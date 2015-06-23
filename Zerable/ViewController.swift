@@ -16,10 +16,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor =  UIColor.colorWithRGBHex(0x363544, alpha: 1.0)
-        scrollView.backgroundColor = UIColor.clearColor()
-        contentView.backgroundColor =  UIColor.clearColor()
-        
         let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         

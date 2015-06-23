@@ -14,6 +14,7 @@
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
 		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
+		85F6C95A1B3A0A7000517ADB /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85F6C9591B3A0A7000517ADB /* temp.png */; };
 		BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
 		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
+		85F6C9591B3A0A7000517ADB /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
 		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				85163BE51B39092100D07CCD /* AppDelegate.swift */,
 				85163BE71B39092100D07CCD /* ViewController.swift */,
 				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
+				85F6C9591B3A0A7000517ADB /* temp.png */,
 				85163BE91B39092100D07CCD /* Main.storyboard */,
 				85163BEC1B39092100D07CCD /* Images.xcassets */,
 				85163BEE1B39092100D07CCD /* LaunchScreen.xib */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85163BEB1B39092100D07CCD /* Main.storyboard in Resources */,
+				85F6C95A1B3A0A7000517ADB /* temp.png in Resources */,
 				85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */,
 				85163BED1B39092100D07CCD /* Images.xcassets in Resources */,
 			);
