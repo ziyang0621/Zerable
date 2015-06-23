@@ -58,10 +58,45 @@ class ViewController: UIViewController {
         scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
     }
     
+    func validateEmail(candidate: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
+    }
+    
     @IBAction func loginButtonPressed(sender: AnyObject) {
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
+    }
+    
+    @IBAction func forgetPasswordButtonPressed(sender: AnyObject) {
+        let alert = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account", preferredStyle: .Alert)
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField!) -> Void in
+                textField.placeholder = "email address"
+                textField.keyboardType = .EmailAddress
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+            let textField = alert.textFields?.first as! UITextField
+            if textField.text == "" {
+                let alert = UIAlertController(title: "Pasword Reset Failed", message: "You must provide an email", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                if !self.validateEmail(textField.text) {
+                    let alert = UIAlertController(title: "Pasword Reset Failed", message: "Invalid email address", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    // do something
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     deinit {
