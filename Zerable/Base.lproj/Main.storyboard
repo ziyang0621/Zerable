@@ -105,6 +105,10 @@
                             <constraint firstAttribute="bottom" secondItem="vmA-Qb-uWg" secondAttribute="bottom" id="t3t-5n-l7j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="8P0-1w-Y7U" id="FCO-G7-KTL"/>
+                        <outlet property="scrollView" destination="vmA-Qb-uWg" id="rtP-c5-qUM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
