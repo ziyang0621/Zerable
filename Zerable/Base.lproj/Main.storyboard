@@ -33,6 +33,9 @@
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eap-SW-p49"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wis-4w-Iez">
                                                 <rect key="frame" x="175" y="343" width="250" height="30"/>
@@ -70,6 +73,9 @@
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signupButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWd-bJ-N4f"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp.png" translatesAutoresizingMaskIntoConstraints="NO" id="cw6-PI-DsK">
                                                 <rect key="frame" x="226" y="114" width="150" height="150"/>
@@ -129,7 +135,11 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="8P0-1w-Y7U" id="FCO-G7-KTL"/>
+                        <outlet property="loginButton" destination="nFk-Oe-ePD" id="8zB-BS-veC"/>
+                        <outlet property="passwordTextfield" destination="Wis-4w-Iez" id="P2I-Ir-Tup"/>
                         <outlet property="scrollView" destination="vmA-Qb-uWg" id="rtP-c5-qUM"/>
+                        <outlet property="signupButton" destination="dXS-ui-9D2" id="0xa-oN-pUA"/>
+                        <outlet property="usernameTextfield" destination="Pgj-aT-pb3" id="WR9-WB-qne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

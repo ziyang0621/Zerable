@@ -12,12 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        usernameTextfield.layer.cornerRadius = CGRectGetHeight(usernameTextfield.frame) / 2
+        passwordTextfield.layer.cornerRadius = CGRectGetHeight(passwordTextfield.frame) / 2
+        loginButton.layer.cornerRadius = CGRectGetHeight(loginButton.frame) / 2
+        signupButton.layer.cornerRadius = CGRectGetHeight(signupButton.frame) / 2
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -47,6 +56,12 @@ class ViewController: UIViewController {
         
         scrollView.contentInset.bottom += adjustmentHeight
         scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+    }
+    
+    @IBAction func signupButtonPressed(sender: AnyObject) {
     }
     
     deinit {
