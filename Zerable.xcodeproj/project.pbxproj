@@ -13,6 +13,8 @@
 		85163BED1B39092100D07CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEC1B39092100D07CCD /* Images.xcassets */; };
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
+		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
+		BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC14B8EFFEFEA77E66A76FD /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
 		85163BE01B39092100D07CCD /* Zerable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zerable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BE41B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BE51B39092100D07CCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		85163BF51B39092100D07CCD /* ZerableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZerableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
+		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
+		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +63,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188299ECB325F50BC75EC3A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85163BD71B39092100D07CCD = {
 			isa = PBXGroup;
 			children = (
 				85163BE21B39092100D07CCD /* Zerable */,
 				85163BF81B39092100D07CCD /* ZerableTests */,
 				85163BE11B39092100D07CCD /* Products */,
+				C63DA1091471853DE80A2F14 /* Pods */,
+				188299ECB325F50BC75EC3A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +96,7 @@
 			children = (
 				85163BE51B39092100D07CCD /* AppDelegate.swift */,
 				85163BE71B39092100D07CCD /* ViewController.swift */,
+				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
 				85163BE91B39092100D07CCD /* Main.storyboard */,
 				85163BEC1B39092100D07CCD /* Images.xcassets */,
 				85163BEE1B39092100D07CCD /* LaunchScreen.xib */,
@@ -112,6 +130,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C63DA1091471853DE80A2F14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */,
+				3AC14B8EFFEFEA77E66A76FD /* Pods-Zerable.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85163BFF1B39092100D07CCD /* Build configuration list for PBXNativeTarget "Zerable" */;
 			buildPhases = (
+				E5ABA711B98A505860FE2870 /* Check Pods Manifest.lock */,
 				85163BDC1B39092100D07CCD /* Sources */,
 				85163BDD1B39092100D07CCD /* Frameworks */,
 				85163BDE1B39092100D07CCD /* Resources */,
+				CF28C0F995EE1B996718772A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +236,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF28C0F995EE1B996718772A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zerable/Pods-Zerable-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5ABA711B98A505860FE2870 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85163BDC1B39092100D07CCD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +276,7 @@
 			files = (
 				85163BE81B39092100D07CCD /* ViewController.swift in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
+				85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +403,11 @@
 		};
 		85163C001B39092100D07CCD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Zerable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,9 +415,11 @@
 		};
 		85163C011B39092100D07CCD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC14B8EFFEFEA77E66A76FD /* Pods-Zerable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Zerable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +478,7 @@
 				85163C011B39092100D07CCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85163C021B39092100D07CCD /* Build configuration list for PBXNativeTarget "ZerableTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +487,7 @@
 				85163C041B39092100D07CCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
