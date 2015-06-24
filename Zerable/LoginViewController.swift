@@ -1,21 +1,23 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Zerable
 //
-//  Created by Ziyang Tan on 6/22/15.
+//  Created by Ziyang Tan on 6/23/15.
 //  Copyright (c) 2015 Ziyang Tan. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class LoginViewController: UIViewController {
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    let MyKeychainWrapper = KeychainWrapper()
+    var keyboardIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,14 @@ class ViewController: UIViewController {
         passwordTextfield.layer.cornerRadius = CGRectGetHeight(passwordTextfield.frame) / 2
         loginButton.layer.cornerRadius = CGRectGetHeight(loginButton.frame) / 2
         signupButton.layer.cornerRadius = CGRectGetHeight(signupButton.frame) / 2
+        
+        usernameTextfield.delegate = self
+        passwordTextfield.delegate = self
+        
+        let topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
+            (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
+        scrollView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -41,11 +51,17 @@ class ViewController: UIViewController {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        adjustInsetForKeyboardShow(true, notification: notification)
+        if !keyboardIsShown {
+            adjustInsetForKeyboardShow(true, notification: notification)
+        }
+        keyboardIsShown = true
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        adjustInsetForKeyboardShow(false, notification: notification)
+        if keyboardIsShown {
+            adjustInsetForKeyboardShow(false, notification: notification)
+        }
+        keyboardIsShown = false
     }
     
     func adjustInsetForKeyboardShow(show: Bool, notification: NSNotification) {
@@ -63,10 +79,44 @@ class ViewController: UIViewController {
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
     }
     
+    func checkLogin(username: String, password: String) -> Bool {
+        if password == MyKeychainWrapper.myObjectForKey("v_Data") as? NSString &&
+            username == NSUserDefaults.standardUserDefaults().valueForKey("username") as? NSString {
+                return true
+        } else {
+            return false
+        }
+    }
+    
+    func login() {
+        usernameTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        
+        if usernameTextfield.text != "" && passwordTextfield.text != "" {
+            if checkLogin(usernameTextfield.text, password: passwordTextfield.text) {
+                println("can login")
+            } else {
+                let alert = UIAlertController(title: "Login Failed", message: "Wrong username or password", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
+            }
+        } else {
+            let alert = UIAlertController(title: "Missing information", message: "Please enter both username and password", preferredStyle: .Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+            presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func loginButtonPressed(sender: AnyObject) {
+        login()
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
+        let signupVC = UIStoryboard.signupViewController()
+        let signupNavVC = UINavigationController(rootViewController: signupVC)
+        presentViewController(signupNavVC, animated: true, completion: nil)
     }
     
     @IBAction func forgetPasswordButtonPressed(sender: AnyObject) {
@@ -74,8 +124,8 @@ class ViewController: UIViewController {
         
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField!) -> Void in
-                textField.placeholder = "email address"
-                textField.keyboardType = .EmailAddress
+            textField.placeholder = "email address"
+            textField.keyboardType = .EmailAddress
         }
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
@@ -102,12 +152,22 @@ class ViewController: UIViewController {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            usernameTextfield.resignFirstResponder()
+            passwordTextfield.becomeFirstResponder()
+        } else {
+            login()
+        }
+        return true
+    }
 }
 

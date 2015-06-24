@@ -31,3 +31,18 @@ extension UIColor {
             alpha: CGFloat(alpha))
     }
 }
+
+extension UIStoryboard {
+    class func mainStoryboard() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    }
+
+    class func loginlViewController() -> LoginViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+    }
+    
+    class func signupViewController() -> SignupViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SignupViewController") as! SignupViewController
+    }
+    
+}

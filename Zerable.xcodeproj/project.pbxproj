@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BE51B39092100D07CCD /* AppDelegate.swift */; };
-		85163BE81B39092100D07CCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BE71B39092100D07CCD /* ViewController.swift */; };
 		85163BEB1B39092100D07CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85163BE91B39092100D07CCD /* Main.storyboard */; };
 		85163BED1B39092100D07CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEC1B39092100D07CCD /* Images.xcassets */; };
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
+		8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1421B3A58CF00150669 /* KeychainWrapper.m */; };
+		8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1461B3A5DBE00150669 /* LoginViewController.swift */; };
+		8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1481B3A5EDE00150669 /* SignupViewController.swift */; };
 		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
 		85F6C95A1B3A0A7000517ADB /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85F6C9591B3A0A7000517ADB /* temp.png */; };
 		BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */; };
@@ -34,13 +36,17 @@
 		85163BE01B39092100D07CCD /* Zerable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zerable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BE41B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BE51B39092100D07CCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85163BE71B39092100D07CCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85163BEA1B39092100D07CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85163BEC1B39092100D07CCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85163BEF1B39092100D07CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		85163BF51B39092100D07CCD /* ZerableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZerableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
+		8546A1401B3A58CE00150669 /* Zerable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zerable-Bridging-Header.h"; sourceTree = "<group>"; };
+		8546A1411B3A58CF00150669 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		8546A1421B3A58CF00150669 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		8546A1461B3A5DBE00150669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8546A1481B3A5EDE00150669 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
 		85F6C9591B3A0A7000517ADB /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
 		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,13 +103,17 @@
 			isa = PBXGroup;
 			children = (
 				85163BE51B39092100D07CCD /* AppDelegate.swift */,
-				85163BE71B39092100D07CCD /* ViewController.swift */,
+				8546A1461B3A5DBE00150669 /* LoginViewController.swift */,
+				8546A1481B3A5EDE00150669 /* SignupViewController.swift */,
 				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
+				8546A1411B3A58CF00150669 /* KeychainWrapper.h */,
+				8546A1421B3A58CF00150669 /* KeychainWrapper.m */,
 				85F6C9591B3A0A7000517ADB /* temp.png */,
 				85163BE91B39092100D07CCD /* Main.storyboard */,
 				85163BEC1B39092100D07CCD /* Images.xcassets */,
 				85163BEE1B39092100D07CCD /* LaunchScreen.xib */,
 				85163BE31B39092100D07CCD /* Supporting Files */,
+				8546A1401B3A58CE00150669 /* Zerable-Bridging-Header.h */,
 			);
 			path = Zerable;
 			sourceTree = "<group>";
@@ -278,8 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85163BE81B39092100D07CCD /* ViewController.swift in Sources */,
+				8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
+				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,
+				8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */,
 				85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,10 +422,13 @@
 			baseConfigurationReference = D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Zerable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zerable/Zerable-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,10 +437,12 @@
 			baseConfigurationReference = 3AC14B8EFFEFEA77E66A76FD /* Pods-Zerable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Zerable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zerable/Zerable-Bridging-Header.h";
 			};
 			name = Release;
 		};
