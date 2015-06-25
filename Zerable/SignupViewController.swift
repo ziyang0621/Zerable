@@ -12,10 +12,10 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var firstnameTextfield: UITextField!
-    @IBOutlet weak var lastnameTextfield: UITextField!
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
     let MyKeychainWrapper = KeychainWrapper()
     var keyboardIsShown = false
@@ -37,10 +37,10 @@ class SignupViewController: UIViewController {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        firstnameTextfield.delegate = self
-        lastnameTextfield.delegate = self
-        emailTextfield.delegate = self
-        passwordTextfield.delegate = self
+        firstnameTextField.delegate = self
+        lastnameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -51,6 +51,9 @@ class SignupViewController: UIViewController {
         let location = gestureRecognizer.locationInView(contentView)
         
         if CGRectContainsPoint(termLabel.frame, location) {
+            let termVC = UIStoryboard.termAndPolicyViewController()
+            let termNavVC = UINavigationController(rootViewController: termVC)
+            presentViewController(termNavVC, animated: true, completion: nil)
             return
         }
         
@@ -91,16 +94,16 @@ class SignupViewController: UIViewController {
     
    
     func signup() {
-        if firstnameTextfield.text != "" && lastnameTextfield.text != "" &&
-            emailTextfield.text != "" && passwordTextfield.text != "" {
-            if !validateEmail(emailTextfield.text) {
+        if firstnameTextField.text != "" && lastnameTextField.text != "" &&
+            emailTextField.text != "" && passwordTextField.text != "" {
+            if !validateEmail(emailTextField.text) {
                 let alert = UIAlertController(title: "Login Failed", message: "Invalid email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             } else {
-                NSUserDefaults.standardUserDefaults().setValue(emailTextfield.text, forKey: "email")
+                NSUserDefaults.standardUserDefaults().setValue(emailTextField.text, forKey: "email")
                 
-                MyKeychainWrapper.mySetObject(passwordTextfield.text, forKey: kSecValueData)
+                MyKeychainWrapper.mySetObject(passwordTextField.text, forKey: kSecValueData)
                 MyKeychainWrapper.writeToKeychain()
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -138,14 +141,14 @@ class SignupViewController: UIViewController {
 extension SignupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == 0 {
-            firstnameTextfield.resignFirstResponder()
-            lastnameTextfield.becomeFirstResponder()
+            firstnameTextField.resignFirstResponder()
+            lastnameTextField.becomeFirstResponder()
         } else if textField.tag == 1 {
-            lastnameTextfield.resignFirstResponder()
-            emailTextfield.becomeFirstResponder()
+            lastnameTextField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
         } else if textField.tag == 2 {
-            emailTextfield.resignFirstResponder()
-            passwordTextfield.becomeFirstResponder()
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
         } else {
             signup()
         }

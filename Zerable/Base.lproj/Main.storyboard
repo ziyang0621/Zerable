@@ -132,10 +132,10 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="8P0-1w-Y7U" id="gHZ-pZ-p9u"/>
-                        <outlet property="emailTextfield" destination="Pgj-aT-pb3" id="B0x-HV-xNA"/>
+                        <outlet property="emailTextField" destination="Pgj-aT-pb3" id="KNH-A0-z6e"/>
                         <outlet property="forgetPasswordLabel" destination="pTD-4L-z8H" id="riv-Dm-AJ3"/>
                         <outlet property="loginButton" destination="nFk-Oe-ePD" id="kCh-dk-4iY"/>
-                        <outlet property="passwordTextfield" destination="Wis-4w-Iez" id="aeV-Aw-PZU"/>
+                        <outlet property="passwordTextField" destination="Wis-4w-Iez" id="txr-zj-4i8"/>
                         <outlet property="scrollView" destination="vmA-Qb-uWg" id="uqJ-Sh-9PS"/>
                         <outlet property="signupButton" destination="dXS-ui-9D2" id="c0c-gD-GBF"/>
                     </connections>
@@ -234,17 +234,54 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6is-IB-NKS" id="pb1-Ap-QWd"/>
-                        <outlet property="emailTextfield" destination="dz5-hr-Kbu" id="TkY-FB-Jb3"/>
-                        <outlet property="firstnameTextfield" destination="TUi-jT-RCm" id="hMS-FM-afl"/>
-                        <outlet property="lastnameTextfield" destination="bEf-FC-XDx" id="lep-Ii-E9c"/>
-                        <outlet property="passwordTextfield" destination="68o-iu-cns" id="U4Y-tI-3U5"/>
+                        <outlet property="emailTextField" destination="dz5-hr-Kbu" id="jvz-Km-Xw4"/>
+                        <outlet property="firstnameTextField" destination="TUi-jT-RCm" id="KNI-Fm-Ywk"/>
+                        <outlet property="lastnameTextField" destination="bEf-FC-XDx" id="ipa-fJ-lKg"/>
+                        <outlet property="passwordTextField" destination="68o-iu-cns" id="i8A-1b-1L9"/>
                         <outlet property="scrollView" destination="nVJ-ry-mtG" id="Ftf-g6-3lM"/>
                         <outlet property="termLabel" destination="RIJ-WO-KIv" id="zzd-AB-JHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3v-xv-hHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="535"/>
+            <point key="canvasLocation" x="1166" y="522"/>
+        </scene>
+        <!--Term And Policy View Controller-->
+        <scene sceneID="rqM-5Q-1f1">
+            <objects>
+                <viewController storyboardIdentifier="TermAndPolicyViewController" id="rIA-f5-VF9" customClass="TermAndPolicyViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rjz-zo-Zxd"/>
+                        <viewControllerLayoutGuide type="bottom" id="XkV-OB-9Ep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hQT-Wd-cGk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoI-pT-hJa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eoI-pT-hJa" firstAttribute="leading" secondItem="hQT-Wd-cGk" secondAttribute="leading" id="9tm-B0-Bjp"/>
+                            <constraint firstAttribute="trailing" secondItem="eoI-pT-hJa" secondAttribute="trailing" id="LeA-tY-7JF"/>
+                            <constraint firstItem="eoI-pT-hJa" firstAttribute="top" secondItem="hQT-Wd-cGk" secondAttribute="top" id="fLb-09-DHH"/>
+                            <constraint firstAttribute="bottom" secondItem="eoI-pT-hJa" secondAttribute="bottom" id="i8S-1l-R67"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="termAndPolicyTextView" destination="eoI-pT-hJa" id="Zt3-19-62A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLE-TU-LKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="522"/>
         </scene>
     </scenes>
     <resources>

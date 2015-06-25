@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgetPasswordLabel: UILabel!
     let MyKeychainWrapper = KeychainWrapper()
     var keyboardIsShown = false
@@ -26,13 +26,13 @@ class LoginViewController: UIViewController {
         let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
         contentView.addGestureRecognizer(viewTap)
         
-        emailTextfield.layer.cornerRadius = CGRectGetHeight(emailTextfield.frame) / 2
-        passwordTextfield.layer.cornerRadius = CGRectGetHeight(passwordTextfield.frame) / 2
+        emailTextField.layer.cornerRadius = CGRectGetHeight(emailTextField.frame) / 2
+        passwordTextField.layer.cornerRadius = CGRectGetHeight(passwordTextField.frame) / 2
         loginButton.layer.cornerRadius = CGRectGetHeight(loginButton.frame) / 2
         signupButton.layer.cornerRadius = CGRectGetHeight(signupButton.frame) / 2
         
-        emailTextfield.delegate = self
-        passwordTextfield.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         let topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
             (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
     }
     
     func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
@@ -87,7 +88,6 @@ class LoginViewController: UIViewController {
     }
     
     func checkLogin(email: String, password: String) -> Bool {
-        print("pwd: ")
         println(MyKeychainWrapper.myObjectForKey("v_data") as? NSString)
         if password == MyKeychainWrapper.myObjectForKey("v_Data") as? NSString &&
             email == NSUserDefaults.standardUserDefaults().valueForKey("email") as? NSString {
@@ -98,16 +98,16 @@ class LoginViewController: UIViewController {
     }
     
     func login() {
-        emailTextfield.resignFirstResponder()
-        passwordTextfield.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         
-        if emailTextfield.text != "" && passwordTextfield.text != "" {
-            if !validateEmail(emailTextfield.text) {
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            if !validateEmail(emailTextField.text) {
                 let alert = UIAlertController(title: "Login Failed", message: "Invalid email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             } else {
-                if checkLogin(emailTextfield.text, password: passwordTextfield.text) {
+                if checkLogin(emailTextField.text, password: passwordTextField.text) {
                     println("can login")
                 } else {
                     let alert = UIAlertController(title: "Login Failed", message: "Wrong email or password", preferredStyle: .Alert)
@@ -139,19 +139,19 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField!) -> Void in
-            textField.placeholder = "email address"
-            textField.keyboardType = .EmailAddress
+            (TextField: UITextField!) -> Void in
+            TextField.placeholder = "email address"
+            TextField.keyboardType = .EmailAddress
         }
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
-            let textField = alert.textFields?.first as! UITextField
-            if textField.text == "" {
+            let TextField = alert.textFields?.first as! UITextField
+            if TextField.text == "" {
                 let alert = UIAlertController(title: "Pasword Reset Failed", message: "You must provide an email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                if !validateEmail(textField.text) {
+                if !validateEmail(TextField.text) {
                     let alert = UIAlertController(title: "Pasword Reset Failed", message: "Invalid email address", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -176,10 +176,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func TextFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == 0 {
-            emailTextfield.resignFirstResponder()
-            passwordTextfield.becomeFirstResponder()
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
         } else {
             login()
         }

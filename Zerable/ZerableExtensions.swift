@@ -45,4 +45,7 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("SignupViewController") as! SignupViewController
     }
     
+    class func termAndPolicyViewController() -> TermAndPolicyViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("TermAndPolicyViewController") as! TermAndPolicyViewController
+    }
 }
