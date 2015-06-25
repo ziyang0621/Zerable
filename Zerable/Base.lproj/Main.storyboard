@@ -179,10 +179,10 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68o-iu-cns">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68o-iu-cns">
                                                 <rect key="frame" x="175" y="167" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to the Terms of Service &amp; Priacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIJ-WO-KIv">
                                                 <rect key="frame" x="190" y="205" width="220" height="50"/>
@@ -233,16 +233,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="6is-IB-NKS" id="pb1-Ap-QWd"/>
                         <outlet property="emailTextfield" destination="dz5-hr-Kbu" id="TkY-FB-Jb3"/>
                         <outlet property="firstnameTextfield" destination="TUi-jT-RCm" id="hMS-FM-afl"/>
                         <outlet property="lastnameTextfield" destination="bEf-FC-XDx" id="lep-Ii-E9c"/>
                         <outlet property="passwordTextfield" destination="68o-iu-cns" id="U4Y-tI-3U5"/>
+                        <outlet property="scrollView" destination="nVJ-ry-mtG" id="Ftf-g6-3lM"/>
                         <outlet property="termLabel" destination="RIJ-WO-KIv" id="zzd-AB-JHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3v-xv-hHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="382"/>
+            <point key="canvasLocation" x="1162" y="535"/>
         </scene>
     </scenes>
     <resources>

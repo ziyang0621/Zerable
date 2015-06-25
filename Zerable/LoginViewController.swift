@@ -86,14 +86,11 @@ class LoginViewController: UIViewController {
         scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
     }
     
-    func validateEmail(candidate: String) -> Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
-    }
-    
-    func checkLogin(username: String, password: String) -> Bool {
+    func checkLogin(email: String, password: String) -> Bool {
+        print("pwd: ")
+        println(MyKeychainWrapper.myObjectForKey("v_data") as? NSString)
         if password == MyKeychainWrapper.myObjectForKey("v_Data") as? NSString &&
-            username == NSUserDefaults.standardUserDefaults().valueForKey("username") as? NSString {
+            email == NSUserDefaults.standardUserDefaults().valueForKey("email") as? NSString {
                 return true
         } else {
             return false
@@ -154,7 +151,7 @@ class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                if !self.validateEmail(textField.text) {
+                if !validateEmail(textField.text) {
                     let alert = UIAlertController(title: "Pasword Reset Failed", message: "Invalid email address", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
