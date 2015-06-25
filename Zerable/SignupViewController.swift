@@ -108,6 +108,7 @@ class SignupViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
                 NSUserDefaults.standardUserDefaults().synchronize()
                 
+                dismissViewControllerAnimated(true, completion: nil)
             }
         } else {
             let alert = UIAlertController(title: "Missing information", message: "Please enter information for all fields", preferredStyle: .Alert)
@@ -120,7 +121,6 @@ class SignupViewController: UIViewController {
     
     func startSignup() {
         signup()
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func cancelSignup() {
