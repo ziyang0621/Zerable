@@ -16,14 +16,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var forgetPasswordLabel: UILabel!
     let MyKeychainWrapper = KeychainWrapper()
     var keyboardIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
+        contentView.addGestureRecognizer(viewTap)
         
         usernameTextfield.layer.cornerRadius = CGRectGetHeight(usernameTextfield.frame) / 2
         passwordTextfield.layer.cornerRadius = CGRectGetHeight(passwordTextfield.frame) / 2
@@ -40,6 +41,17 @@ class LoginViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        let location = gestureRecognizer.locationInView(contentView)
+      
+        if CGRectContainsPoint(forgetPasswordLabel.frame, location) {
+            forgetPassword()
+            return
+        }
+        
+        dismissKeyboard()
     }
     
     func dismissKeyboard() {
@@ -119,7 +131,7 @@ class LoginViewController: UIViewController {
         presentViewController(signupNavVC, animated: true, completion: nil)
     }
     
-    @IBAction func forgetPasswordButtonPressed(sender: AnyObject) {
+    func forgetPassword() {
         let alert = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler {
