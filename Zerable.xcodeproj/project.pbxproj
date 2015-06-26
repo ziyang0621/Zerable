@@ -12,6 +12,7 @@
 		85163BED1B39092100D07CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEC1B39092100D07CCD /* Images.xcassets */; };
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
+		85365E911B3DCAED0053448F /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85365E901B3DCAED0053448F /* ItemListViewController.swift */; };
 		853FD2761B3CB68100969391 /* ZerableHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FD2751B3CB68100969391 /* ZerableHelperFunctions.swift */; };
 		853FD2781B3CC0AF00969391 /* TermAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */; };
 		8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1421B3A58CF00150669 /* KeychainWrapper.m */; };
@@ -44,6 +45,7 @@
 		85163BF51B39092100D07CCD /* ZerableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZerableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
+		85365E901B3DCAED0053448F /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		853FD2751B3CB68100969391 /* ZerableHelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableHelperFunctions.swift; sourceTree = "<group>"; };
 		853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermAndPolicyViewController.swift; sourceTree = "<group>"; };
 		8546A1401B3A58CE00150669 /* Zerable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zerable-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				8546A1461B3A5DBE00150669 /* LoginViewController.swift */,
 				8546A1481B3A5EDE00150669 /* SignupViewController.swift */,
 				853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */,
+				85365E901B3DCAED0053448F /* ItemListViewController.swift */,
 				853FD2751B3CB68100969391 /* ZerableHelperFunctions.swift */,
 				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
 				8546A1411B3A58CF00150669 /* KeychainWrapper.h */,
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853FD2781B3CC0AF00969391 /* TermAndPolicyViewController.swift in Sources */,
+				85365E911B3DCAED0053448F /* ItemListViewController.swift in Sources */,
 				8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
 				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,

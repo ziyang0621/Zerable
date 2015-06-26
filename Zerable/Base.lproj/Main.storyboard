@@ -138,10 +138,40 @@
                         <outlet property="passwordTextField" destination="Wis-4w-Iez" id="txr-zj-4i8"/>
                         <outlet property="scrollView" destination="vmA-Qb-uWg" id="uqJ-Sh-9PS"/>
                         <outlet property="signupButton" destination="dXS-ui-9D2" id="c0c-gD-GBF"/>
+                        <segue destination="JD5-xO-2Sl" kind="show" identifier="showItemList" id="CqY-ne-olW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Item List View Controller-->
+        <scene sceneID="XI2-Zd-hsn">
+            <objects>
+                <viewController id="JD5-xO-2Sl" customClass="ItemListViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dKH-HZ-F6K"/>
+                        <viewControllerLayoutGuide type="bottom" id="JMt-Sy-LAU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLY-OZ-6kk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDf-XB-PBo">
+                                <rect key="frame" x="269" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="test:" destination="JD5-xO-2Sl" eventType="touchUpInside" id="1VX-xB-Y6H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OR-hC-L2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="1201"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="dQd-Qo-Wt3">

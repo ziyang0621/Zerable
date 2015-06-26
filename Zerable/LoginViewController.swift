@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgetPasswordLabel: UILabel!
-    let MyKeychainWrapper = KeychainWrapper()
     var keyboardIsShown = false
     
     override func viewDidLoad() {
@@ -88,8 +87,7 @@ class LoginViewController: UIViewController {
     }
     
     func checkLogin(email: String, password: String) -> Bool {
-        println(MyKeychainWrapper.myObjectForKey("v_data") as? NSString)
-        if password == MyKeychainWrapper.myObjectForKey("v_Data") as? NSString &&
+        if password == ZerableKeychainWrapper.sharedInstance.myObjectForKey("v_Data") as? NSString &&
             email == NSUserDefaults.standardUserDefaults().valueForKey("email") as? NSString {
                 return true
         } else {
@@ -109,6 +107,7 @@ class LoginViewController: UIViewController {
             } else {
                 if checkLogin(emailTextField.text, password: passwordTextField.text) {
                     println("can login")
+                    performSegueWithIdentifier("showItemList", sender: self)
                 } else {
                     let alert = UIAlertController(title: "Login Failed", message: "Wrong email or password", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
@@ -132,7 +131,8 @@ class LoginViewController: UIViewController {
     @IBAction func signupButtonPressed(sender: AnyObject) {
         let signupVC = UIStoryboard.signupViewController()
         let signupNavVC = UINavigationController(rootViewController: signupVC)
-        presentViewController(signupNavVC, animated: true, completion: nil)
+        //presentViewController(signupNavVC, animated: true, completion: nil)
+        showViewController(signupNavVC, sender: self)
     }
     
     func forgetPassword() {

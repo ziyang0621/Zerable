@@ -17,7 +17,6 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
-    let MyKeychainWrapper = KeychainWrapper()
     var keyboardIsShown = false
     
     override func viewDidLoad() {
@@ -103,9 +102,8 @@ class SignupViewController: UIViewController {
             } else {
                 NSUserDefaults.standardUserDefaults().setValue(emailTextField.text, forKey: "email")
                 
-                MyKeychainWrapper.mySetObject(passwordTextField.text, forKey: kSecValueData)
-                MyKeychainWrapper.writeToKeychain()
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
+                ZerableKeychainWrapper.sharedInstance.mySetObject(passwordTextField.text, forKey: kSecValueData)
+                ZerableKeychainWrapper.sharedInstance.writeToKeychain()
                 NSUserDefaults.standardUserDefaults().synchronize()
                 
                 dismissViewControllerAnimated(true, completion: nil)
