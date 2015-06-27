@@ -22,14 +22,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
-        contentView.addGestureRecognizer(viewTap)
+        forgetPasswordLabel.addGestureRecognizer(viewTap)
         
         emailTextField.layer.cornerRadius = CGRectGetHeight(emailTextField.frame) / 2
         passwordTextField.layer.cornerRadius = CGRectGetHeight(passwordTextField.frame) / 2
         loginButton.layer.cornerRadius = CGRectGetHeight(loginButton.frame) / 2
         signupButton.layer.cornerRadius = CGRectGetHeight(signupButton.frame) / 2
         
-
         emailTextField.delegate = self
         passwordTextField.delegate = self
 
@@ -38,24 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        let location = gestureRecognizer.locationInView(contentView)
-      
-        if CGRectContainsPoint(forgetPasswordLabel.frame, location) {
-            forgetPassword()
-            return
-        }
-        
-        dismissKeyboard()
-    }
-    
-    func dismissKeyboard() {
-        for view in contentView.subviews {
-            if view.isKindOfClass(UITextField) &&
-                (view as! UITextField).isFirstResponder() {
-                (view as! UITextField).resignFirstResponder()
-                return
-            }
-        }
+        forgetPassword()
     }
     
     func checkLogin(email: String, password: String) -> Bool {

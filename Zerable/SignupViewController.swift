@@ -22,7 +22,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         
         let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
-        contentView.addGestureRecognizer(viewTap)
+        termLabel.addGestureRecognizer(viewTap)
 
         let leftBarButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelSignup")
         navigationItem.leftBarButtonItem = leftBarButton
@@ -38,28 +38,11 @@ class SignupViewController: UIViewController {
     }
     
     func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        let location = gestureRecognizer.locationInView(contentView)
-        
-        if CGRectContainsPoint(termLabel.frame, location) {
-            let termVC = UIStoryboard.termAndPolicyViewController()
-            let termNavVC = UINavigationController(rootViewController: termVC)
-            presentViewController(termNavVC, animated: true, completion: nil)
-            return
-        }
-        
-        dismissKeyboard()
+        let termVC = UIStoryboard.termAndPolicyViewController()
+        let termNavVC = UINavigationController(rootViewController: termVC)
+        presentViewController(termNavVC, animated: true, completion: nil)
     }
     
-    func dismissKeyboard() {
-        for view in contentView.subviews {
-            if view.isKindOfClass(UITextField) &&
-                (view as! UITextField).isFirstResponder() {
-                    (view as! UITextField).resignFirstResponder()
-                    return
-            }
-        }
-    }
-   
     func signup() {
         if firstnameTextField.text != "" && lastnameTextField.text != "" &&
             emailTextField.text != "" && passwordTextField.text != "" {

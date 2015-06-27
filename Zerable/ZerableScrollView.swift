@@ -13,6 +13,8 @@ class ZerableScrollView: UIScrollView {
     var keyboardIsShown = false
     var topInset: CGFloat = 0.0
     var bottomInset: CGFloat = 0.0
+    var leftInset: CGFloat = 0.0
+    var rightInset: CGFloat = 0.0
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,9 +23,12 @@ class ZerableScrollView: UIScrollView {
     }
     
     func setup() {
-        contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
-        scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+        contentInset = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         
+        let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
+        self.addGestureRecognizer(viewTap)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -60,14 +65,31 @@ class ZerableScrollView: UIScrollView {
         scrollIndicatorInsets.bottom += adjustmentHeight
     }
     
+    func findFirstResponder(view: UIView) -> UIView? {
+        for childView in view.subviews {
+            if childView.respondsToSelector(Selector("isFirstResponder")) &&
+                childView.isFirstResponder() {
+                    return childView as? UIView
+            }
+            if let result = findFirstResponder(childView as! UIView) {
+                return result;
+            }
+        }
+        return nil
+    }
+    
+    func dismissKeyboard() {
+        if let childView = findFirstResponder(self) {
+            childView.resignFirstResponder()
+        }
+    }
+    
+    func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        dismissKeyboard()
+    }
+
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
-
-//extension ZerableScrollView: UITextFieldDelegate {
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        println("test delegate")
-//        return true
-//    }
-//}
