@@ -10,14 +10,13 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
-    var keyboardIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +30,10 @@ class SignupViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "Sign up", style: .Plain, target: self, action: "startSignup")
         navigationItem.rightBarButtonItem = rightBarButton
         
-//        let topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
-//            (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
         firstnameTextField.delegate = self
         lastnameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
     }
     
@@ -61,36 +52,13 @@ class SignupViewController: UIViewController {
     
     func dismissKeyboard() {
         for view in contentView.subviews {
-            if view.isKindOfClass(UITextField) {
-                (view as! UITextField).resignFirstResponder()
+            if view.isKindOfClass(UITextField) &&
+                (view as! UITextField).isFirstResponder() {
+                    (view as! UITextField).resignFirstResponder()
+                    return
             }
         }
     }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if !keyboardIsShown {
-            adjustInsetForKeyboardShow(true, notification: notification)
-        }
-        keyboardIsShown = true
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if keyboardIsShown {
-            adjustInsetForKeyboardShow(false, notification: notification)
-        }
-        keyboardIsShown = false
-    }
-    
-    func adjustInsetForKeyboardShow(show: Bool, notification: NSNotification) {
-        let userInfo = notification.userInfo ?? [:]
-        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        let adjustmentHeight = (CGRectGetHeight(keyboardFrame) -
-            (navigationController?.toolbar == nil ? 0 : CGRectGetHeight(navigationController!.toolbar.frame)) + 20) * (show ? 1 : -1)
-        
-        scrollView.contentInset.bottom += adjustmentHeight
-        scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
-    }
-    
    
     func signup() {
         if firstnameTextField.text != "" && lastnameTextField.text != "" &&
@@ -102,8 +70,8 @@ class SignupViewController: UIViewController {
             } else {
                 NSUserDefaults.standardUserDefaults().setValue(emailTextField.text, forKey: "email")
                 
-                ZerableKeychainWrapper.sharedInstance.mySetObject(passwordTextField.text, forKey: kSecValueData)
-                ZerableKeychainWrapper.sharedInstance.writeToKeychain()
+                KeychainWrapper.sharedInstance.mySetObject(passwordTextField.text, forKey: kSecValueData)
+                KeychainWrapper.sharedInstance.writeToKeychain()
                 NSUserDefaults.standardUserDefaults().synchronize()
                 
                 dismissViewControllerAnimated(true, completion: nil)
@@ -125,10 +93,6 @@ class SignupViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

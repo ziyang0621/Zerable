@@ -13,6 +13,3 @@ func validateEmail(candidate: String) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
 }
 
-class ZerableKeychainWrapper: KeychainWrapper {
-    static let sharedInstance = ZerableKeychainWrapper()
-}

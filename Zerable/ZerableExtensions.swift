@@ -49,3 +49,14 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("TermAndPolicyViewController") as! TermAndPolicyViewController
     }
 }
+
+extension KeychainWrapper {
+    
+    class var sharedInstance: KeychainWrapper {
+        struct Static {
+            static let instance: KeychainWrapper = KeychainWrapper()
+        }
+        return Static.instance
+    }
+}
+
