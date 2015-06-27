@@ -27,7 +27,7 @@ class ZerableScrollView: UIScrollView {
         scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         
         let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
-        self.addGestureRecognizer(viewTap)
+        addGestureRecognizer(viewTap)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
