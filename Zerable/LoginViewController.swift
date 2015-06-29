@@ -12,11 +12,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgetPasswordLabel: UILabel!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +25,22 @@ class LoginViewController: UIViewController {
         
         emailTextField.layer.cornerRadius = CGRectGetHeight(emailTextField.frame) / 2
         passwordTextField.layer.cornerRadius = CGRectGetHeight(passwordTextField.frame) / 2
-        loginButton.layer.cornerRadius = CGRectGetHeight(loginButton.frame) / 2
-        signupButton.layer.cornerRadius = CGRectGetHeight(signupButton.frame) / 2
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-
+        
         scrollView.topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
             (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
+        
+        let rightBarButton = UIBarButtonItem(title: "Log In", style: .Plain, target: self, action: "login")
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIColor.imageWithColor(kThemeColor), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIColor.imageWithColor(kThemeColor)
     }
     
     func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
@@ -80,13 +87,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
         login()
-    }
-    
-    @IBAction func signupButtonPressed(sender: AnyObject) {
-        let signupVC = UIStoryboard.signupViewController()
-        let signupNavVC = UINavigationController(rootViewController: signupVC)
-        //presentViewController(signupNavVC, animated: true, completion: nil)
-        showViewController(signupNavVC, sender: self)
     }
     
     func forgetPassword() {

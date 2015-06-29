@@ -23,9 +23,6 @@ class SignupViewController: UIViewController {
         
         let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
         termLabel.addGestureRecognizer(viewTap)
-
-        let leftBarButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelSignup")
-        navigationItem.leftBarButtonItem = leftBarButton
         
         let rightBarButton = UIBarButtonItem(title: "Sign up", style: .Plain, target: self, action: "startSignup")
         navigationItem.rightBarButtonItem = rightBarButton
@@ -36,6 +33,14 @@ class SignupViewController: UIViewController {
         passwordTextField.delegate = self
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIColor.imageWithColor(kThemeColor), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIColor.imageWithColor(kThemeColor)
+    }
+
     
     func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         let termVC = UIStoryboard.termAndPolicyViewController()
@@ -70,10 +75,6 @@ class SignupViewController: UIViewController {
     
     func startSignup() {
         signup()
-    }
-    
-    func cancelSignup() {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
