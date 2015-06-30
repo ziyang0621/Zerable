@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F1040975B756AAFAF1E2363"
-               BuildableName = "libPods-Zerable.a"
-               BlueprintName = "Pods-Zerable"
+               BlueprintIdentifier = "0F0F78CB399E59761A07A498"
+               BuildableName = "libPods-Zerable-REFormattedNumberField.a"
+               BlueprintName = "Pods-Zerable-REFormattedNumberField"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

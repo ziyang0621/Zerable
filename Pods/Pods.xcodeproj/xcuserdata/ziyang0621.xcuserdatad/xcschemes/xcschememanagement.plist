@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Zerable-REFormattedNumberField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Zerable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26F9E23BE259BC5AFEC2076B</key>
+		<key>0F0F78CB399E59761A07A498</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E3B58D69FA2017A99A9B60C</key>
+		<key>570CF068573080EC0299771C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F1040975B756AAFAF1E2363</key>
 		<dict>
 			<key>primary</key>
 			<true/>

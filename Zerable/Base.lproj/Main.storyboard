@@ -238,22 +238,17 @@
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEf-FC-XDx">
-                                                <rect key="frame" x="175" y="68" width="250" height="30"/>
+                                                <rect key="frame" x="175" y="70" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dz5-hr-Kbu">
-                                                <rect key="frame" x="175" y="119" width="250" height="30"/>
+                                                <rect key="frame" x="175" y="120" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68o-iu-cns">
-                                                <rect key="frame" x="175" y="167" width="250" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
-                                            </textField>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to the Terms of Service &amp; Priacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIJ-WO-KIv">
-                                                <rect key="frame" x="190" y="205" width="220" height="50"/>
+                                                <rect key="frame" x="190" y="270" width="220" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="220" id="DG3-5V-gwe"/>
                                                     <constraint firstAttribute="height" constant="50" id="vn6-oT-vtJ"/>
@@ -262,22 +257,35 @@
                                                 <color key="textColor" red="0.2784313725" green="0.96470588239999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68o-iu-cns">
+                                                <rect key="frame" x="175" y="220" width="250" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(123) 456-7890" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N2s-K9-MPz" customClass="REFormattedNumberField">
+                                                <rect key="frame" x="175" y="170" width="250" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="bEf-FC-XDx" firstAttribute="trailing" secondItem="dz5-hr-Kbu" secondAttribute="trailing" id="3Gj-J0-dq6"/>
-                                            <constraint firstItem="dz5-hr-Kbu" firstAttribute="top" secondItem="bEf-FC-XDx" secondAttribute="bottom" constant="21" id="CUg-1x-MHa"/>
+                                            <constraint firstItem="dz5-hr-Kbu" firstAttribute="top" secondItem="bEf-FC-XDx" secondAttribute="bottom" constant="20" id="CUg-1x-MHa"/>
                                             <constraint firstItem="68o-iu-cns" firstAttribute="centerX" secondItem="RIJ-WO-KIv" secondAttribute="centerX" id="IeP-di-lfl"/>
+                                            <constraint firstItem="N2s-K9-MPz" firstAttribute="leading" secondItem="dz5-hr-Kbu" secondAttribute="leading" id="Ll7-Eh-QML"/>
                                             <constraint firstItem="bEf-FC-XDx" firstAttribute="leading" secondItem="dz5-hr-Kbu" secondAttribute="leading" id="NQR-8d-hrP"/>
                                             <constraint firstItem="TUi-jT-RCm" firstAttribute="top" secondItem="6is-IB-NKS" secondAttribute="top" constant="20" id="Pax-1T-odE"/>
                                             <constraint firstItem="bEf-FC-XDx" firstAttribute="centerX" secondItem="6is-IB-NKS" secondAttribute="centerX" id="QlC-hQ-ir1"/>
+                                            <constraint firstItem="68o-iu-cns" firstAttribute="top" secondItem="N2s-K9-MPz" secondAttribute="bottom" constant="20" id="Ueb-WI-4wN"/>
                                             <constraint firstItem="bEf-FC-XDx" firstAttribute="leading" secondItem="TUi-jT-RCm" secondAttribute="leading" id="ZPf-x6-Jrh"/>
+                                            <constraint firstItem="N2s-K9-MPz" firstAttribute="top" secondItem="dz5-hr-Kbu" secondAttribute="bottom" constant="20" id="b1g-dX-30B"/>
                                             <constraint firstItem="dz5-hr-Kbu" firstAttribute="trailing" secondItem="68o-iu-cns" secondAttribute="trailing" id="f58-oh-VGX"/>
-                                            <constraint firstItem="RIJ-WO-KIv" firstAttribute="top" secondItem="68o-iu-cns" secondAttribute="bottom" constant="8" symbolic="YES" id="kKd-qj-ze2"/>
-                                            <constraint firstItem="bEf-FC-XDx" firstAttribute="top" secondItem="TUi-jT-RCm" secondAttribute="bottom" constant="18" id="qh4-id-LMJ"/>
+                                            <constraint firstItem="RIJ-WO-KIv" firstAttribute="top" secondItem="68o-iu-cns" secondAttribute="bottom" constant="20" id="kKd-qj-ze2"/>
+                                            <constraint firstItem="N2s-K9-MPz" firstAttribute="trailing" secondItem="dz5-hr-Kbu" secondAttribute="trailing" id="nPG-UN-g22"/>
+                                            <constraint firstItem="bEf-FC-XDx" firstAttribute="top" secondItem="TUi-jT-RCm" secondAttribute="bottom" constant="20" id="qh4-id-LMJ"/>
                                             <constraint firstItem="TUi-jT-RCm" firstAttribute="trailing" secondItem="bEf-FC-XDx" secondAttribute="trailing" id="sAG-RG-fOQ"/>
                                             <constraint firstItem="dz5-hr-Kbu" firstAttribute="leading" secondItem="68o-iu-cns" secondAttribute="leading" id="tOm-Rz-HXZ"/>
-                                            <constraint firstItem="68o-iu-cns" firstAttribute="top" secondItem="dz5-hr-Kbu" secondAttribute="bottom" constant="18" id="uxl-oO-hae"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -306,6 +314,7 @@
                         <outlet property="firstnameTextField" destination="TUi-jT-RCm" id="KNI-Fm-Ywk"/>
                         <outlet property="lastnameTextField" destination="bEf-FC-XDx" id="ipa-fJ-lKg"/>
                         <outlet property="passwordTextField" destination="68o-iu-cns" id="i8A-1b-1L9"/>
+                        <outlet property="phoneTextField" destination="N2s-K9-MPz" id="N7d-br-8Fx"/>
                         <outlet property="scrollView" destination="nVJ-ry-mtG" id="FdL-rC-5kT"/>
                         <outlet property="termLabel" destination="RIJ-WO-KIv" id="zzd-AB-JHM"/>
                     </connections>

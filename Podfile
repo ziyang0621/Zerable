@@ -6,4 +6,6 @@ target 'Zerable' do
 
 pod 'KVNProgress'
 
+pod 'REFormattedNumberField'
+
 end

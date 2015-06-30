@@ -15,6 +15,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: REFormattedNumberField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
     
@@ -27,9 +28,12 @@ class SignupViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "Sign up", style: .Plain, target: self, action: "startSignup")
         navigationItem.rightBarButtonItem = rightBarButton
         
+        phoneTextField.format = "(XXX) XXX-XXXX";
+        
         firstnameTextField.delegate = self
         lastnameTextField.delegate = self
         emailTextField.delegate = self
+        phoneTextField.delegate = self
         passwordTextField.delegate = self
 
     }
@@ -50,12 +54,16 @@ class SignupViewController: UIViewController {
     
     func signup() {
         if firstnameTextField.text != "" && lastnameTextField.text != "" &&
-            emailTextField.text != "" && passwordTextField.text != "" {
+            emailTextField.text != "" && phoneTextField.unformattedText != "" && passwordTextField.text != "" {
             if !validateEmail(emailTextField.text) {
-                let alert = UIAlertController(title: "Login Failed", message: "Invalid email", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Setup Failed", message: "Invalid email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
-            } else {
+            } else if count(phoneTextField.unformattedText) < 10 {
+                let alert = UIAlertController(title: "Setup Failed", message: "Invalid phone number", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
+            }else {
                 NSUserDefaults.standardUserDefaults().setValue(emailTextField.text, forKey: "email")
                 
                 KeychainWrapper.sharedInstance.mySetObject(passwordTextField.text, forKey: kSecValueData)
@@ -94,8 +102,10 @@ extension SignupViewController: UITextFieldDelegate {
             emailTextField.becomeFirstResponder()
         } else if textField.tag == 2 {
             emailTextField.resignFirstResponder()
+        } else if textField.tag == 3 {
+            phoneTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-        } else {
+        }else {
             signup()
         }
         return true

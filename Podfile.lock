@@ -1,10 +1,13 @@
 PODS:
   - KVNProgress (2.2.1)
+  - REFormattedNumberField (1.1.5)
 
 DEPENDENCIES:
   - KVNProgress
+  - REFormattedNumberField
 
 SPEC CHECKSUMS:
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
+  REFormattedNumberField: be3d55dd709f65541fb26b7e1709da07903147f8
 
 COCOAPODS: 0.37.2
