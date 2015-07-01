@@ -18,6 +18,8 @@ class ItemListViewController: UIViewController {
     
     var resultSearchController = UISearchController()
     
+    var filteredTableData = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,13 +99,25 @@ class ItemListViewController: UIViewController {
 extension ItemListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
-        cell.itemImageView.image = UIImage(named: itemList[indexPath.row])
-        cell.itemNameLabel.text = itemList[indexPath.row]
+        if (resultSearchController.active) {
+            cell.itemImageView.image = UIImage(named: filteredTableData[indexPath.row])
+            cell.itemNameLabel.text = filteredTableData[indexPath.row]
+
+        } else {
+            cell.itemImageView.image = UIImage(named: itemList[indexPath.row])
+            cell.itemNameLabel.text = itemList[indexPath.row]
+
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if (resultSearchController.active) {
+            return filteredTableData.count
+        }
+        else {
+            return itemList.count
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -117,7 +131,13 @@ extension ItemListViewController: UITableViewDelegate {
 
 extension ItemListViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filteredTableData.removeAll(keepCapacity: false)
         
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+        let array = (itemList as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredTableData = array as! [String]
+        
+        tableView.reloadData()
     }
 }
 
