@@ -15,6 +15,9 @@ class ItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        println("awake")
+        itemImageView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
