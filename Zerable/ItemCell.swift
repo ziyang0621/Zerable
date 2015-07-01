@@ -19,7 +19,7 @@ class ItemCell: UITableViewCell {
         
         itemImageView.clipsToBounds = true
         itemNameLabel.shadowColor = UIColor.blackColor()
-        itemNameLabel.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        itemNameLabel.shadowOffset = CGSize(width: 1.0, height: 1.0)
         selectionStyle = .None
     }
 

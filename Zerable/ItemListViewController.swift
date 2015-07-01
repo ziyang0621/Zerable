@@ -16,6 +16,8 @@ class ItemListViewController: UIViewController {
     
     var itemList: [String] = []
     
+    var resultSearchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,16 @@ class ItemListViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         
         itemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
+        
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.hidesNavigationBarDuringPresentation = false
+            controller.dimsBackgroundDuringPresentation = false
+            self.navigationItem.titleView = controller.searchBar
+            
+            return controller
+        })()
         
     }
 
@@ -102,3 +114,10 @@ extension ItemListViewController: UITableViewDataSource {
 extension ItemListViewController: UITableViewDelegate {
     
 }
+
+extension ItemListViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+    }
+}
+
