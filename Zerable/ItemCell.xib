@@ -13,20 +13,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-nB-ail">
-                        <rect key="frame" x="0.0" y="0.0" width="455" height="160"/>
+                        <rect key="frame" x="0.0" y="-12" width="455" height="160"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="FEC-16-QOA"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-AZ-rcc">
+                        <rect key="frame" x="201" y="50" width="53" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Tkc-Ub-s41"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Ukh-nB-ail" secondAttribute="bottom" constant="1" id="GGX-TC-Yex"/>
                     <constraint firstItem="Ukh-nB-ail" firstAttribute="leading" secondItem="Kze-J3-INc" secondAttribute="leading" id="P86-Vj-gYi"/>
-                    <constraint firstItem="Ukh-nB-ail" firstAttribute="top" secondItem="Kze-J3-INc" secondAttribute="top" id="sZJ-Xp-43z"/>
+                    <constraint firstAttribute="centerY" secondItem="RY1-AZ-rcc" secondAttribute="centerY" id="T4z-BA-C3d"/>
+                    <constraint firstAttribute="centerX" secondItem="RY1-AZ-rcc" secondAttribute="centerX" id="r8v-yq-Rep"/>
                     <constraint firstAttribute="trailing" secondItem="Ukh-nB-ail" secondAttribute="trailing" id="wXO-7e-Ljg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="itemImageView" destination="Ukh-nB-ail" id="xyc-kv-Zz4"/>
+                <outlet property="itemNameLabel" destination="RY1-AZ-rcc" id="3wd-ku-k9p"/>
             </connections>
             <point key="canvasLocation" x="342.5" y="269"/>
         </tableViewCell>

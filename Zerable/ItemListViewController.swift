@@ -24,8 +24,6 @@ class ItemListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-//        tableView.estimatedRowHeight = 160.0
-//        tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         
@@ -88,6 +86,7 @@ extension ItemListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
         cell.itemImageView.image = UIImage(named: itemList[indexPath.row])
+        cell.itemNameLabel.text = itemList[indexPath.row]
         return cell
     }
     
