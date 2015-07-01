@@ -21,6 +21,13 @@
 		8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1421B3A58CF00150669 /* KeychainWrapper.m */; };
 		8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1461B3A5DBE00150669 /* LoginViewController.swift */; };
 		8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1481B3A5EDE00150669 /* SignupViewController.swift */; };
+		85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69571B4397E0008F13F1 /* ItemCell.xib */; };
+		85BE695A1B43986C008F13F1 /* frozen-beef.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69591B43986C008F13F1 /* frozen-beef.png */; };
+		85BE695F1B4399EB008F13F1 /* frozen-chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE695B1B4399EB008F13F1 /* frozen-chicken.png */; };
+		85BE69611B4399EB008F13F1 /* frozen-pork.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE695D1B4399EB008F13F1 /* frozen-pork.png */; };
+		85BE69621B4399EB008F13F1 /* frozen-shrimp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE695E1B4399EB008F13F1 /* frozen-shrimp.png */; };
+		85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE69631B439A1B008F13F1 /* ItemCell.swift */; };
+		85BE69661B439D8D008F13F1 /* frozen-red-meat.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69651B439D8D008F13F1 /* frozen-red-meat.png */; };
 		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
 		85F6C95A1B3A0A7000517ADB /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85F6C9591B3A0A7000517ADB /* temp.png */; };
 		BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */; };
@@ -59,6 +66,13 @@
 		8546A1421B3A58CF00150669 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		8546A1461B3A5DBE00150669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8546A1481B3A5EDE00150669 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		85BE69571B4397E0008F13F1 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		85BE69591B43986C008F13F1 /* frozen-beef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frozen-beef.png"; sourceTree = "<group>"; };
+		85BE695B1B4399EB008F13F1 /* frozen-chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frozen-chicken.png"; sourceTree = "<group>"; };
+		85BE695D1B4399EB008F13F1 /* frozen-pork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frozen-pork.png"; sourceTree = "<group>"; };
+		85BE695E1B4399EB008F13F1 /* frozen-shrimp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frozen-shrimp.png"; sourceTree = "<group>"; };
+		85BE69631B439A1B008F13F1 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		85BE69651B439D8D008F13F1 /* frozen-red-meat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frozen-red-meat.png"; sourceTree = "<group>"; };
 		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
 		85F6C9591B3A0A7000517ADB /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
 		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,11 +136,18 @@
 				8546A1481B3A5EDE00150669 /* SignupViewController.swift */,
 				853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */,
 				85365E901B3DCAED0053448F /* ItemListViewController.swift */,
+				85BE69631B439A1B008F13F1 /* ItemCell.swift */,
 				853FD2751B3CB68100969391 /* ZerableHelperFunctions.swift */,
 				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
 				8546A1411B3A58CF00150669 /* KeychainWrapper.h */,
 				8546A1421B3A58CF00150669 /* KeychainWrapper.m */,
 				85F6C9591B3A0A7000517ADB /* temp.png */,
+				85BE69651B439D8D008F13F1 /* frozen-red-meat.png */,
+				85BE69591B43986C008F13F1 /* frozen-beef.png */,
+				85BE695B1B4399EB008F13F1 /* frozen-chicken.png */,
+				85BE695D1B4399EB008F13F1 /* frozen-pork.png */,
+				85BE695E1B4399EB008F13F1 /* frozen-shrimp.png */,
+				85BE69571B4397E0008F13F1 /* ItemCell.xib */,
 				85163BE91B39092100D07CCD /* Main.storyboard */,
 				85163BEC1B39092100D07CCD /* Images.xcassets */,
 				85163BEE1B39092100D07CCD /* LaunchScreen.xib */,
@@ -252,10 +273,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BE69661B439D8D008F13F1 /* frozen-red-meat.png in Resources */,
 				85163BEB1B39092100D07CCD /* Main.storyboard in Resources */,
+				85BE69611B4399EB008F13F1 /* frozen-pork.png in Resources */,
 				85F6C95A1B3A0A7000517ADB /* temp.png in Resources */,
+				85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */,
+				85BE69621B4399EB008F13F1 /* frozen-shrimp.png in Resources */,
 				85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */,
 				85163BED1B39092100D07CCD /* Images.xcassets in Resources */,
+				85BE695F1B4399EB008F13F1 /* frozen-chicken.png in Resources */,
+				85BE695A1B43986C008F13F1 /* frozen-beef.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +341,7 @@
 				8532CD9B1B41F78F004D45EF /* ZerableRoundButton.swift in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
 				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,
+				85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */,
 				853FD2761B3CB68100969391 /* ZerableHelperFunctions.swift in Sources */,
 				8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */,
 				85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */,

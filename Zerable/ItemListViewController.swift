@@ -10,10 +10,27 @@ import UIKit
 
 class ItemListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let refreshControl = UIRefreshControl()
+    
+    var itemList: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         println("viewDidLoad")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+//        tableView.estimatedRowHeight = 160.0
+//        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
+        
+        itemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,20 +56,24 @@ class ItemListViewController: UIViewController {
         
         println("viewDidLayoutSubviews")
     }
+}
+
+extension ItemListViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
+        cell.itemImageView.image = UIImage(named: itemList[indexPath.row])
+        return cell
+    }
     
-    @IBAction func test(sender: AnyObject) {
-        //navigationController?.popToRootViewControllerAnimated(true)
-        dismissViewControllerAnimated(true, completion: nil)
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 160
     }
-    */
+}
 
+extension ItemListViewController: UITableViewDelegate {
+    
 }

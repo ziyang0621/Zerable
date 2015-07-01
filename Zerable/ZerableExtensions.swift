@@ -48,6 +48,11 @@ extension UIStoryboard {
     class func termAndPolicyViewController() -> TermAndPolicyViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("TermAndPolicyViewController") as! TermAndPolicyViewController
     }
+    
+    class func itemListViewController() -> ItemListViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("ItemListViewController") as! ItemListViewController
+    }
+
 }
 
 extension KeychainWrapper {

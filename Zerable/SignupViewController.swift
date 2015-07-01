@@ -70,7 +70,9 @@ class SignupViewController: UIViewController {
                 KeychainWrapper.sharedInstance.writeToKeychain()
                 NSUserDefaults.standardUserDefaults().synchronize()
                 
-                dismissViewControllerAnimated(true, completion: nil)
+                let itemListVC = UIStoryboard.itemListViewController()
+                let itemListNav = UINavigationController(rootViewController: itemListVC)
+                presentViewController(itemListNav, animated: true, completion: nil)
             }
         } else {
             let alert = UIAlertController(title: "Missing information", message: "Please enter information for all fields", preferredStyle: .Alert)

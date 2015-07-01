@@ -68,12 +68,14 @@ class LoginViewController: UIViewController {
             } else {
                 if checkLogin(emailTextField.text, password: passwordTextField.text) {
                     println("can login")
-                    performSegueWithIdentifier("showItemList", sender: self)
+                    let itemListVC = UIStoryboard.itemListViewController()
+                    let itemListNav = UINavigationController(rootViewController: itemListVC)
+                    presentViewController(itemListNav, animated: true, completion: nil)
                 } else {
                     let alert = UIAlertController(title: "Login Failed", message: "Wrong email or password", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                     presentViewController(alert, animated: true, completion: nil)
-                }
+                } 
 
             }
         } else {
@@ -85,9 +87,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginButtonPressed(sender: AnyObject) {
-        login()
-    }
     
     func forgetPassword() {
         let alert = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account", preferredStyle: .Alert)
