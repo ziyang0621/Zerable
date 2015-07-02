@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7A0D0DF1C6EFDCCB86DFCBE"
-               BuildableName = "libPods-Zerable.a"
-               BlueprintName = "Pods-Zerable"
+               BlueprintIdentifier = "5A1AC841CBE9CA1ACB2CDCDA"
+               BuildableName = "libPods-Zerable-RNGridMenu.a"
+               BlueprintName = "Pods-Zerable-RNGridMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

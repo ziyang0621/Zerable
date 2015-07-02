@@ -8,4 +8,6 @@ pod 'KVNProgress'
 
 pod 'REFormattedNumberField'
 
+pod 'RNGridMenu'
+
 end

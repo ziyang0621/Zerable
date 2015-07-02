@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_REFormattedNumberField 1
 #define COCOAPODS_VERSION_PATCH_REFormattedNumberField 5
 
+// RNGridMenu
+#define COCOAPODS_POD_AVAILABLE_RNGridMenu
+#define COCOAPODS_VERSION_MAJOR_RNGridMenu 0
+#define COCOAPODS_VERSION_MINOR_RNGridMenu 1
+#define COCOAPODS_VERSION_PATCH_RNGridMenu 3
+

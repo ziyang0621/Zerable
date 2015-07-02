@@ -197,16 +197,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-5Y-NqQ">
+                                <rect key="frame" x="530" y="530" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="TXi-vB-hrY"/>
+                                    <constraint firstAttribute="height" constant="60" id="h3t-WH-vtT"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="logo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="assistButtonPressed:" destination="JD5-xO-2Sl" eventType="touchUpInside" id="mhS-IX-cHs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5wX-ja-QIS" secondAttribute="trailing" id="8c6-tH-qrf"/>
                             <constraint firstItem="5wX-ja-QIS" firstAttribute="leading" secondItem="lLY-OZ-6kk" secondAttribute="leading" id="PnW-ii-AQ0"/>
                             <constraint firstItem="5wX-ja-QIS" firstAttribute="top" secondItem="lLY-OZ-6kk" secondAttribute="top" id="VxF-ft-Oq2"/>
+                            <constraint firstAttribute="trailing" secondItem="G2h-5Y-NqQ" secondAttribute="trailing" constant="10" id="XEf-ck-Ddv"/>
+                            <constraint firstAttribute="bottom" secondItem="G2h-5Y-NqQ" secondAttribute="bottom" constant="10" id="j79-rg-U2T"/>
                             <constraint firstItem="JMt-Sy-LAU" firstAttribute="top" secondItem="5wX-ja-QIS" secondAttribute="bottom" id="qCA-Be-PDA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="assistButton" destination="G2h-5Y-NqQ" id="SKb-tY-8bm"/>
                         <outlet property="tableView" destination="5wX-ja-QIS" id="ro9-PT-d3H"/>
                     </connections>
                 </viewController>

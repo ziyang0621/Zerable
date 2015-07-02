@@ -8,6 +8,41 @@
 
 import UIKit
 
+extension UIView {
+    class func applyCurvedShadow(view: UIView) {
+        let size = view.bounds.size
+        let width = size.width
+        let height = size.height
+        let depth = CGFloat(11.0)
+        let lessDepth = 0.8 * depth
+        let curvyness = CGFloat(5)
+        let radius = CGFloat(1)
+        
+        let path = UIBezierPath()
+        
+        // top left
+        path.moveToPoint(CGPoint(x: radius, y: height))
+        
+        // top right
+        path.addLineToPoint(CGPoint(x: width - 2*radius, y: height))
+        
+        // bottom right + a little extra
+        path.addLineToPoint(CGPoint(x: width - 2*radius, y: height + depth))
+        
+        // path to bottom left via curve
+        path.addCurveToPoint(CGPoint(x: radius, y: height + depth),
+            controlPoint1: CGPoint(x: width - curvyness, y: height + lessDepth - curvyness),
+            controlPoint2: CGPoint(x: curvyness, y: height + lessDepth - curvyness))
+        
+        let layer = view.layer
+        layer.shadowPath = path.CGPath
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = radius
+        layer.shadowOffset = CGSize(width: 0, height: -3)
+    }
+}
+
 extension UIColor {
     class func imageWithColor(color :UIColor) -> UIImage {
         let rect = CGRectMake(0, 0, 1, 1)
@@ -32,6 +67,27 @@ extension UIColor {
     }
 }
 
+extension UIImage {
+    func newImageWithColor(color1: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        color1.setFill()
+        
+        let context = UIGraphicsGetCurrentContext() as CGContextRef
+        CGContextTranslateCTM(context, 0, self.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0);
+        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        
+        let rect = CGRectMake(0, 0, self.size.width, self.size.height) as CGRect
+        CGContextClipToMask(context, rect, self.CGImage)
+        CGContextFillRect(context, rect)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext() as UIImage
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
+
 extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -52,7 +108,6 @@ extension UIStoryboard {
     class func itemListViewController() -> ItemListViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("ItemListViewController") as! ItemListViewController
     }
-
 }
 
 extension KeychainWrapper {

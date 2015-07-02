@@ -11,6 +11,7 @@ import UIKit
 class ItemListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var assistButton: UIButton!
     
     let refreshControl = UIRefreshControl()
     
@@ -33,7 +34,7 @@ class ItemListViewController: UIViewController {
         
         itemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
         
-        self.resultSearchController = ({
+        resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
             controller.hidesNavigationBarDuringPresentation = false
@@ -43,6 +44,7 @@ class ItemListViewController: UIViewController {
             return controller
         })()
         
+        UIView.applyCurvedShadow(assistButton.imageView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,30 +71,15 @@ class ItemListViewController: UIViewController {
         println("viewDidLayoutSubviews")
     }
     
-    func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
+    @IBAction func assistButtonPressed(sender: AnyObject) {
+      
+        let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
+            UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
+            UIImage(named: "history")!.newImageWithColor(kThemeColor),
+            UIImage(named:"settings")!.newImageWithColor(kThemeColor)])
         
-        let widthRatio  = targetSize.width  / image.size.width
-        let heightRatio = targetSize.height / image.size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
-        } else {
-            newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
-        }
-        
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.drawInRect(rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
+        gridMenu.delegate = self
+        gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
     }
 }
 
@@ -139,5 +126,9 @@ extension ItemListViewController: UISearchResultsUpdating {
         
         tableView.reloadData()
     }
+}
+
+extension ItemListViewController: RNGridMenuDelegate {
+    
 }
 
