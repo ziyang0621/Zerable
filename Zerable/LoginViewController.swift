@@ -29,9 +29,6 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        emailTextField.text = "test@test.com"
-        passwordTextField.text = "1234"
-        
         scrollView.topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
             (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
         
