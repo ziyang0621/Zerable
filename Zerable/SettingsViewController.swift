@@ -40,7 +40,6 @@ class SettingsViewController: UIViewController {
         
         gridMenu.delegate = self
         gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
-
     }
 }
 
@@ -70,19 +69,22 @@ extension SettingsViewController: UITableViewDelegate {
 
 extension SettingsViewController: RNGridMenuDelegate {
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        if itemIndex == 3 {
-            return
-        }
-        if itemIndex == fromGridIndex {
-            dismissViewControllerAnimated(true, completion: nil)
-        }
-        else {
-            if itemIndex == 0 {
-                let itemListVC = UIStoryboard.itemListViewController()
-                itemListVC.fromGridIndex == 3
-                let itemListNav = UINavigationController(rootViewController: itemListVC)
-                presentViewController(itemListNav, animated: true, completion: nil)
+        delay(seconds: 0.3) { () -> () in
+            if itemIndex == 3 {
+                return
             }
+            if itemIndex == self.fromGridIndex {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                if itemIndex == 0 {
+                    let itemListVC = UIStoryboard.itemListViewController()
+                    itemListVC.fromGridIndex == 3
+                    let itemListNav = UINavigationController(rootViewController: itemListVC)
+                    self.presentViewController(itemListNav, animated: true, completion: nil)
+                }
+            }
+
         }
     }
 }

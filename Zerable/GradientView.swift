@@ -12,7 +12,7 @@ class GradientView: UIView {
     
     lazy private var gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
-        layer.colors = [UIColor.clearColor().CGColor, UIColor(white: 0.0, alpha: 0.75).CGColor]
+        layer.colors = [UIColor.clearColor().CGColor, UIColor(white: 0.0, alpha: 0.5).CGColor]
         layer.locations = [NSNumber(float: 0.0), NSNumber(float: 1.0)]
         return layer
         }()

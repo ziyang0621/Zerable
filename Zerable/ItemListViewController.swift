@@ -132,20 +132,24 @@ extension ItemListViewController: UISearchResultsUpdating {
 
 extension ItemListViewController: RNGridMenuDelegate {
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        if itemIndex == 0 {
-            return
-        }
-        if itemIndex == fromGridIndex {
-            dismissViewControllerAnimated(true, completion: nil)
-        }
-        else {
-            if itemIndex == 3 {
-                let settingsVC = UIStoryboard.settingsViewController()
-                settingsVC.fromGridIndex = 0
-                let settingsNav = UINavigationController(rootViewController: settingsVC)
-                presentViewController(settingsNav, animated: true, completion: nil)
+        delay(seconds: 0.3) { () -> () in
+            if itemIndex == 0 {
+                return
             }
+            if itemIndex == self.fromGridIndex {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                if itemIndex == 3 {
+                    let settingsVC = UIStoryboard.settingsViewController()
+                    settingsVC.fromGridIndex = 0
+                    let settingsNav = UINavigationController(rootViewController: settingsVC)
+                    self.presentViewController(settingsNav, animated: true, completion: nil)
+                }
+            }
+
         }
+        
     }
-}
+ }
 
