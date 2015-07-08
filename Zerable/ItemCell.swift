@@ -12,6 +12,7 @@ class ItemCell: UITableViewCell {
     
     @IBOutlet private weak var itemImageView: UIImageView!
     @IBOutlet private weak var itemNameLabel: UILabel!
+    @IBOutlet private weak var gradientView: GradientView!
     
     var itemImage: UIImage? {
         didSet {
@@ -34,8 +35,6 @@ class ItemCell: UITableViewCell {
         // Initialization code
         
         itemImageView.clipsToBounds = true
-        itemNameLabel.shadowColor = UIColor.blackColor()
-        itemNameLabel.shadowOffset = CGSize(width: 1.0, height: 1.0)
         selectionStyle = .None
     }
 

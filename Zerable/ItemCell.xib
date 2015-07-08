@@ -18,8 +18,15 @@
                             <constraint firstAttribute="height" constant="160" id="FEC-16-QOA"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8W-Hc-tag" customClass="GradientView" customModule="Zerable" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="99" width="455" height="50"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="lX6-Kz-KCl"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-AZ-rcc">
-                        <rect key="frame" x="201" y="50" width="53" height="50"/>
+                        <rect key="frame" x="201" y="99" width="53" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Tkc-Ub-s41"/>
@@ -30,14 +37,18 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="f8W-Hc-tag" firstAttribute="leading" secondItem="Kze-J3-INc" secondAttribute="leading" id="8m2-5N-4W3"/>
+                    <constraint firstAttribute="trailing" secondItem="f8W-Hc-tag" secondAttribute="trailing" id="DHs-R3-yFT"/>
+                    <constraint firstAttribute="bottom" secondItem="f8W-Hc-tag" secondAttribute="bottom" id="E9Y-Or-PeB"/>
                     <constraint firstAttribute="bottom" secondItem="Ukh-nB-ail" secondAttribute="bottom" constant="1" id="GGX-TC-Yex"/>
                     <constraint firstItem="Ukh-nB-ail" firstAttribute="leading" secondItem="Kze-J3-INc" secondAttribute="leading" id="P86-Vj-gYi"/>
-                    <constraint firstAttribute="centerY" secondItem="RY1-AZ-rcc" secondAttribute="centerY" id="T4z-BA-C3d"/>
+                    <constraint firstAttribute="bottom" secondItem="RY1-AZ-rcc" secondAttribute="bottom" id="bJQ-e0-62n"/>
                     <constraint firstAttribute="centerX" secondItem="RY1-AZ-rcc" secondAttribute="centerX" id="r8v-yq-Rep"/>
                     <constraint firstAttribute="trailing" secondItem="Ukh-nB-ail" secondAttribute="trailing" id="wXO-7e-Ljg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="gradientView" destination="f8W-Hc-tag" id="TMB-ax-9Xr"/>
                 <outlet property="itemImageView" destination="Ukh-nB-ail" id="xyc-kv-Zz4"/>
                 <outlet property="itemNameLabel" destination="RY1-AZ-rcc" id="3wd-ku-k9p"/>
             </connections>
