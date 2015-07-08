@@ -69,6 +69,7 @@ class LoginViewController: UIViewController {
                 if checkLogin(emailTextField.text, password: passwordTextField.text) {
                     println("can login")
                     let itemListVC = UIStoryboard.itemListViewController()
+                    itemListVC.fromGridIndex = -1
                     let itemListNav = UINavigationController(rootViewController: itemListVC)
                     presentViewController(itemListNav, animated: true, completion: nil)
                 } else {

@@ -13,6 +13,8 @@ class ItemListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var assistButton: UIButton!
     
+    var fromGridIndex = 0
+    
     let refreshControl = UIRefreshControl()
     
     var itemList: [String] = []
@@ -87,12 +89,12 @@ extension ItemListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
         if (resultSearchController.active) {
-            cell.itemImageView.image = UIImage(named: filteredTableData[indexPath.row])
-            cell.itemNameLabel.text = filteredTableData[indexPath.row]
+            cell.itemImage = UIImage(named: filteredTableData[indexPath.row])
+            cell.itemName = filteredTableData[indexPath.row]
 
         } else {
-            cell.itemImageView.image = UIImage(named: itemList[indexPath.row])
-            cell.itemNameLabel.text = itemList[indexPath.row]
+            cell.itemImage = UIImage(named: itemList[indexPath.row])
+            cell.itemName = itemList[indexPath.row]
 
         }
         return cell
@@ -129,6 +131,21 @@ extension ItemListViewController: UISearchResultsUpdating {
 }
 
 extension ItemListViewController: RNGridMenuDelegate {
-    
+    func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
+        if itemIndex == 0 {
+            return
+        }
+        if itemIndex == fromGridIndex {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            if itemIndex == 3 {
+                let settingsVC = UIStoryboard.settingsViewController()
+                settingsVC.fromGridIndex = 0
+                let settingsNav = UINavigationController(rootViewController: settingsVC)
+                presentViewController(settingsNav, animated: true, completion: nil)
+            }
+        }
+    }
 }
 

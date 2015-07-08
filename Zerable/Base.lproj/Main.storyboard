@@ -342,6 +342,55 @@
             </objects>
             <point key="canvasLocation" x="1894" y="369"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="E7A-VH-wZU">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="CoO-hX-XPb" customClass="SettingsViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mvh-X8-3YT"/>
+                        <viewControllerLayoutGuide type="bottom" id="ASm-M9-Nn3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xMv-6x-ooi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Qn-Yu-vhp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-us-KoC">
+                                <rect key="frame" x="530" y="530" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="G0d-29-O3b"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZTQ-Qf-OeC"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="logo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="assistButtonPressed:" destination="CoO-hX-XPb" eventType="touchUpInside" id="D0n-mi-ltm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Qn-Yu-vhp" secondAttribute="trailing" id="C4l-gY-Y0X"/>
+                            <constraint firstItem="5Qn-Yu-vhp" firstAttribute="leading" secondItem="xMv-6x-ooi" secondAttribute="leading" id="E2d-9v-RY2"/>
+                            <constraint firstAttribute="bottom" secondItem="Z0J-us-KoC" secondAttribute="bottom" constant="10" id="JvG-Ht-168"/>
+                            <constraint firstAttribute="trailing" secondItem="Z0J-us-KoC" secondAttribute="trailing" constant="10" id="OWr-YC-42p"/>
+                            <constraint firstItem="5Qn-Yu-vhp" firstAttribute="top" secondItem="xMv-6x-ooi" secondAttribute="top" id="wJI-YO-aDD"/>
+                            <constraint firstAttribute="bottom" secondItem="5Qn-Yu-vhp" secondAttribute="bottom" id="yU0-qj-tYb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="assistButton" destination="Z0J-us-KoC" id="kMN-h9-ibl"/>
+                        <outlet property="tableView" destination="5Qn-Yu-vhp" id="jRF-HJ-X1m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBH-HW-aw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="1144"/>
+        </scene>
         <!--Term And Policy View Controller-->
         <scene sceneID="rqM-5Q-1f1">
             <objects>

@@ -108,6 +108,11 @@ extension UIStoryboard {
     class func itemListViewController() -> ItemListViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("ItemListViewController") as! ItemListViewController
     }
+    
+    class func settingsViewController() -> SettingsViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+    }
+
 }
 
 extension KeychainWrapper {

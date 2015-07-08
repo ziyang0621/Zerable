@@ -10,8 +10,24 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
-    @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet private weak var itemImageView: UIImageView!
+    @IBOutlet private weak var itemNameLabel: UILabel!
+    
+    var itemImage: UIImage? {
+        didSet {
+            if let itemImage = itemImage {
+                itemImageView.image = itemImage
+            }
+        }
+    }
+    
+    var itemName: String? {
+        didSet {
+            if let itemName = itemName {
+                itemNameLabel.text = itemName
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
