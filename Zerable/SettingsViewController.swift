@@ -24,6 +24,8 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         
         tableView.registerNib(UINib(nibName: "SettingsCell", bundle: nil), forCellReuseIdentifier: "SettingsCell")
+        
+        UIView.applyCurvedShadow(assistButton.imageView!)
     }
 
     override func didReceiveMemoryWarning() {

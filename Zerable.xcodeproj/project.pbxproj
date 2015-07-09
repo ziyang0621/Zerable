@@ -27,6 +27,7 @@
 		85BA28DD1B4DD1660084E7A7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA28DC1B4DD1660084E7A7 /* GradientView.swift */; };
 		85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69571B4397E0008F13F1 /* ItemCell.xib */; };
 		85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE69631B439A1B008F13F1 /* ItemCell.swift */; };
+		85D23B861B4F177000865C7C /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D23B851B4F177000865C7C /* AddressViewController.swift */; };
 		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
 		85F6C95A1B3A0A7000517ADB /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85F6C9591B3A0A7000517ADB /* temp.png */; };
 		BD9A64C06A7F9F04C94923BF /* libPods-Zerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 238220FA3A4BAFC8BB6EE9B2 /* libPods-Zerable.a */; };
@@ -71,6 +72,7 @@
 		85BA28DC1B4DD1660084E7A7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		85BE69571B4397E0008F13F1 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		85BE69631B439A1B008F13F1 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		85D23B851B4F177000865C7C /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
 		85F6C9591B3A0A7000517ADB /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
 		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8546A1481B3A5EDE00150669 /* SignupViewController.swift */,
 				853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */,
 				85365E901B3DCAED0053448F /* ItemListViewController.swift */,
+				85D23B851B4F177000865C7C /* AddressViewController.swift */,
 				852B25891B4DB93300F597ED /* SettingsViewController.swift */,
 				852B258B1B4DBA9900F597ED /* SettingsCell.swift */,
 				85BE69631B439A1B008F13F1 /* ItemCell.swift */,
@@ -337,6 +340,7 @@
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
 				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,
 				85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */,
+				85D23B861B4F177000865C7C /* AddressViewController.swift in Sources */,
 				853FD2761B3CB68100969391 /* ZerableHelperFunctions.swift in Sources */,
 				852B258A1B4DB93300F597ED /* SettingsViewController.swift in Sources */,
 				8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */,
