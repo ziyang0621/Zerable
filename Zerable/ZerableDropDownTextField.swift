@@ -34,10 +34,8 @@ class ZerableDropDownTextField: UITextField {
 
     func setupTableView() {
         if dropDownTableView == nil {
-            var tableViewFrame = frame
-            tableViewFrame.origin.y += frame.size.height
-            tableViewFrame.size.height = 200
-            dropDownTableView = UITableView(frame: tableViewFrame)
+            
+            dropDownTableView = UITableView()
             dropDownTableView.backgroundColor = UIColor.whiteColor()
             dropDownTableView.layer.cornerRadius = 10.0
             dropDownTableView.layer.borderColor = UIColor.lightGrayColor().CGColor
@@ -45,9 +43,20 @@ class ZerableDropDownTextField: UITextField {
             dropDownTableView.showsVerticalScrollIndicator = false
             dropDownTableView.delegate = self
             dropDownTableView.dataSource = self
+            
+            superview?.addSubview(dropDownTableView)
+            superview?.bringSubviewToFront(dropDownTableView)
+            
+            dropDownTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            
+            let leftConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
+            let rightConstraint =  NSLayoutConstraint(item: dropDownTableView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
+            let heightConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 200)
+            let topConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 1)
+            
+            NSLayoutConstraint.activateConstraints([leftConstraint, rightConstraint, heightConstraint, topConstraint])
         }
-        superview?.addSubview(dropDownTableView)
-        superview?.bringSubviewToFront(dropDownTableView)
+
     }
 
 }
