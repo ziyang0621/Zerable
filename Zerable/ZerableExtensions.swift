@@ -112,6 +112,19 @@ extension UIStoryboard {
     class func settingsViewController() -> SettingsViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
     }
+    
+    class func profileViewController() -> ProfileViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+    }
+    
+    
+    class func basicViewController() -> BasicInfoViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("BasicInfoViewController") as! BasicInfoViewController
+    }
+    
+    class func addressViewController() -> AddressViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("AddressViewController") as! AddressViewController
+    }
 
 }
 
