@@ -11,15 +11,38 @@ import UIKit
 class ZerableScrollView: UIScrollView {
     
     var keyboardIsShown = false
-    var topInset: CGFloat = 0.0
-    var bottomInset: CGFloat = 0.0
-    var leftInset: CGFloat = 0.0
-    var rightInset: CGFloat = 0.0
+    var topInset: CGFloat = 0.0 {
+        didSet {
+            adjustInsets()
+        }
+    }
+    var bottomInset: CGFloat = 0.0 {
+        didSet {
+            adjustInsets()
+        }
+    }
+
+    var leftInset: CGFloat = 0.0 {
+        didSet {
+            adjustInsets()
+        }
+    }
+
+    var rightInset: CGFloat = 0.0 {
+        didSet {
+            adjustInsets()
+        }
+    }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         println("init code")
         setup()
+    }
+    
+    func adjustInsets() {
+        contentInset = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
     }
     
     func setup() {

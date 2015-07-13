@@ -10,10 +10,27 @@ import UIKit
 
 class BasicInfoViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: ZerableScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: REFormattedNumberField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        scrollView.topInset = 64
+        
+        phoneTextField.format = "(XXX) XXX-XXXX";
+        
+        firstnameTextField.delegate = self
+        lastnameTextField.delegate = self
+        phoneTextField.delegate = self
+    }
+    
+    func saveButtonTapped() {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +38,18 @@ class BasicInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
 
+
+extension BasicInfoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            firstnameTextField.resignFirstResponder()
+            lastnameTextField.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            lastnameTextField.resignFirstResponder()
+            phoneTextField.becomeFirstResponder()
+        }
+        return true
+    }
 }

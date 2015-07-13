@@ -21,6 +21,12 @@ class ProfileViewController: UIViewController {
         navigationItem.title = "Profile"
         tabBar.delegate = self
         
+        let rightBarButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveProfile")
+        navigationItem.rightBarButtonItem = rightBarButton
+        
+        let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "close")
+        navigationItem.leftBarButtonItem = leftBarButton
+        
         if basicInfoVC == nil {
             basicInfoVC = UIStoryboard.basicViewController()
         }
@@ -32,6 +38,13 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func saveProfile() {
+        
+    }
+    
+    func close() {
+        
+    }
 }
 
 
