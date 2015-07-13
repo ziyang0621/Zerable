@@ -7,13 +7,33 @@
 //
 
 import UIKit
+import MapKit
+import AddressBookUI
 
 class AddressViewController: UIViewController {
+
+    @IBOutlet weak var scrollView: ZerableScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var fullAddressTextField: ZerableDropDownTextField!
+    @IBOutlet weak var optionalAddressTextField: UITextField!
+    @IBOutlet weak var finalAddressTextView: UITextView!
+    let geocoder = CLGeocoder()
+    let region = CLCircularRegion(center: CLLocationCoordinate2DMake(37.7577, -122.4376), radius: 1000, identifier: "region")
+    var placemarkList: [CLPlacemark] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        scrollView.topInset = 64
+        
+        fullAddressTextField.delegate = self
+        fullAddressTextField.dataSourceDelegate = self
+        fullAddressTextField.addTarget(self, action: "fullAddressTextDidChanged:", forControlEvents:.EditingChanged)
+        
+        optionalAddressTextField.delegate = self
+        optionalAddressTextField.addTarget(self, action: "optionalAddressTextDidChanged:", forControlEvents:.EditingChanged)
+
+        finalAddressTextView.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +41,78 @@ class AddressViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func fullAddressTextDidChanged(textField: UITextField) {
+        
+        if textField.text.isEmpty {
+            placemarkList.removeAll(keepCapacity: false)
+            fullAddressTextField.dropDownTableView.reloadData()
+            return
+        }
+        
+        geocoder.geocodeAddressString(textField.text, inRegion: region, completionHandler: { (placemarks, error) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                self.placemarkList.removeAll(keepCapacity: false)
+                self.placemarkList = placemarks as! [CLPlacemark]
+                self.fullAddressTextField.dropDownTableView.reloadData()
+            }
+        })
     }
-    */
+    
+    func optionalAddressTextDidChanged(textField: UITextField) {
+        finalAddressTextView.text = formattedAddressWithOptionalLine()
+    }
+    
+    func formateedFullAddress(placemark: CLPlacemark) -> String {
+        let lines = ABCreateStringWithAddressDictionary(placemark.addressDictionary, false)
+        let addressString = lines.stringByReplacingOccurrencesOfString("\n", withString: ", ", options: .LiteralSearch, range: nil)
+        return addressString
+    }
+    
+    func formattedAddressWithOptionalLine() -> String {
+        if !optionalAddressTextField.text.isEmpty {
+            let finalAddressString = finalAddressTextView.text.stringByReplacingOccurrencesOfString("\n", withString: "\n\(optionalAddressTextField.text)\n", options: .LiteralSearch, range: finalAddressTextView.text.rangesOfString("\n").first!)
+            return finalAddressString
+        }
+        return finalAddressTextView.text
+    }
+}
 
+extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
+    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, numberOfRowsInSection section: Int) -> Int {
+        return placemarkList.count
+    }
+    
+    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = dropDownTextField.dropDownTableView.dequeueReusableCellWithIdentifier("addressCell") as? UITableViewCell
+        if let cell = cell {
+            
+        } else {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "addressCell")
+        }
+        
+        cell!.textLabel!.text = formateedFullAddress(placemarkList[indexPath.row])
+        cell!.textLabel?.numberOfLines = 0
+        return cell!
+    }
+    
+    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        fullAddressTextField.text = formateedFullAddress(placemarkList[indexPath.row])
+        finalAddressTextView.text = ABCreateStringWithAddressDictionary(placemarkList[indexPath.row].addressDictionary, false)
+        finalAddressTextView.text = formattedAddressWithOptionalLine()
+    }
+}
+
+extension AddressViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            fullAddressTextField.resignFirstResponder()
+            optionalAddressTextField.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            optionalAddressTextField.resignFirstResponder()
+        }
+        return true
+    }
 }

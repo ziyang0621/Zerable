@@ -88,6 +88,42 @@ extension UIImage {
     }
 }
 
+extension String {
+    
+    func rangesOfString(findStr:String) -> [Range<String.Index>] {
+        var arr = [Range<String.Index>]()
+        var startInd = self.startIndex
+        // check first that the first character of search string exists
+        if contains(self, first(findStr)!) {
+            // if so set this as the place to start searching
+            startInd = find(self,first(findStr)!)!
+        }
+        else {
+            // if not return empty array
+            return arr
+        }
+        var i = distance(self.startIndex, startInd)
+        while i<=count(self)-count(findStr) {
+            if self[advance(self.startIndex, i)..<advance(self.startIndex, i+count(findStr))] == findStr {
+                arr.append(Range(start:advance(self.startIndex, i),end:advance(self.startIndex, i+count(findStr))))
+                i = i+count(findStr)-1
+                // check again for first occurrence of character (this reduces number of times loop will run
+                if contains(self[advance(self.startIndex, i)..<self.endIndex], first(findStr)!) {
+                    // if so set this as the place to start searching
+                    i = distance(self.startIndex,find(self[advance(self.startIndex, i)..<self.endIndex],first(findStr)!)!) + i
+                    count(findStr)
+                }
+                else {
+                    return arr
+                }
+                
+            }
+            i++
+        }
+        return arr
+    }
+}
+
 extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())

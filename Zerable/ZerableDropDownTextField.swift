@@ -22,14 +22,19 @@ class ZerableDropDownTextField: UITextField {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        delegate = self
         println("init code")
+        setupTextField()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        delegate = self
         println("init frame")
+        setupTextField()
+    }
+    
+    func setupTextField() {
+       addTarget(self, action: "editingDidBegin:", forControlEvents:.EditingDidBegin)
+     //  addTarget(self, action: "editingDidEnd:", forControlEvents:.EditingDidEnd)
     }
 
     func setupTableView() {
@@ -43,39 +48,40 @@ class ZerableDropDownTextField: UITextField {
             dropDownTableView.showsVerticalScrollIndicator = false
             dropDownTableView.delegate = self
             dropDownTableView.dataSource = self
+            dropDownTableView.estimatedRowHeight = 50
             
             superview?.addSubview(dropDownTableView)
             superview?.bringSubviewToFront(dropDownTableView)
+            (dataSourceDelegate as! UIViewController).view.bringSubviewToFront(dropDownTableView)
             
             dropDownTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
             
             let leftConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
             let rightConstraint =  NSLayoutConstraint(item: dropDownTableView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
-            let heightConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 200)
+            let heightConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 150)
             let topConstraint = NSLayoutConstraint(item: dropDownTableView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 1)
             
             NSLayoutConstraint.activateConstraints([leftConstraint, rightConstraint, heightConstraint, topConstraint])
         }
 
     }
-
-}
-
-extension ZerableDropDownTextField: UITextFieldDelegate {
-    func textFieldDidBeginEditing(textField: UITextField) {
+    
+    func editingDidBegin(textField: UITextField) {
         setupTableView()
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.dropDownTableView.alpha = 0.7
+            self.dropDownTableView.alpha = 1.0
         })
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func editingDidEnd(textField: UITextField) {
         if let dropDownTableView = dropDownTableView {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.dropDownTableView.alpha = 0
             })
         }
+
     }
+
 }
 
 extension ZerableDropDownTextField: UITableViewDataSource {
@@ -109,4 +115,5 @@ extension ZerableDropDownTextField: UITableViewDelegate {
             tableView.alpha = 0
         })
     }
+
 }
