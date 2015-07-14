@@ -16,7 +16,6 @@ class BasicInfoViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: REFormattedNumberField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +26,12 @@ class BasicInfoViewController: UIViewController {
         firstnameTextField.delegate = self
         lastnameTextField.delegate = self
         phoneTextField.delegate = self
-    }
-    
-    func saveButtonTapped() {
         
     }
+    
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -161,6 +161,10 @@ extension UIStoryboard {
     class func addressViewController() -> AddressViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("AddressViewController") as! AddressViewController
     }
+    
+    class func paymentInfoViewController() -> PaymentInfoViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("PaymentInfoViewController") as! PaymentInfoViewController
+    }
 
 }
 

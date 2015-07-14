@@ -12,6 +12,7 @@
 		85163BED1B39092100D07CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEC1B39092100D07CCD /* Images.xcassets */; };
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
+		851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */; };
 		852B258A1B4DB93300F597ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B25891B4DB93300F597ED /* SettingsViewController.swift */; };
 		852B258C1B4DBA9900F597ED /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B258B1B4DBA9900F597ED /* SettingsCell.swift */; };
 		852B258E1B4DBAF100F597ED /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852B258D1B4DBAF100F597ED /* SettingsCell.xib */; };
@@ -59,6 +60,7 @@
 		85163BF51B39092100D07CCD /* ZerableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZerableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
+		851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentInfoViewController.swift; sourceTree = "<group>"; };
 		852B25891B4DB93300F597ED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		852B258B1B4DBA9900F597ED /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		852B258D1B4DBAF100F597ED /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				852B9C9C1B50DE33006DE459 /* ProfileViewController.swift */,
 				852B9C9E1B50E044006DE459 /* BasicInfoViewController.swift */,
 				852B9CA01B50E1F4006DE459 /* AddressViewController.swift */,
+				851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */,
 				853FD2751B3CB68100969391 /* ZerableHelperFunctions.swift */,
 				85F6C9551B39F24500517ADB /* ZerableExtensions.swift */,
 				8546A1411B3A58CF00150669 /* KeychainWrapper.h */,
@@ -343,6 +346,7 @@
 			files = (
 				85D743F91B4F6E7100635CB4 /* ZerableDropDownTextField.swift in Sources */,
 				852B258C1B4DBA9900F597ED /* SettingsCell.swift in Sources */,
+				851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */,
 				853FD2781B3CC0AF00969391 /* TermAndPolicyViewController.swift in Sources */,
 				852B9CA11B50E1F4006DE459 /* AddressViewController.swift in Sources */,
 				85BA28DD1B4DD1660084E7A7 /* GradientView.swift in Sources */,

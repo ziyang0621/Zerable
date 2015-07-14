@@ -10,4 +10,6 @@ pod 'REFormattedNumberField'
 
 pod 'RNGridMenu'
 
+pod 'PaymentKit'
+
 end

@@ -14,15 +14,13 @@ class ProfileViewController: UIViewController {
     
     var basicInfoVC: BasicInfoViewController!
     var addressInfoVC: AddressViewController!
+    var paymentInfoVC: PaymentInfoViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "Profile"
         tabBar.delegate = self
-        
-        let rightBarButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveProfile")
-        navigationItem.rightBarButtonItem = rightBarButton
         
         let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "close")
         navigationItem.leftBarButtonItem = leftBarButton
@@ -36,10 +34,6 @@ class ProfileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func saveProfile() {
-        
     }
     
     func close() {
@@ -61,6 +55,11 @@ extension ProfileViewController: UITabBarDelegate {
                 addressInfoVC = UIStoryboard.addressViewController()
             }
             view.insertSubview(addressInfoVC.view, belowSubview: tabBar)
+        case 2:
+            if paymentInfoVC == nil {
+                paymentInfoVC = UIStoryboard.paymentInfoViewController()
+            }
+            view.insertSubview(paymentInfoVC.view, belowSubview: tabBar)
         default:
             println("default")
         }

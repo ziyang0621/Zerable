@@ -7,366 +7,517 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D3FFDCC4E275ACFB28A5B6 /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F37C126534BEC2DD6E71C173 /* Pods-Zerable-REFormattedNumberField-dummy.m */; };
-		08FB7F9110A38085F2A72260 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F5A9F98F8400E72995BD3 /* Pods-Zerable-RNGridMenu-dummy.m */; };
-		0AF3DF50A0DFE8965A7EA2D1 /* NSString+RENumberFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF9D13F71CBBEB17A04052A /* NSString+RENumberFormat.h */; };
-		0C150F2C6BD8CEA029702B0D /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2881E3A5A849B99992EADB /* KVNProgressConfiguration.m */; };
-		122AE1ABF01A9BD0A91A38B9 /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = E35D37A8F5A6791609F32FFF /* UIImage+KVNImageEffects.h */; };
-		188EF513736D6B50D6D2DF8E /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EF47E2E4E77D3692DA633A /* KVNProgress.m */; };
-		29F8D461515E235304AB7B1D /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3D02EB876ED2388FADC /* NSString+RENumberFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		518E32EA89FBE8C82453C80A /* Pods-Zerable-KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CC93527E4F842B7CC38E84 /* Pods-Zerable-KVNProgress-dummy.m */; };
-		5E1541ABBA30E100C06E85F6 /* RNGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = B3EB3A1ED849934ED1CC9CA6 /* RNGridMenu.h */; };
-		5E15AF511DE3F8424BF639A8 /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD8A5FAF495888D51794FE /* UIColor+KVNContrast.m */; };
-		62F80FE9EDD52BAC571639C3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE14AEB4044915138CF96C8 /* Accelerate.framework */; };
-		6ACB7400CD93EC68198D9C1B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF8710E08DB1C01ECC44E3 /* QuartzCore.framework */; };
-		8A75443CF76816956A305965 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2402D6771B05B515B709BD99 /* UIImage+KVNImageEffects.m */; };
-		8ADE69BD801F8818CA5366F7 /* REFormattedNumberField.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EFF66DF57D5D1FA7C0E7716 /* REFormattedNumberField.h */; };
-		90DD4F6FC092426DD4A4CB93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78D946EBBE524C3058844F /* Foundation.framework */; };
-		981E0ED9AD4264D300EA6E53 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C80EF6857EA309337D169D /* UIImage+KVNEmpty.h */; };
-		AA38F82B08EA247D0BE427A2 /* Pods-Zerable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D04523AD1E9DC25A1BE2F43 /* Pods-Zerable-dummy.m */; };
-		BC049F08D8FCBAC945F19312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78D946EBBE524C3058844F /* Foundation.framework */; };
-		DB5299ED50454C7389CE8941 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF8710E08DB1C01ECC44E3 /* QuartzCore.framework */; };
-		DC5D978649AEB5947B0BAFFF /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 613570B8DFBA5B59CE1D3764 /* UIImage+KVNEmpty.m */; };
-		DDE2D5365C6AAF6D303E3EA7 /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F93A6A9EAD25AA79708CCDF /* UIColor+KVNContrast.h */; };
-		E15AB1F639B07BF633049965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78D946EBBE524C3058844F /* Foundation.framework */; };
-		E1AFE802889C4A9A9EC9E410 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78D946EBBE524C3058844F /* Foundation.framework */; };
-		E6A69924B30BE543EDA53F6F /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7F307CC966073D4AC499A8 /* KVNProgressConfiguration.h */; };
-		F1570ACEFB4ADDAF4E78AFE1 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = D060BA98C44631A8C66F4966 /* REFormattedNumberField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F4C1A2442054E9173AB2AD71 /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FD58AE8F2ECDD25F44828553 /* RNGridMenu.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FD90FCAB1CEF493A0F2E686E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD25B86BFCBC6B6626BFFF6 /* GLKit.framework */; };
-		FF4DE85A6285032DD7FE10AC /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 19577034476248ACF0482FED /* KVNProgress.h */; };
+		025D706CEFDA7FFFD9F67C15 /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = AA38E4775805F240C54C58F6 /* KVNProgress.h */; };
+		0A63EE164CD1562631DE2449 /* PTKTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D2819C114C455D3D6AA6DF /* PTKTextField.h */; };
+		0B1B32B5B719ADCC2F6D5C18 /* PTKUSAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */; };
+		1354BE0E020ED5C79F36F50F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
+		177E1407EC872A6FDC5D73E4 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */; };
+		1994D3C20E98ADF45CDD21EE /* NSString+RENumberFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */; };
+		1A6DB5AE4040311087C4CB23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
+		23AB37DB989FF721BF0C05F5 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */; };
+		23D98EABD7DC9BD0B7FCAB75 /* Pods-Zerable-KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */; };
+		28554BAB07A0AE469A7E7386 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */; };
+		2C7E36C98C928219D3320F1F /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F316E2711572FE9C4DD40E /* RNGridMenu.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2E5164DE66A04AC3AA7BC5FE /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */; };
+		3D119CC49DC8C1EB0094CA0E /* PTKCardExpiry.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */; };
+		4B999A53DEC54441780E2594 /* PTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 704554464FFF3D4F33BF869F /* PTKView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		552679150328AAD3809A443F /* PTKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9266B88281EAB8D8611B3617 /* PTKComponent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		59FF6143D0209D774F51040F /* PTKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D59B8742140D156C135D2 /* PTKCard.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		654B319AF5442F0B4B834C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
+		689E6A61DBB52BBD542F02C3 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */; };
+		69BA552C92B3DA23C0A70FD1 /* PTKCardType.h in Headers */ = {isa = PBXBuildFile; fileRef = 026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */; };
+		6A74FE7961044AB34F216205 /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = 15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */; };
+		6A9B7F66AB9AF9D1F59D7CD3 /* PTKCardExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7152745477A3DBAD187F9CDF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED186BA781C2967768EA02A6 /* Accelerate.framework */; };
+		86D22C89996808DD9FAFBE0F /* Pods-Zerable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */; };
+		8AE661BC9A4B3E7DCAF56180 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */; };
+		94892E64B72DF59153A2B376 /* RNGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */; };
+		9EB6896D0876866F93BFD68D /* PTKAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A051059E208EEEE633DF5837 /* PTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */; };
+		A7D5CAE12A911B7688F3352E /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AB33CB7A48B128265C8D5092 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC0E778251A4620B837BDFA /* QuartzCore.framework */; };
+		AD8A5B46057AED946844213D /* PTKCardCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222E344E40717E73D0BF302 /* PTKCardCVC.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AF3CC7578472E1DBEE236E94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC0E778251A4620B837BDFA /* QuartzCore.framework */; };
+		B7CEE738606A08B1D0E27F4D /* Pods-Zerable-PaymentKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */; };
+		C1311EC41CBC537E13E84258 /* REFormattedNumberField.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */; };
+		C1A81299A07BADB1AA1F0A4C /* PTKAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C79D329423FA6B96067B7E /* PTKAddressZip.h */; };
+		C602BF78F9D893C7A490CB06 /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */; };
+		C8F5DF18C3DDA1D408A9609D /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */; };
+		DA03364500C036141EFA06B6 /* PTKUSAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DC7CD00A78C8AC6FE1C48BEF /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */; };
+		DEDE387D4BFD5B256E5DEC60 /* PTKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DF9EBCB0A2D8F0C5B3772CA0 /* PTKCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1C6EF6E197D249E1941234 /* PTKCard.h */; };
+		E29F2B150EE414BE495157F4 /* PTKCardCVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */; };
+		EC291F83C9DB5E0C5307D4CA /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EC5F3F1235C3B7EF2BE82ED9 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 367AF93DD06EB11370EABFFE /* KVNProgress.m */; };
+		F6F5DA54C3D56BB97BFD23C5 /* PTKComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */; };
+		F8653B7BC0C5DCB77F4A31B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
+		F988A83886AA8F1B71B994D6 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FCB363BB5CE9C51856EA0C /* GLKit.framework */; };
+		FAB1996E7DDEB4CBCE12C2F7 /* PTKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FC606B01151CB6BEAA22E014 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
+		FE2DE3F39151BEFCE6A654D8 /* PTKCardNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A5047E6242A2C38B514014 /* PTKCardNumber.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		090F17FAB69A0885BAC77937 /* PBXContainerItemProxy */ = {
+		6107BB4D1B3CE8CF2EAEC049 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 967BAFCACCAE416F8ABC98DE /* Project object */;
+			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5A1AC841CBE9CA1ACB2CDCDA;
+			remoteGlobalIDString = 974C1BCD2054B9ADB4A34429;
 			remoteInfo = "Pods-Zerable-RNGridMenu";
 		};
-		190351732610D257B32A937D /* PBXContainerItemProxy */ = {
+		AD2CC74529C75B34A9F84931 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 967BAFCACCAE416F8ABC98DE /* Project object */;
+			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7EA4015CAE9C3788FFAEDA7D;
+			remoteGlobalIDString = 5F29E2E3FD5B8853C18A9449;
+			remoteInfo = "Pods-Zerable-PaymentKit";
+		};
+		DB18F8424E74C7DE6162F46B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EACC875AFB7692AD09CCFB;
 			remoteInfo = "Pods-Zerable-REFormattedNumberField";
 		};
-		D88645F35BC87B2FA688F468 /* PBXContainerItemProxy */ = {
+		EB914BB3E208846083F9AB8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 967BAFCACCAE416F8ABC98DE /* Project object */;
+			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A14F067A5F1FF1D556D56F63;
+			remoteGlobalIDString = A5D3B6B2A14ED7B09942C153;
 			remoteInfo = "Pods-Zerable-KVNProgress";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02C80EF6857EA309337D169D /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
-		05F314C7592A89D38D27459C /* Pods-Zerable-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-environment.h"; sourceTree = "<group>"; };
-		0C49282C2FFDA19F21482918 /* Pods-Zerable-KVNProgress-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress-Private.xcconfig"; sourceTree = "<group>"; };
-		0D0D71D61CEA1D4E333B804B /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
-		0D1E4C609327A6A350052794 /* Pods-Zerable-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zerable-resources.sh"; sourceTree = "<group>"; };
-		0D7DE60C70AFFB784A352F29 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0DCF8710E08DB1C01ECC44E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		0EFF66DF57D5D1FA7C0E7716 /* REFormattedNumberField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REFormattedNumberField.h; path = REFormattedNumberField/REFormattedNumberField.h; sourceTree = "<group>"; };
-		158DF2F8FE3D6E204A2ABEC9 /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
-		19577034476248ACF0482FED /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
-		1D04523AD1E9DC25A1BE2F43 /* Pods-Zerable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-dummy.m"; sourceTree = "<group>"; };
-		2402D6771B05B515B709BD99 /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
-		3DFA42C5C34498EEB1F6EA97 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField-Private.xcconfig"; sourceTree = "<group>"; };
-		4A1FC539CEC62DDE291AB8AD /* Pods-Zerable-RNGridMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu-Private.xcconfig"; sourceTree = "<group>"; };
-		55A9FE67237DBA3AF0B511C3 /* libPods-Zerable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FF9D13F71CBBEB17A04052A /* NSString+RENumberFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+RENumberFormat.h"; path = "REFormattedNumberField/NSString+RENumberFormat.h"; sourceTree = "<group>"; };
-		613570B8DFBA5B59CE1D3764 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
-		69EF47E2E4E77D3692DA633A /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
-		6C29B3D02EB876ED2388FADC /* NSString+RENumberFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RENumberFormat.m"; path = "REFormattedNumberField/NSString+RENumberFormat.m"; sourceTree = "<group>"; };
-		7D2881E3A5A849B99992EADB /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
-		8148F3D7AE05932FD718FF38 /* libPods-Zerable-RNGridMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-RNGridMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85A059F80D68EF848C3380E1 /* Pods-Zerable-RNGridMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-RNGridMenu-prefix.pch"; sourceTree = "<group>"; };
-		87C02CB8A858AF0EE640B1C6 /* Pods-Zerable-KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-KVNProgress-prefix.pch"; sourceTree = "<group>"; };
-		8B574E7D82DC6BB40B331A48 /* libPods-Zerable-KVNProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-KVNProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F93A6A9EAD25AA79708CCDF /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
-		9982B35754D29F689D5E6004 /* Pods-Zerable-REFormattedNumberField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField.xcconfig"; sourceTree = "<group>"; };
-		9AA930192A7CBC917B45385F /* libPods-Zerable-REFormattedNumberField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-REFormattedNumberField.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D4AD4EFFC02D7F7BBC957EA /* Pods-Zerable-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Zerable-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A445A42417A2E33AA57CD63C /* Pods-Zerable-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Zerable-acknowledgements.plist"; sourceTree = "<group>"; };
-		A76E3DCDA0E8F6FE5F76CFED /* Pods-Zerable-REFormattedNumberField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-REFormattedNumberField-prefix.pch"; sourceTree = "<group>"; };
-		A9CC93527E4F842B7CC38E84 /* Pods-Zerable-KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-KVNProgress-dummy.m"; sourceTree = "<group>"; };
-		AB7FF0F99E0849C14FDAB911 /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
-		AEBD8A5FAF495888D51794FE /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
-		B3EB3A1ED849934ED1CC9CA6 /* RNGridMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
-		CFE14AEB4044915138CF96C8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		D060BA98C44631A8C66F4966 /* REFormattedNumberField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REFormattedNumberField.m; path = REFormattedNumberField/REFormattedNumberField.m; sourceTree = "<group>"; };
-		D9892B99016CAE70D3866E13 /* Pods-Zerable-RNGridMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu.xcconfig"; sourceTree = "<group>"; };
-		DBD25B86BFCBC6B6626BFFF6 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
-		E21F5A9F98F8400E72995BD3 /* Pods-Zerable-RNGridMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-RNGridMenu-dummy.m"; sourceTree = "<group>"; };
-		E35D37A8F5A6791609F32FFF /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
-		EAEC3B693B69951F0CBB48EB /* Pods-Zerable-KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress.xcconfig"; sourceTree = "<group>"; };
-		EE7F307CC966073D4AC499A8 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
-		F37C126534BEC2DD6E71C173 /* Pods-Zerable-REFormattedNumberField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-REFormattedNumberField-dummy.m"; sourceTree = "<group>"; };
-		FB78D946EBBE524C3058844F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FD58AE8F2ECDD25F44828553 /* RNGridMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
+		013340F5303A9447B67AEB6B /* mastercard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mastercard@2x.png"; path = "PaymentKit/Resources/Cards/mastercard@2x.png"; sourceTree = "<group>"; };
+		025CD6583F124A698A5EEBDE /* cvc-amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex.png"; path = "PaymentKit/Resources/Cards/cvc-amex.png"; sourceTree = "<group>"; };
+		026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardType.h; path = PaymentKit/PTKCardType.h; sourceTree = "<group>"; };
+		02819864C3EE413ACAA32661 /* jcb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "jcb@2x.png"; path = "PaymentKit/Resources/Cards/jcb@2x.png"; sourceTree = "<group>"; };
+		05C79D329423FA6B96067B7E /* PTKAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKAddressZip.h; path = PaymentKit/PTKAddressZip.h; sourceTree = "<group>"; };
+		05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKUSAddressZip.m; path = PaymentKit/PTKUSAddressZip.m; sourceTree = "<group>"; };
+		0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKView.h; path = PaymentKit/PTKView.h; sourceTree = "<group>"; };
+		15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
+		1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
+		17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardCVC.h; path = PaymentKit/PTKCardCVC.h; sourceTree = "<group>"; };
+		1B7797D5872A9DCA64469454 /* Pods-Zerable-REFormattedNumberField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-REFormattedNumberField-prefix.pch"; sourceTree = "<group>"; };
+		1F1C6EF6E197D249E1941234 /* PTKCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCard.h; path = PaymentKit/PTKCard.h; sourceTree = "<group>"; };
+		2063791919983D40B1BBC641 /* mastercard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mastercard.png; path = PaymentKit/Resources/Cards/mastercard.png; sourceTree = "<group>"; };
+		23D2819C114C455D3D6AA6DF /* PTKTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKTextField.h; path = PaymentKit/PTKTextField.h; sourceTree = "<group>"; };
+		2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-REFormattedNumberField-dummy.m"; sourceTree = "<group>"; };
+		2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
+		333D59B8742140D156C135D2 /* PTKCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCard.m; path = PaymentKit/PTKCard.m; sourceTree = "<group>"; };
+		367AF93DD06EB11370EABFFE /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
+		399D4199CB1A10F7E1278ACF /* visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = visa.png; path = PaymentKit/Resources/Cards/visa.png; sourceTree = "<group>"; };
+		39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
+		3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardExpiry.m; path = PaymentKit/PTKCardExpiry.m; sourceTree = "<group>"; };
+		3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKAddressZip.m; path = PaymentKit/PTKAddressZip.m; sourceTree = "<group>"; };
+		3DE2F0967059F730A585334D /* Pods-Zerable-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zerable-resources.sh"; sourceTree = "<group>"; };
+		40B6B67BD30A997D5DA8F56D /* Pods-Zerable-KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-KVNProgress-prefix.pch"; sourceTree = "<group>"; };
+		4655DD86F2E8DC54AD1025AD /* jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = jcb.png; path = PaymentKit/Resources/Cards/jcb.png; sourceTree = "<group>"; };
+		4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
+		501CF748C0207BE6F5D04E65 /* discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = discover.png; path = PaymentKit/Resources/Cards/discover.png; sourceTree = "<group>"; };
+		53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-dummy.m"; sourceTree = "<group>"; };
+		53DA3F7CB62B69B2EECD8A19 /* placeholder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "PaymentKit/Resources/Cards/placeholder@2x.png"; sourceTree = "<group>"; };
+		56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		594D88BA7B881404442A4425 /* cvc.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = cvc.png; path = PaymentKit/Resources/Cards/cvc.png; sourceTree = "<group>"; };
+		5E93EDFAA91BEF43CE59C573 /* Pods-Zerable-PaymentKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit.xcconfig"; sourceTree = "<group>"; };
+		609380551BF24AC517E8070A /* Pods-Zerable-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Zerable-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6222E344E40717E73D0BF302 /* PTKCardCVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardCVC.m; path = PaymentKit/PTKCardCVC.m; sourceTree = "<group>"; };
+		629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress-Private.xcconfig"; sourceTree = "<group>"; };
+		6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu-Private.xcconfig"; sourceTree = "<group>"; };
+		6A47A9FEA7A4C3A38216847C /* Pods-Zerable-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Zerable-acknowledgements.plist"; sourceTree = "<group>"; };
+		6BC0E778251A4620B837BDFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKComponent.h; path = PaymentKit/PTKComponent.h; sourceTree = "<group>"; };
+		704554464FFF3D4F33BF869F /* PTKView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKView.m; path = PaymentKit/PTKView.m; sourceTree = "<group>"; };
+		78A5047E6242A2C38B514014 /* PTKCardNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardNumber.h; path = PaymentKit/PTKCardNumber.h; sourceTree = "<group>"; };
+		79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardExpiry.h; path = PaymentKit/PTKCardExpiry.h; sourceTree = "<group>"; };
+		7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-PaymentKit-dummy.m"; sourceTree = "<group>"; };
+		7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-RNGridMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8578B63A1E4E7DA460FF5EF1 /* amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = amex.png; path = PaymentKit/Resources/Cards/amex.png; sourceTree = "<group>"; };
+		8692F8028351094ABFC0769E /* diners.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diners.png; path = PaymentKit/Resources/Cards/diners.png; sourceTree = "<group>"; };
+		8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-KVNProgress-dummy.m"; sourceTree = "<group>"; };
+		8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-REFormattedNumberField.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REFormattedNumberField.h; path = REFormattedNumberField/REFormattedNumberField.h; sourceTree = "<group>"; };
+		8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
+		8F864A86B3BDA7A1CFFB15E0 /* Pods-Zerable-RNGridMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu.xcconfig"; sourceTree = "<group>"; };
+		90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-RNGridMenu-dummy.m"; sourceTree = "<group>"; };
+		91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit-Private.xcconfig"; sourceTree = "<group>"; };
+		9266B88281EAB8D8611B3617 /* PTKComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKComponent.m; path = PaymentKit/PTKComponent.m; sourceTree = "<group>"; };
+		92AD1723B61B0287BDE49679 /* Pods-Zerable-RNGridMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-RNGridMenu-prefix.pch"; sourceTree = "<group>"; };
+		92B0BBC083E3C093D4E2B6B3 /* cvc@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc@2x.png"; path = "PaymentKit/Resources/Cards/cvc@2x.png"; sourceTree = "<group>"; };
+		9E7F78D624056453BF91BD64 /* discover@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "discover@2x.png"; path = "PaymentKit/Resources/Cards/discover@2x.png"; sourceTree = "<group>"; };
+		A7F316E2711572FE9C4DD40E /* RNGridMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
+		AA38E4775805F240C54C58F6 /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
+		AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKUSAddressZip.h; path = PaymentKit/PTKUSAddressZip.h; sourceTree = "<group>"; };
+		B56143E1E4F0A9C8E5E8D37F /* textfield.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = textfield.png; path = PaymentKit/Resources/textfield.png; sourceTree = "<group>"; };
+		B7C96FB4595ED3A2ED68F291 /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
+		BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REFormattedNumberField.m; path = REFormattedNumberField/REFormattedNumberField.m; sourceTree = "<group>"; };
+		C13E26673067A536E4F9DE36 /* libPods-Zerable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35AA7E391034ACF49EF43C0 /* gradient@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gradient@2x.png"; path = "PaymentKit/Resources/gradient@2x.png"; sourceTree = "<group>"; };
+		C3FCB363BB5CE9C51856EA0C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKTextField.m; path = PaymentKit/PTKTextField.m; sourceTree = "<group>"; };
+		CB56D6056004E0CD5C8E7AB9 /* diners@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "diners@2x.png"; path = "PaymentKit/Resources/Cards/diners@2x.png"; sourceTree = "<group>"; };
+		D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-KVNProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1700FBA06D3AAA1E1D9ABDB /* textfield@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "textfield@2x.png"; path = "PaymentKit/Resources/textfield@2x.png"; sourceTree = "<group>"; };
+		D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardNumber.m; path = PaymentKit/PTKCardNumber.m; sourceTree = "<group>"; };
+		D374EFD36881801E4386C91C /* Pods-Zerable-KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress.xcconfig"; sourceTree = "<group>"; };
+		D791D97B2F1B0F37B929D667 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+RENumberFormat.h"; path = "REFormattedNumberField/NSString+RENumberFormat.h"; sourceTree = "<group>"; };
+		DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField-Private.xcconfig"; sourceTree = "<group>"; };
+		E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
+		E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-PaymentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E55D1205DBCAFDCACB4DDEEE /* visa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "visa@2x.png"; path = "PaymentKit/Resources/Cards/visa@2x.png"; sourceTree = "<group>"; };
+		E7C57F97C01EA7F10C13C7C5 /* Pods-Zerable-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-environment.h"; sourceTree = "<group>"; };
+		EC9D0B8017A24791C754DF2E /* Pods-Zerable-PaymentKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-PaymentKit-prefix.pch"; sourceTree = "<group>"; };
+		ED186BA781C2967768EA02A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		EEA22138E21359C4F542D13E /* Pods-Zerable-REFormattedNumberField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField.xcconfig"; sourceTree = "<group>"; };
+		EEFBA0459F91A48919430E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RENumberFormat.m"; path = "REFormattedNumberField/NSString+RENumberFormat.m"; sourceTree = "<group>"; };
+		F4E975A2E5646621BE1F1FF7 /* cvc-amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex@2x.png"; path = "PaymentKit/Resources/Cards/cvc-amex@2x.png"; sourceTree = "<group>"; };
+		F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
+		F87A5DDC59F4A6369A310175 /* amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "amex@2x.png"; path = "PaymentKit/Resources/Cards/amex@2x.png"; sourceTree = "<group>"; };
+		FC4019FF6EB1FC264140A609 /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = placeholder.png; path = PaymentKit/Resources/Cards/placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6FABBEB8AC8083860F60DEAB /* Frameworks */ = {
+		001A8591D14D29A0FBE9560E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90DD4F6FC092426DD4A4CB93 /* Foundation.framework in Frameworks */,
-				FD90FCAB1CEF493A0F2E686E /* GLKit.framework in Frameworks */,
-				DB5299ED50454C7389CE8941 /* QuartzCore.framework in Frameworks */,
+				1A6DB5AE4040311087C4CB23 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0C074DDA583279F163DE2DE /* Frameworks */ = {
+		05FE7DBA327F76ACC8B352D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1AFE802889C4A9A9EC9E410 /* Foundation.framework in Frameworks */,
+				654B319AF5442F0B4B834C25 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBFFEEF6E18F88FCF2B51F95 /* Frameworks */ = {
+		25518709343F121D2AD5839A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E15AB1F639B07BF633049965 /* Foundation.framework in Frameworks */,
+				7152745477A3DBAD187F9CDF /* Accelerate.framework in Frameworks */,
+				1354BE0E020ED5C79F36F50F /* Foundation.framework in Frameworks */,
+				AB33CB7A48B128265C8D5092 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EAD33F2D7D11C94684DC0A51 /* Frameworks */ = {
+		27E202E013B79627A279159B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62F80FE9EDD52BAC571639C3 /* Accelerate.framework in Frameworks */,
-				BC049F08D8FCBAC945F19312 /* Foundation.framework in Frameworks */,
-				6ACB7400CD93EC68198D9C1B /* QuartzCore.framework in Frameworks */,
+				FC606B01151CB6BEAA22E014 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796CD260EF34D8B8DF1AE07C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8653B7BC0C5DCB77F4A31B1 /* Foundation.framework in Frameworks */,
+				F988A83886AA8F1B71B994D6 /* GLKit.framework in Frameworks */,
+				AF3CC7578472E1DBEE236E94 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		050A971A0A634AAAC6A65882 /* iOS */ = {
+		0850278D4F53A4F38E84A004 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CFE14AEB4044915138CF96C8 /* Accelerate.framework */,
-				FB78D946EBBE524C3058844F /* Foundation.framework */,
-				DBD25B86BFCBC6B6626BFFF6 /* GLKit.framework */,
-				0DCF8710E08DB1C01ECC44E3 /* QuartzCore.framework */,
+				B7C96FB4595ED3A2ED68F291 /* KVNProgressView.xib */,
 			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		284EC800326E2F9165ADAE83 /* Products */ = {
+		0AABE73ADC93AD750EDE0995 /* REFormattedNumberField */ = {
 			isa = PBXGroup;
 			children = (
-				55A9FE67237DBA3AF0B511C3 /* libPods-Zerable.a */,
-				8B574E7D82DC6BB40B331A48 /* libPods-Zerable-KVNProgress.a */,
-				9AA930192A7CBC917B45385F /* libPods-Zerable-REFormattedNumberField.a */,
-				8148F3D7AE05932FD718FF38 /* libPods-Zerable-RNGridMenu.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		36F27141F213265E56E0C2DB /* REFormattedNumberField */ = {
-			isa = PBXGroup;
-			children = (
-				5FF9D13F71CBBEB17A04052A /* NSString+RENumberFormat.h */,
-				6C29B3D02EB876ED2388FADC /* NSString+RENumberFormat.m */,
-				0EFF66DF57D5D1FA7C0E7716 /* REFormattedNumberField.h */,
-				D060BA98C44631A8C66F4966 /* REFormattedNumberField.m */,
-				4E58F1C5A05E9A06B5A44989 /* Support Files */,
+				DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */,
+				EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */,
+				88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */,
+				BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */,
+				1E0B2B8C8614E86C2E9810B4 /* Support Files */,
 			);
 			path = REFormattedNumberField;
 			sourceTree = "<group>";
 		};
-		4E06E0BA77B3E4C65736A11C = {
+		174B8503B8521340F45A0554 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D7DE60C70AFFB784A352F29 /* Podfile */,
-				7640D4C188B26B0BC1F852D6 /* Frameworks */,
-				F033E1BF4A0DF962A3933A4D /* Pods */,
-				284EC800326E2F9165ADAE83 /* Products */,
-				55BA3D783A00CF0FE09454AD /* Targets Support Files */,
+				1D48B3F382B1BEC1B68E60BF /* KVNProgress */,
+				FB9C06B44D67CBCF2D59B1A6 /* PaymentKit */,
+				0AABE73ADC93AD750EDE0995 /* REFormattedNumberField */,
+				3C6ED02249468C5DB71F68C1 /* RNGridMenu */,
 			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		4E58F1C5A05E9A06B5A44989 /* Support Files */ = {
+		1D48B3F382B1BEC1B68E60BF /* KVNProgress */ = {
 			isa = PBXGroup;
 			children = (
-				9982B35754D29F689D5E6004 /* Pods-Zerable-REFormattedNumberField.xcconfig */,
-				3DFA42C5C34498EEB1F6EA97 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */,
-				F37C126534BEC2DD6E71C173 /* Pods-Zerable-REFormattedNumberField-dummy.m */,
-				A76E3DCDA0E8F6FE5F76CFED /* Pods-Zerable-REFormattedNumberField-prefix.pch */,
+				AA38E4775805F240C54C58F6 /* KVNProgress.h */,
+				367AF93DD06EB11370EABFFE /* KVNProgress.m */,
+				1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */,
+				39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */,
+				4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */,
+				15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */,
+				2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */,
+				17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */,
+				56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */,
+				F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */,
+				0850278D4F53A4F38E84A004 /* Resources */,
+				7A8A1436D525908FA0734ABA /* Support Files */,
+			);
+			path = KVNProgress;
+			sourceTree = "<group>";
+		};
+		1E0B2B8C8614E86C2E9810B4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEA22138E21359C4F542D13E /* Pods-Zerable-REFormattedNumberField.xcconfig */,
+				DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */,
+				2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */,
+				1B7797D5872A9DCA64469454 /* Pods-Zerable-REFormattedNumberField-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Zerable-REFormattedNumberField";
 			sourceTree = "<group>";
 		};
-		55BA3D783A00CF0FE09454AD /* Targets Support Files */ = {
+		3C6ED02249468C5DB71F68C1 /* RNGridMenu */ = {
 			isa = PBXGroup;
 			children = (
-				98E1F6D3B0A60E2BB6BBF11A /* Pods-Zerable */,
+				8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */,
+				A7F316E2711572FE9C4DD40E /* RNGridMenu.m */,
+				C557B21BE87D4AF2B9AA94D4 /* Support Files */,
+			);
+			path = RNGridMenu;
+			sourceTree = "<group>";
+		};
+		4C5BF80AB225B474A179CC31 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				ED186BA781C2967768EA02A6 /* Accelerate.framework */,
+				EEFBA0459F91A48919430E1E /* Foundation.framework */,
+				C3FCB363BB5CE9C51856EA0C /* GLKit.framework */,
+				6BC0E778251A4620B837BDFA /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		79A8BD4E0690DFC50E8F60E9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AA15BC7ADA6893FB40ACE61 /* Pods-Zerable */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7640D4C188B26B0BC1F852D6 /* Frameworks */ = {
+		7A8A1436D525908FA0734ABA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				050A971A0A634AAAC6A65882 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7DCD3E4826B4765112E9FC2E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				AB7FF0F99E0849C14FDAB911 /* KVNProgressView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		98E1F6D3B0A60E2BB6BBF11A /* Pods-Zerable */ = {
-			isa = PBXGroup;
-			children = (
-				9D4AD4EFFC02D7F7BBC957EA /* Pods-Zerable-acknowledgements.markdown */,
-				A445A42417A2E33AA57CD63C /* Pods-Zerable-acknowledgements.plist */,
-				1D04523AD1E9DC25A1BE2F43 /* Pods-Zerable-dummy.m */,
-				05F314C7592A89D38D27459C /* Pods-Zerable-environment.h */,
-				0D1E4C609327A6A350052794 /* Pods-Zerable-resources.sh */,
-				0D0D71D61CEA1D4E333B804B /* Pods-Zerable.debug.xcconfig */,
-				158DF2F8FE3D6E204A2ABEC9 /* Pods-Zerable.release.xcconfig */,
-			);
-			name = "Pods-Zerable";
-			path = "Target Support Files/Pods-Zerable";
-			sourceTree = "<group>";
-		};
-		C371A1C20E67F65FD5AE882C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EAEC3B693B69951F0CBB48EB /* Pods-Zerable-KVNProgress.xcconfig */,
-				0C49282C2FFDA19F21482918 /* Pods-Zerable-KVNProgress-Private.xcconfig */,
-				A9CC93527E4F842B7CC38E84 /* Pods-Zerable-KVNProgress-dummy.m */,
-				87C02CB8A858AF0EE640B1C6 /* Pods-Zerable-KVNProgress-prefix.pch */,
+				D374EFD36881801E4386C91C /* Pods-Zerable-KVNProgress.xcconfig */,
+				629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */,
+				8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */,
+				40B6B67BD30A997D5DA8F56D /* Pods-Zerable-KVNProgress-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Zerable-KVNProgress";
 			sourceTree = "<group>";
 		};
-		CD7F08C443307786AD98B477 /* Support Files */ = {
+		7AA15BC7ADA6893FB40ACE61 /* Pods-Zerable */ = {
 			isa = PBXGroup;
 			children = (
-				D9892B99016CAE70D3866E13 /* Pods-Zerable-RNGridMenu.xcconfig */,
-				4A1FC539CEC62DDE291AB8AD /* Pods-Zerable-RNGridMenu-Private.xcconfig */,
-				E21F5A9F98F8400E72995BD3 /* Pods-Zerable-RNGridMenu-dummy.m */,
-				85A059F80D68EF848C3380E1 /* Pods-Zerable-RNGridMenu-prefix.pch */,
+				609380551BF24AC517E8070A /* Pods-Zerable-acknowledgements.markdown */,
+				6A47A9FEA7A4C3A38216847C /* Pods-Zerable-acknowledgements.plist */,
+				53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */,
+				E7C57F97C01EA7F10C13C7C5 /* Pods-Zerable-environment.h */,
+				3DE2F0967059F730A585334D /* Pods-Zerable-resources.sh */,
+				E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */,
+				32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */,
+			);
+			name = "Pods-Zerable";
+			path = "Target Support Files/Pods-Zerable";
+			sourceTree = "<group>";
+		};
+		7B582739DC980EC818DA086D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8578B63A1E4E7DA460FF5EF1 /* amex.png */,
+				F87A5DDC59F4A6369A310175 /* amex@2x.png */,
+				594D88BA7B881404442A4425 /* cvc.png */,
+				025CD6583F124A698A5EEBDE /* cvc-amex.png */,
+				F4E975A2E5646621BE1F1FF7 /* cvc-amex@2x.png */,
+				92B0BBC083E3C093D4E2B6B3 /* cvc@2x.png */,
+				8692F8028351094ABFC0769E /* diners.png */,
+				CB56D6056004E0CD5C8E7AB9 /* diners@2x.png */,
+				501CF748C0207BE6F5D04E65 /* discover.png */,
+				9E7F78D624056453BF91BD64 /* discover@2x.png */,
+				C35AA7E391034ACF49EF43C0 /* gradient@2x.png */,
+				4655DD86F2E8DC54AD1025AD /* jcb.png */,
+				02819864C3EE413ACAA32661 /* jcb@2x.png */,
+				2063791919983D40B1BBC641 /* mastercard.png */,
+				013340F5303A9447B67AEB6B /* mastercard@2x.png */,
+				FC4019FF6EB1FC264140A609 /* placeholder.png */,
+				53DA3F7CB62B69B2EECD8A19 /* placeholder@2x.png */,
+				B56143E1E4F0A9C8E5E8D37F /* textfield.png */,
+				D1700FBA06D3AAA1E1D9ABDB /* textfield@2x.png */,
+				399D4199CB1A10F7E1278ACF /* visa.png */,
+				E55D1205DBCAFDCACB4DDEEE /* visa@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8DC0C0AE154BA37A4BF2B173 = {
+			isa = PBXGroup;
+			children = (
+				D791D97B2F1B0F37B929D667 /* Podfile */,
+				C2B5C25737432E30D03FDE98 /* Frameworks */,
+				174B8503B8521340F45A0554 /* Pods */,
+				BF55131EE75AFEAEF814004C /* Products */,
+				79A8BD4E0690DFC50E8F60E9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A8524A5A44E66F0FC02318C2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E93EDFAA91BEF43CE59C573 /* Pods-Zerable-PaymentKit.xcconfig */,
+				91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */,
+				7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */,
+				EC9D0B8017A24791C754DF2E /* Pods-Zerable-PaymentKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Zerable-PaymentKit";
+			sourceTree = "<group>";
+		};
+		BF55131EE75AFEAEF814004C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C13E26673067A536E4F9DE36 /* libPods-Zerable.a */,
+				D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */,
+				E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */,
+				8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */,
+				7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2B5C25737432E30D03FDE98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C5BF80AB225B474A179CC31 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C557B21BE87D4AF2B9AA94D4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F864A86B3BDA7A1CFFB15E0 /* Pods-Zerable-RNGridMenu.xcconfig */,
+				6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */,
+				90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */,
+				92AD1723B61B0287BDE49679 /* Pods-Zerable-RNGridMenu-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Zerable-RNGridMenu";
 			sourceTree = "<group>";
 		};
-		E7E72551F3C15BB23C80F2FF /* RNGridMenu */ = {
+		FB9C06B44D67CBCF2D59B1A6 /* PaymentKit */ = {
 			isa = PBXGroup;
 			children = (
-				B3EB3A1ED849934ED1CC9CA6 /* RNGridMenu.h */,
-				FD58AE8F2ECDD25F44828553 /* RNGridMenu.m */,
-				CD7F08C443307786AD98B477 /* Support Files */,
+				05C79D329423FA6B96067B7E /* PTKAddressZip.h */,
+				3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */,
+				1F1C6EF6E197D249E1941234 /* PTKCard.h */,
+				333D59B8742140D156C135D2 /* PTKCard.m */,
+				1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */,
+				6222E344E40717E73D0BF302 /* PTKCardCVC.m */,
+				79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */,
+				3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */,
+				78A5047E6242A2C38B514014 /* PTKCardNumber.h */,
+				D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */,
+				026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */,
+				6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */,
+				9266B88281EAB8D8611B3617 /* PTKComponent.m */,
+				23D2819C114C455D3D6AA6DF /* PTKTextField.h */,
+				C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */,
+				AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */,
+				05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */,
+				0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */,
+				704554464FFF3D4F33BF869F /* PTKView.m */,
+				7B582739DC980EC818DA086D /* Resources */,
+				A8524A5A44E66F0FC02318C2 /* Support Files */,
 			);
-			path = RNGridMenu;
-			sourceTree = "<group>";
-		};
-		F033E1BF4A0DF962A3933A4D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F2815275524C7F3FB404B905 /* KVNProgress */,
-				36F27141F213265E56E0C2DB /* REFormattedNumberField */,
-				E7E72551F3C15BB23C80F2FF /* RNGridMenu */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F2815275524C7F3FB404B905 /* KVNProgress */ = {
-			isa = PBXGroup;
-			children = (
-				19577034476248ACF0482FED /* KVNProgress.h */,
-				69EF47E2E4E77D3692DA633A /* KVNProgress.m */,
-				EE7F307CC966073D4AC499A8 /* KVNProgressConfiguration.h */,
-				7D2881E3A5A849B99992EADB /* KVNProgressConfiguration.m */,
-				8F93A6A9EAD25AA79708CCDF /* UIColor+KVNContrast.h */,
-				AEBD8A5FAF495888D51794FE /* UIColor+KVNContrast.m */,
-				02C80EF6857EA309337D169D /* UIImage+KVNEmpty.h */,
-				613570B8DFBA5B59CE1D3764 /* UIImage+KVNEmpty.m */,
-				E35D37A8F5A6791609F32FFF /* UIImage+KVNImageEffects.h */,
-				2402D6771B05B515B709BD99 /* UIImage+KVNImageEffects.m */,
-				7DCD3E4826B4765112E9FC2E /* Resources */,
-				C371A1C20E67F65FD5AE882C /* Support Files */,
-			);
-			path = KVNProgress;
+			path = PaymentKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		542651A55A8C3F7BFC3249C3 /* Headers */ = {
+		07F00DA288A6639C1C5DB065 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF3DF50A0DFE8965A7EA2D1 /* NSString+RENumberFormat.h in Headers */,
-				8ADE69BD801F8818CA5366F7 /* REFormattedNumberField.h in Headers */,
+				94892E64B72DF59153A2B376 /* RNGridMenu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0B7AA581FD67F9573AC571F /* Headers */ = {
+		182FEEBE2ED18399DC10F844 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4DE85A6285032DD7FE10AC /* KVNProgress.h in Headers */,
-				E6A69924B30BE543EDA53F6F /* KVNProgressConfiguration.h in Headers */,
-				DDE2D5365C6AAF6D303E3EA7 /* UIColor+KVNContrast.h in Headers */,
-				981E0ED9AD4264D300EA6E53 /* UIImage+KVNEmpty.h in Headers */,
-				122AE1ABF01A9BD0A91A38B9 /* UIImage+KVNImageEffects.h in Headers */,
+				025D706CEFDA7FFFD9F67C15 /* KVNProgress.h in Headers */,
+				DC7CD00A78C8AC6FE1C48BEF /* KVNProgressConfiguration.h in Headers */,
+				C602BF78F9D893C7A490CB06 /* UIColor+KVNContrast.h in Headers */,
+				23AB37DB989FF721BF0C05F5 /* UIImage+KVNEmpty.h in Headers */,
+				2E5164DE66A04AC3AA7BC5FE /* UIImage+KVNImageEffects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A71C5BA866CF704B22B46453 /* Headers */ = {
+		18DA151812F9B5735F4316E5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1541ABBA30E100C06E85F6 /* RNGridMenu.h in Headers */,
+				C1A81299A07BADB1AA1F0A4C /* PTKAddressZip.h in Headers */,
+				DF9EBCB0A2D8F0C5B3772CA0 /* PTKCard.h in Headers */,
+				E29F2B150EE414BE495157F4 /* PTKCardCVC.h in Headers */,
+				3D119CC49DC8C1EB0094CA0E /* PTKCardExpiry.h in Headers */,
+				FE2DE3F39151BEFCE6A654D8 /* PTKCardNumber.h in Headers */,
+				69BA552C92B3DA23C0A70FD1 /* PTKCardType.h in Headers */,
+				F6F5DA54C3D56BB97BFD23C5 /* PTKComponent.h in Headers */,
+				0A63EE164CD1562631DE2449 /* PTKTextField.h in Headers */,
+				0B1B32B5B719ADCC2F6D5C18 /* PTKUSAddressZip.h in Headers */,
+				A051059E208EEEE633DF5837 /* PTKView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48D9CB31578B157626197BEE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1994D3C20E98ADF45CDD21EE /* NSString+RENumberFormat.h in Headers */,
+				C1311EC41CBC537E13E84258 /* REFormattedNumberField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5A1AC841CBE9CA1ACB2CDCDA /* Pods-Zerable-RNGridMenu */ = {
+		05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A721BAA3B00CA2B223597D7 /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */;
+			buildConfigurationList = 67D320C2E6796042F13D2D81 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */;
 			buildPhases = (
-				F690EF1134A27B385DA26EFF /* Sources */,
-				EAD33F2D7D11C94684DC0A51 /* Frameworks */,
-				A71C5BA866CF704B22B46453 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Zerable-RNGridMenu";
-			productName = "Pods-Zerable-RNGridMenu";
-			productReference = 8148F3D7AE05932FD718FF38 /* libPods-Zerable-RNGridMenu.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		7EA4015CAE9C3788FFAEDA7D /* Pods-Zerable-REFormattedNumberField */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65464B291679041C1962E1F1 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */;
-			buildPhases = (
-				982686505F9612B07DFF6BDB /* Sources */,
-				DBFFEEF6E18F88FCF2B51F95 /* Frameworks */,
-				542651A55A8C3F7BFC3249C3 /* Headers */,
+				825E317E8533D6C40D0134B1 /* Sources */,
+				05FE7DBA327F76ACC8B352D2 /* Frameworks */,
+				48D9CB31578B157626197BEE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -374,16 +525,70 @@
 			);
 			name = "Pods-Zerable-REFormattedNumberField";
 			productName = "Pods-Zerable-REFormattedNumberField";
-			productReference = 9AA930192A7CBC917B45385F /* libPods-Zerable-REFormattedNumberField.a */;
+			productReference = 8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A14F067A5F1FF1D556D56F63 /* Pods-Zerable-KVNProgress */ = {
+		4F6DF59ABC98D39D7EB51EC8 /* Pods-Zerable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C57D30F6999F1A60021F4F7F /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */;
+			buildConfigurationList = 4AB03008451FE33C668F77ED /* Build configuration list for PBXNativeTarget "Pods-Zerable" */;
 			buildPhases = (
-				0041AE0DCE0D55E25D4102D3 /* Sources */,
-				6FABBEB8AC8083860F60DEAB /* Frameworks */,
-				A0B7AA581FD67F9573AC571F /* Headers */,
+				59694ABFDA970C32ED846DAC /* Sources */,
+				001A8591D14D29A0FBE9560E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23024F9C2D6FBA87E5124362 /* PBXTargetDependency */,
+				95CE1EECB4DB68D40EF348E2 /* PBXTargetDependency */,
+				AD609B58CBD1C02E4DF5A207 /* PBXTargetDependency */,
+				1CCE1856D28D7C8B6B7C095E /* PBXTargetDependency */,
+			);
+			name = "Pods-Zerable";
+			productName = "Pods-Zerable";
+			productReference = C13E26673067A536E4F9DE36 /* libPods-Zerable.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB71075F52B192E5FA147C4F /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */;
+			buildPhases = (
+				3D88D3FFC83C82B44E4AA7E3 /* Sources */,
+				27E202E013B79627A279159B /* Frameworks */,
+				18DA151812F9B5735F4316E5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Zerable-PaymentKit";
+			productName = "Pods-Zerable-PaymentKit";
+			productReference = E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1757BE555792AC49B95233EB /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */;
+			buildPhases = (
+				7DA22EAA2FF5AC4F3530FA18 /* Sources */,
+				25518709343F121D2AD5839A /* Frameworks */,
+				07F00DA288A6639C1C5DB065 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Zerable-RNGridMenu";
+			productName = "Pods-Zerable-RNGridMenu";
+			productReference = 7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45A51A01547730A54A23FDD /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */;
+			buildPhases = (
+				782EE35DC816BEC350587220 /* Sources */,
+				796CD260EF34D8B8DF1AE07C /* Frameworks */,
+				182FEEBE2ED18399DC10F844 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -391,170 +596,127 @@
 			);
 			name = "Pods-Zerable-KVNProgress";
 			productName = "Pods-Zerable-KVNProgress";
-			productReference = 8B574E7D82DC6BB40B331A48 /* libPods-Zerable-KVNProgress.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		B7A0D0DF1C6EFDCCB86DFCBE /* Pods-Zerable */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9111ABE846774A3630FC2BDB /* Build configuration list for PBXNativeTarget "Pods-Zerable" */;
-			buildPhases = (
-				A374A26CA472B6831311EC25 /* Sources */,
-				D0C074DDA583279F163DE2DE /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3F774E4280EDF3133E6C6B20 /* PBXTargetDependency */,
-				7A1492A9BAC1BCA929A0C657 /* PBXTargetDependency */,
-				D03F608C57612756722176D1 /* PBXTargetDependency */,
-			);
-			name = "Pods-Zerable";
-			productName = "Pods-Zerable";
-			productReference = 55A9FE67237DBA3AF0B511C3 /* libPods-Zerable.a */;
+			productReference = D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		967BAFCACCAE416F8ABC98DE /* Project object */ = {
+		5A1BD22C8CC740C8845105E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 9B5C31345BD8F0CD2C130F0A /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 901897E2B728400BFE739DA2 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4E06E0BA77B3E4C65736A11C;
-			productRefGroup = 284EC800326E2F9165ADAE83 /* Products */;
+			mainGroup = 8DC0C0AE154BA37A4BF2B173;
+			productRefGroup = BF55131EE75AFEAEF814004C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B7A0D0DF1C6EFDCCB86DFCBE /* Pods-Zerable */,
-				A14F067A5F1FF1D556D56F63 /* Pods-Zerable-KVNProgress */,
-				7EA4015CAE9C3788FFAEDA7D /* Pods-Zerable-REFormattedNumberField */,
-				5A1AC841CBE9CA1ACB2CDCDA /* Pods-Zerable-RNGridMenu */,
+				4F6DF59ABC98D39D7EB51EC8 /* Pods-Zerable */,
+				A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */,
+				5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */,
+				05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */,
+				974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0041AE0DCE0D55E25D4102D3 /* Sources */ = {
+		3D88D3FFC83C82B44E4AA7E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188EF513736D6B50D6D2DF8E /* KVNProgress.m in Sources */,
-				0C150F2C6BD8CEA029702B0D /* KVNProgressConfiguration.m in Sources */,
-				518E32EA89FBE8C82453C80A /* Pods-Zerable-KVNProgress-dummy.m in Sources */,
-				5E15AF511DE3F8424BF639A8 /* UIColor+KVNContrast.m in Sources */,
-				DC5D978649AEB5947B0BAFFF /* UIImage+KVNEmpty.m in Sources */,
-				8A75443CF76816956A305965 /* UIImage+KVNImageEffects.m in Sources */,
+				9EB6896D0876866F93BFD68D /* PTKAddressZip.m in Sources */,
+				59FF6143D0209D774F51040F /* PTKCard.m in Sources */,
+				AD8A5B46057AED946844213D /* PTKCardCVC.m in Sources */,
+				6A9B7F66AB9AF9D1F59D7CD3 /* PTKCardExpiry.m in Sources */,
+				DEDE387D4BFD5B256E5DEC60 /* PTKCardNumber.m in Sources */,
+				552679150328AAD3809A443F /* PTKComponent.m in Sources */,
+				FAB1996E7DDEB4CBCE12C2F7 /* PTKTextField.m in Sources */,
+				DA03364500C036141EFA06B6 /* PTKUSAddressZip.m in Sources */,
+				4B999A53DEC54441780E2594 /* PTKView.m in Sources */,
+				B7CEE738606A08B1D0E27F4D /* Pods-Zerable-PaymentKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		982686505F9612B07DFF6BDB /* Sources */ = {
+		59694ABFDA970C32ED846DAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F8D461515E235304AB7B1D /* NSString+RENumberFormat.m in Sources */,
-				03D3FFDCC4E275ACFB28A5B6 /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */,
-				F1570ACEFB4ADDAF4E78AFE1 /* REFormattedNumberField.m in Sources */,
+				86D22C89996808DD9FAFBE0F /* Pods-Zerable-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A374A26CA472B6831311EC25 /* Sources */ = {
+		782EE35DC816BEC350587220 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA38F82B08EA247D0BE427A2 /* Pods-Zerable-dummy.m in Sources */,
+				EC5F3F1235C3B7EF2BE82ED9 /* KVNProgress.m in Sources */,
+				689E6A61DBB52BBD542F02C3 /* KVNProgressConfiguration.m in Sources */,
+				23D98EABD7DC9BD0B7FCAB75 /* Pods-Zerable-KVNProgress-dummy.m in Sources */,
+				6A74FE7961044AB34F216205 /* UIColor+KVNContrast.m in Sources */,
+				28554BAB07A0AE469A7E7386 /* UIImage+KVNEmpty.m in Sources */,
+				177E1407EC872A6FDC5D73E4 /* UIImage+KVNImageEffects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F690EF1134A27B385DA26EFF /* Sources */ = {
+		7DA22EAA2FF5AC4F3530FA18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FB7F9110A38085F2A72260 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */,
-				F4C1A2442054E9173AB2AD71 /* RNGridMenu.m in Sources */,
+				8AE661BC9A4B3E7DCAF56180 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */,
+				2C7E36C98C928219D3320F1F /* RNGridMenu.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		825E317E8533D6C40D0134B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC291F83C9DB5E0C5307D4CA /* NSString+RENumberFormat.m in Sources */,
+				C8F5DF18C3DDA1D408A9609D /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */,
+				A7D5CAE12A911B7688F3352E /* REFormattedNumberField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F774E4280EDF3133E6C6B20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Zerable-KVNProgress";
-			target = A14F067A5F1FF1D556D56F63 /* Pods-Zerable-KVNProgress */;
-			targetProxy = D88645F35BC87B2FA688F468 /* PBXContainerItemProxy */;
-		};
-		7A1492A9BAC1BCA929A0C657 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Zerable-REFormattedNumberField";
-			target = 7EA4015CAE9C3788FFAEDA7D /* Pods-Zerable-REFormattedNumberField */;
-			targetProxy = 190351732610D257B32A937D /* PBXContainerItemProxy */;
-		};
-		D03F608C57612756722176D1 /* PBXTargetDependency */ = {
+		1CCE1856D28D7C8B6B7C095E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Zerable-RNGridMenu";
-			target = 5A1AC841CBE9CA1ACB2CDCDA /* Pods-Zerable-RNGridMenu */;
-			targetProxy = 090F17FAB69A0885BAC77937 /* PBXContainerItemProxy */;
+			target = 974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */;
+			targetProxy = 6107BB4D1B3CE8CF2EAEC049 /* PBXContainerItemProxy */;
+		};
+		23024F9C2D6FBA87E5124362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-KVNProgress";
+			target = A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */;
+			targetProxy = EB914BB3E208846083F9AB8F /* PBXContainerItemProxy */;
+		};
+		95CE1EECB4DB68D40EF348E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-PaymentKit";
+			target = 5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */;
+			targetProxy = AD2CC74529C75B34A9F84931 /* PBXContainerItemProxy */;
+		};
+		AD609B58CBD1C02E4DF5A207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-REFormattedNumberField";
+			target = 05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */;
+			targetProxy = DB18F8424E74C7DE6162F46B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2975FF120F0190B8DF664F98 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DFA42C5C34498EEB1F6EA97 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5F394392C6DE6255D6899A9D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A1FC539CEC62DDE291AB8AD /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6A82507B7D492884A30B3B00 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C49282C2FFDA19F21482918 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		7981134833A828DA13800553 /* Debug */ = {
+		00DAD37EFEC11B5BAF8F4656 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -593,25 +755,25 @@
 			};
 			name = Debug;
 		};
-		8FA4D002A1238A1BC9DE19B9 /* Release */ = {
+		05ABE08D69B2D5FEAF8707BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A1FC539CEC62DDE291AB8AD /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
+			baseConfigurationReference = 91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		C4AC0732792F878844ABBFF0 /* Release */ = {
+		0B7386E70A708FBCACDF42B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C49282C2FFDA19F21482918 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
+			baseConfigurationReference = 629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
@@ -625,39 +787,23 @@
 			};
 			name = Release;
 		};
-		C8544CFAF1EFA82A41C302E9 /* Debug */ = {
+		488017EA060F0845CD4DC79D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DFA42C5C34498EEB1F6EA97 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
+			baseConfigurationReference = 91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D7B8A65B4AE0F00A43AF80FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 158DF2F8FE3D6E204A2ABEC9 /* Pods-Zerable.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		F7BBED571E5E8A3535C7489B /* Release */ = {
+		51006DE89CACA478D4E4FFA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -691,9 +837,89 @@
 			};
 			name = Release;
 		};
-		FB9D788722B82DB8451DEDDF /* Debug */ = {
+		60A5292766232BDEE6FE54A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D0D71D61CEA1D4E333B804B /* Pods-Zerable.debug.xcconfig */;
+			baseConfigurationReference = DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7C8D50DA36E75CDCF90FC964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		98DDBD20E030A3075E97A2E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B45D81959F4CB584630A5001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BC28FE931A22A9FE05ED5A47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BECCD9C8BDB5315FBD132D2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -707,55 +933,80 @@
 			};
 			name = Debug;
 		};
+		D52D21B20D9F30FEF7C8E3E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A721BAA3B00CA2B223597D7 /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */ = {
+		1757BE555792AC49B95233EB /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F394392C6DE6255D6899A9D /* Debug */,
-				8FA4D002A1238A1BC9DE19B9 /* Release */,
+				98DDBD20E030A3075E97A2E2 /* Debug */,
+				D52D21B20D9F30FEF7C8E3E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65464B291679041C1962E1F1 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */ = {
+		4AB03008451FE33C668F77ED /* Build configuration list for PBXNativeTarget "Pods-Zerable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8544CFAF1EFA82A41C302E9 /* Debug */,
-				2975FF120F0190B8DF664F98 /* Release */,
+				BECCD9C8BDB5315FBD132D2B /* Debug */,
+				B45D81959F4CB584630A5001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9111ABE846774A3630FC2BDB /* Build configuration list for PBXNativeTarget "Pods-Zerable" */ = {
+		67D320C2E6796042F13D2D81 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB9D788722B82DB8451DEDDF /* Debug */,
-				D7B8A65B4AE0F00A43AF80FF /* Release */,
+				7C8D50DA36E75CDCF90FC964 /* Debug */,
+				60A5292766232BDEE6FE54A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B5C31345BD8F0CD2C130F0A /* Build configuration list for PBXProject "Pods" */ = {
+		901897E2B728400BFE739DA2 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7981134833A828DA13800553 /* Debug */,
-				F7BBED571E5E8A3535C7489B /* Release */,
+				00DAD37EFEC11B5BAF8F4656 /* Debug */,
+				51006DE89CACA478D4E4FFA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C57D30F6999F1A60021F4F7F /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */ = {
+		F45A51A01547730A54A23FDD /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A82507B7D492884A30B3B00 /* Debug */,
-				C4AC0732792F878844ABBFF0 /* Release */,
+				BC28FE931A22A9FE05ED5A47 /* Debug */,
+				0B7386E70A708FBCACDF42B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB71075F52B192E5FA147C4F /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05ABE08D69B2D5FEAF8707BD /* Debug */,
+				488017EA060F0845CD4DC79D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 967BAFCACCAE416F8ABC98DE /* Project object */;
+	rootObject = 5A1BD22C8CC740C8845105E6 /* Project object */;
 }

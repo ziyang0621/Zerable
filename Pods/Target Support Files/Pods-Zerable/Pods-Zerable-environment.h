@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_KVNProgress 2
 #define COCOAPODS_VERSION_PATCH_KVNProgress 1
 
+// PaymentKit
+#define COCOAPODS_POD_AVAILABLE_PaymentKit
+#define COCOAPODS_VERSION_MAJOR_PaymentKit 1
+#define COCOAPODS_VERSION_MINOR_PaymentKit 1
+#define COCOAPODS_VERSION_PATCH_PaymentKit 1
+
 // REFormattedNumberField
 #define COCOAPODS_POD_AVAILABLE_REFormattedNumberField
 #define COCOAPODS_VERSION_MAJOR_REFormattedNumberField 1
