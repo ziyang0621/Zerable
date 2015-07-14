@@ -20,6 +20,7 @@ class AddressViewController: UIViewController {
     let geocoder = CLGeocoder()
     let region = CLCircularRegion(center: CLLocationCoordinate2DMake(37.7577, -122.4376), radius: 1000, identifier: "region")
     var placemarkList: [CLPlacemark] = []
+    var selectedPlacemark: CLPlacemark?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +72,18 @@ class AddressViewController: UIViewController {
     }
     
     func formattedAddressWithOptionalLine() -> String {
-        if !optionalAddressTextField.text.isEmpty {
-            let finalAddressString = finalAddressTextView.text.stringByReplacingOccurrencesOfString("\n", withString: "\n\(optionalAddressTextField.text)\n", options: .LiteralSearch, range: finalAddressTextView.text.rangesOfString("\n").first!)
-            return finalAddressString
+        if let selectedPlacemark = selectedPlacemark {
+            var addressSummaryString = ""
+            addressSummaryString += selectedPlacemark.subThoroughfare + " "
+            addressSummaryString += selectedPlacemark.thoroughfare + "\n"
+            addressSummaryString += optionalAddressTextField.text.isEmpty ? "" : optionalAddressTextField.text + "\n"
+            addressSummaryString += selectedPlacemark.locality + " "
+            addressSummaryString += selectedPlacemark.administrativeArea + " "
+            addressSummaryString += selectedPlacemark.postalCode + "\n"
+            addressSummaryString += selectedPlacemark.country
+            return addressSummaryString
         }
-        return finalAddressTextView.text
+        return ""
     }
 }
 
@@ -99,6 +107,7 @@ extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
     }
     
     func dropDownTextField(dropDownTextField: ZerableDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedPlacemark = placemarkList[indexPath.row]
         fullAddressTextField.text = formateedFullAddress(placemarkList[indexPath.row])
         finalAddressTextView.text = ABCreateStringWithAddressDictionary(placemarkList[indexPath.row].addressDictionary, false)
         finalAddressTextView.text = formattedAddressWithOptionalLine()
