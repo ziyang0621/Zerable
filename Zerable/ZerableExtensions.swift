@@ -165,7 +165,6 @@ extension UIStoryboard {
     class func paymentInfoViewController() -> PaymentInfoViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("PaymentInfoViewController") as! PaymentInfoViewController
     }
-
 }
 
 extension KeychainWrapper {

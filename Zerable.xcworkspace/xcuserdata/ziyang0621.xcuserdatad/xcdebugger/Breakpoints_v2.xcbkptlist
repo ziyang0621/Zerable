@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/AddressViewController.swift"
-            timestampString = "458535042.282242"
+            timestampString = "458603258.012196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "AddressViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -214,17 +214,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Zerable/AddressViewController.swift"
-            timestampString = "458534980.575192"
+            filePath = "Zerable/PaymentInfoViewController.swift"
+            timestampString = "458599978.227043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "formattedAddressWithOptionalLine()"
-            landmarkType = "5">
+            startingLineNumber = "9"
+            endingLineNumber = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

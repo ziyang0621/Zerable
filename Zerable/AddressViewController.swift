@@ -12,6 +12,7 @@ import AddressBookUI
 
 class AddressViewController: UIViewController {
 
+    @IBOutlet weak var saveButton: ZerableRoundButton!
     @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var fullAddressTextField: ZerableDropDownTextField!
@@ -35,6 +36,7 @@ class AddressViewController: UIViewController {
         optionalAddressTextField.addTarget(self, action: "optionalAddressTextDidChanged:", forControlEvents:.EditingChanged)
 
         finalAddressTextView.layer.cornerRadius = 5
+        saveButton.enabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +49,8 @@ class AddressViewController: UIViewController {
     }
     
     func fullAddressTextDidChanged(textField: UITextField) {
-        
+        changeSaveButtonState()
+
         if textField.text.isEmpty {
             placemarkList.removeAll(keepCapacity: false)
             fullAddressTextField.dropDownTableView.reloadData()
@@ -66,6 +69,7 @@ class AddressViewController: UIViewController {
     }
     
     func optionalAddressTextDidChanged(textField: UITextField) {
+        changeSaveButtonState()
         finalAddressTextView.text = formattedAddressWithOptionalLine()
     }
     
@@ -78,13 +82,33 @@ class AddressViewController: UIViewController {
     func formattedAddressWithOptionalLine() -> String {
         if let selectedPlacemark = selectedPlacemark {
             var addressSummaryString = ""
-            addressSummaryString += selectedPlacemark.subThoroughfare + " "
-            addressSummaryString += selectedPlacemark.thoroughfare + "\n"
+            if let subThoroughfare = selectedPlacemark.subThoroughfare {
+                addressSummaryString += subThoroughfare + " "
+            }
+            if let thoroughfare = selectedPlacemark.thoroughfare {
+                addressSummaryString += thoroughfare + "\n"
+            } else {
+                if !addressSummaryString.isEmpty {
+                    addressSummaryString += "\n"
+                }
+            }
             addressSummaryString += optionalAddressTextField.text.isEmpty ? "" : optionalAddressTextField.text + "\n"
-            addressSummaryString += selectedPlacemark.locality + " "
-            addressSummaryString += selectedPlacemark.administrativeArea + " "
-            addressSummaryString += selectedPlacemark.postalCode + "\n"
-            addressSummaryString += selectedPlacemark.country
+            if let locality = selectedPlacemark.locality {
+                addressSummaryString += locality + " "
+            }
+            if let administrativeArea = selectedPlacemark.administrativeArea {
+                addressSummaryString += administrativeArea + " "
+            }
+            if let postalCode = selectedPlacemark.postalCode {
+                addressSummaryString += postalCode + "\n"
+            } else {
+                if !addressSummaryString.isEmpty {
+                    addressSummaryString += "\n"
+                }
+            }
+            if let country = selectedPlacemark.country {
+                addressSummaryString += country
+            }
             return addressSummaryString
         }
         return ""
@@ -112,9 +136,20 @@ extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
     
     func dropDownTextField(dropDownTextField: ZerableDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedPlacemark = placemarkList[indexPath.row]
+        println(selectedPlacemark?.subThoroughfare)
+        println(selectedPlacemark?.thoroughfare)
+        println(selectedPlacemark?.locality)
+        println(selectedPlacemark?.administrativeArea)
+        println(selectedPlacemark?.postalCode)
+        println(selectedPlacemark?.country)
         fullAddressTextField.text = formateedFullAddress(placemarkList[indexPath.row])
         finalAddressTextView.text = ABCreateStringWithAddressDictionary(placemarkList[indexPath.row].addressDictionary, false)
         finalAddressTextView.text = formattedAddressWithOptionalLine()
+    }
+    
+    func changeSaveButtonState() {
+        saveButton.enabled = !fullAddressTextField.text.isEmpty && !optionalAddressTextField.text.isEmpty ? true : false
+        saveButton.backgroundColor = !fullAddressTextField.text.isEmpty && !optionalAddressTextField.text.isEmpty ? kThemeColor : UIColor.lightGrayColor()
     }
 }
 

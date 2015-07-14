@@ -15,6 +15,7 @@ class BasicInfoViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: REFormattedNumberField!
+    @IBOutlet weak var saveButton: ZerableRoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,14 @@ class BasicInfoViewController: UIViewController {
         lastnameTextField.delegate = self
         phoneTextField.delegate = self
         
+        firstnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
+        lastnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
+        phoneTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
+    }
+    
+    func textDidChanged(textField: UITextField) {
+        saveButton.enabled = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? true : false
+        saveButton.backgroundColor = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? kThemeColor : UIColor.lightGrayColor()
     }
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
@@ -52,4 +61,5 @@ extension BasicInfoViewController: UITextFieldDelegate {
         }
         return true
     }
+    
 }
