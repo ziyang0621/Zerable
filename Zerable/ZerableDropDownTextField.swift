@@ -34,7 +34,7 @@ class ZerableDropDownTextField: UITextField {
     
     func setupTextField() {
        addTarget(self, action: "editingDidBegin:", forControlEvents:.EditingDidBegin)
-     //  addTarget(self, action: "editingDidEnd:", forControlEvents:.EditingDidEnd)
+       addTarget(self, action: "editingDidEnd:", forControlEvents:.EditingDidEnd)
     }
 
     func setupTableView() {
@@ -49,9 +49,8 @@ class ZerableDropDownTextField: UITextField {
             dropDownTableView.delegate = self
             dropDownTableView.dataSource = self
             dropDownTableView.estimatedRowHeight = 50
-            
-            superview?.addSubview(dropDownTableView)
-            superview?.bringSubviewToFront(dropDownTableView)
+        
+            (dataSourceDelegate as! UIViewController).view.addSubview(dropDownTableView)
             (dataSourceDelegate as! UIViewController).view.bringSubviewToFront(dropDownTableView)
             
             dropDownTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -79,7 +78,6 @@ class ZerableDropDownTextField: UITextField {
                 self.dropDownTableView.alpha = 0
             })
         }
-
     }
 
 }

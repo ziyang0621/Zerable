@@ -29,9 +29,6 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        scrollView.topInset = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame) +
-            (navigationController?.navigationBar == nil ? 0 : CGRectGetHeight(navigationController!.navigationBar.frame))
-        
         let rightBarButton = UIBarButtonItem(title: "Log In", style: .Plain, target: self, action: "login")
         navigationItem.rightBarButtonItem = rightBarButton
     }

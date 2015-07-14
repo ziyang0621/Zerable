@@ -148,8 +148,8 @@ extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
     }
     
     func changeSaveButtonState() {
-        saveButton.enabled = !fullAddressTextField.text.isEmpty && !optionalAddressTextField.text.isEmpty ? true : false
-        saveButton.backgroundColor = !fullAddressTextField.text.isEmpty && !optionalAddressTextField.text.isEmpty ? kThemeColor : UIColor.lightGrayColor()
+        saveButton.enabled = !fullAddressTextField.text.isEmpty ? true : false
+        saveButton.backgroundColor = !fullAddressTextField.text.isEmpty ? kThemeColor : UIColor.lightGrayColor()
     }
 }
 

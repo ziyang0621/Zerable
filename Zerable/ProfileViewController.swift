@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
     }
     
     func close() {
-        
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

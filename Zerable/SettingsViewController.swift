@@ -66,7 +66,13 @@ extension SettingsViewController: UITableViewDataSource {
 }
 
 extension SettingsViewController: UITableViewDelegate {
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            let profileVC = UIStoryboard.profileViewController()
+            let profileNav = UINavigationController(rootViewController: profileVC)
+            presentViewController(profileNav, animated: true, completion: nil)
+        }
+    }
 }
 
 extension SettingsViewController: RNGridMenuDelegate {
