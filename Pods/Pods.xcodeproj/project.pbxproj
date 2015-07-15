@@ -7,554 +7,852 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		025D706CEFDA7FFFD9F67C15 /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = AA38E4775805F240C54C58F6 /* KVNProgress.h */; };
-		0A63EE164CD1562631DE2449 /* PTKTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D2819C114C455D3D6AA6DF /* PTKTextField.h */; };
-		0B1B32B5B719ADCC2F6D5C18 /* PTKUSAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */; };
-		1354BE0E020ED5C79F36F50F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
-		177E1407EC872A6FDC5D73E4 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */; };
-		1994D3C20E98ADF45CDD21EE /* NSString+RENumberFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */; };
-		1A6DB5AE4040311087C4CB23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
-		23AB37DB989FF721BF0C05F5 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */; };
-		23D98EABD7DC9BD0B7FCAB75 /* Pods-Zerable-KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */; };
-		28554BAB07A0AE469A7E7386 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */; };
-		2C7E36C98C928219D3320F1F /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F316E2711572FE9C4DD40E /* RNGridMenu.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2E5164DE66A04AC3AA7BC5FE /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */; };
-		3D119CC49DC8C1EB0094CA0E /* PTKCardExpiry.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */; };
-		4B999A53DEC54441780E2594 /* PTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 704554464FFF3D4F33BF869F /* PTKView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		552679150328AAD3809A443F /* PTKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9266B88281EAB8D8611B3617 /* PTKComponent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		59FF6143D0209D774F51040F /* PTKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D59B8742140D156C135D2 /* PTKCard.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		654B319AF5442F0B4B834C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
-		689E6A61DBB52BBD542F02C3 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */; };
-		69BA552C92B3DA23C0A70FD1 /* PTKCardType.h in Headers */ = {isa = PBXBuildFile; fileRef = 026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */; };
-		6A74FE7961044AB34F216205 /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = 15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */; };
-		6A9B7F66AB9AF9D1F59D7CD3 /* PTKCardExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7152745477A3DBAD187F9CDF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED186BA781C2967768EA02A6 /* Accelerate.framework */; };
-		86D22C89996808DD9FAFBE0F /* Pods-Zerable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */; };
-		8AE661BC9A4B3E7DCAF56180 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */; };
-		94892E64B72DF59153A2B376 /* RNGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */; };
-		9EB6896D0876866F93BFD68D /* PTKAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A051059E208EEEE633DF5837 /* PTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */; };
-		A7D5CAE12A911B7688F3352E /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AB33CB7A48B128265C8D5092 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC0E778251A4620B837BDFA /* QuartzCore.framework */; };
-		AD8A5B46057AED946844213D /* PTKCardCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222E344E40717E73D0BF302 /* PTKCardCVC.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AF3CC7578472E1DBEE236E94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC0E778251A4620B837BDFA /* QuartzCore.framework */; };
-		B7CEE738606A08B1D0E27F4D /* Pods-Zerable-PaymentKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */; };
-		C1311EC41CBC537E13E84258 /* REFormattedNumberField.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */; };
-		C1A81299A07BADB1AA1F0A4C /* PTKAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C79D329423FA6B96067B7E /* PTKAddressZip.h */; };
-		C602BF78F9D893C7A490CB06 /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */; };
-		C8F5DF18C3DDA1D408A9609D /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */; };
-		DA03364500C036141EFA06B6 /* PTKUSAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DC7CD00A78C8AC6FE1C48BEF /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */; };
-		DEDE387D4BFD5B256E5DEC60 /* PTKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DF9EBCB0A2D8F0C5B3772CA0 /* PTKCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1C6EF6E197D249E1941234 /* PTKCard.h */; };
-		E29F2B150EE414BE495157F4 /* PTKCardCVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */; };
-		EC291F83C9DB5E0C5307D4CA /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EC5F3F1235C3B7EF2BE82ED9 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 367AF93DD06EB11370EABFFE /* KVNProgress.m */; };
-		F6F5DA54C3D56BB97BFD23C5 /* PTKComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */; };
-		F8653B7BC0C5DCB77F4A31B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
-		F988A83886AA8F1B71B994D6 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FCB363BB5CE9C51856EA0C /* GLKit.framework */; };
-		FAB1996E7DDEB4CBCE12C2F7 /* PTKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FC606B01151CB6BEAA22E014 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFBA0459F91A48919430E1E /* Foundation.framework */; };
-		FE2DE3F39151BEFCE6A654D8 /* PTKCardNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A5047E6242A2C38B514014 /* PTKCardNumber.h */; };
+		017B1BE0ECF2F15A835FAA66 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = B88CB8882FAA7B105EEFA26F /* Empty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		02DC006BF4171A3DDDD9197F /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FE875379A7FDE7B72539CCF6 /* NSString+RENumberFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		03FAC22B5DF27F939A50A289 /* PFInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6044DF8B787778FA5887AA /* PFInstallation.h */; };
+		09B76DD37ECCC5C0903167E7 /* RNGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 881BB44F6E6710312444150A /* RNGridMenu.h */; };
+		0A87760DA874AF304EEC93FD /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = 176600EFDE3C9F37F54E270D /* Bolts.h */; };
+		0E104611D668189117985151 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2993147F5AB7A6A71B6D8D /* Pods-Zerable-RNGridMenu-dummy.m */; };
+		0EE82790AB95EEB201168CAA /* PFGeoPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = AF9940E0BCB91D63620301D4 /* PFGeoPoint.h */; };
+		0FA76A2FBC9FB1F00C150C30 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967C963DEB18E8F59358141 /* UIImage+KVNImageEffects.m */; };
+		0FBEDB48AAB5A35C78822501 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1678E54E401E775FC25ADA /* BFCancellationTokenRegistration.h */; };
+		0FEEED98A3CEBE2961BAF729 /* PFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5451BEC6AFFE2E4E07E391A5 /* PFNetworkActivityIndicatorManager.h */; };
+		1347C6E3C05E95D7AFCDE7EB /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A35F46296FA9456CDDB95BC /* BFTask.h */; };
+		1DE68E711B762F3723BB6156 /* PTKCardNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 781844EAF47D9EB46E84485C /* PTKCardNumber.h */; };
+		1EE268AA304AC8C59A3728CE /* PTKCard.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6AF7C29341478C3444BEE /* PTKCard.h */; };
+		21176829AC6A3812F18FD32F /* PFAnonymousUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 211783490100DF87AF8E8F4B /* PFAnonymousUtils.h */; };
+		28981164CA926E08209C379A /* PFCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = A946668CC7E635D9D50F658A /* PFCloud.h */; };
+		2A18B62E00938FFD76A52633 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A90E6AE9F93F673401FC8C4 /* AudioToolbox.framework */; };
+		30BBE4D5069E3E2EDEF30F00 /* PFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 53852115FD716F755D81666E /* PFConstants.h */; };
+		35068DA7153AFFC56B1A6846 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7B9FD6054D21B8D2015BD /* CoreLocation.framework */; };
+		3B6721AD0C94BFF9932C8A6D /* UIColor+KVNContrast.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7E3A79BA41771924A96862 /* UIColor+KVNContrast.h */; };
+		3DF098381D0106036600756C /* PFAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A008662D43B13C69C61F9C /* PFAnalytics.h */; };
+		402462ABBE7D453AC7494FC3 /* NSString+RENumberFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = AAFF96FAB3C6A3BFBFDD8310 /* NSString+RENumberFormat.h */; };
+		41BD73C1F29C440DBF45BE22 /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE60D6F3D04808F7973E547 /* BFCancellationTokenRegistration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		42B12C1AE3ADECF5808B0C29 /* PFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F1106CB7D2E0B5DC91DC3C /* PFQuery.h */; };
+		4468718B12D737F2A8E80C1F /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DB605DC18CDB65678FD75 /* RNGridMenu.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4521AF5A9CC069D48DE89F7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		46CB76793C8DABF64188E175 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F419EF161318C22589578B4 /* SystemConfiguration.framework */; };
+		47D1EFAA18F62497B9BB0C08 /* PTKUSAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9FF481837BA8EBA6002FBF /* PTKUSAddressZip.h */; };
+		4AF1C2D575C9F0A9C47CE1BA /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F51DA3D52347D6D606DACA /* BFTask.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4D965D02190C44F04E315B1C /* Pods-Zerable-KVNProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B789EC994BB8B636E6EF09 /* Pods-Zerable-KVNProgress-dummy.m */; };
+		551830411B234C3FDE7F4E76 /* PFSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 095E3C440E0E12D8EB42D25C /* PFSession.h */; };
+		55DC9CE4AAD6FF3D62942293 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE692B7F6CDF1EAAB86BB9 /* BFCancellationTokenSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5755180619459D4F9FD4294F /* KVNProgressConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 670CEF5EBDFEEC697E79C56C /* KVNProgressConfiguration.h */; };
+		5A010A4BEE00A62B828AF041 /* PFUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 605B0E44690FC7D6CC755D97 /* PFUser.h */; };
+		5AFB9BF28E9031F0D8537976 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7553995E3484D39F74C838 /* BFCancellationToken.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5E091036CAF90563C26F3C06 /* PFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F5827B2F4B2C2C49BE8EF285 /* PFObject.h */; };
+		668525C3564E1FFF2F5A8CD6 /* PTKAddressZip.h in Headers */ = {isa = PBXBuildFile; fileRef = C531E44CB19C8CB69043E01B /* PTKAddressZip.h */; };
+		6785483544677ADEA15A079D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981542C9382328C6E8813510 /* Accelerate.framework */; };
+		68E092C329614F7660000F42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		6CEE07C16BB3154F346074FD /* PTKCardType.h in Headers */ = {isa = PBXBuildFile; fileRef = 73BCC56E057216C0BBA0B7F5 /* PTKCardType.h */; };
+		6DBF9D0EB6E0E96951EB1A73 /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D04FD6A7DDB5936A44C1CF /* BFExecutor.h */; };
+		72B6FCDBFC06E82F900395D8 /* PTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = C343082D4CA9857C8A553A01 /* PTKView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		72EA2B03B8B1E211EF86C56D /* REFormattedNumberField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C09B653AC33F13D852E0957 /* REFormattedNumberField.h */; };
+		78CC27FEFDA3C9C8515D5361 /* PFRelation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3E8941BCF8A9A31BC8888E /* PFRelation.h */; };
+		7923F88F77B441E8D52EE9D6 /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728921567C3D898C264706 /* BFExecutor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7B79545519F1F2EF47044448 /* PFACL.h in Headers */ = {isa = PBXBuildFile; fileRef = B475A1680EF87C471800519D /* PFACL.h */; };
+		7CCF9C159B5E69D386F4F3A0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A1A6990EE820CFBD3F1F86 /* CFNetwork.framework */; };
+		7E2EE1932954EF8B0D3A3BF6 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A60038397525C622A67D7F /* UIImage+KVNEmpty.m */; };
+		7F530C8F9C98BE25CCAE5C6A /* PFTwitterUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DB5781B5F309497415C4EA1D /* PFTwitterUtils.h */; };
+		80282498CA2DD99110DD7C3B /* PTKCardCVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D54392C95D8622F9115FCC /* PTKCardCVC.h */; };
+		8030DC027C4D59A6B71422AF /* UIColor+KVNContrast.m in Sources */ = {isa = PBXBuildFile; fileRef = 856B89FE460F150CBFBDAABF /* UIColor+KVNContrast.m */; };
+		87842FFE40058ECA4B68029F /* BoltsVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 437B6BCF9DF13CCD342C1ABF /* BoltsVersion.h */; };
+		9084050366DAFC08217901D9 /* PFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FDDA39CD9B2B8F46D67230B /* PFFile.h */; };
+		9403001628D38DA76368A720 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		94C72F4676C6C7465A4D4147 /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = B3EDE910D4922C6EE514837C /* PFProduct.h */; };
+		966388CF3EB8099FEE6CBD99 /* UIImage+KVNEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 10F2401E89875FAB51954493 /* UIImage+KVNEmpty.h */; };
+		96889C968D8A696FEB27A7D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D3BEA724BAA9486F1C1407 /* Security.framework */; };
+		9AF7C0B5CDDF88DAE7A99A04 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E897F8A3E7082921E66F5AA9 /* QuartzCore.framework */; };
+		9DA13B1633DA1612B636AD3D /* PTKCardCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DC8DA888D9AAE6A3AB3C67 /* PTKCardCVC.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A0ED58F238799322BE64D189 /* Pods-Zerable-PaymentKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0728473B5CB5F45EE8A8366B /* Pods-Zerable-PaymentKit-dummy.m */; };
+		A10AA0C0570FB6FE69DC5BBD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E897F8A3E7082921E66F5AA9 /* QuartzCore.framework */; };
+		A1F0052CB405542DF0CA27D2 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3B57ED3D18F5301FE7BD /* BFTaskCompletionSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A40F33C05C15D588EC038E09 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E41945D6349C00397F9BC6 /* KVNProgressConfiguration.m */; };
+		A426FC63BFAF636F8B49C7B5 /* PTKCardExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 80952CDAAF2F0E6B4A7DAC8D /* PTKCardExpiry.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A5A6B7F4C70E4130956AED5A /* UIImage+KVNImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 248426D1B9C28496F10F7481 /* UIImage+KVNImageEffects.h */; };
+		A6E19B3E0822006020255158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		A74E9229331993E6CABC6049 /* PTKUSAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF07401BED294AF98796D76 /* PTKUSAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A9CDEB0F9C7A4CBE67746C17 /* Parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A01BB5596B93946ED60239 /* Parse.h */; };
+		AADCA2B2250FECDCFE6899DD /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = FB60F6703AF901305BD0C3AA /* BFCancellationToken.h */; };
+		B1406FB7EEB0D90B2BE73546 /* PFNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = C3ADC999A4F3F3E418BEFDEB /* PFNullability.h */; };
+		B1C9EC5D9E99676D8C41A7E7 /* PFPush.h in Headers */ = {isa = PBXBuildFile; fileRef = E504A5BEC55B07F4C8AA07F4 /* PFPush.h */; };
+		B44DBADBEDA85D3D7DDB71D4 /* KVNProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 160B4312C09B632E47FEAC57 /* KVNProgress.h */; };
+		B4DF4D9FE256C6960E3CE2EE /* PTKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691E5C11B9D2D3F459C8B0C /* PTKCard.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B84D3A036D22ACE3A9DC1938 /* PTKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CC30A5C8209CCF33333FD /* PTKComponent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C2C471D1FCA48B3A5513C83C /* Pods-Zerable-Parse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E615BC681FF9708D0BB641B /* Pods-Zerable-Parse-dummy.m */; };
+		CADACCEE21867C8E8B6AB8C7 /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3552DDC2431F2ED8471094C9 /* Pods-Zerable-REFormattedNumberField-dummy.m */; };
+		CD799957C247855767C5C171 /* PFConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 30B041126D4785652E23FC31 /* PFConfig.h */; };
+		CD8EB81E8AFA25B440382366 /* PTKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 383148CC72C8C3C6FD8EB58D /* PTKCardNumber.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CDBCE217DCFE926573E11F99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		D008CD842F3A4CDA47E34E75 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB8D2A9F91566B201CDEEF5 /* REFormattedNumberField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D119282D133E32BD02D88237 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F71C7BA678422A0A423BE5 /* CoreGraphics.framework */; };
+		D1FE1F3EB79368D555F1258A /* PTKAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = B205511235E6C19BA545C2EF /* PTKAddressZip.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D2A4E32E82DFD85351CE4D3B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7993FE110CE35FBF5489F /* GLKit.framework */; };
+		D2D1BDFBEAB9B8726EB9D508 /* PTKCardExpiry.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E9C487C2B455328EC7D1F36 /* PTKCardExpiry.h */; };
+		D426696E0C2FBEC73BCD5364 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		D56AFF8E5F9CDC409A242859 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E897F8A3E7082921E66F5AA9 /* QuartzCore.framework */; };
+		D6D9D0CF0508B4D7790F1356 /* Pods-Zerable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBE0474C1D854EC01EC38C /* Pods-Zerable-dummy.m */; };
+		DAFCAE31B7F4801631780BC5 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E5F73D6E091E178F1ABFCC /* Bolts.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E0D9E1F6ED8AE8C404EC1AA5 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C57165274697D1E5620CC924 /* BFTaskCompletionSource.h */; };
+		E18016799712A7DBD3DC58EB /* PTKTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B8ECC7E440D3111CB6B39A /* PTKTextField.h */; };
+		E46ABABECBFE630256BAB0C9 /* PF_Twitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C3903DA8CA9327565D0B82 /* PF_Twitter.h */; };
+		EA381DC20A0E0648D6BB326D /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CC7C96321E914AD1FBF6E6 /* KVNProgress.m */; };
+		EB9F14CF7F2E48881213C5FE /* PFPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1816BD7016685C1C1FDCD6BD /* PFPurchase.h */; };
+		F020DD68D87341E7EE430080 /* PTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 982C72DC790153FBF1EA8A95 /* PTKView.h */; };
+		F09F9AE247245F1B54E9822B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555E7D3A225111EF2A3C2F5 /* Foundation.framework */; };
+		F11B93AF99C9126FB0DB12C6 /* PFObject+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA5BF765BA76169D49E2FCA /* PFObject+Subclass.h */; };
+		F9E007D0928B4E71B42142A4 /* Pods-Zerable-Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ABCC0CB336A2D0B4A1B060 /* Pods-Zerable-Bolts-dummy.m */; };
+		FB13AFA3CCB6DAAE3309848D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9095CE728536CBC4F94693ED /* StoreKit.framework */; };
+		FD0DCD2325A6475646EC6C5B /* PFRole.h in Headers */ = {isa = PBXBuildFile; fileRef = CF34636CD40C091695B76C88 /* PFRole.h */; };
+		FDD3663C3581BAF5482F688B /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 120B45E3B4636FD3ACB8CFBF /* BFCancellationTokenSource.h */; };
+		FF00DF4EDB043C419C97E2F9 /* PFSubclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FFD3B47F89F16AE2BF4FF9 /* PFSubclassing.h */; };
+		FFA2C54BEB0196B32AD3FEA1 /* PTKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA68BB9A2403ABD32F179B51 /* PTKTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FFDF3A0B78D5B7B955E921BA /* PTKComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4FF5959C5E73D970E24DBA /* PTKComponent.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6107BB4D1B3CE8CF2EAEC049 /* PBXContainerItemProxy */ = {
+		18B53CC5110E4B5DE4A4C835 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 974C1BCD2054B9ADB4A34429;
-			remoteInfo = "Pods-Zerable-RNGridMenu";
-		};
-		AD2CC74529C75B34A9F84931 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5F29E2E3FD5B8853C18A9449;
+			remoteGlobalIDString = 27C63ECF5AFB2DCD854CBAB7;
 			remoteInfo = "Pods-Zerable-PaymentKit";
 		};
-		DB18F8424E74C7DE6162F46B /* PBXContainerItemProxy */ = {
+		18D5377AC166706C8DA7594A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 05EACC875AFB7692AD09CCFB;
+			remoteGlobalIDString = 9F20467BEE8DD581E9083FEE;
+			remoteInfo = "Pods-Zerable-Parse";
+		};
+		587327E4BE0F8E20FFE0EDB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6992DA20B24939E2FEE43689;
+			remoteInfo = "Pods-Zerable-RNGridMenu";
+		};
+		75E8F52707AD5AEE1B67E626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30DD607953308643E2058194;
 			remoteInfo = "Pods-Zerable-REFormattedNumberField";
 		};
-		EB914BB3E208846083F9AB8F /* PBXContainerItemProxy */ = {
+		D7A04594605D64EF85DDB1F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A1BD22C8CC740C8845105E6 /* Project object */;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A5D3B6B2A14ED7B09942C153;
+			remoteGlobalIDString = 3F4D220E5BE32BD9843B1515;
+			remoteInfo = "Pods-Zerable-Bolts";
+		};
+		DDA0675FAF9FBB676B311942 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FB21C3FA7A4B65F6FA26924;
 			remoteInfo = "Pods-Zerable-KVNProgress";
+		};
+		F20A5D427C99A97A40E80F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7070524AE53A20853CC50D40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F4D220E5BE32BD9843B1515;
+			remoteInfo = "Pods-Zerable-Bolts";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		013340F5303A9447B67AEB6B /* mastercard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mastercard@2x.png"; path = "PaymentKit/Resources/Cards/mastercard@2x.png"; sourceTree = "<group>"; };
-		025CD6583F124A698A5EEBDE /* cvc-amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex.png"; path = "PaymentKit/Resources/Cards/cvc-amex.png"; sourceTree = "<group>"; };
-		026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardType.h; path = PaymentKit/PTKCardType.h; sourceTree = "<group>"; };
-		02819864C3EE413ACAA32661 /* jcb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "jcb@2x.png"; path = "PaymentKit/Resources/Cards/jcb@2x.png"; sourceTree = "<group>"; };
-		05C79D329423FA6B96067B7E /* PTKAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKAddressZip.h; path = PaymentKit/PTKAddressZip.h; sourceTree = "<group>"; };
-		05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKUSAddressZip.m; path = PaymentKit/PTKUSAddressZip.m; sourceTree = "<group>"; };
-		0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKView.h; path = PaymentKit/PTKView.h; sourceTree = "<group>"; };
-		15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
-		1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
-		17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
-		1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardCVC.h; path = PaymentKit/PTKCardCVC.h; sourceTree = "<group>"; };
-		1B7797D5872A9DCA64469454 /* Pods-Zerable-REFormattedNumberField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-REFormattedNumberField-prefix.pch"; sourceTree = "<group>"; };
-		1F1C6EF6E197D249E1941234 /* PTKCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCard.h; path = PaymentKit/PTKCard.h; sourceTree = "<group>"; };
-		2063791919983D40B1BBC641 /* mastercard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mastercard.png; path = PaymentKit/Resources/Cards/mastercard.png; sourceTree = "<group>"; };
-		23D2819C114C455D3D6AA6DF /* PTKTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKTextField.h; path = PaymentKit/PTKTextField.h; sourceTree = "<group>"; };
-		2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-REFormattedNumberField-dummy.m"; sourceTree = "<group>"; };
-		2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
-		32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
-		333D59B8742140D156C135D2 /* PTKCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCard.m; path = PaymentKit/PTKCard.m; sourceTree = "<group>"; };
-		367AF93DD06EB11370EABFFE /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
-		399D4199CB1A10F7E1278ACF /* visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = visa.png; path = PaymentKit/Resources/Cards/visa.png; sourceTree = "<group>"; };
-		39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
-		3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardExpiry.m; path = PaymentKit/PTKCardExpiry.m; sourceTree = "<group>"; };
-		3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKAddressZip.m; path = PaymentKit/PTKAddressZip.m; sourceTree = "<group>"; };
-		3DE2F0967059F730A585334D /* Pods-Zerable-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zerable-resources.sh"; sourceTree = "<group>"; };
-		40B6B67BD30A997D5DA8F56D /* Pods-Zerable-KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-KVNProgress-prefix.pch"; sourceTree = "<group>"; };
-		4655DD86F2E8DC54AD1025AD /* jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = jcb.png; path = PaymentKit/Resources/Cards/jcb.png; sourceTree = "<group>"; };
-		4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
-		501CF748C0207BE6F5D04E65 /* discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = discover.png; path = PaymentKit/Resources/Cards/discover.png; sourceTree = "<group>"; };
-		53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-dummy.m"; sourceTree = "<group>"; };
-		53DA3F7CB62B69B2EECD8A19 /* placeholder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "PaymentKit/Resources/Cards/placeholder@2x.png"; sourceTree = "<group>"; };
-		56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
-		594D88BA7B881404442A4425 /* cvc.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = cvc.png; path = PaymentKit/Resources/Cards/cvc.png; sourceTree = "<group>"; };
-		5E93EDFAA91BEF43CE59C573 /* Pods-Zerable-PaymentKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit.xcconfig"; sourceTree = "<group>"; };
-		609380551BF24AC517E8070A /* Pods-Zerable-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Zerable-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6222E344E40717E73D0BF302 /* PTKCardCVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardCVC.m; path = PaymentKit/PTKCardCVC.m; sourceTree = "<group>"; };
-		629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress-Private.xcconfig"; sourceTree = "<group>"; };
-		6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu-Private.xcconfig"; sourceTree = "<group>"; };
-		6A47A9FEA7A4C3A38216847C /* Pods-Zerable-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Zerable-acknowledgements.plist"; sourceTree = "<group>"; };
-		6BC0E778251A4620B837BDFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKComponent.h; path = PaymentKit/PTKComponent.h; sourceTree = "<group>"; };
-		704554464FFF3D4F33BF869F /* PTKView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKView.m; path = PaymentKit/PTKView.m; sourceTree = "<group>"; };
-		78A5047E6242A2C38B514014 /* PTKCardNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardNumber.h; path = PaymentKit/PTKCardNumber.h; sourceTree = "<group>"; };
-		79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardExpiry.h; path = PaymentKit/PTKCardExpiry.h; sourceTree = "<group>"; };
-		7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-PaymentKit-dummy.m"; sourceTree = "<group>"; };
-		7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-RNGridMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8578B63A1E4E7DA460FF5EF1 /* amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = amex.png; path = PaymentKit/Resources/Cards/amex.png; sourceTree = "<group>"; };
-		8692F8028351094ABFC0769E /* diners.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diners.png; path = PaymentKit/Resources/Cards/diners.png; sourceTree = "<group>"; };
-		8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-KVNProgress-dummy.m"; sourceTree = "<group>"; };
-		8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-REFormattedNumberField.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REFormattedNumberField.h; path = REFormattedNumberField/REFormattedNumberField.h; sourceTree = "<group>"; };
-		8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
-		8F864A86B3BDA7A1CFFB15E0 /* Pods-Zerable-RNGridMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu.xcconfig"; sourceTree = "<group>"; };
-		90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-RNGridMenu-dummy.m"; sourceTree = "<group>"; };
-		91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit-Private.xcconfig"; sourceTree = "<group>"; };
-		9266B88281EAB8D8611B3617 /* PTKComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKComponent.m; path = PaymentKit/PTKComponent.m; sourceTree = "<group>"; };
-		92AD1723B61B0287BDE49679 /* Pods-Zerable-RNGridMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-RNGridMenu-prefix.pch"; sourceTree = "<group>"; };
-		92B0BBC083E3C093D4E2B6B3 /* cvc@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc@2x.png"; path = "PaymentKit/Resources/Cards/cvc@2x.png"; sourceTree = "<group>"; };
-		9E7F78D624056453BF91BD64 /* discover@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "discover@2x.png"; path = "PaymentKit/Resources/Cards/discover@2x.png"; sourceTree = "<group>"; };
-		A7F316E2711572FE9C4DD40E /* RNGridMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
-		AA38E4775805F240C54C58F6 /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
-		AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKUSAddressZip.h; path = PaymentKit/PTKUSAddressZip.h; sourceTree = "<group>"; };
-		B56143E1E4F0A9C8E5E8D37F /* textfield.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = textfield.png; path = PaymentKit/Resources/textfield.png; sourceTree = "<group>"; };
-		B7C96FB4595ED3A2ED68F291 /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
-		BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REFormattedNumberField.m; path = REFormattedNumberField/REFormattedNumberField.m; sourceTree = "<group>"; };
-		C13E26673067A536E4F9DE36 /* libPods-Zerable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C35AA7E391034ACF49EF43C0 /* gradient@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gradient@2x.png"; path = "PaymentKit/Resources/gradient@2x.png"; sourceTree = "<group>"; };
-		C3FCB363BB5CE9C51856EA0C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
-		C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKTextField.m; path = PaymentKit/PTKTextField.m; sourceTree = "<group>"; };
-		CB56D6056004E0CD5C8E7AB9 /* diners@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "diners@2x.png"; path = "PaymentKit/Resources/Cards/diners@2x.png"; sourceTree = "<group>"; };
-		D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-KVNProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1700FBA06D3AAA1E1D9ABDB /* textfield@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "textfield@2x.png"; path = "PaymentKit/Resources/textfield@2x.png"; sourceTree = "<group>"; };
-		D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardNumber.m; path = PaymentKit/PTKCardNumber.m; sourceTree = "<group>"; };
-		D374EFD36881801E4386C91C /* Pods-Zerable-KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress.xcconfig"; sourceTree = "<group>"; };
-		D791D97B2F1B0F37B929D667 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+RENumberFormat.h"; path = "REFormattedNumberField/NSString+RENumberFormat.h"; sourceTree = "<group>"; };
-		DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField-Private.xcconfig"; sourceTree = "<group>"; };
-		E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
-		E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-PaymentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E55D1205DBCAFDCACB4DDEEE /* visa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "visa@2x.png"; path = "PaymentKit/Resources/Cards/visa@2x.png"; sourceTree = "<group>"; };
-		E7C57F97C01EA7F10C13C7C5 /* Pods-Zerable-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-environment.h"; sourceTree = "<group>"; };
-		EC9D0B8017A24791C754DF2E /* Pods-Zerable-PaymentKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-PaymentKit-prefix.pch"; sourceTree = "<group>"; };
-		ED186BA781C2967768EA02A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		EEA22138E21359C4F542D13E /* Pods-Zerable-REFormattedNumberField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField.xcconfig"; sourceTree = "<group>"; };
-		EEFBA0459F91A48919430E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RENumberFormat.m"; path = "REFormattedNumberField/NSString+RENumberFormat.m"; sourceTree = "<group>"; };
-		F4E975A2E5646621BE1F1FF7 /* cvc-amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex@2x.png"; path = "PaymentKit/Resources/Cards/cvc-amex@2x.png"; sourceTree = "<group>"; };
-		F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
-		F87A5DDC59F4A6369A310175 /* amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "amex@2x.png"; path = "PaymentKit/Resources/Cards/amex@2x.png"; sourceTree = "<group>"; };
-		FC4019FF6EB1FC264140A609 /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = placeholder.png; path = PaymentKit/Resources/Cards/placeholder.png; sourceTree = "<group>"; };
+		004516ACBDE6EEEECC989B28 /* Pods-Zerable-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Zerable-acknowledgements.plist"; sourceTree = "<group>"; };
+		02F51DA3D52347D6D606DACA /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
+		04C8AC10702E20BFB1C39AF6 /* cvc@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc@2x.png"; path = "PaymentKit/Resources/Cards/cvc@2x.png"; sourceTree = "<group>"; };
+		05FB07A7826FD0564534A46C /* libPods-Zerable-RNGridMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-RNGridMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0728473B5CB5F45EE8A8366B /* Pods-Zerable-PaymentKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-PaymentKit-dummy.m"; sourceTree = "<group>"; };
+		095E3C440E0E12D8EB42D25C /* PFSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSession.h; path = Parse.framework/Headers/PFSession.h; sourceTree = "<group>"; };
+		09B8ECC7E440D3111CB6B39A /* PTKTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKTextField.h; path = PaymentKit/PTKTextField.h; sourceTree = "<group>"; };
+		0D344E07F943D11C1B00707A /* Pods-Zerable-RNGridMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu-Private.xcconfig"; sourceTree = "<group>"; };
+		0DFFD19BEC1B33725FED159F /* KVNProgressView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
+		0EA06BE188A44C1D5259B6E7 /* jcb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "jcb@2x.png"; path = "PaymentKit/Resources/Cards/jcb@2x.png"; sourceTree = "<group>"; };
+		0FDDA39CD9B2B8F46D67230B /* PFFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFile.h; path = Parse.framework/Headers/PFFile.h; sourceTree = "<group>"; };
+		10F2401E89875FAB51954493 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		11E671E852DE767C85408543 /* libPods-Zerable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		120B45E3B4636FD3ACB8CFBF /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
+		14A01BB5596B93946ED60239 /* Parse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Parse.h; path = Parse.framework/Headers/Parse.h; sourceTree = "<group>"; };
+		160B4312C09B632E47FEAC57 /* KVNProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
+		167DB605DC18CDB65678FD75 /* RNGridMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
+		176600EFDE3C9F37F54E270D /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
+		17E41945D6349C00397F9BC6 /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgressConfiguration.m; path = KVNProgress/Classes/KVNProgressConfiguration.m; sourceTree = "<group>"; };
+		1816BD7016685C1C1FDCD6BD /* PFPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPurchase.h; path = Parse.framework/Headers/PFPurchase.h; sourceTree = "<group>"; };
+		19D3BEA724BAA9486F1C1407 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		1A728921567C3D898C264706 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
+		1DD509560FF5A53DCED3076B /* libPods-Zerable-REFormattedNumberField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-REFormattedNumberField.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20FFD3B47F89F16AE2BF4FF9 /* PFSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSubclassing.h; path = Parse.framework/Headers/PFSubclassing.h; sourceTree = "<group>"; };
+		211783490100DF87AF8E8F4B /* PFAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnonymousUtils.h; path = Parse.framework/Headers/PFAnonymousUtils.h; sourceTree = "<group>"; };
+		2204F435850A575783196E14 /* libPods-Zerable-KVNProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-KVNProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23DA639DCDF4B21AC42CC04C /* jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = jcb.png; path = PaymentKit/Resources/Cards/jcb.png; sourceTree = "<group>"; };
+		248426D1B9C28496F10F7481 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		2B800DDF142AF5F190E7CD98 /* amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "amex@2x.png"; path = "PaymentKit/Resources/Cards/amex@2x.png"; sourceTree = "<group>"; };
+		2F47CCDBAB0A5FEE192FA0D8 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField-Private.xcconfig"; sourceTree = "<group>"; };
+		2FF82A0CCD4A8B7BE953C449 /* Pods-Zerable-KVNProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-KVNProgress-prefix.pch"; sourceTree = "<group>"; };
+		30B041126D4785652E23FC31 /* PFConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConfig.h; path = Parse.framework/Headers/PFConfig.h; sourceTree = "<group>"; };
+		31B77D6902F467A963BF94D5 /* visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = visa.png; path = PaymentKit/Resources/Cards/visa.png; sourceTree = "<group>"; };
+		3552DDC2431F2ED8471094C9 /* Pods-Zerable-REFormattedNumberField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-REFormattedNumberField-dummy.m"; sourceTree = "<group>"; };
+		35A1A6990EE820CFBD3F1F86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		377A08C5BB6B42861F286F51 /* Pods-Zerable-KVNProgress-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress-Private.xcconfig"; sourceTree = "<group>"; };
+		37932DB040D5B7BE83B7CCDD /* gradient@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gradient@2x.png"; path = "PaymentKit/Resources/gradient@2x.png"; sourceTree = "<group>"; };
+		383148CC72C8C3C6FD8EB58D /* PTKCardNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardNumber.m; path = PaymentKit/PTKCardNumber.m; sourceTree = "<group>"; };
+		39A60038397525C622A67D7F /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		39D04FD6A7DDB5936A44C1CF /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
+		39DC8DA888D9AAE6A3AB3C67 /* PTKCardCVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardCVC.m; path = PaymentKit/PTKCardCVC.m; sourceTree = "<group>"; };
+		3C56F8FD5C896C7456B9773C /* Pods-Zerable-PaymentKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-PaymentKit-prefix.pch"; sourceTree = "<group>"; };
+		3D8B8F7DA43E3DB3FD81E085 /* Pods-Zerable-REFormattedNumberField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-REFormattedNumberField.xcconfig"; sourceTree = "<group>"; };
+		3DA6B0DFB3B7A22F9765F029 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
+		3E615BC681FF9708D0BB641B /* Pods-Zerable-Parse-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-Parse-dummy.m"; sourceTree = "<group>"; };
+		3EEF4B4B362CA7B76244135A /* visa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "visa@2x.png"; path = "PaymentKit/Resources/Cards/visa@2x.png"; sourceTree = "<group>"; };
+		3F604CD4CE04075B8F2A3267 /* placeholder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "PaymentKit/Resources/Cards/placeholder@2x.png"; sourceTree = "<group>"; };
+		437B6BCF9DF13CCD342C1ABF /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
+		48A53686EDB9494D67BDD398 /* diners@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "diners@2x.png"; path = "PaymentKit/Resources/Cards/diners@2x.png"; sourceTree = "<group>"; };
+		4967C963DEB18E8F59358141 /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
+		4B3E8941BCF8A9A31BC8888E /* PFRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelation.h; path = Parse.framework/Headers/PFRelation.h; sourceTree = "<group>"; };
+		4D9051354981AEC565D5684A /* Pods-Zerable-Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-Bolts-prefix.pch"; sourceTree = "<group>"; };
+		537D6987199734F6EF1EF013 /* mastercard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mastercard@2x.png"; path = "PaymentKit/Resources/Cards/mastercard@2x.png"; sourceTree = "<group>"; };
+		53852115FD716F755D81666E /* PFConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConstants.h; path = Parse.framework/Headers/PFConstants.h; sourceTree = "<group>"; };
+		5451BEC6AFFE2E4E07E391A5 /* PFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFNetworkActivityIndicatorManager.h; path = Parse.framework/Headers/PFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		58938C62A9920810F0064ECE /* libPods-Zerable-Parse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-Parse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2993147F5AB7A6A71B6D8D /* Pods-Zerable-RNGridMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-RNGridMenu-dummy.m"; sourceTree = "<group>"; };
+		5A4711FC3513D730DC55DFF5 /* Pods-Zerable-PaymentKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit.xcconfig"; sourceTree = "<group>"; };
+		5C28AB92B5F490FE665BF4A1 /* discover@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "discover@2x.png"; path = "PaymentKit/Resources/Cards/discover@2x.png"; sourceTree = "<group>"; };
+		5C306B6A2EA8680D38805F80 /* cvc-amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex.png"; path = "PaymentKit/Resources/Cards/cvc-amex.png"; sourceTree = "<group>"; };
+		605B0E44690FC7D6CC755D97 /* PFUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUser.h; path = Parse.framework/Headers/PFUser.h; sourceTree = "<group>"; };
+		63D54392C95D8622F9115FCC /* PTKCardCVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardCVC.h; path = PaymentKit/PTKCardCVC.h; sourceTree = "<group>"; };
+		670CEF5EBDFEEC697E79C56C /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVNProgressConfiguration.h; path = KVNProgress/Classes/KVNProgressConfiguration.h; sourceTree = "<group>"; };
+		676D2BBAE32DFD46594CD729 /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = placeholder.png; path = PaymentKit/Resources/Cards/placeholder.png; sourceTree = "<group>"; };
+		6A35F46296FA9456CDDB95BC /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
+		6E9C487C2B455328EC7D1F36 /* PTKCardExpiry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardExpiry.h; path = PaymentKit/PTKCardExpiry.h; sourceTree = "<group>"; };
+		6F419EF161318C22589578B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		72E3ABBFD27C40900D50F3A2 /* mastercard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mastercard.png; path = PaymentKit/Resources/Cards/mastercard.png; sourceTree = "<group>"; };
+		73BCC56E057216C0BBA0B7F5 /* PTKCardType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardType.h; path = PaymentKit/PTKCardType.h; sourceTree = "<group>"; };
+		73CA5A936AC874E5126E6A86 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		781844EAF47D9EB46E84485C /* PTKCardNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCardNumber.h; path = PaymentKit/PTKCardNumber.h; sourceTree = "<group>"; };
+		79B789EC994BB8B636E6EF09 /* Pods-Zerable-KVNProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-KVNProgress-dummy.m"; sourceTree = "<group>"; };
+		7B7553995E3484D39F74C838 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
+		7C09B653AC33F13D852E0957 /* REFormattedNumberField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = REFormattedNumberField.h; path = REFormattedNumberField/REFormattedNumberField.h; sourceTree = "<group>"; };
+		7E6044DF8B787778FA5887AA /* PFInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallation.h; path = Parse.framework/Headers/PFInstallation.h; sourceTree = "<group>"; };
+		80952CDAAF2F0E6B4A7DAC8D /* PTKCardExpiry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCardExpiry.m; path = PaymentKit/PTKCardExpiry.m; sourceTree = "<group>"; };
+		83DDB0AD979E631201A72ED8 /* Pods-Zerable-RNGridMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-RNGridMenu.xcconfig"; sourceTree = "<group>"; };
+		856B89FE460F150CBFBDAABF /* UIColor+KVNContrast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KVNContrast.m"; path = "KVNProgress/Categories/UIColor+KVNContrast.m"; sourceTree = "<group>"; };
+		85C3903DA8CA9327565D0B82 /* PF_Twitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PF_Twitter.h; path = Parse.framework/Headers/PF_Twitter.h; sourceTree = "<group>"; };
+		881BB44F6E6710312444150A /* RNGridMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
+		8A90E6AE9F93F673401FC8C4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		8F1CC30A5C8209CCF33333FD /* PTKComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKComponent.m; path = PaymentKit/PTKComponent.m; sourceTree = "<group>"; };
+		9095CE728536CBC4F94693ED /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		92B7993FE110CE35FBF5489F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		92EBDD1B880743F003352AF8 /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
+		93F71C7BA678422A0A423BE5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		952B2A70936CFE6B2213ED20 /* textfield.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = textfield.png; path = PaymentKit/Resources/textfield.png; sourceTree = "<group>"; };
+		9691E5C11B9D2D3F459C8B0C /* PTKCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKCard.m; path = PaymentKit/PTKCard.m; sourceTree = "<group>"; };
+		981542C9382328C6E8813510 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		982C72DC790153FBF1EA8A95 /* PTKView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKView.h; path = PaymentKit/PTKView.h; sourceTree = "<group>"; };
+		9B6FB3578B9E6E8F9E56902C /* libParse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libParse.a; sourceTree = "<group>"; };
+		9C4FF5959C5E73D970E24DBA /* PTKComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKComponent.h; path = PaymentKit/PTKComponent.h; sourceTree = "<group>"; };
+		9DF07401BED294AF98796D76 /* PTKUSAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKUSAddressZip.m; path = PaymentKit/PTKUSAddressZip.m; sourceTree = "<group>"; };
+		A15F0F2ABBD4E325C8AB2022 /* libPods-Zerable-PaymentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-PaymentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3752D3BDA907C62E1EDACB2 /* Pods-Zerable-REFormattedNumberField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-REFormattedNumberField-prefix.pch"; sourceTree = "<group>"; };
+		A47687F364007C010A417AEF /* diners.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diners.png; path = PaymentKit/Resources/Cards/diners.png; sourceTree = "<group>"; };
+		A5C6AF7C29341478C3444BEE /* PTKCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKCard.h; path = PaymentKit/PTKCard.h; sourceTree = "<group>"; };
+		A946668CC7E635D9D50F658A /* PFCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCloud.h; path = Parse.framework/Headers/PFCloud.h; sourceTree = "<group>"; };
+		AA282F26569ADF4BFF2BAD3B /* Pods-Zerable-Parse-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-Parse-Private.xcconfig"; sourceTree = "<group>"; };
+		AAA6593E387A3A4A4EA3073F /* Pods-Zerable-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Zerable-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AAFF96FAB3C6A3BFBFDD8310 /* NSString+RENumberFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+RENumberFormat.h"; path = "REFormattedNumberField/NSString+RENumberFormat.h"; sourceTree = "<group>"; };
+		ACE60D6F3D04808F7973E547 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
+		AE1678E54E401E775FC25ADA /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		AEF2B4751BF5DCB1B078AC3C /* cvc-amex@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cvc-amex@2x.png"; path = "PaymentKit/Resources/Cards/cvc-amex@2x.png"; sourceTree = "<group>"; };
+		AF9940E0BCB91D63620301D4 /* PFGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFGeoPoint.h; path = Parse.framework/Headers/PFGeoPoint.h; sourceTree = "<group>"; };
+		B205511235E6C19BA545C2EF /* PTKAddressZip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKAddressZip.m; path = PaymentKit/PTKAddressZip.m; sourceTree = "<group>"; };
+		B266229D255DF759C8E16278 /* Pods-Zerable-Parse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-Parse-prefix.pch"; sourceTree = "<group>"; };
+		B3EDE910D4922C6EE514837C /* PFProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFProduct.h; path = Parse.framework/Headers/PFProduct.h; sourceTree = "<group>"; };
+		B475A1680EF87C471800519D /* PFACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACL.h; path = Parse.framework/Headers/PFACL.h; sourceTree = "<group>"; };
+		B7A7B9FD6054D21B8D2015BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		B88CB8882FAA7B105EEFA26F /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		B8E5F73D6E091E178F1ABFCC /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
+		B9ABCC0CB336A2D0B4A1B060 /* Pods-Zerable-Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-Bolts-dummy.m"; sourceTree = "<group>"; };
+		B9CBE0474C1D854EC01EC38C /* Pods-Zerable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zerable-dummy.m"; sourceTree = "<group>"; };
+		C343082D4CA9857C8A553A01 /* PTKView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKView.m; path = PaymentKit/PTKView.m; sourceTree = "<group>"; };
+		C35E9FABC495396079E3A34A /* Pods-Zerable-Parse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-Parse.xcconfig"; sourceTree = "<group>"; };
+		C3ADC999A4F3F3E418BEFDEB /* PFNullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFNullability.h; path = Parse.framework/Headers/PFNullability.h; sourceTree = "<group>"; };
+		C531E44CB19C8CB69043E01B /* PTKAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKAddressZip.h; path = PaymentKit/PTKAddressZip.h; sourceTree = "<group>"; };
+		C57165274697D1E5620CC924 /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
+		C71C832181D66CA8D35BE0A6 /* textfield@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "textfield@2x.png"; path = "PaymentKit/Resources/textfield@2x.png"; sourceTree = "<group>"; };
+		C8A0CD360A5D87A74BD5171E /* Pods-Zerable-Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-Bolts.xcconfig"; sourceTree = "<group>"; };
+		CBDE692B7F6CDF1EAAB86BB9 /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
+		CCAE60BA780419C34F03534E /* Pods-Zerable-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-environment.h"; sourceTree = "<group>"; };
+		CF34636CD40C091695B76C88 /* PFRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRole.h; path = Parse.framework/Headers/PFRole.h; sourceTree = "<group>"; };
+		D128A21DCD92735F6B17E827 /* Pods-Zerable-KVNProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-KVNProgress.xcconfig"; sourceTree = "<group>"; };
+		D2584D48C3D64175DA33ECF5 /* amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = amex.png; path = PaymentKit/Resources/Cards/amex.png; sourceTree = "<group>"; };
+		D2A008662D43B13C69C61F9C /* PFAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalytics.h; path = Parse.framework/Headers/PFAnalytics.h; sourceTree = "<group>"; };
+		D4F1106CB7D2E0B5DC91DC3C /* PFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQuery.h; path = Parse.framework/Headers/PFQuery.h; sourceTree = "<group>"; };
+		D555E7D3A225111EF2A3C2F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DB5781B5F309497415C4EA1D /* PFTwitterUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFTwitterUtils.h; path = Parse.framework/Headers/PFTwitterUtils.h; sourceTree = "<group>"; };
+		DB797EEA324604F1A8AB7C49 /* Pods-Zerable-Bolts-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-Bolts-Private.xcconfig"; sourceTree = "<group>"; };
+		DBA5BF765BA76169D49E2FCA /* PFObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFObject+Subclass.h"; path = "Parse.framework/Headers/PFObject+Subclass.h"; sourceTree = "<group>"; };
+		DE7E3A79BA41771924A96862 /* UIColor+KVNContrast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+KVNContrast.h"; path = "KVNProgress/Categories/UIColor+KVNContrast.h"; sourceTree = "<group>"; };
+		DF4F738D6066F757EA9B926C /* Pods-Zerable-PaymentKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zerable-PaymentKit-Private.xcconfig"; sourceTree = "<group>"; };
+		E0CC7C96321E914AD1FBF6E6 /* KVNProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
+		E2BDF6CC2A4ED261F147E0B9 /* discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = discover.png; path = PaymentKit/Resources/Cards/discover.png; sourceTree = "<group>"; };
+		E504A5BEC55B07F4C8AA07F4 /* PFPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPush.h; path = Parse.framework/Headers/PFPush.h; sourceTree = "<group>"; };
+		E81C54D18002BDA71356E43B /* cvc.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = cvc.png; path = PaymentKit/Resources/Cards/cvc.png; sourceTree = "<group>"; };
+		E897F8A3E7082921E66F5AA9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		E8DA1AB0A1B4BC6706469C39 /* libPods-Zerable-Bolts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zerable-Bolts.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECB8D2A9F91566B201CDEEF5 /* REFormattedNumberField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = REFormattedNumberField.m; path = REFormattedNumberField/REFormattedNumberField.m; sourceTree = "<group>"; };
+		F5827B2F4B2C2C49BE8EF285 /* PFObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObject.h; path = Parse.framework/Headers/PFObject.h; sourceTree = "<group>"; };
+		FA1586664C26B4BC806E66D3 /* Pods-Zerable-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zerable-resources.sh"; sourceTree = "<group>"; };
+		FA68BB9A2403ABD32F179B51 /* PTKTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTKTextField.m; path = PaymentKit/PTKTextField.m; sourceTree = "<group>"; };
+		FB60F6703AF901305BD0C3AA /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
+		FCFC3B57ED3D18F5301FE7BD /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
+		FD9FF481837BA8EBA6002FBF /* PTKUSAddressZip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTKUSAddressZip.h; path = PaymentKit/PTKUSAddressZip.h; sourceTree = "<group>"; };
+		FE875379A7FDE7B72539CCF6 /* NSString+RENumberFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RENumberFormat.m"; path = "REFormattedNumberField/NSString+RENumberFormat.m"; sourceTree = "<group>"; };
+		FF2AA96F0E2989E64EA9980C /* Pods-Zerable-RNGridMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zerable-RNGridMenu-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		001A8591D14D29A0FBE9560E /* Frameworks */ = {
+		01519FD44F412E4DEBE4D83A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6DB5AE4040311087C4CB23 /* Foundation.framework in Frameworks */,
+				9403001628D38DA76368A720 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05FE7DBA327F76ACC8B352D2 /* Frameworks */ = {
+		4F159853DC3146431E64D2C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654B319AF5442F0B4B834C25 /* Foundation.framework in Frameworks */,
+				4521AF5A9CC069D48DE89F7B /* Foundation.framework in Frameworks */,
+				D2A4E32E82DFD85351CE4D3B /* GLKit.framework in Frameworks */,
+				9AF7C0B5CDDF88DAE7A99A04 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25518709343F121D2AD5839A /* Frameworks */ = {
+		50049D542CB131CE16B54D45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7152745477A3DBAD187F9CDF /* Accelerate.framework in Frameworks */,
-				1354BE0E020ED5C79F36F50F /* Foundation.framework in Frameworks */,
-				AB33CB7A48B128265C8D5092 /* QuartzCore.framework in Frameworks */,
+				F09F9AE247245F1B54E9822B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27E202E013B79627A279159B /* Frameworks */ = {
+		63063D04EF8618DD9944B34B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC606B01151CB6BEAA22E014 /* Foundation.framework in Frameworks */,
+				6785483544677ADEA15A079D /* Accelerate.framework in Frameworks */,
+				CDBCE217DCFE926573E11F99 /* Foundation.framework in Frameworks */,
+				D56AFF8E5F9CDC409A242859 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		796CD260EF34D8B8DF1AE07C /* Frameworks */ = {
+		A893B102EB5681FCF55F1F0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8653B7BC0C5DCB77F4A31B1 /* Foundation.framework in Frameworks */,
-				F988A83886AA8F1B71B994D6 /* GLKit.framework in Frameworks */,
-				AF3CC7578472E1DBEE236E94 /* QuartzCore.framework in Frameworks */,
+				A6E19B3E0822006020255158 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E176BD07714D063381D1C6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A18B62E00938FFD76A52633 /* AudioToolbox.framework in Frameworks */,
+				7CCF9C159B5E69D386F4F3A0 /* CFNetwork.framework in Frameworks */,
+				D119282D133E32BD02D88237 /* CoreGraphics.framework in Frameworks */,
+				35068DA7153AFFC56B1A6846 /* CoreLocation.framework in Frameworks */,
+				D426696E0C2FBEC73BCD5364 /* Foundation.framework in Frameworks */,
+				A10AA0C0570FB6FE69DC5BBD /* QuartzCore.framework in Frameworks */,
+				96889C968D8A696FEB27A7D3 /* Security.framework in Frameworks */,
+				FB13AFA3CCB6DAAE3309848D /* StoreKit.framework in Frameworks */,
+				46CB76793C8DABF64188E175 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F36295B9E4AC0A212CE30774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E092C329614F7660000F42 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0850278D4F53A4F38E84A004 /* Resources */ = {
+		03BDD340FE1C29E4321FE25B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B7C96FB4595ED3A2ED68F291 /* KVNProgressView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		0AABE73ADC93AD750EDE0995 /* REFormattedNumberField */ = {
-			isa = PBXGroup;
-			children = (
-				DAE8CF01FFC515FB9E5E67AE /* NSString+RENumberFormat.h */,
-				EF02C457BB935E081F375C1C /* NSString+RENumberFormat.m */,
-				88B3EBDDC5F83723BCD7FD21 /* REFormattedNumberField.h */,
-				BFE50FBF2D32B080FFFB8CAA /* REFormattedNumberField.m */,
-				1E0B2B8C8614E86C2E9810B4 /* Support Files */,
-			);
-			path = REFormattedNumberField;
-			sourceTree = "<group>";
-		};
-		174B8503B8521340F45A0554 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1D48B3F382B1BEC1B68E60BF /* KVNProgress */,
-				FB9C06B44D67CBCF2D59B1A6 /* PaymentKit */,
-				0AABE73ADC93AD750EDE0995 /* REFormattedNumberField */,
-				3C6ED02249468C5DB71F68C1 /* RNGridMenu */,
+				A7F116B3CFB7AFD8CE62F5FD /* Bolts */,
+				327DDF646FFC1AD98F551FD0 /* KVNProgress */,
+				89ECE12661081F695E1F43A5 /* Parse */,
+				77850D26C21C17C4FF8683E8 /* PaymentKit */,
+				B226E6AC72A48A50FC014675 /* REFormattedNumberField */,
+				10C337D435FE1104ADA726CA /* RNGridMenu */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		1D48B3F382B1BEC1B68E60BF /* KVNProgress */ = {
+		10C337D435FE1104ADA726CA /* RNGridMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AA38E4775805F240C54C58F6 /* KVNProgress.h */,
-				367AF93DD06EB11370EABFFE /* KVNProgress.m */,
-				1785CD357D6730C9BD47E21B /* KVNProgressConfiguration.h */,
-				39F099056D4FD83C030A872C /* KVNProgressConfiguration.m */,
-				4C63E0DEB04DB370F19ACF00 /* UIColor+KVNContrast.h */,
-				15754E48F3C9605C14789024 /* UIColor+KVNContrast.m */,
-				2C2A2E1807042F5DF447E437 /* UIImage+KVNEmpty.h */,
-				17C6C84D6946DEF95E18A193 /* UIImage+KVNEmpty.m */,
-				56A43496C6F73AFD06C42161 /* UIImage+KVNImageEffects.h */,
-				F7BFF7B3D6D5EBEC1AF0C74E /* UIImage+KVNImageEffects.m */,
-				0850278D4F53A4F38E84A004 /* Resources */,
-				7A8A1436D525908FA0734ABA /* Support Files */,
-			);
-			path = KVNProgress;
-			sourceTree = "<group>";
-		};
-		1E0B2B8C8614E86C2E9810B4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EEA22138E21359C4F542D13E /* Pods-Zerable-REFormattedNumberField.xcconfig */,
-				DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */,
-				2589FA7EB9C5880FFCC43EB2 /* Pods-Zerable-REFormattedNumberField-dummy.m */,
-				1B7797D5872A9DCA64469454 /* Pods-Zerable-REFormattedNumberField-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Zerable-REFormattedNumberField";
-			sourceTree = "<group>";
-		};
-		3C6ED02249468C5DB71F68C1 /* RNGridMenu */ = {
-			isa = PBXGroup;
-			children = (
-				8AC36975C64E0B5EB68DB8E1 /* RNGridMenu.h */,
-				A7F316E2711572FE9C4DD40E /* RNGridMenu.m */,
-				C557B21BE87D4AF2B9AA94D4 /* Support Files */,
+				881BB44F6E6710312444150A /* RNGridMenu.h */,
+				167DB605DC18CDB65678FD75 /* RNGridMenu.m */,
+				C449FEE6E3E2A76E12E6E272 /* Support Files */,
 			);
 			path = RNGridMenu;
 			sourceTree = "<group>";
 		};
-		4C5BF80AB225B474A179CC31 /* iOS */ = {
+		11CD75EBB53A8D5159FAAB77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ED186BA781C2967768EA02A6 /* Accelerate.framework */,
-				EEFBA0459F91A48919430E1E /* Foundation.framework */,
-				C3FCB363BB5CE9C51856EA0C /* GLKit.framework */,
-				6BC0E778251A4620B837BDFA /* QuartzCore.framework */,
+				D2584D48C3D64175DA33ECF5 /* amex.png */,
+				2B800DDF142AF5F190E7CD98 /* amex@2x.png */,
+				E81C54D18002BDA71356E43B /* cvc.png */,
+				5C306B6A2EA8680D38805F80 /* cvc-amex.png */,
+				AEF2B4751BF5DCB1B078AC3C /* cvc-amex@2x.png */,
+				04C8AC10702E20BFB1C39AF6 /* cvc@2x.png */,
+				A47687F364007C010A417AEF /* diners.png */,
+				48A53686EDB9494D67BDD398 /* diners@2x.png */,
+				E2BDF6CC2A4ED261F147E0B9 /* discover.png */,
+				5C28AB92B5F490FE665BF4A1 /* discover@2x.png */,
+				37932DB040D5B7BE83B7CCDD /* gradient@2x.png */,
+				23DA639DCDF4B21AC42CC04C /* jcb.png */,
+				0EA06BE188A44C1D5259B6E7 /* jcb@2x.png */,
+				72E3ABBFD27C40900D50F3A2 /* mastercard.png */,
+				537D6987199734F6EF1EF013 /* mastercard@2x.png */,
+				676D2BBAE32DFD46594CD729 /* placeholder.png */,
+				3F604CD4CE04075B8F2A3267 /* placeholder@2x.png */,
+				952B2A70936CFE6B2213ED20 /* textfield.png */,
+				C71C832181D66CA8D35BE0A6 /* textfield@2x.png */,
+				31B77D6902F467A963BF94D5 /* visa.png */,
+				3EEF4B4B362CA7B76244135A /* visa@2x.png */,
 			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		79A8BD4E0690DFC50E8F60E9 /* Targets Support Files */ = {
+		1EDA89BB1A3FC435BBEDA9BA /* Pods-Zerable */ = {
 			isa = PBXGroup;
 			children = (
-				7AA15BC7ADA6893FB40ACE61 /* Pods-Zerable */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7A8A1436D525908FA0734ABA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D374EFD36881801E4386C91C /* Pods-Zerable-KVNProgress.xcconfig */,
-				629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */,
-				8697D7CD5C56DD697544A24C /* Pods-Zerable-KVNProgress-dummy.m */,
-				40B6B67BD30A997D5DA8F56D /* Pods-Zerable-KVNProgress-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Zerable-KVNProgress";
-			sourceTree = "<group>";
-		};
-		7AA15BC7ADA6893FB40ACE61 /* Pods-Zerable */ = {
-			isa = PBXGroup;
-			children = (
-				609380551BF24AC517E8070A /* Pods-Zerable-acknowledgements.markdown */,
-				6A47A9FEA7A4C3A38216847C /* Pods-Zerable-acknowledgements.plist */,
-				53AFA8E933E538D66F2A9C72 /* Pods-Zerable-dummy.m */,
-				E7C57F97C01EA7F10C13C7C5 /* Pods-Zerable-environment.h */,
-				3DE2F0967059F730A585334D /* Pods-Zerable-resources.sh */,
-				E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */,
-				32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */,
+				AAA6593E387A3A4A4EA3073F /* Pods-Zerable-acknowledgements.markdown */,
+				004516ACBDE6EEEECC989B28 /* Pods-Zerable-acknowledgements.plist */,
+				B9CBE0474C1D854EC01EC38C /* Pods-Zerable-dummy.m */,
+				CCAE60BA780419C34F03534E /* Pods-Zerable-environment.h */,
+				FA1586664C26B4BC806E66D3 /* Pods-Zerable-resources.sh */,
+				3DA6B0DFB3B7A22F9765F029 /* Pods-Zerable.debug.xcconfig */,
+				92EBDD1B880743F003352AF8 /* Pods-Zerable.release.xcconfig */,
 			);
 			name = "Pods-Zerable";
 			path = "Target Support Files/Pods-Zerable";
 			sourceTree = "<group>";
 		};
-		7B582739DC980EC818DA086D /* Resources */ = {
+		2DDF516EA6BC5EFADB5CDCD1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8578B63A1E4E7DA460FF5EF1 /* amex.png */,
-				F87A5DDC59F4A6369A310175 /* amex@2x.png */,
-				594D88BA7B881404442A4425 /* cvc.png */,
-				025CD6583F124A698A5EEBDE /* cvc-amex.png */,
-				F4E975A2E5646621BE1F1FF7 /* cvc-amex@2x.png */,
-				92B0BBC083E3C093D4E2B6B3 /* cvc@2x.png */,
-				8692F8028351094ABFC0769E /* diners.png */,
-				CB56D6056004E0CD5C8E7AB9 /* diners@2x.png */,
-				501CF748C0207BE6F5D04E65 /* discover.png */,
-				9E7F78D624056453BF91BD64 /* discover@2x.png */,
-				C35AA7E391034ACF49EF43C0 /* gradient@2x.png */,
-				4655DD86F2E8DC54AD1025AD /* jcb.png */,
-				02819864C3EE413ACAA32661 /* jcb@2x.png */,
-				2063791919983D40B1BBC641 /* mastercard.png */,
-				013340F5303A9447B67AEB6B /* mastercard@2x.png */,
-				FC4019FF6EB1FC264140A609 /* placeholder.png */,
-				53DA3F7CB62B69B2EECD8A19 /* placeholder@2x.png */,
-				B56143E1E4F0A9C8E5E8D37F /* textfield.png */,
-				D1700FBA06D3AAA1E1D9ABDB /* textfield@2x.png */,
-				399D4199CB1A10F7E1278ACF /* visa.png */,
-				E55D1205DBCAFDCACB4DDEEE /* visa@2x.png */,
+				C8A0CD360A5D87A74BD5171E /* Pods-Zerable-Bolts.xcconfig */,
+				DB797EEA324604F1A8AB7C49 /* Pods-Zerable-Bolts-Private.xcconfig */,
+				B9ABCC0CB336A2D0B4A1B060 /* Pods-Zerable-Bolts-dummy.m */,
+				4D9051354981AEC565D5684A /* Pods-Zerable-Bolts-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Zerable-Bolts";
+			sourceTree = "<group>";
+		};
+		327DDF646FFC1AD98F551FD0 /* KVNProgress */ = {
+			isa = PBXGroup;
+			children = (
+				160B4312C09B632E47FEAC57 /* KVNProgress.h */,
+				E0CC7C96321E914AD1FBF6E6 /* KVNProgress.m */,
+				670CEF5EBDFEEC697E79C56C /* KVNProgressConfiguration.h */,
+				17E41945D6349C00397F9BC6 /* KVNProgressConfiguration.m */,
+				DE7E3A79BA41771924A96862 /* UIColor+KVNContrast.h */,
+				856B89FE460F150CBFBDAABF /* UIColor+KVNContrast.m */,
+				10F2401E89875FAB51954493 /* UIImage+KVNEmpty.h */,
+				39A60038397525C622A67D7F /* UIImage+KVNEmpty.m */,
+				248426D1B9C28496F10F7481 /* UIImage+KVNImageEffects.h */,
+				4967C963DEB18E8F59358141 /* UIImage+KVNImageEffects.m */,
+				5501091A215E5AB3444EB306 /* Resources */,
+				6B4DF2219F6A56ED03DBD0C9 /* Support Files */,
+			);
+			path = KVNProgress;
+			sourceTree = "<group>";
+		};
+		3E8DF01758003C1CD0CAE074 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B8F7DA43E3DB3FD81E085 /* Pods-Zerable-REFormattedNumberField.xcconfig */,
+				2F47CCDBAB0A5FEE192FA0D8 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */,
+				3552DDC2431F2ED8471094C9 /* Pods-Zerable-REFormattedNumberField-dummy.m */,
+				A3752D3BDA907C62E1EDACB2 /* Pods-Zerable-REFormattedNumberField-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Zerable-REFormattedNumberField";
+			sourceTree = "<group>";
+		};
+		440FD216186C1CDF9FE5E8E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11E671E852DE767C85408543 /* libPods-Zerable.a */,
+				E8DA1AB0A1B4BC6706469C39 /* libPods-Zerable-Bolts.a */,
+				2204F435850A575783196E14 /* libPods-Zerable-KVNProgress.a */,
+				58938C62A9920810F0064ECE /* libPods-Zerable-Parse.a */,
+				A15F0F2ABBD4E325C8AB2022 /* libPods-Zerable-PaymentKit.a */,
+				1DD509560FF5A53DCED3076B /* libPods-Zerable-REFormattedNumberField.a */,
+				05FB07A7826FD0564534A46C /* libPods-Zerable-RNGridMenu.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5501091A215E5AB3444EB306 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0DFFD19BEC1B33725FED159F /* KVNProgressView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		8DC0C0AE154BA37A4BF2B173 = {
+		62599E52C2277355F0096ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D791D97B2F1B0F37B929D667 /* Podfile */,
-				C2B5C25737432E30D03FDE98 /* Frameworks */,
-				174B8503B8521340F45A0554 /* Pods */,
-				BF55131EE75AFEAEF814004C /* Products */,
-				79A8BD4E0690DFC50E8F60E9 /* Targets Support Files */,
+				9B6FB3578B9E6E8F9E56902C /* libParse.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B4DF2219F6A56ED03DBD0C9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D128A21DCD92735F6B17E827 /* Pods-Zerable-KVNProgress.xcconfig */,
+				377A08C5BB6B42861F286F51 /* Pods-Zerable-KVNProgress-Private.xcconfig */,
+				79B789EC994BB8B636E6EF09 /* Pods-Zerable-KVNProgress-dummy.m */,
+				2FF82A0CCD4A8B7BE953C449 /* Pods-Zerable-KVNProgress-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Zerable-KVNProgress";
+			sourceTree = "<group>";
+		};
+		77850D26C21C17C4FF8683E8 /* PaymentKit */ = {
+			isa = PBXGroup;
+			children = (
+				C531E44CB19C8CB69043E01B /* PTKAddressZip.h */,
+				B205511235E6C19BA545C2EF /* PTKAddressZip.m */,
+				A5C6AF7C29341478C3444BEE /* PTKCard.h */,
+				9691E5C11B9D2D3F459C8B0C /* PTKCard.m */,
+				63D54392C95D8622F9115FCC /* PTKCardCVC.h */,
+				39DC8DA888D9AAE6A3AB3C67 /* PTKCardCVC.m */,
+				6E9C487C2B455328EC7D1F36 /* PTKCardExpiry.h */,
+				80952CDAAF2F0E6B4A7DAC8D /* PTKCardExpiry.m */,
+				781844EAF47D9EB46E84485C /* PTKCardNumber.h */,
+				383148CC72C8C3C6FD8EB58D /* PTKCardNumber.m */,
+				73BCC56E057216C0BBA0B7F5 /* PTKCardType.h */,
+				9C4FF5959C5E73D970E24DBA /* PTKComponent.h */,
+				8F1CC30A5C8209CCF33333FD /* PTKComponent.m */,
+				09B8ECC7E440D3111CB6B39A /* PTKTextField.h */,
+				FA68BB9A2403ABD32F179B51 /* PTKTextField.m */,
+				FD9FF481837BA8EBA6002FBF /* PTKUSAddressZip.h */,
+				9DF07401BED294AF98796D76 /* PTKUSAddressZip.m */,
+				982C72DC790153FBF1EA8A95 /* PTKView.h */,
+				C343082D4CA9857C8A553A01 /* PTKView.m */,
+				11CD75EBB53A8D5159FAAB77 /* Resources */,
+				BA57EC260B2CCFB0DB691096 /* Support Files */,
+			);
+			path = PaymentKit;
+			sourceTree = "<group>";
+		};
+		85C3ACE36EC920C3FFBA51A0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				981542C9382328C6E8813510 /* Accelerate.framework */,
+				8A90E6AE9F93F673401FC8C4 /* AudioToolbox.framework */,
+				35A1A6990EE820CFBD3F1F86 /* CFNetwork.framework */,
+				93F71C7BA678422A0A423BE5 /* CoreGraphics.framework */,
+				B7A7B9FD6054D21B8D2015BD /* CoreLocation.framework */,
+				D555E7D3A225111EF2A3C2F5 /* Foundation.framework */,
+				92B7993FE110CE35FBF5489F /* GLKit.framework */,
+				E897F8A3E7082921E66F5AA9 /* QuartzCore.framework */,
+				19D3BEA724BAA9486F1C1407 /* Security.framework */,
+				9095CE728536CBC4F94693ED /* StoreKit.framework */,
+				6F419EF161318C22589578B4 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		89ECE12661081F695E1F43A5 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				B88CB8882FAA7B105EEFA26F /* Empty.m */,
+				B475A1680EF87C471800519D /* PFACL.h */,
+				D2A008662D43B13C69C61F9C /* PFAnalytics.h */,
+				211783490100DF87AF8E8F4B /* PFAnonymousUtils.h */,
+				A946668CC7E635D9D50F658A /* PFCloud.h */,
+				30B041126D4785652E23FC31 /* PFConfig.h */,
+				53852115FD716F755D81666E /* PFConstants.h */,
+				0FDDA39CD9B2B8F46D67230B /* PFFile.h */,
+				AF9940E0BCB91D63620301D4 /* PFGeoPoint.h */,
+				7E6044DF8B787778FA5887AA /* PFInstallation.h */,
+				5451BEC6AFFE2E4E07E391A5 /* PFNetworkActivityIndicatorManager.h */,
+				C3ADC999A4F3F3E418BEFDEB /* PFNullability.h */,
+				F5827B2F4B2C2C49BE8EF285 /* PFObject.h */,
+				DBA5BF765BA76169D49E2FCA /* PFObject+Subclass.h */,
+				B3EDE910D4922C6EE514837C /* PFProduct.h */,
+				1816BD7016685C1C1FDCD6BD /* PFPurchase.h */,
+				E504A5BEC55B07F4C8AA07F4 /* PFPush.h */,
+				D4F1106CB7D2E0B5DC91DC3C /* PFQuery.h */,
+				4B3E8941BCF8A9A31BC8888E /* PFRelation.h */,
+				CF34636CD40C091695B76C88 /* PFRole.h */,
+				095E3C440E0E12D8EB42D25C /* PFSession.h */,
+				20FFD3B47F89F16AE2BF4FF9 /* PFSubclassing.h */,
+				DB5781B5F309497415C4EA1D /* PFTwitterUtils.h */,
+				605B0E44690FC7D6CC755D97 /* PFUser.h */,
+				85C3903DA8CA9327565D0B82 /* PF_Twitter.h */,
+				14A01BB5596B93946ED60239 /* Parse.h */,
+				62599E52C2277355F0096ECF /* Frameworks */,
+				E63919E1F12DADC67AF60B27 /* Support Files */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
+		8CC35BF3B8ECE46D9FE26B9A = {
+			isa = PBXGroup;
+			children = (
+				73CA5A936AC874E5126E6A86 /* Podfile */,
+				8D6CEFDAC5DE792245E1B3EA /* Frameworks */,
+				03BDD340FE1C29E4321FE25B /* Pods */,
+				440FD216186C1CDF9FE5E8E2 /* Products */,
+				ECFB8AB2DA4B1019755FFD3E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A8524A5A44E66F0FC02318C2 /* Support Files */ = {
+		8D6CEFDAC5DE792245E1B3EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E93EDFAA91BEF43CE59C573 /* Pods-Zerable-PaymentKit.xcconfig */,
-				91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */,
-				7A3DA6AFEAFCD4F633F52952 /* Pods-Zerable-PaymentKit-dummy.m */,
-				EC9D0B8017A24791C754DF2E /* Pods-Zerable-PaymentKit-prefix.pch */,
+				85C3ACE36EC920C3FFBA51A0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7F116B3CFB7AFD8CE62F5FD /* Bolts */ = {
+			isa = PBXGroup;
+			children = (
+				2DDF516EA6BC5EFADB5CDCD1 /* Support Files */,
+				E065835F1ED2381185044EAB /* Tasks */,
+			);
+			path = Bolts;
+			sourceTree = "<group>";
+		};
+		B226E6AC72A48A50FC014675 /* REFormattedNumberField */ = {
+			isa = PBXGroup;
+			children = (
+				AAFF96FAB3C6A3BFBFDD8310 /* NSString+RENumberFormat.h */,
+				FE875379A7FDE7B72539CCF6 /* NSString+RENumberFormat.m */,
+				7C09B653AC33F13D852E0957 /* REFormattedNumberField.h */,
+				ECB8D2A9F91566B201CDEEF5 /* REFormattedNumberField.m */,
+				3E8DF01758003C1CD0CAE074 /* Support Files */,
+			);
+			path = REFormattedNumberField;
+			sourceTree = "<group>";
+		};
+		BA57EC260B2CCFB0DB691096 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A4711FC3513D730DC55DFF5 /* Pods-Zerable-PaymentKit.xcconfig */,
+				DF4F738D6066F757EA9B926C /* Pods-Zerable-PaymentKit-Private.xcconfig */,
+				0728473B5CB5F45EE8A8366B /* Pods-Zerable-PaymentKit-dummy.m */,
+				3C56F8FD5C896C7456B9773C /* Pods-Zerable-PaymentKit-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Zerable-PaymentKit";
 			sourceTree = "<group>";
 		};
-		BF55131EE75AFEAEF814004C /* Products */ = {
+		C449FEE6E3E2A76E12E6E272 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C13E26673067A536E4F9DE36 /* libPods-Zerable.a */,
-				D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */,
-				E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */,
-				8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */,
-				7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C2B5C25737432E30D03FDE98 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4C5BF80AB225B474A179CC31 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C557B21BE87D4AF2B9AA94D4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8F864A86B3BDA7A1CFFB15E0 /* Pods-Zerable-RNGridMenu.xcconfig */,
-				6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */,
-				90B43369EFCF408527424820 /* Pods-Zerable-RNGridMenu-dummy.m */,
-				92AD1723B61B0287BDE49679 /* Pods-Zerable-RNGridMenu-prefix.pch */,
+				83DDB0AD979E631201A72ED8 /* Pods-Zerable-RNGridMenu.xcconfig */,
+				0D344E07F943D11C1B00707A /* Pods-Zerable-RNGridMenu-Private.xcconfig */,
+				5A2993147F5AB7A6A71B6D8D /* Pods-Zerable-RNGridMenu-dummy.m */,
+				FF2AA96F0E2989E64EA9980C /* Pods-Zerable-RNGridMenu-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Zerable-RNGridMenu";
 			sourceTree = "<group>";
 		};
-		FB9C06B44D67CBCF2D59B1A6 /* PaymentKit */ = {
+		E065835F1ED2381185044EAB /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				05C79D329423FA6B96067B7E /* PTKAddressZip.h */,
-				3A9C9C29003A6CA344859A27 /* PTKAddressZip.m */,
-				1F1C6EF6E197D249E1941234 /* PTKCard.h */,
-				333D59B8742140D156C135D2 /* PTKCard.m */,
-				1A2CE7B9D18C528A0322A91A /* PTKCardCVC.h */,
-				6222E344E40717E73D0BF302 /* PTKCardCVC.m */,
-				79C4DA4950D533CDF02AEB0F /* PTKCardExpiry.h */,
-				3A5E87F378A9C5F91347F0A8 /* PTKCardExpiry.m */,
-				78A5047E6242A2C38B514014 /* PTKCardNumber.h */,
-				D28F3E08C2963C75773C5C5B /* PTKCardNumber.m */,
-				026F48FA1A7F8E2743A2B3B5 /* PTKCardType.h */,
-				6E4D06AE69C0EDA29E8161BC /* PTKComponent.h */,
-				9266B88281EAB8D8611B3617 /* PTKComponent.m */,
-				23D2819C114C455D3D6AA6DF /* PTKTextField.h */,
-				C797FDEBD18F9AFC4095E1ED /* PTKTextField.m */,
-				AA9A52800CC5818D0E88AA4A /* PTKUSAddressZip.h */,
-				05CFF4F6457A4A5E5CB8131F /* PTKUSAddressZip.m */,
-				0BD8E91BE5EE4773B4B7DD3B /* PTKView.h */,
-				704554464FFF3D4F33BF869F /* PTKView.m */,
-				7B582739DC980EC818DA086D /* Resources */,
-				A8524A5A44E66F0FC02318C2 /* Support Files */,
+				FB60F6703AF901305BD0C3AA /* BFCancellationToken.h */,
+				7B7553995E3484D39F74C838 /* BFCancellationToken.m */,
+				AE1678E54E401E775FC25ADA /* BFCancellationTokenRegistration.h */,
+				ACE60D6F3D04808F7973E547 /* BFCancellationTokenRegistration.m */,
+				120B45E3B4636FD3ACB8CFBF /* BFCancellationTokenSource.h */,
+				CBDE692B7F6CDF1EAAB86BB9 /* BFCancellationTokenSource.m */,
+				39D04FD6A7DDB5936A44C1CF /* BFExecutor.h */,
+				1A728921567C3D898C264706 /* BFExecutor.m */,
+				6A35F46296FA9456CDDB95BC /* BFTask.h */,
+				02F51DA3D52347D6D606DACA /* BFTask.m */,
+				C57165274697D1E5620CC924 /* BFTaskCompletionSource.h */,
+				FCFC3B57ED3D18F5301FE7BD /* BFTaskCompletionSource.m */,
+				176600EFDE3C9F37F54E270D /* Bolts.h */,
+				B8E5F73D6E091E178F1ABFCC /* Bolts.m */,
+				437B6BCF9DF13CCD342C1ABF /* BoltsVersion.h */,
 			);
-			path = PaymentKit;
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		E63919E1F12DADC67AF60B27 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C35E9FABC495396079E3A34A /* Pods-Zerable-Parse.xcconfig */,
+				AA282F26569ADF4BFF2BAD3B /* Pods-Zerable-Parse-Private.xcconfig */,
+				3E615BC681FF9708D0BB641B /* Pods-Zerable-Parse-dummy.m */,
+				B266229D255DF759C8E16278 /* Pods-Zerable-Parse-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Zerable-Parse";
+			sourceTree = "<group>";
+		};
+		ECFB8AB2DA4B1019755FFD3E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EDA89BB1A3FC435BBEDA9BA /* Pods-Zerable */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07F00DA288A6639C1C5DB065 /* Headers */ = {
+		41C51DE171EB7CFA5F93011A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94892E64B72DF59153A2B376 /* RNGridMenu.h in Headers */,
+				402462ABBE7D453AC7494FC3 /* NSString+RENumberFormat.h in Headers */,
+				72EA2B03B8B1E211EF86C56D /* REFormattedNumberField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		182FEEBE2ED18399DC10F844 /* Headers */ = {
+		6585A669E7BAEED80A363401 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				025D706CEFDA7FFFD9F67C15 /* KVNProgress.h in Headers */,
-				DC7CD00A78C8AC6FE1C48BEF /* KVNProgressConfiguration.h in Headers */,
-				C602BF78F9D893C7A490CB06 /* UIColor+KVNContrast.h in Headers */,
-				23AB37DB989FF721BF0C05F5 /* UIImage+KVNEmpty.h in Headers */,
-				2E5164DE66A04AC3AA7BC5FE /* UIImage+KVNImageEffects.h in Headers */,
+				668525C3564E1FFF2F5A8CD6 /* PTKAddressZip.h in Headers */,
+				1EE268AA304AC8C59A3728CE /* PTKCard.h in Headers */,
+				80282498CA2DD99110DD7C3B /* PTKCardCVC.h in Headers */,
+				D2D1BDFBEAB9B8726EB9D508 /* PTKCardExpiry.h in Headers */,
+				1DE68E711B762F3723BB6156 /* PTKCardNumber.h in Headers */,
+				6CEE07C16BB3154F346074FD /* PTKCardType.h in Headers */,
+				FFDF3A0B78D5B7B955E921BA /* PTKComponent.h in Headers */,
+				E18016799712A7DBD3DC58EB /* PTKTextField.h in Headers */,
+				47D1EFAA18F62497B9BB0C08 /* PTKUSAddressZip.h in Headers */,
+				F020DD68D87341E7EE430080 /* PTKView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18DA151812F9B5735F4316E5 /* Headers */ = {
+		9581AE6B5E97E17F8724C699 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A81299A07BADB1AA1F0A4C /* PTKAddressZip.h in Headers */,
-				DF9EBCB0A2D8F0C5B3772CA0 /* PTKCard.h in Headers */,
-				E29F2B150EE414BE495157F4 /* PTKCardCVC.h in Headers */,
-				3D119CC49DC8C1EB0094CA0E /* PTKCardExpiry.h in Headers */,
-				FE2DE3F39151BEFCE6A654D8 /* PTKCardNumber.h in Headers */,
-				69BA552C92B3DA23C0A70FD1 /* PTKCardType.h in Headers */,
-				F6F5DA54C3D56BB97BFD23C5 /* PTKComponent.h in Headers */,
-				0A63EE164CD1562631DE2449 /* PTKTextField.h in Headers */,
-				0B1B32B5B719ADCC2F6D5C18 /* PTKUSAddressZip.h in Headers */,
-				A051059E208EEEE633DF5837 /* PTKView.h in Headers */,
+				AADCA2B2250FECDCFE6899DD /* BFCancellationToken.h in Headers */,
+				0FBEDB48AAB5A35C78822501 /* BFCancellationTokenRegistration.h in Headers */,
+				FDD3663C3581BAF5482F688B /* BFCancellationTokenSource.h in Headers */,
+				6DBF9D0EB6E0E96951EB1A73 /* BFExecutor.h in Headers */,
+				1347C6E3C05E95D7AFCDE7EB /* BFTask.h in Headers */,
+				E0D9E1F6ED8AE8C404EC1AA5 /* BFTaskCompletionSource.h in Headers */,
+				0A87760DA874AF304EEC93FD /* Bolts.h in Headers */,
+				87842FFE40058ECA4B68029F /* BoltsVersion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48D9CB31578B157626197BEE /* Headers */ = {
+		982CAFF4F2E6E699DFA45B41 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1994D3C20E98ADF45CDD21EE /* NSString+RENumberFormat.h in Headers */,
-				C1311EC41CBC537E13E84258 /* REFormattedNumberField.h in Headers */,
+				7B79545519F1F2EF47044448 /* PFACL.h in Headers */,
+				3DF098381D0106036600756C /* PFAnalytics.h in Headers */,
+				21176829AC6A3812F18FD32F /* PFAnonymousUtils.h in Headers */,
+				28981164CA926E08209C379A /* PFCloud.h in Headers */,
+				CD799957C247855767C5C171 /* PFConfig.h in Headers */,
+				30BBE4D5069E3E2EDEF30F00 /* PFConstants.h in Headers */,
+				9084050366DAFC08217901D9 /* PFFile.h in Headers */,
+				0EE82790AB95EEB201168CAA /* PFGeoPoint.h in Headers */,
+				03FAC22B5DF27F939A50A289 /* PFInstallation.h in Headers */,
+				0FEEED98A3CEBE2961BAF729 /* PFNetworkActivityIndicatorManager.h in Headers */,
+				B1406FB7EEB0D90B2BE73546 /* PFNullability.h in Headers */,
+				F11B93AF99C9126FB0DB12C6 /* PFObject+Subclass.h in Headers */,
+				5E091036CAF90563C26F3C06 /* PFObject.h in Headers */,
+				94C72F4676C6C7465A4D4147 /* PFProduct.h in Headers */,
+				EB9F14CF7F2E48881213C5FE /* PFPurchase.h in Headers */,
+				B1C9EC5D9E99676D8C41A7E7 /* PFPush.h in Headers */,
+				42B12C1AE3ADECF5808B0C29 /* PFQuery.h in Headers */,
+				78CC27FEFDA3C9C8515D5361 /* PFRelation.h in Headers */,
+				FD0DCD2325A6475646EC6C5B /* PFRole.h in Headers */,
+				551830411B234C3FDE7F4E76 /* PFSession.h in Headers */,
+				FF00DF4EDB043C419C97E2F9 /* PFSubclassing.h in Headers */,
+				7F530C8F9C98BE25CCAE5C6A /* PFTwitterUtils.h in Headers */,
+				5A010A4BEE00A62B828AF041 /* PFUser.h in Headers */,
+				E46ABABECBFE630256BAB0C9 /* PF_Twitter.h in Headers */,
+				A9CDEB0F9C7A4CBE67746C17 /* Parse.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA918ED18EA1B72B2086DD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44DBADBEDA85D3D7DDB71D4 /* KVNProgress.h in Headers */,
+				5755180619459D4F9FD4294F /* KVNProgressConfiguration.h in Headers */,
+				3B6721AD0C94BFF9932C8A6D /* UIColor+KVNContrast.h in Headers */,
+				966388CF3EB8099FEE6CBD99 /* UIImage+KVNEmpty.h in Headers */,
+				A5A6B7F4C70E4130956AED5A /* UIImage+KVNImageEffects.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C22C79FCD6C6F071AD75974 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09B76DD37ECCC5C0903167E7 /* RNGridMenu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */ = {
+		08BF6F220C148DB74BECFD1A /* Pods-Zerable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67D320C2E6796042F13D2D81 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */;
+			buildConfigurationList = 4B266E8CF885E95C42CBFE46 /* Build configuration list for PBXNativeTarget "Pods-Zerable" */;
 			buildPhases = (
-				825E317E8533D6C40D0134B1 /* Sources */,
-				05FE7DBA327F76ACC8B352D2 /* Frameworks */,
-				48D9CB31578B157626197BEE /* Headers */,
+				70F71F9B6CA43C5529DA2864 /* Sources */,
+				F36295B9E4AC0A212CE30774 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-Zerable-REFormattedNumberField";
-			productName = "Pods-Zerable-REFormattedNumberField";
-			productReference = 8775EB632D3200A9C69476B7 /* libPods-Zerable-REFormattedNumberField.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		4F6DF59ABC98D39D7EB51EC8 /* Pods-Zerable */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AB03008451FE33C668F77ED /* Build configuration list for PBXNativeTarget "Pods-Zerable" */;
-			buildPhases = (
-				59694ABFDA970C32ED846DAC /* Sources */,
-				001A8591D14D29A0FBE9560E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				23024F9C2D6FBA87E5124362 /* PBXTargetDependency */,
-				95CE1EECB4DB68D40EF348E2 /* PBXTargetDependency */,
-				AD609B58CBD1C02E4DF5A207 /* PBXTargetDependency */,
-				1CCE1856D28D7C8B6B7C095E /* PBXTargetDependency */,
+				CF67385B8169F9074D04A4C1 /* PBXTargetDependency */,
+				A8A880D4B5C7B512671C292C /* PBXTargetDependency */,
+				89FDB8EAB0C30DF45E188782 /* PBXTargetDependency */,
+				A53F99DC3C6648D997310E51 /* PBXTargetDependency */,
+				273228487B725CF0CEB99532 /* PBXTargetDependency */,
+				85603DCA4EB4E6559D5ED508 /* PBXTargetDependency */,
 			);
 			name = "Pods-Zerable";
 			productName = "Pods-Zerable";
-			productReference = C13E26673067A536E4F9DE36 /* libPods-Zerable.a */;
+			productReference = 11E671E852DE767C85408543 /* libPods-Zerable.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */ = {
+		27C63ECF5AFB2DCD854CBAB7 /* Pods-Zerable-PaymentKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB71075F52B192E5FA147C4F /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */;
+			buildConfigurationList = 59A3070A1FEBD772AF2C6C34 /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */;
 			buildPhases = (
-				3D88D3FFC83C82B44E4AA7E3 /* Sources */,
-				27E202E013B79627A279159B /* Frameworks */,
-				18DA151812F9B5735F4316E5 /* Headers */,
+				26746FDE4D64C85AAAD22153 /* Sources */,
+				01519FD44F412E4DEBE4D83A /* Frameworks */,
+				6585A669E7BAEED80A363401 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -562,16 +860,50 @@
 			);
 			name = "Pods-Zerable-PaymentKit";
 			productName = "Pods-Zerable-PaymentKit";
-			productReference = E3A6E35AE7E37B3B3ADBC45F /* libPods-Zerable-PaymentKit.a */;
+			productReference = A15F0F2ABBD4E325C8AB2022 /* libPods-Zerable-PaymentKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */ = {
+		30DD607953308643E2058194 /* Pods-Zerable-REFormattedNumberField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1757BE555792AC49B95233EB /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */;
+			buildConfigurationList = ED797ABB8F0B1A0AE0A70783 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */;
 			buildPhases = (
-				7DA22EAA2FF5AC4F3530FA18 /* Sources */,
-				25518709343F121D2AD5839A /* Frameworks */,
-				07F00DA288A6639C1C5DB065 /* Headers */,
+				1B284A5B5C503BBD64BEBD4C /* Sources */,
+				A893B102EB5681FCF55F1F0F /* Frameworks */,
+				41C51DE171EB7CFA5F93011A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Zerable-REFormattedNumberField";
+			productName = "Pods-Zerable-REFormattedNumberField";
+			productReference = 1DD509560FF5A53DCED3076B /* libPods-Zerable-REFormattedNumberField.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3F4D220E5BE32BD9843B1515 /* Pods-Zerable-Bolts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12A26FDBA9A622058E3F27AF /* Build configuration list for PBXNativeTarget "Pods-Zerable-Bolts" */;
+			buildPhases = (
+				F0D6C15EDB60F9F996C63187 /* Sources */,
+				50049D542CB131CE16B54D45 /* Frameworks */,
+				9581AE6B5E97E17F8724C699 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Zerable-Bolts";
+			productName = "Pods-Zerable-Bolts";
+			productReference = E8DA1AB0A1B4BC6706469C39 /* libPods-Zerable-Bolts.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6992DA20B24939E2FEE43689 /* Pods-Zerable-RNGridMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51281F7651E3C6898054F15C /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */;
+			buildPhases = (
+				38E4D0BF84920E9FD326DC0B /* Sources */,
+				63063D04EF8618DD9944B34B /* Frameworks */,
+				9C22C79FCD6C6F071AD75974 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -579,16 +911,16 @@
 			);
 			name = "Pods-Zerable-RNGridMenu";
 			productName = "Pods-Zerable-RNGridMenu";
-			productReference = 7A8E882F0D5B6C209095523D /* libPods-Zerable-RNGridMenu.a */;
+			productReference = 05FB07A7826FD0564534A46C /* libPods-Zerable-RNGridMenu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */ = {
+		7FB21C3FA7A4B65F6FA26924 /* Pods-Zerable-KVNProgress */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F45A51A01547730A54A23FDD /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */;
+			buildConfigurationList = 8907DB8BAD97012CA2443BD0 /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */;
 			buildPhases = (
-				782EE35DC816BEC350587220 /* Sources */,
-				796CD260EF34D8B8DF1AE07C /* Frameworks */,
-				182FEEBE2ED18399DC10F844 /* Headers */,
+				9416349F57DF1C853A75A41F /* Sources */,
+				4F159853DC3146431E64D2C9 /* Frameworks */,
+				9BA918ED18EA1B72B2086DD8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -596,127 +928,413 @@
 			);
 			name = "Pods-Zerable-KVNProgress";
 			productName = "Pods-Zerable-KVNProgress";
-			productReference = D02C4622368088AD4841F01A /* libPods-Zerable-KVNProgress.a */;
+			productReference = 2204F435850A575783196E14 /* libPods-Zerable-KVNProgress.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9F20467BEE8DD581E9083FEE /* Pods-Zerable-Parse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77EC5DFE7DD1670AEBE3495 /* Build configuration list for PBXNativeTarget "Pods-Zerable-Parse" */;
+			buildPhases = (
+				58F69EE3DAA5C04B3B9004D0 /* Sources */,
+				E176BD07714D063381D1C6BE /* Frameworks */,
+				982CAFF4F2E6E699DFA45B41 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26E0C96699F6FB0BA56A5D41 /* PBXTargetDependency */,
+			);
+			name = "Pods-Zerable-Parse";
+			productName = "Pods-Zerable-Parse";
+			productReference = 58938C62A9920810F0064ECE /* libPods-Zerable-Parse.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5A1BD22C8CC740C8845105E6 /* Project object */ = {
+		7070524AE53A20853CC50D40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 901897E2B728400BFE739DA2 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = CA7984004B546677A14CD60D /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8DC0C0AE154BA37A4BF2B173;
-			productRefGroup = BF55131EE75AFEAEF814004C /* Products */;
+			mainGroup = 8CC35BF3B8ECE46D9FE26B9A;
+			productRefGroup = 440FD216186C1CDF9FE5E8E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F6DF59ABC98D39D7EB51EC8 /* Pods-Zerable */,
-				A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */,
-				5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */,
-				05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */,
-				974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */,
+				08BF6F220C148DB74BECFD1A /* Pods-Zerable */,
+				3F4D220E5BE32BD9843B1515 /* Pods-Zerable-Bolts */,
+				7FB21C3FA7A4B65F6FA26924 /* Pods-Zerable-KVNProgress */,
+				9F20467BEE8DD581E9083FEE /* Pods-Zerable-Parse */,
+				27C63ECF5AFB2DCD854CBAB7 /* Pods-Zerable-PaymentKit */,
+				30DD607953308643E2058194 /* Pods-Zerable-REFormattedNumberField */,
+				6992DA20B24939E2FEE43689 /* Pods-Zerable-RNGridMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3D88D3FFC83C82B44E4AA7E3 /* Sources */ = {
+		1B284A5B5C503BBD64BEBD4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EB6896D0876866F93BFD68D /* PTKAddressZip.m in Sources */,
-				59FF6143D0209D774F51040F /* PTKCard.m in Sources */,
-				AD8A5B46057AED946844213D /* PTKCardCVC.m in Sources */,
-				6A9B7F66AB9AF9D1F59D7CD3 /* PTKCardExpiry.m in Sources */,
-				DEDE387D4BFD5B256E5DEC60 /* PTKCardNumber.m in Sources */,
-				552679150328AAD3809A443F /* PTKComponent.m in Sources */,
-				FAB1996E7DDEB4CBCE12C2F7 /* PTKTextField.m in Sources */,
-				DA03364500C036141EFA06B6 /* PTKUSAddressZip.m in Sources */,
-				4B999A53DEC54441780E2594 /* PTKView.m in Sources */,
-				B7CEE738606A08B1D0E27F4D /* Pods-Zerable-PaymentKit-dummy.m in Sources */,
+				02DC006BF4171A3DDDD9197F /* NSString+RENumberFormat.m in Sources */,
+				CADACCEE21867C8E8B6AB8C7 /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */,
+				D008CD842F3A4CDA47E34E75 /* REFormattedNumberField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59694ABFDA970C32ED846DAC /* Sources */ = {
+		26746FDE4D64C85AAAD22153 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86D22C89996808DD9FAFBE0F /* Pods-Zerable-dummy.m in Sources */,
+				D1FE1F3EB79368D555F1258A /* PTKAddressZip.m in Sources */,
+				B4DF4D9FE256C6960E3CE2EE /* PTKCard.m in Sources */,
+				9DA13B1633DA1612B636AD3D /* PTKCardCVC.m in Sources */,
+				A426FC63BFAF636F8B49C7B5 /* PTKCardExpiry.m in Sources */,
+				CD8EB81E8AFA25B440382366 /* PTKCardNumber.m in Sources */,
+				B84D3A036D22ACE3A9DC1938 /* PTKComponent.m in Sources */,
+				FFA2C54BEB0196B32AD3FEA1 /* PTKTextField.m in Sources */,
+				A74E9229331993E6CABC6049 /* PTKUSAddressZip.m in Sources */,
+				72B6FCDBFC06E82F900395D8 /* PTKView.m in Sources */,
+				A0ED58F238799322BE64D189 /* Pods-Zerable-PaymentKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		782EE35DC816BEC350587220 /* Sources */ = {
+		38E4D0BF84920E9FD326DC0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC5F3F1235C3B7EF2BE82ED9 /* KVNProgress.m in Sources */,
-				689E6A61DBB52BBD542F02C3 /* KVNProgressConfiguration.m in Sources */,
-				23D98EABD7DC9BD0B7FCAB75 /* Pods-Zerable-KVNProgress-dummy.m in Sources */,
-				6A74FE7961044AB34F216205 /* UIColor+KVNContrast.m in Sources */,
-				28554BAB07A0AE469A7E7386 /* UIImage+KVNEmpty.m in Sources */,
-				177E1407EC872A6FDC5D73E4 /* UIImage+KVNImageEffects.m in Sources */,
+				0E104611D668189117985151 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */,
+				4468718B12D737F2A8E80C1F /* RNGridMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7DA22EAA2FF5AC4F3530FA18 /* Sources */ = {
+		58F69EE3DAA5C04B3B9004D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AE661BC9A4B3E7DCAF56180 /* Pods-Zerable-RNGridMenu-dummy.m in Sources */,
-				2C7E36C98C928219D3320F1F /* RNGridMenu.m in Sources */,
+				017B1BE0ECF2F15A835FAA66 /* Empty.m in Sources */,
+				C2C471D1FCA48B3A5513C83C /* Pods-Zerable-Parse-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		825E317E8533D6C40D0134B1 /* Sources */ = {
+		70F71F9B6CA43C5529DA2864 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC291F83C9DB5E0C5307D4CA /* NSString+RENumberFormat.m in Sources */,
-				C8F5DF18C3DDA1D408A9609D /* Pods-Zerable-REFormattedNumberField-dummy.m in Sources */,
-				A7D5CAE12A911B7688F3352E /* REFormattedNumberField.m in Sources */,
+				D6D9D0CF0508B4D7790F1356 /* Pods-Zerable-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9416349F57DF1C853A75A41F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA381DC20A0E0648D6BB326D /* KVNProgress.m in Sources */,
+				A40F33C05C15D588EC038E09 /* KVNProgressConfiguration.m in Sources */,
+				4D965D02190C44F04E315B1C /* Pods-Zerable-KVNProgress-dummy.m in Sources */,
+				8030DC027C4D59A6B71422AF /* UIColor+KVNContrast.m in Sources */,
+				7E2EE1932954EF8B0D3A3BF6 /* UIImage+KVNEmpty.m in Sources */,
+				0FA76A2FBC9FB1F00C150C30 /* UIImage+KVNImageEffects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D6C15EDB60F9F996C63187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFB9BF28E9031F0D8537976 /* BFCancellationToken.m in Sources */,
+				41BD73C1F29C440DBF45BE22 /* BFCancellationTokenRegistration.m in Sources */,
+				55DC9CE4AAD6FF3D62942293 /* BFCancellationTokenSource.m in Sources */,
+				7923F88F77B441E8D52EE9D6 /* BFExecutor.m in Sources */,
+				4AF1C2D575C9F0A9C47CE1BA /* BFTask.m in Sources */,
+				A1F0052CB405542DF0CA27D2 /* BFTaskCompletionSource.m in Sources */,
+				DAFCAE31B7F4801631780BC5 /* Bolts.m in Sources */,
+				F9E007D0928B4E71B42142A4 /* Pods-Zerable-Bolts-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1CCE1856D28D7C8B6B7C095E /* PBXTargetDependency */ = {
+		26E0C96699F6FB0BA56A5D41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-Zerable-RNGridMenu";
-			target = 974C1BCD2054B9ADB4A34429 /* Pods-Zerable-RNGridMenu */;
-			targetProxy = 6107BB4D1B3CE8CF2EAEC049 /* PBXContainerItemProxy */;
+			name = "Pods-Zerable-Bolts";
+			target = 3F4D220E5BE32BD9843B1515 /* Pods-Zerable-Bolts */;
+			targetProxy = D7A04594605D64EF85DDB1F0 /* PBXContainerItemProxy */;
 		};
-		23024F9C2D6FBA87E5124362 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Zerable-KVNProgress";
-			target = A5D3B6B2A14ED7B09942C153 /* Pods-Zerable-KVNProgress */;
-			targetProxy = EB914BB3E208846083F9AB8F /* PBXContainerItemProxy */;
-		};
-		95CE1EECB4DB68D40EF348E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Zerable-PaymentKit";
-			target = 5F29E2E3FD5B8853C18A9449 /* Pods-Zerable-PaymentKit */;
-			targetProxy = AD2CC74529C75B34A9F84931 /* PBXContainerItemProxy */;
-		};
-		AD609B58CBD1C02E4DF5A207 /* PBXTargetDependency */ = {
+		273228487B725CF0CEB99532 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Zerable-REFormattedNumberField";
-			target = 05EACC875AFB7692AD09CCFB /* Pods-Zerable-REFormattedNumberField */;
-			targetProxy = DB18F8424E74C7DE6162F46B /* PBXContainerItemProxy */;
+			target = 30DD607953308643E2058194 /* Pods-Zerable-REFormattedNumberField */;
+			targetProxy = 75E8F52707AD5AEE1B67E626 /* PBXContainerItemProxy */;
+		};
+		85603DCA4EB4E6559D5ED508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-RNGridMenu";
+			target = 6992DA20B24939E2FEE43689 /* Pods-Zerable-RNGridMenu */;
+			targetProxy = 587327E4BE0F8E20FFE0EDB5 /* PBXContainerItemProxy */;
+		};
+		89FDB8EAB0C30DF45E188782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-Parse";
+			target = 9F20467BEE8DD581E9083FEE /* Pods-Zerable-Parse */;
+			targetProxy = 18D5377AC166706C8DA7594A /* PBXContainerItemProxy */;
+		};
+		A53F99DC3C6648D997310E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-PaymentKit";
+			target = 27C63ECF5AFB2DCD854CBAB7 /* Pods-Zerable-PaymentKit */;
+			targetProxy = 18B53CC5110E4B5DE4A4C835 /* PBXContainerItemProxy */;
+		};
+		A8A880D4B5C7B512671C292C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-KVNProgress";
+			target = 7FB21C3FA7A4B65F6FA26924 /* Pods-Zerable-KVNProgress */;
+			targetProxy = DDA0675FAF9FBB676B311942 /* PBXContainerItemProxy */;
+		};
+		CF67385B8169F9074D04A4C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Zerable-Bolts";
+			target = 3F4D220E5BE32BD9843B1515 /* Pods-Zerable-Bolts */;
+			targetProxy = F20A5D427C99A97A40E80F32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00DAD37EFEC11B5BAF8F4656 /* Debug */ = {
+		35CC73C4E97B98EBA5C0AE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F47CCDBAB0A5FEE192FA0D8 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		45C88784CE13DC5C23294579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92EBDD1B880743F003352AF8 /* Pods-Zerable.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4945D3A1610DC409571C3097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA6B0DFB3B7A22F9765F029 /* Pods-Zerable.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4A742B93D591251E23CE5FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB797EEA324604F1A8AB7C49 /* Pods-Zerable-Bolts-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-Bolts/Pods-Zerable-Bolts-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5F539FBAA6E542B9D7E68DF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4F738D6066F757EA9B926C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		66D134A119F9E10593CD3CD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377A08C5BB6B42861F286F51 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8261E4F376AB2488640652EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F47CCDBAB0A5FEE192FA0D8 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		99E6820DD9F0948BC5BECC22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D344E07F943D11C1B00707A /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B5045574F0365D69E5F8151B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB797EEA324604F1A8AB7C49 /* Pods-Zerable-Bolts-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-Bolts/Pods-Zerable-Bolts-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BD75DD5E1A94E529705F08E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA282F26569ADF4BFF2BAD3B /* Pods-Zerable-Parse-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-Parse/Pods-Zerable-Parse-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C34FE732D19FBF4132752C1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA282F26569ADF4BFF2BAD3B /* Pods-Zerable-Parse-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-Parse/Pods-Zerable-Parse-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D88335C4157E2D74DA24228A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4F738D6066F757EA9B926C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DB02F27218569E4D328E23CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D344E07F943D11C1B00707A /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DC8B342A69369BEC45A604EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377A08C5BB6B42861F286F51 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DEB15F1D81F9864C2C956E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -755,55 +1373,7 @@
 			};
 			name = Debug;
 		};
-		05ABE08D69B2D5FEAF8707BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		0B7386E70A708FBCACDF42B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		488017EA060F0845CD4DC79D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91F908ADBA6AC74B4989DA6C /* Pods-Zerable-PaymentKit-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-PaymentKit/Pods-Zerable-PaymentKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		51006DE89CACA478D4E4FFA0 /* Release */ = {
+		F00911FAB2D330BFE52C1CFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -837,176 +1407,82 @@
 			};
 			name = Release;
 		};
-		60A5292766232BDEE6FE54A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		7C8D50DA36E75CDCF90FC964 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF503BE92060DBDE245A4F54 /* Pods-Zerable-REFormattedNumberField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-REFormattedNumberField/Pods-Zerable-REFormattedNumberField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		98DDBD20E030A3075E97A2E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B45D81959F4CB584630A5001 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32DCA2EFCE6C8A2C1CFDDE51 /* Pods-Zerable.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BC28FE931A22A9FE05ED5A47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 629651A6982BCE0C9F917A26 /* Pods-Zerable-KVNProgress-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-KVNProgress/Pods-Zerable-KVNProgress-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		BECCD9C8BDB5315FBD132D2B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0778B85BD04C57F193244E9 /* Pods-Zerable.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D52D21B20D9F30FEF7C8E3E6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6454BAC251B4F57C66ED49B3 /* Pods-Zerable-RNGridMenu-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Zerable-RNGridMenu/Pods-Zerable-RNGridMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1757BE555792AC49B95233EB /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */ = {
+		12A26FDBA9A622058E3F27AF /* Build configuration list for PBXNativeTarget "Pods-Zerable-Bolts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98DDBD20E030A3075E97A2E2 /* Debug */,
-				D52D21B20D9F30FEF7C8E3E6 /* Release */,
+				4A742B93D591251E23CE5FA5 /* Debug */,
+				B5045574F0365D69E5F8151B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AB03008451FE33C668F77ED /* Build configuration list for PBXNativeTarget "Pods-Zerable" */ = {
+		4B266E8CF885E95C42CBFE46 /* Build configuration list for PBXNativeTarget "Pods-Zerable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BECCD9C8BDB5315FBD132D2B /* Debug */,
-				B45D81959F4CB584630A5001 /* Release */,
+				4945D3A1610DC409571C3097 /* Debug */,
+				45C88784CE13DC5C23294579 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67D320C2E6796042F13D2D81 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */ = {
+		51281F7651E3C6898054F15C /* Build configuration list for PBXNativeTarget "Pods-Zerable-RNGridMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C8D50DA36E75CDCF90FC964 /* Debug */,
-				60A5292766232BDEE6FE54A8 /* Release */,
+				99E6820DD9F0948BC5BECC22 /* Debug */,
+				DB02F27218569E4D328E23CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		901897E2B728400BFE739DA2 /* Build configuration list for PBXProject "Pods" */ = {
+		59A3070A1FEBD772AF2C6C34 /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00DAD37EFEC11B5BAF8F4656 /* Debug */,
-				51006DE89CACA478D4E4FFA0 /* Release */,
+				5F539FBAA6E542B9D7E68DF7 /* Debug */,
+				D88335C4157E2D74DA24228A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F45A51A01547730A54A23FDD /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */ = {
+		8907DB8BAD97012CA2443BD0 /* Build configuration list for PBXNativeTarget "Pods-Zerable-KVNProgress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC28FE931A22A9FE05ED5A47 /* Debug */,
-				0B7386E70A708FBCACDF42B8 /* Release */,
+				DC8B342A69369BEC45A604EA /* Debug */,
+				66D134A119F9E10593CD3CD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB71075F52B192E5FA147C4F /* Build configuration list for PBXNativeTarget "Pods-Zerable-PaymentKit" */ = {
+		CA7984004B546677A14CD60D /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05ABE08D69B2D5FEAF8707BD /* Debug */,
-				488017EA060F0845CD4DC79D /* Release */,
+				DEB15F1D81F9864C2C956E3B /* Debug */,
+				F00911FAB2D330BFE52C1CFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77EC5DFE7DD1670AEBE3495 /* Build configuration list for PBXNativeTarget "Pods-Zerable-Parse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD75DD5E1A94E529705F08E9 /* Debug */,
+				C34FE732D19FBF4132752C1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED797ABB8F0B1A0AE0A70783 /* Build configuration list for PBXNativeTarget "Pods-Zerable-REFormattedNumberField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8261E4F376AB2488640652EA /* Debug */,
+				35CC73C4E97B98EBA5C0AE75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5A1BD22C8CC740C8845105E6 /* Project object */;
+	rootObject = 7070524AE53A20853CC50D40 /* Project object */;
 }

@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Zerable-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Zerable-KVNProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Zerable-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05EACC875AFB7692AD09CCFB</key>
+		<key>08BF6F220C148DB74BECFD1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F6DF59ABC98D39D7EB51EC8</key>
+		<key>27C63ECF5AFB2DCD854CBAB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F29E2E3FD5B8853C18A9449</key>
+		<key>30DD607953308643E2058194</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>974C1BCD2054B9ADB4A34429</key>
+		<key>3F4D220E5BE32BD9843B1515</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5D3B6B2A14ED7B09942C153</key>
+		<key>6992DA20B24939E2FEE43689</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FB21C3FA7A4B65F6FA26924</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F20467BEE8DD581E9083FEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

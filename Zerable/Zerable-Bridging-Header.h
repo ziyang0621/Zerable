@@ -7,3 +7,4 @@
 #import "RNGridMenu.h"
 #import "PTKView.h"
 #import "PTKCardType.h"
+#import <Parse/Parse.h>

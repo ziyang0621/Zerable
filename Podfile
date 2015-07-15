@@ -12,4 +12,6 @@ pod 'RNGridMenu'
 
 pod 'PaymentKit'
 
+pod 'Parse'
+
 end
