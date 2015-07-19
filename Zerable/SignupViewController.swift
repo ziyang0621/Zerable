@@ -64,22 +64,33 @@ class SignupViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             }else {
-                NSUserDefaults.standardUserDefaults().setValue(emailTextField.text, forKey: "email")
+                let user = PFUser()
+                user.username = emailTextField.text
+                user.email = emailTextField.text
+                user.password = passwordTextField.text
+                user["firstName"] = firstnameTextField.text
+                user["lastName"] = lastnameTextField.text
+                user["phoneNumber"] = phoneTextField.unformattedText
                 
-                KeychainWrapper.sharedInstance.mySetObject(passwordTextField.text, forKey: kSecValueData)
-                KeychainWrapper.sharedInstance.writeToKeychain()
-                NSUserDefaults.standardUserDefaults().synchronize()
-                
-                let itemListVC = UIStoryboard.itemListViewController()
-                itemListVC.fromGridIndex = -1
-                let itemListNav = UINavigationController(rootViewController: itemListVC)
-                presentViewController(itemListNav, animated: true, completion: nil)
+                KVNProgress.showWithStatus("Signing up...")
+                user.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
+                    KVNProgress.dismiss()
+                    if let error = error {
+                        let errorString = error.userInfo?["error"] as? String
+                        let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    } else {
+                        let itemListVC = UIStoryboard.itemListViewController()
+                        itemListVC.fromGridIndex = -1
+                        let itemListNav = UINavigationController(rootViewController: itemListVC)
+                        self.presentViewController(itemListNav, animated: true, completion: nil)
+                    }
+                })
             }
         } else {
             let alert = UIAlertController(title: "Missing information", message: "Please enter information for all fields", preferredStyle: .Alert)
-            
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            
             presentViewController(alert, animated: true, completion: nil)
         }
     }

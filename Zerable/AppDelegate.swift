@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        Parse.setApplicationId("gSMFL1BfYtr0daSJz9iQqUCzsK7ZRYdSg80Fy30O", clientKey: "R4s5wWFQus4BPt1xaKnIyOHPPLSSIa9gd7fS3YbQ")
+        
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
         

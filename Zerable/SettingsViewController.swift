@@ -69,8 +69,19 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             let profileVC = UIStoryboard.profileViewController()
-            let profileNav = UINavigationController(rootViewController: profileVC)
-            presentViewController(profileNav, animated: true, completion: nil)
+//            let profileNav = UINavigationController(rootViewController: profileVC)
+         //   presentViewController(profileNav, animated: true, completion: nil)
+            navigationController?.showViewController(profileVC, sender: self)
+        } else if indexPath.section == 3 {
+            let alert = UIAlertController(title: "Log out", message: "Are you sure to log out?", preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "Yes, log out", style: .Destructive, handler: { (action: UIAlertAction!) -> Void in
+                PFUser.logOut()
+                let welcomeVC = UIStoryboard.welcomeViewController()
+                let welcomeNav = UINavigationController(rootViewController: welcomeVC)
+                self.presentViewController(welcomeNav, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
 }

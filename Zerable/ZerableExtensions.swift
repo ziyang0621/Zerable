@@ -128,6 +128,11 @@ extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
     }
+    
+    class func welcomeViewController() -> WelcomeViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("WelcomeViewController") as!
+        WelcomeViewController
+    }
 
     class func loginlViewController() -> LoginViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController

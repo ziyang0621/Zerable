@@ -22,8 +22,8 @@ class ProfileViewController: UIViewController {
         navigationItem.title = "Profile"
         tabBar.delegate = self
         
-        let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "close")
-        navigationItem.leftBarButtonItem = leftBarButton
+//        let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "close")
+//        navigationItem.leftBarButtonItem = leftBarButton
         
         if basicInfoVC == nil {
             basicInfoVC = UIStoryboard.basicViewController()

@@ -44,15 +44,6 @@ class LoginViewController: UIViewController {
         forgetPassword()
     }
     
-    func checkLogin(email: String, password: String) -> Bool {
-        if password == KeychainWrapper.sharedInstance.myObjectForKey("v_Data") as? NSString &&
-            email == NSUserDefaults.standardUserDefaults().valueForKey("email") as? NSString {
-                return true
-        } else {
-            return false
-        }
-    }
-    
     func login() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -63,24 +54,28 @@ class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             } else {
-                if checkLogin(emailTextField.text, password: passwordTextField.text) {
-                    println("can login")
-                    let itemListVC = UIStoryboard.itemListViewController()
-                    itemListVC.fromGridIndex = -1
-                    let itemListNav = UINavigationController(rootViewController: itemListVC)
-                    presentViewController(itemListNav, animated: true, completion: nil)
-                } else {
-                    let alert = UIAlertController(title: "Login Failed", message: "Wrong email or password", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-                    presentViewController(alert, animated: true, completion: nil)
-                } 
-
+                KVNProgress.showWithStatus("Loggin in...")
+                PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text, block: {
+                    (user: PFUser?, error:NSError?) -> Void in
+                    KVNProgress.dismiss()
+                    if user != nil {
+                        let itemListVC = UIStoryboard.itemListViewController()
+                        itemListVC.fromGridIndex = -1
+                        let itemListNav = UINavigationController(rootViewController: itemListVC)
+                        self.presentViewController(itemListNav, animated: true, completion: nil)
+                    } else {
+                        if let error = error {
+                            let errorString = error.userInfo?["error"] as? String
+                            let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        }
+                    }
+                })
             }
         } else {
             let alert = UIAlertController(title: "Missing information", message: "Please enter both email and password", preferredStyle: .Alert)
-            
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            
             presentViewController(alert, animated: true, completion: nil)
         }
     }
@@ -90,29 +85,39 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler {
-            (TextField: UITextField!) -> Void in
-            TextField.placeholder = "email address"
-            TextField.keyboardType = .EmailAddress
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "email address"
+            textField.keyboardType = .EmailAddress
         }
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
-            let TextField = alert.textFields?.first as! UITextField
-            if TextField.text == "" {
+            let textField = alert.textFields?.first as! UITextField
+            if textField.text == "" {
                 let alert = UIAlertController(title: "Pasword Reset Failed", message: "You must provide an email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                if !validateEmail(TextField.text) {
+                if !validateEmail(textField.text) {
                     let alert = UIAlertController(title: "Pasword Reset Failed", message: "Invalid email address", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    // do something
+                    PFUser.requestPasswordResetForEmailInBackground(textField.text, block: { (succeeded: Bool, error:NSError?) -> Void in
+                        if let error = error {
+                            let errorString = error.userInfo?["error"] as? String
+                            let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        } else {
+                            let alert = UIAlertController(title: "Sent", message: "Password reset email sent", preferredStyle: .Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        }
+                    })
                 }
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
         presentViewController(alert, animated: true, completion: nil)
     }
     
