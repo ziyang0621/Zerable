@@ -28,19 +28,48 @@ class BasicInfoViewController: UIViewController {
         lastnameTextField.delegate = self
         phoneTextField.delegate = self
         
+        PFUser.currentUser()?.fetchIfNeededInBackgroundWithBlock({
+            (object: PFObject?, error:NSError?) -> Void in
+            let user = object as! PFUser
+            self.firstnameTextField.text = user["firstName"] as! String
+            self.lastnameTextField.text = user["lastName"] as! String
+            self.phoneTextField.text = user["phoneNumber"] as! String
+            self.changeSaveButtonState()
+        })
+        
         firstnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
         lastnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
         phoneTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
     }
     
-    func textDidChanged(textField: UITextField) {
+    func changeSaveButtonState() {
         saveButton.enabled = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? true : false
         saveButton.backgroundColor = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? kThemeColor : UIColor.lightGrayColor()
     }
     
-    @IBAction func saveButtonPressed(sender: AnyObject) {
+    func textDidChanged(textField: UITextField) {
+        changeSaveButtonState()
     }
-
+    
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        if let currentUser = PFUser.currentUser() {
+            currentUser["firstName"] = firstnameTextField.text
+            currentUser["lastName"] = lastnameTextField.text
+            currentUser["phoneNumber"] = phoneTextField.text
+            
+            KVNProgress.showWithStatus("Saving...")
+            currentUser.saveInBackgroundWithBlock({
+                (succeeded: Bool, error: NSError?) -> Void in
+                KVNProgress.showSuccess()
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? String
+                    let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

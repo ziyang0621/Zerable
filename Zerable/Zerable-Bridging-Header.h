@@ -7,5 +7,6 @@
 #import "RNGridMenu.h"
 #import "PTKView.h"
 #import "PTKCardType.h"
+#import "PTKTextField.h"
 #import <Parse/Parse.h>
 #import <KVNProgress/KVNProgress.h>

@@ -70,7 +70,7 @@ class SignupViewController: UIViewController {
                 user.password = passwordTextField.text
                 user["firstName"] = firstnameTextField.text
                 user["lastName"] = lastnameTextField.text
-                user["phoneNumber"] = phoneTextField.unformattedText
+                user["phoneNumber"] = phoneTextField.text
                 
                 KVNProgress.showWithStatus("Signing up...")
                 user.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in

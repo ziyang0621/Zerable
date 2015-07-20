@@ -29,6 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIColor.imageWithColor(kThemeColor), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIColor.imageWithColor(kThemeColor)
         UINavigationBar.appearance().translucent = true
+        
+        if PFUser.currentUser() != nil {
+            if let window = self.window {
+                let itemListVC = UIStoryboard.itemListViewController()
+                itemListVC.fromGridIndex = -1
+                let itemListNav = UINavigationController(rootViewController: itemListVC)
+                window.rootViewController = itemListNav
+            }
+        }
 
         return true
     }
