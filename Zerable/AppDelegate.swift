@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             product["durability"] = 180
             product["certificate"] = "xxx supply"
             product["productionDate"] = "7/1/2015"
+            product["thumbnail"] = generateImage()
         
             product.saveInBackgroundWithBlock({
                 (succeeded: Bool, error: NSError?) -> Void in
@@ -89,17 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func addProductImage(product: PFObject) {
-        let thumbNailImage = PFObject(className: "ImageFile")
-        thumbNailImage["imageType"] = "thumbnailImage"
-        thumbNailImage["imageFile"] = generateImage()
-        thumbNailImage["product"] = product
-        thumbNailImage.saveInBackgroundWithBlock {   (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? String
-            } else {
-                println("saved thumbnail image")
-            }
-        }
         
         for imageIndex in 0..<3 {
             let detailImage = PFObject(className: "ImageFile")

@@ -17,14 +17,12 @@ class ItemListViewController: UIViewController {
     @IBOutlet weak var loadLabel: UILabel!
     
     var fromGridIndex = 0
-    var itemList: [String] = []
     var resultSearchController = UISearchController()
-    var filteredTableData = [String]()
+    var filteredTableData = [PFObject]()
     var totalPages = 0
     let numberOfItemsPerPage = 8
     var currentPage = 1
     var productList = [PFObject]()
-    var productThumbnailImages = [PFFile]()
     let refreshControl = UIRefreshControl()
     var fetchingProducts = false
     var viewDidAppear = false
@@ -37,10 +35,7 @@ class ItemListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        
         tableView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
-        
-        itemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
         
         resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
@@ -103,7 +98,6 @@ class ItemListViewController: UIViewController {
         refreshControl.beginRefreshing()
         
         productList.removeAll(keepCapacity: false)
-        productThumbnailImages.removeAll(keepCapacity: false)
         self.currentPage = 1
         self.totalPages = 0
         
@@ -143,40 +137,13 @@ class ItemListViewController: UIViewController {
                         if let products = objects as? [PFObject] {
                             println("query count \(self.productList.count)")
                             self.productList.extend(products)
-                            self.fetchProductImageFiles()
-                        }
-                    }
-                })
-            }
-        }
-    }
-    
-    func fetchProductImageFiles() {
-        var imageCount = 0
-        for product in productList {
-            let productImageQuery = PFQuery(className: "ImageFile")
-            productImageQuery.whereKey("imageType", equalTo: "thumbnailImage")
-            productImageQuery.whereKey("product", equalTo: product)
-            productImageQuery.limit = 1
-            productImageQuery.findObjectsInBackgroundWithBlock({
-                (objects: [AnyObject]?, error: NSError?) -> Void in
-                if error == nil {
-                    if let imageFile = objects?.first as? PFObject {
-                        self.productThumbnailImages.append(imageFile["imageFile"] as! PFFile)
-                        imageCount++
-                        if imageCount == self.productList.count {
                             self.resetUI()
                             self.currentPage++
                             self.tableView.reloadData()
                         }
                     }
-                } else {
-                    self.resetUI()
-                    let errorString = error!.userInfo?["error"] as? String
-                    println(errorString)
-                }
-            })
-
+                })
+            }
         }
     }
     
@@ -215,7 +182,7 @@ class ItemListViewController: UIViewController {
         let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
             UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
             UIImage(named: "history")!.newImageWithColor(kThemeColor),
-            UIImage(named:"settings")!.newImageWithColor(kThemeColor)])
+            UIImage(named: "settings")!.newImageWithColor(kThemeColor)])
         
         gridMenu.delegate = self
         gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
@@ -225,23 +192,24 @@ class ItemListViewController: UIViewController {
 extension ItemListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
-        let product = productList[indexPath.row]
+        var product: PFObject!
         if (resultSearchController.active) {
-            cell.itemImage = UIImage(named: filteredTableData[indexPath.row])
-            cell.itemName = filteredTableData[indexPath.row]
-
+            product = filteredTableData[indexPath.row]
         } else {
-            cell.itemName = product["name"] as? String
-            cell.itemImageView.file = productThumbnailImages[indexPath.row]
-            cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
-                if error == nil {
-                    println("cell image loaded")
-                } else {
-                    let errorString = error!.userInfo?["error"] as? String
-                    println(errorString)
-                }
-            })
+            product = productList[indexPath.row]
         }
+        
+        cell.itemName = product["name"] as? String
+        cell.itemImageView.file = product["thumbnail"] as? PFFile
+        cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
+            if error == nil {
+                println("cell image loaded")
+            } else {
+                let errorString = error!.userInfo?["error"] as? String
+                println(errorString)
+            }
+        })
+
         return cell
     }
     
@@ -268,11 +236,23 @@ extension ItemListViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredTableData.removeAll(keepCapacity: false)
         
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-        let array = (itemList as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredTableData = array as! [String]
-        
-        tableView.reloadData()
+        let query = PFQuery(className: "Product")
+        query.whereKey("name", containsString: searchController.searchBar.text)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                self.resetUI()
+                let errorString = error.userInfo?["error"] as? String
+                println(errorString)
+            } else {
+                if let products = objects as? [PFObject] {
+                    self.filteredTableData.extend(products)
+                    self.resetUI()
+                    self.currentPage++
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }
 
