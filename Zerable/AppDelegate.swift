@@ -75,17 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             product["durability"] = 180
             product["certificate"] = "xxx supply"
             product["productionDate"] = "7/1/2015"
-            
-            let imageName = shuffle(kItemList).first
-            let imageData = UIImagePNGRepresentation(UIImage(named: imageName!))
-            let imageFile = PFFile(name: imageName, data: imageData)
-            product["thumbnail"] = imageFile
-            
-            var array = [PFFile]()
-            for imageIndex in 0..<3 {
-                array.append(generateImage())
-            }
-            product["images"] = array
         
             product.saveInBackgroundWithBlock({
                 (succeeded: Bool, error: NSError?) -> Void in
@@ -93,8 +82,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let errorString = error.userInfo?["error"] as? String
                 } else {
                     println("inserted product")
+                    self.addProductImage(product)
                 }
             })
+        }
+    }
+    
+    func addProductImage(product: PFObject) {
+        let thumbNailImage = PFObject(className: "ImageFile")
+        thumbNailImage["imageType"] = "thumbnailImage"
+        thumbNailImage["imageFile"] = generateImage()
+        thumbNailImage["product"] = product
+        thumbNailImage.saveInBackgroundWithBlock {   (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? String
+            } else {
+                println("saved thumbnail image")
+            }
+        }
+        
+        for imageIndex in 0..<3 {
+            let detailImage = PFObject(className: "ImageFile")
+            detailImage["imageType"] = "detailImage"
+            detailImage["imageFile"] = generateImage()
+            detailImage["product"] = product
+            detailImage.saveInBackgroundWithBlock {   (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? String
+                } else {
+                    println("saved detail image")
+                }
+            }
         }
     }
     
