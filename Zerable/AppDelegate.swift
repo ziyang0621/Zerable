@@ -9,6 +9,7 @@
 import UIKit
 
 let kThemeColor = UIColor.colorWithRGBHex(0x71EAC6, alpha: 1.0)
+let kItemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,8 +39,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window.rootViewController = itemListNav
             }
         }
-
+        
+        checkProducts()
+       
         return true
+    }
+    
+    func checkProducts() {
+        let query = PFQuery(className: "Product")
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? String
+                println(errorString)
+            } else {
+                if let products = objects as? [PFObject] {
+                    if products.count == 0 {
+                        self.insertProducts()
+                    }
+                }
+            }
+        }
+    }
+    
+    func insertProducts() {
+        for index in 0..<15 {
+            let product = PFObject(className: "Product")
+            product["name"] = shuffle(kItemList).first
+            product["description"] = "This is a frozen meet from Bay Area"
+            product["price"] = Int(arc4random_uniform(100))
+            product["stock"] = Int(arc4random_uniform(100))
+            product["category"] = "American"
+            product["origin"] = "San Francisco"
+            product["storeMethod"] = "Frozen"
+            product["durability"] = 180
+            product["certificate"] = "xxx supply"
+            product["productionDate"] = "7/1/2015"
+            
+            let imageName = shuffle(kItemList).first
+            let imageData = UIImagePNGRepresentation(UIImage(named: imageName!))
+            let imageFile = PFFile(name: imageName, data: imageData)
+            product["thumbnail"] = imageFile
+            
+            var array = [PFFile]()
+            for imageIndex in 0..<3 {
+                array.append(generateImage())
+            }
+            product["images"] = array
+        
+            product.saveInBackgroundWithBlock({
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? String
+                } else {
+                    println("inserted product")
+                }
+            })
+        }
+    }
+    
+    func generateImage() -> PFFile {
+        let imageName = shuffle(kItemList).first
+        let imageData = UIImagePNGRepresentation(UIImage(named: imageName!))
+        let imageFile = PFFile(name: imageName, data: imageData)
+        return imageFile
     }
 
     func applicationWillResignActive(application: UIApplication) {

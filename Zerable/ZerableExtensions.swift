@@ -8,6 +8,16 @@
 
 import UIKit
 
+func shuffle<C: MutableCollectionType where C.Index == Int>(var list: C) -> C {
+    let c = count(list)
+    if c < 2 { return list }
+    for i in 0..<(c - 1) {
+        let j = Int(arc4random_uniform(UInt32(c - i))) + i
+        swap(&list[i], &list[j])
+    }
+    return list
+}
+
 extension UIView {
     class func applyCurvedShadow(view: UIView) {
         let size = view.bounds.size
