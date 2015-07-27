@@ -59,6 +59,7 @@ install_resource()
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "KVNProgress/KVNProgress/Resources/KVNProgressView.xib"
+  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/amex.png"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/amex@2x.png"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/cvc-amex.png"
@@ -83,6 +84,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "KVNProgress/KVNProgress/Resources/KVNProgressView.xib"
+  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/amex.png"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/amex@2x.png"
   install_resource "PaymentKit/PaymentKit/Resources/Cards/cvc-amex.png"

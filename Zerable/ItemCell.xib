@@ -12,7 +12,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VHe-6h-wXi" id="Kze-J3-INc">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-nB-ail">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-nB-ail" customClass="PFImageView">
                         <rect key="frame" x="0.0" y="-12" width="455" height="160"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="FEC-16-QOA"/>
@@ -49,7 +49,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="gradientView" destination="f8W-Hc-tag" id="TMB-ax-9Xr"/>
-                <outlet property="itemImageView" destination="Ukh-nB-ail" id="xyc-kv-Zz4"/>
+                <outlet property="itemImageView" destination="Ukh-nB-ail" id="aHg-Jb-vWR"/>
                 <outlet property="itemNameLabel" destination="RY1-AZ-rcc" id="3wd-ku-k9p"/>
             </connections>
             <point key="canvasLocation" x="342.5" y="269"/>

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+class ItemCell: PFTableViewCell {
     
-    @IBOutlet private weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemImageView: PFImageView!
     @IBOutlet private weak var itemNameLabel: UILabel!
     @IBOutlet private weak var gradientView: GradientView!
     

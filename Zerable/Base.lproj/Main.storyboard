@@ -210,11 +210,42 @@
                                     <action selector="assistButtonPressed:" destination="JD5-xO-2Sl" eventType="touchUpInside" id="mhS-IX-cHs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neT-N2-J8c">
+                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-TA-X1z">
+                                        <rect key="frame" x="300" y="21" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tOu-hr-LN6">
+                                        <rect key="frame" x="270" y="10" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jc9-TA-X1z" firstAttribute="leading" secondItem="tOu-hr-LN6" secondAttribute="trailing" constant="10" id="5aE-E2-fFU"/>
+                                    <constraint firstAttribute="centerX" secondItem="jc9-TA-X1z" secondAttribute="centerX" id="EcQ-gN-Kuc"/>
+                                    <constraint firstAttribute="height" constant="40" id="JpC-Qf-odm"/>
+                                    <constraint firstItem="tOu-hr-LN6" firstAttribute="leading" secondItem="jc9-TA-X1z" secondAttribute="trailing" constant="10" id="j2f-Gk-36F"/>
+                                    <constraint firstAttribute="centerY" secondItem="jc9-TA-X1z" secondAttribute="centerY" constant="-0.5" id="l7y-91-8eJ"/>
+                                    <constraint firstAttribute="centerY" secondItem="tOu-hr-LN6" secondAttribute="centerY" id="thB-5C-oOc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="j2f-Gk-36F"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="neT-N2-J8c" firstAttribute="leading" secondItem="lLY-OZ-6kk" secondAttribute="leading" id="5vc-Ab-eCh"/>
+                            <constraint firstAttribute="trailing" secondItem="neT-N2-J8c" secondAttribute="trailing" id="8Bb-wY-rcJ"/>
                             <constraint firstAttribute="trailing" secondItem="5wX-ja-QIS" secondAttribute="trailing" id="8c6-tH-qrf"/>
                             <constraint firstItem="5wX-ja-QIS" firstAttribute="leading" secondItem="lLY-OZ-6kk" secondAttribute="leading" id="PnW-ii-AQ0"/>
+                            <constraint firstAttribute="bottom" secondItem="neT-N2-J8c" secondAttribute="bottom" id="VGJ-Ti-mHc"/>
                             <constraint firstItem="5wX-ja-QIS" firstAttribute="top" secondItem="lLY-OZ-6kk" secondAttribute="top" id="VxF-ft-Oq2"/>
                             <constraint firstAttribute="trailing" secondItem="G2h-5Y-NqQ" secondAttribute="trailing" constant="10" id="XEf-ck-Ddv"/>
                             <constraint firstAttribute="bottom" secondItem="G2h-5Y-NqQ" secondAttribute="bottom" constant="10" id="j79-rg-U2T"/>
@@ -223,6 +254,9 @@
                     </view>
                     <connections>
                         <outlet property="assistButton" destination="G2h-5Y-NqQ" id="SKb-tY-8bm"/>
+                        <outlet property="loadLabel" destination="jc9-TA-X1z" id="nmi-iE-bxY"/>
+                        <outlet property="loadingIndicator" destination="tOu-hr-LN6" id="BcO-8D-HWf"/>
+                        <outlet property="loadingInfoView" destination="neT-N2-J8c" id="3NS-tR-YhH"/>
                         <outlet property="tableView" destination="5wX-ja-QIS" id="ro9-PT-d3H"/>
                     </connections>
                 </viewController>

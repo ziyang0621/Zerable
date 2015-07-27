@@ -14,4 +14,6 @@ pod 'PaymentKit'
 
 pod 'Parse'
 
+pod 'ParseUI'
+
 end
