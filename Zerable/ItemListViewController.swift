@@ -234,6 +234,7 @@ extension ItemListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let itemDetailVC = UIStoryboard.itemDetailViewController()
         itemDetailVC.item = productList[indexPath.row]
+        itemDetailVC.headerImage = (tableView.cellForRowAtIndexPath(indexPath) as! ItemCell).itemImageView.image
         showViewController(itemDetailVC, sender: self)
     }
 }
