@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RNGridMenu
+import Parse
 
 class ItemListViewController: UIViewController {
 
@@ -229,7 +231,11 @@ extension ItemListViewController: UITableViewDataSource {
 }
 
 extension ItemListViewController: UITableViewDelegate {
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let itemDetailVC = UIStoryboard.itemDetailViewController()
+        itemDetailVC.item = productList[indexPath.row]
+        showViewController(itemDetailVC, sender: self)
+    }
 }
 
 extension ItemListViewController: UISearchResultsUpdating {

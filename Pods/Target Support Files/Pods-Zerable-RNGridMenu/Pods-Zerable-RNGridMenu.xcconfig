@@ -1,1 +1,0 @@
-PODS_ZERABLE_RNGRIDMENU_OTHER_LDFLAGS = -framework "Accelerate" -framework "QuartzCore"

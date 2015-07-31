@@ -9,13 +9,16 @@
 import UIKit
 import MapKit
 import AddressBookUI
+import ZTDropDownTextField
+import Parse
+import KVNProgress
 
 class AddressViewController: UIViewController {
 
     @IBOutlet weak var saveButton: ZerableRoundButton!
     @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var fullAddressTextField: ZerableDropDownTextField!
+    @IBOutlet weak var fullAddressTextField: ZTDropDownTextField!
     @IBOutlet weak var optionalAddressTextField: UITextField!
     @IBOutlet weak var addressSummaryTextView: UITextView!
     let geocoder = CLGeocoder()
@@ -100,7 +103,9 @@ class AddressViewController: UIViewController {
 
         if textField.text.isEmpty {
             placemarkList.removeAll(keepCapacity: false)
-            fullAddressTextField.dropDownTableView.reloadData()
+            if let dropDownTableView = fullAddressTextField.dropDownTableView {
+                dropDownTableView.reloadData()
+            }
             return
         }
         
@@ -174,12 +179,12 @@ class AddressViewController: UIViewController {
     }
 }
 
-extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
-    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, numberOfRowsInSection section: Int) -> Int {
+extension AddressViewController: ZTDropDownTextFieldDataSourceDelegate {
+    func dropDownTextField(dropDownTextField: ZTDropDownTextField, numberOfRowsInSection section: Int) -> Int {
         return placemarkList.count
     }
     
-    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func dropDownTextField(dropDownTextField: ZTDropDownTextField, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = dropDownTextField.dropDownTableView.dequeueReusableCellWithIdentifier("addressCell") as? UITableViewCell
         if let cell = cell {
@@ -193,7 +198,7 @@ extension AddressViewController: ZerableDropDownTextFieldDataSourceDelegate {
         return cell!
     }
     
-    func dropDownTextField(dropDownTextField: ZerableDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func dropDownTextField(dropDownTextField: ZTDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedPlacemark = placemarkList[indexPath.row]
         println(selectedPlacemark?.subThoroughfare)
         println(selectedPlacemark?.thoroughfare)

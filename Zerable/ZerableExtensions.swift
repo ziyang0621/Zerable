@@ -180,6 +180,10 @@ extension UIStoryboard {
     class func paymentInfoViewController() -> PaymentInfoViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("PaymentInfoViewController") as! PaymentInfoViewController
     }
+    
+    class func itemDetailViewController() -> ItemDetailViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+    }
 }
 
 extension KeychainWrapper {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RNGridMenu
+import Parse
 
 class SettingsViewController: UIViewController {
 

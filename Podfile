@@ -2,6 +2,8 @@ platform :ios, '8.2'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
+use_frameworks!
+
 target 'Zerable' do
 
 pod 'KVNProgress'
@@ -15,5 +17,7 @@ pod 'PaymentKit'
 pod 'Parse'
 
 pod 'ParseUI'
+
+pod 'ZTDropDownTextField'
 
 end

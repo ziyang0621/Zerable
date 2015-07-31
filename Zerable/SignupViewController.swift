@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import REFormattedNumberField
+import Parse
+import KVNProgress
 
 class SignupViewController: UIViewController {
 

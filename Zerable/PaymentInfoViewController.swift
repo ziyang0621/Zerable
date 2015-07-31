@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import PaymentKit
+import Parse
+import KVNProgress
 
 class PaymentInfoViewController: UIViewController {
 

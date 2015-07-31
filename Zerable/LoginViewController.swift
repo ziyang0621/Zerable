@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KVNProgress
+import Parse
 
 class LoginViewController: UIViewController {
     
