@@ -30,6 +30,7 @@
 		8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1461B3A5DBE00150669 /* LoginViewController.swift */; };
 		8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546A1481B3A5EDE00150669 /* SignupViewController.swift */; };
 		85B6BCDD1B6BE74E00B6A197 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6BCDC1B6BE74E00B6A197 /* ItemDetailViewController.swift */; };
+		85B6BCDF1B6BF90B00B6A197 /* ItemPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6BCDE1B6BF90B00B6A197 /* ItemPhoto.swift */; };
 		85BA28DD1B4DD1660084E7A7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA28DC1B4DD1660084E7A7 /* GradientView.swift */; };
 		85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69571B4397E0008F13F1 /* ItemCell.xib */; };
 		85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE69631B439A1B008F13F1 /* ItemCell.swift */; };
@@ -77,6 +78,7 @@
 		8546A1461B3A5DBE00150669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8546A1481B3A5EDE00150669 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		85B6BCDC1B6BE74E00B6A197 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		85B6BCDE1B6BF90B00B6A197 /* ItemPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhoto.swift; sourceTree = "<group>"; };
 		85BA28DC1B4DD1660084E7A7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		85BE69571B4397E0008F13F1 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		85BE69631B439A1B008F13F1 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				8592E6C21B66E41A00FC06AA /* Ultilities */,
 				8592E6C11B66E3F900FC06AA /* View */,
 				85163BE51B39092100D07CCD /* AppDelegate.swift */,
+				85B6BCDE1B6BF90B00B6A197 /* ItemPhoto.swift */,
 				8532CD981B41E92E004D45EF /* WelcomeViewController.swift */,
 				8546A1461B3A5DBE00150669 /* LoginViewController.swift */,
 				8546A1481B3A5EDE00150669 /* SignupViewController.swift */,
@@ -388,6 +391,7 @@
 				853FD2761B3CB68100969391 /* ZerableHelperFunctions.swift in Sources */,
 				852B258A1B4DB93300F597ED /* SettingsViewController.swift in Sources */,
 				8546A1471B3A5DBF00150669 /* LoginViewController.swift in Sources */,
+				85B6BCDF1B6BF90B00B6A197 /* ItemPhoto.swift in Sources */,
 				85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,4 +20,6 @@ pod 'ParseUI'
 
 pod 'ZTDropDownTextField'
 
+pod 'NYTPhotoViewer'
+
 end

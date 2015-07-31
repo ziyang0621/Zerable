@@ -272,7 +272,7 @@
                         <viewControllerLayoutGuide type="top" id="m6e-jK-vxn"/>
                         <viewControllerLayoutGuide type="bottom" id="yyy-lm-Juf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lD3-ct-mzn" customClass="ZTopDownTextField">
+                    <view key="view" contentMode="scaleToFill" id="lD3-ct-mzn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -282,7 +282,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng6-Xu-4bj">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nn-iP-O6n" customClass="PFImageView">
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nn-iP-O6n" customClass="PFImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="rVd-Qb-3ax"/>

@@ -1,6 +1,7 @@
 PODS:
   - Bolts/Tasks (1.2.0)
   - KVNProgress (2.2.1)
+  - NYTPhotoViewer (0.1.2)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
   - ParseUI (1.1.4):
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - KVNProgress
+  - NYTPhotoViewer
   - Parse
   - ParseUI
   - PaymentKit
@@ -22,6 +24,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
+  NYTPhotoViewer: 874a57dd833238b52ab2e8d1c827356c763626c3
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
   ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
   PaymentKit: 323c25233af5060880daa0c31366d4b688c34487

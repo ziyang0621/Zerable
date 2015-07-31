@@ -54,6 +54,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Zerable/Bolts.framework'
   install_framework 'Pods-Zerable/KVNProgress.framework'
+  install_framework 'Pods-Zerable/NYTPhotoViewer.framework'
   install_framework 'Pods-Zerable/Parse.framework'
   install_framework 'Pods-Zerable/ParseUI.framework'
   install_framework 'Pods-Zerable/PaymentKit.framework'
@@ -64,6 +65,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Zerable/Bolts.framework'
   install_framework 'Pods-Zerable/KVNProgress.framework'
+  install_framework 'Pods-Zerable/NYTPhotoViewer.framework'
   install_framework 'Pods-Zerable/Parse.framework'
   install_framework 'Pods-Zerable/ParseUI.framework'
   install_framework 'Pods-Zerable/PaymentKit.framework'

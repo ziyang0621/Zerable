@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import ParseUI
+import NYTPhotoViewer
+import KVNProgress
 
 private let kHeaderViewHeight: CGFloat = 300.0
 
@@ -24,6 +26,9 @@ class ItemDetailViewController: UIViewController {
     var viewDidAppear = false
     var headerImageViewFrame: CGRect!
     var maximumStretchHeight: CGFloat?
+    var imageCount = 0
+    var itemImages = [ItemPhoto]()
+    var loadingImages = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +43,69 @@ class ItemDetailViewController: UIViewController {
     
     func setupUI() {
         itemImageView.image = headerImage
+        
+        itemImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: "itemImageViewTapped")
+        itemImageView.addGestureRecognizer(tap)
+        
         itemNameLabel.text = item["name"] as? String
     }
+    
+    func itemImageViewTapped() {
+        println("image tapped")
+        if loadingImages {
+            return
+        }
+        
+        KVNProgress.showWithStatus("Loading...")
+        loadingImages = true
+        itemImages.removeAll(keepCapacity: false)
+        let query = PFQuery(className: "ImageFile")
+        query.whereKey("product", equalTo: item)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? String
+                println(errorString)
+            } else {
+                if let images = objects as? [PFObject] {
+                    var files = [PFFile]()
+                    self.imageCount = 0
+                    for image in images {
+                        files.append(image["imageFile"] as! PFFile)
+                        self.imageCount++
+                    }
+                    self.loadImageData(files)
+                }
+            }
+        }
+    }
+    
+    func loadImageData(files: [PFFile]) {
+        var loadCount = 0
+        for file in files {
+            file.getDataInBackgroundWithBlock({
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data: imageData)
+                        let title = NSAttributedString(string: self.item["name"] as! String, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+                        let itemImage = ItemPhoto(image: image, attributedCaptionTitle: title)
+                        self.itemImages.append(itemImage)
+                        loadCount++
+                        if loadCount == self.imageCount {
+                            KVNProgress.dismiss()
+                            let photoViewerVC = NYTPhotosViewController(photos: self.itemImages)
+                            self.presentViewController(photoViewerVC, animated: true, completion: nil)
+                            self.loadingImages = false
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
