@@ -328,16 +328,37 @@
                                     <constraint firstItem="Ng6-Xu-4bj" firstAttribute="leading" secondItem="Y6p-RK-Pny" secondAttribute="leading" id="zgK-tr-O2H"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDq-UN-Pqo">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wei-gt-9CA">
+                                        <rect key="frame" x="246" y="15" width="94" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dxa-7o-YAG"/>
+                                    <constraint firstAttribute="centerX" secondItem="wei-gt-9CA" secondAttribute="centerX" constant="8" id="GLE-D4-sFK"/>
+                                    <constraint firstAttribute="centerY" secondItem="wei-gt-9CA" secondAttribute="centerY" constant="0.5" id="Hy3-kN-gkp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yyy-lm-Juf" firstAttribute="top" secondItem="EDq-UN-Pqo" secondAttribute="bottom" id="CVl-GM-ala"/>
                             <constraint firstItem="Y6p-RK-Pny" firstAttribute="top" secondItem="lD3-ct-mzn" secondAttribute="top" id="PFe-VG-qKS"/>
                             <constraint firstAttribute="trailing" secondItem="Y6p-RK-Pny" secondAttribute="trailing" id="ccw-uM-XJR"/>
+                            <constraint firstAttribute="trailing" secondItem="EDq-UN-Pqo" secondAttribute="trailing" id="pNI-kL-h2P"/>
                             <constraint firstItem="Y6p-RK-Pny" firstAttribute="leading" secondItem="lD3-ct-mzn" secondAttribute="leading" id="qHi-9J-lh8"/>
+                            <constraint firstItem="EDq-UN-Pqo" firstAttribute="leading" secondItem="lD3-ct-mzn" secondAttribute="leading" id="rwA-oG-E6X"/>
                             <constraint firstAttribute="bottom" secondItem="Y6p-RK-Pny" secondAttribute="bottom" id="wOY-Si-IX0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addToCartView" destination="EDq-UN-Pqo" id="uaJ-Jj-lnE"/>
                         <outlet property="containerHeightLayoutContraint" destination="3pv-u1-1ks" id="d6t-CJ-CpB"/>
                         <outlet property="containerWidthLayoutContraint" destination="CYp-rm-F2A" id="8bk-G4-E4R"/>
                         <outlet property="contentView" destination="Ng6-Xu-4bj" id="6dk-5G-rkG"/>

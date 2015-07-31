@@ -13,6 +13,7 @@ import NYTPhotoViewer
 import KVNProgress
 
 private let kHeaderViewHeight: CGFloat = 300.0
+private let kAddToCartViewHeight: CGFloat = 50.0
 
 class ItemDetailViewController: UIViewController {
     
@@ -24,6 +25,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var headerImageViewTopLayoutContraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightLayoutContraint: NSLayoutConstraint!
     @IBOutlet weak var containerWidthLayoutContraint: NSLayoutConstraint!
+    @IBOutlet weak var addToCartView: UIView!
     var item: PFObject!
     var headerImage: UIImage!
     var viewDidAppear = false
@@ -69,7 +71,15 @@ class ItemDetailViewController: UIViewController {
         generateItemRow("Certificate", value: (item["certificate"] as! String), rowNumber: 7)
         generateItemRow("Description", value: (item["description"] as! String), rowNumber: 8, needSeparator: false)
         
-        containerHeightLayoutContraint.constant = kHeaderViewHeight + heightForView((item["description"] as! String), font:UIFont(name: "HelveticaNeue", size: 20.0)!, width: CGRectGetWidth(view.frame) - 30) + 30 * (8 * 3 + 2)
+        containerHeightLayoutContraint.constant = kHeaderViewHeight + heightForView((item["description"] as! String), font:UIFont(name: "HelveticaNeue", size: 20.0)!, width: CGRectGetWidth(view.frame) - 30) + 30 * (8 * 3 + 2) + kAddToCartViewHeight
+        
+        addToCartView.alpha = 0.7
+        if (item["stock"] as! NSNumber).intValue < 1 {
+            addToCartView.backgroundColor = UIColor.lightGrayColor()
+        } else {
+            let addToCartTap = UITapGestureRecognizer(target: self, action: "addToCartTapped")
+            addToCartView.addGestureRecognizer(addToCartTap)
+        }
     }
     
     func generateItemRow(key: String, value: String, rowNumber: CGFloat, needSeparator: Bool = true) {
@@ -118,6 +128,9 @@ class ItemDetailViewController: UIViewController {
             }, completion: nil)
     }
 
+    func addToCartTapped() {
+        println("added to cart tapped")
+    }
     
     func itemImageViewTapped() {
         if loadingImages {
