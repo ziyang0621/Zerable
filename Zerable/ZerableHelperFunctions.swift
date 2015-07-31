@@ -20,3 +20,20 @@ func delay(#seconds: Double, completion:()->()) {
         completion()
     }
 }
+
+func formattedCurrencyString(value: NSNumber) -> String {
+    let formatter = NSNumberFormatter()
+    formatter.numberStyle = .CurrencyStyle
+    return formatter.stringFromNumber(value)!
+}
+
+func heightForView(text:String, #font:UIFont, #width:CGFloat) -> CGFloat{
+    let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+    label.numberOfLines = 0
+    label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+    label.font = font
+    label.text = text
+    
+    label.sizeToFit()
+    return label.frame.height
+}

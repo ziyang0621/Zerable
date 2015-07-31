@@ -309,6 +309,8 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="4nn-iP-O6n" secondAttribute="trailing" id="1y0-tx-C9K"/>
                                             <constraint firstItem="4nn-iP-O6n" firstAttribute="top" secondItem="Ng6-Xu-4bj" secondAttribute="top" id="2QI-ty-ku1"/>
+                                            <constraint firstAttribute="height" constant="600" id="3pv-u1-1ks"/>
+                                            <constraint firstAttribute="width" constant="600" id="CYp-rm-F2A"/>
                                             <constraint firstItem="4nn-iP-O6n" firstAttribute="bottom" secondItem="HJo-xt-zay" secondAttribute="bottom" id="TwS-FY-u6X"/>
                                             <constraint firstItem="HJo-xt-zay" firstAttribute="leading" secondItem="Ng6-Xu-4bj" secondAttribute="leading" id="djo-YT-yym"/>
                                             <constraint firstAttribute="trailing" secondItem="cnK-YD-g1a" secondAttribute="trailing" constant="10" id="eg6-gE-m4M"/>
@@ -321,9 +323,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ng6-Xu-4bj" firstAttribute="top" secondItem="Y6p-RK-Pny" secondAttribute="top" id="DQz-vW-C79"/>
-                                    <constraint firstAttribute="centerX" secondItem="Ng6-Xu-4bj" secondAttribute="centerX" id="Lcq-Jb-bnv"/>
                                     <constraint firstAttribute="trailing" secondItem="Ng6-Xu-4bj" secondAttribute="trailing" id="MBI-Zl-ME4"/>
-                                    <constraint firstAttribute="centerY" secondItem="Ng6-Xu-4bj" secondAttribute="centerY" id="Uc0-bg-RjW"/>
                                     <constraint firstAttribute="bottom" secondItem="Ng6-Xu-4bj" secondAttribute="bottom" id="ZVL-gL-FaS"/>
                                     <constraint firstItem="Ng6-Xu-4bj" firstAttribute="leading" secondItem="Y6p-RK-Pny" secondAttribute="leading" id="zgK-tr-O2H"/>
                                 </constraints>
@@ -338,6 +338,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerHeightLayoutContraint" destination="3pv-u1-1ks" id="d6t-CJ-CpB"/>
+                        <outlet property="containerWidthLayoutContraint" destination="CYp-rm-F2A" id="8bk-G4-E4R"/>
+                        <outlet property="contentView" destination="Ng6-Xu-4bj" id="6dk-5G-rkG"/>
                         <outlet property="headerImageViewHeightLayoutConstraint" destination="rVd-Qb-3ax" id="DCp-lf-8Pg"/>
                         <outlet property="headerImageViewTopLayoutContraint" destination="2QI-ty-ku1" id="K3a-Ps-37P"/>
                         <outlet property="itemImageView" destination="4nn-iP-O6n" id="9G6-Xb-Pq4"/>
