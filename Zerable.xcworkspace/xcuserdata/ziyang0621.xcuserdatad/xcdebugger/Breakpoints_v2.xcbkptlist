@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/ZerableExtensions.swift"
-            timestampString = "460943926.932521"
+            timestampString = "460953090.394403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "rangesOfString(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,61 +378,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/ItemDetailViewController.swift"
-            timestampString = "460944014.001594"
+            timestampString = "460953090.394403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "itemImageViewTapped()"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zerable/ItemDetailViewController.swift"
-            timestampString = "460944014.001594"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "loadImageData(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Zerable.ItemDetailViewController.loadImageData (Zerable.ItemDetailViewController)(Swift.Array&lt;ObjectiveC.PFFile&gt;) -&gt; ()"
-                  moduleName = "Zerable"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ziyang0621/iOSApplications/Zerable/Zerable/ItemDetailViewController.swift"
-                  timestampString = "460060673.596289"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "234">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Zerable.ItemDetailViewController.(loadImageData (Zerable.ItemDetailViewController) -&gt; (Swift.Array&lt;ObjectiveC.PFFile&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "Zerable"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ziyang0621/iOSApplications/Zerable/Zerable/ItemDetailViewController.swift"
-                  timestampString = "460060673.596487"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/ItemDetailViewController.swift"
-            timestampString = "460944086.264533"
+            timestampString = "460953090.394403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "addToCartTapped()"
             landmarkType = "5">
          </BreakpointContent>

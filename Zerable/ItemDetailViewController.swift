@@ -135,7 +135,7 @@ class ItemDetailViewController: UIViewController {
     func addToCartTapped() {
         println("added to cart tapped")
         
-        PFObject.addItemToCart(item, completion: {
+        PFQuery.addItemToCart(item, completion: {
             (success, error) -> () in
             if success {
                 let cartVC = UIStoryboard.cartViewController()
@@ -158,53 +158,25 @@ class ItemDetailViewController: UIViewController {
         KVNProgress.showWithStatus("Loading...")
         loadingImages = true
         itemImages.removeAll(keepCapacity: false)
-        let query = PFQuery(className: "ImageFile")
-        query.whereKey("product", equalTo: item)
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+        
+        PFQuery.loadImagesForItem(item, completion: {
+            (itemImages, error) -> () in
+            KVNProgress.dismiss()
+            self.loadingImages = false
             if let error = error {
                 let errorString = error.userInfo?["error"] as? String
                 println(errorString)
             } else {
-                if let images = objects as? [PFObject] {
-                    var files = [PFFile]()
-                    self.imageCount = 0
-                    for image in images {
-                        files.append(image["imageFile"] as! PFFile)
-                        self.imageCount++
-                    }
-                    self.loadImageData(files)
+                if let images = itemImages {
+                    self.itemImages = images
+                    let photoViewerVC = NYTPhotosViewController(photos: self.itemImages)
+                    self.presentViewController(photoViewerVC, animated: true, completion: nil)
+                    
                 }
             }
-        }
+        })
     }
     
-    func loadImageData(files: [PFFile]) {
-        var loadCount = 0
-        for file in files {
-            file.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
-                if error == nil {
-                    if let imageData = imageData {
-                        let image = UIImage(data: imageData)
-                        let title = NSAttributedString(string: self.item["name"] as! String, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-                        let itemImage = ItemPhoto(image: image, attributedCaptionTitle: title)
-                        self.itemImages.append(itemImage)
-                        loadCount++
-                        if loadCount == self.imageCount {
-                            KVNProgress.dismiss()
-                            let photoViewerVC = NYTPhotosViewController(photos: self.itemImages)
-                            self.presentViewController(photoViewerVC, animated: true, completion: nil)
-                            self.loadingImages = false
-                        }
-                    }
-                }
-            })
-        }
-    }
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

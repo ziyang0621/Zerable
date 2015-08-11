@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-extension PFObject {
+extension PFQuery {
     class func addItemToCart(item: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
         let cartQuery = PFQuery(className: "Cart")
         cartQuery.whereKey("user", equalTo: PFUser.currentUser()!)
@@ -23,7 +23,7 @@ extension PFObject {
                 let results = objects as? [PFObject]
                 // If no cart for current user was created
                 if results!.count == 0 {
-                    PFObject.createCartWithItem(item, completion: {
+                    PFQuery.createCartWithItem(item, completion: {
                         (success, error) -> () in
                         if success {
                             completion(success: true, error: nil)
@@ -36,7 +36,7 @@ extension PFObject {
                 else if results!.count > 0 {
                     let cart = results!.first! as PFObject
                     // check if cart already contains the item
-                    PFObject.cartContainsItem(cart, item: item, completion: {
+                    PFQuery.cartContainsItem(cart, item: item, completion: {
                         (contains, cartItem, error) -> () in
                         if let error = error {
                             completion(success: false, error: error)
@@ -62,7 +62,7 @@ extension PFObject {
                                 }
                             } else {
                                 // If not contains the item, create one with cart
-                                PFObject.createItemWithCart(item, cart: cart, completion: { (success, error) -> () in
+                                PFQuery.createItemWithCart(item, cart: cart, completion: { (success, error) -> () in
                                     if success {
                                         completion(success: true, error: nil)
                                     } else {
@@ -130,6 +130,60 @@ extension PFObject {
                     }
                 }
             }
+        }
+    }
+    
+    
+    class func loadImagesForItem(item: PFObject, completion: (itemImages: [ItemPhoto]?, error: NSError?) -> ()) {
+        let query = PFQuery(className: "ImageFile")
+        query.whereKey("product", equalTo: item)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error != nil {
+                completion(itemImages: nil, error: error)
+            } else {
+                if let images = objects as? [PFObject] {
+                    var files = [PFFile]()
+                    for image in images {
+                        files.append(image["imageFile"] as! PFFile)
+                    }
+                    self.loadImageData(files, item: item, completion: {
+                        (itemImages, error) -> () in
+                        if error == nil {
+                            if let itemImages = itemImages {
+                                completion(itemImages: itemImages, error: nil)
+                            }
+                        } else {
+                            completion(itemImages: nil, error: error)
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    class func loadImageData(files: [PFFile], item: PFObject, completion:(itemImages: [ItemPhoto]?, error: NSError?) -> ()) {
+        var loadCount = 0
+        var imageCount = files.count
+        var itemImages = [ItemPhoto]()
+        for file in files {
+            file.getDataInBackgroundWithBlock({
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data: imageData)
+                        let title = NSAttributedString(string: item["name"] as! String, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+                        let itemImage = ItemPhoto(image: image, attributedCaptionTitle: title)
+                        itemImages.append(itemImage)
+                        loadCount++
+                        if loadCount == imageCount {
+                            completion(itemImages: itemImages, error:nil)
+                        }
+                    }
+                } else {
+                    completion(itemImages: nil, error: error)
+                }
+            })
         }
     }
 
