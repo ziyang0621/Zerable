@@ -67,6 +67,8 @@ class CartViewController: UIViewController {
                                         for cartItem in self.cartItemList {
                                             println("\(cartItem.product.name) \(cartItem.product.stock)")
                                         }
+                                        
+                                        self.tableView.reloadData()
                                     }
                                 }
                             })
@@ -108,14 +110,24 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cartItemList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CartItemCell", forIndexPath: indexPath) as! CartItemCell
-        cell.maxQuantity = 3
-        cell.miniQuantity = 0
-        cell.currentQuantity = 1
+        let cartItem = cartItemList[indexPath.row]
+        cell.cartItem = cartItem
+        cell.itemImageView.file = cartItem.product.thumbnail
+        
+        cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
+            if error == nil {
+                println("cell image loaded")
+            } else {
+                let errorString = error!.userInfo?["error"] as? String
+                println(errorString)
+            }
+        })
+        
         return cell
     }
 }

@@ -7,17 +7,26 @@
 //
 
 import UIKit
+import ParseUI
 
-class CartItemCell: UITableViewCell {
+class CartItemCell: PFTableViewCell {
 
-    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemImageView: PFImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var stockLabel: UILabel!
-    var miniQuantity = 0
-    var maxQuantity = 0
+    var cartItem: CartItem? {
+        didSet {
+            if let cartItem = cartItem {
+                itemNameLabel.text = cartItem.product.name
+                stockLabel.text = "In Stock: \(cartItem.product.stock)"
+                currentQuantity = cartItem.quantity
+            }
+        }
+    }
+    
     var currentQuantity: Int? {
         didSet {
             if let currentQuantity = currentQuantity {
@@ -25,7 +34,6 @@ class CartItemCell: UITableViewCell {
             }
         }
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,14 +49,16 @@ class CartItemCell: UITableViewCell {
     }
     
     @IBAction func minusButtonTapped(sender: AnyObject) {
-        if currentQuantity > miniQuantity {
+        if currentQuantity > 0 {
             currentQuantity!--
         }
     }
     
     @IBAction func plusButtonTapped(sender: AnyObject) {
-        if currentQuantity < maxQuantity {
-            currentQuantity!++
+        if let cartItem = cartItem {
+            if currentQuantity < cartItem.product.stock {
+                currentQuantity!++
+            }
         }
     }
 }
