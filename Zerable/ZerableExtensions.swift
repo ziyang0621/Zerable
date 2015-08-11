@@ -7,15 +7,132 @@
 //
 
 import UIKit
+import Parse
 
-func shuffle<C: MutableCollectionType where C.Index == Int>(var list: C) -> C {
-    let c = count(list)
-    if c < 2 { return list }
-    for i in 0..<(c - 1) {
-        let j = Int(arc4random_uniform(UInt32(c - i))) + i
-        swap(&list[i], &list[j])
+extension PFObject {
+    class func addItemToCart(item: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
+        let cartQuery = PFQuery(className: "Cart")
+        cartQuery.whereKey("user", equalTo: PFUser.currentUser()!)
+        cartQuery.whereKey("checkedOut", equalTo: false)
+        cartQuery.limit = 1
+        cartQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                completion(success: false, error: error)
+            } else {
+                let results = objects as? [PFObject]
+                // If no cart for current user was created
+                if results!.count == 0 {
+                    PFObject.createCartWithItem(item, completion: {
+                        (success, error) -> () in
+                        if success {
+                            completion(success: true, error: nil)
+                        } else {
+                            completion(success: false, error: error)
+                        }
+                    })
+                }
+                // If there was cart for current user created
+                else if results!.count > 0 {
+                    let cart = results!.first! as PFObject
+                    // check if cart already contains the item
+                    PFObject.cartContainsItem(cart, item: item, completion: {
+                        (contains, cartItem, error) -> () in
+                        if let error = error {
+                            completion(success: false, error: error)
+                        } else {
+                            if contains {
+                                // If already contains the item, increase the quantity and save it
+                                if let cartItem = cartItem {
+                                    let quantity = (cartItem["quantity"] as! NSNumber).intValue
+                                    let stock = (cartItem["stock"] as! NSNumber).intValue
+                                    if quantity < stock {
+                                        cartItem["quantity"] = Int(quantity) + 1
+                                        cartItem.saveInBackgroundWithBlock({
+                                            (success: Bool, error: NSError?) -> Void in
+                                            if success {
+                                                completion(success: true, error: nil)
+                                            } else {
+                                                completion(success: false, error: error)
+                                            }
+                                        })
+                                    } else {
+                                        completion(success: true, error: nil)
+                                    }
+                                }
+                            } else {
+                                // If not contains the item, create one with cart
+                                PFObject.createItemWithCart(item, cart: cart, completion: { (success, error) -> () in
+                                    if success {
+                                        completion(success: true, error: nil)
+                                    } else {
+                                        completion(success: false, error: error)
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        }
     }
-    return list
+    
+    class func createCartWithItem(item: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
+        let cart = PFObject(className: "Cart")
+        cart["checkedOut"] = false
+        cart["user"] = PFUser.currentUser()!
+        cart.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if success {
+                self.createItemWithCart(item, cart: cart, completion: {
+                    (success, error) -> () in
+                    if success {
+                        completion(success: true, error: nil)
+                    } else {
+                        completion(success: false, error: error)
+                    }
+                })
+            }
+        }
+    }
+    
+    class func createItemWithCart(item: PFObject, cart: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
+        let cartItem = PFObject(className: "CartItem")
+        cartItem["item"] = item
+        cartItem["stock"] = item["stock"] as! NSNumber
+        cartItem["quantity"] = 1
+        cartItem["cart"] = cart
+        cartItem.saveInBackgroundWithBlock({
+            (success: Bool, error: NSError?) -> Void in
+            if success {
+                completion(success: true, error: nil)
+            } else {
+                completion(success: false, error: error)
+            }
+        })
+    }
+    
+    class func cartContainsItem(cart: PFObject, item: PFObject, completion: (contains: Bool, cartItem: PFObject?, error: NSError?) -> ()) {
+        let cartItemQuery = PFQuery(className: "CartItem")
+        cartItemQuery.whereKey("cart", equalTo: cart)
+        cartItemQuery.whereKey("item", equalTo: item)
+        cartItemQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                completion(contains: false, cartItem: nil, error: nil)
+            } else {
+                if let cartItems = objects as? [PFObject] {
+                    if cartItems.count > 0 {
+                        let cartItem = cartItems.first! as PFObject
+                        completion(contains: true, cartItem: cartItem, error: nil)
+                    } else {
+                        completion(contains: false, cartItem: nil, error: nil)
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 extension UIView {
@@ -183,6 +300,10 @@ extension UIStoryboard {
     
     class func itemDetailViewController() -> ItemDetailViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+    }
+    
+    class func cartViewController() -> CartViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("CartViewController") as! CartViewController
     }
 }
 

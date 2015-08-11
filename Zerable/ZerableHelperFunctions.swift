@@ -8,6 +8,16 @@
 
 import UIKit
 
+func shuffle<C: MutableCollectionType where C.Index == Int>(var list: C) -> C {
+    let c = count(list)
+    if c < 2 { return list }
+    for i in 0..<(c - 1) {
+        let j = Int(arc4random_uniform(UInt32(c - i))) + i
+        swap(&list[i], &list[j])
+    }
+    return list
+}
+
 func validateEmail(candidate: String) -> Bool {
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
     return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)

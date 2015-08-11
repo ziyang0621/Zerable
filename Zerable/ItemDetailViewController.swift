@@ -125,11 +125,29 @@ class ItemDetailViewController: UIViewController {
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animateAlongsideTransition({ (context) -> Void in
             self.containerWidthLayoutContraint.constant = CGRectGetWidth(self.view.bounds)
+            self.view.updateConstraints()
+            UIView.animateWithDuration(1.0, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
             }, completion: nil)
     }
 
     func addToCartTapped() {
         println("added to cart tapped")
+        
+        PFObject.addItemToCart(item, completion: {
+            (success, error) -> () in
+            if success {
+                let cartVC = UIStoryboard.cartViewController()
+                let cartNav = UINavigationController(rootViewController: cartVC)
+                self.presentViewController(cartNav, animated: true, completion: nil)
+            } else {
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? String
+                    println(errorString)
+                }
+            }
+        })
     }
     
     func itemImageViewTapped() {

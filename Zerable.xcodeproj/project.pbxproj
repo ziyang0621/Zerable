@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		62C0C1959FE6AC2C828AAD41 /* Pods_Zerable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215C647095260555D8088A71 /* Pods_Zerable.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		85110DE41B793AF4008848B4 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85110DE21B793AF4008848B4 /* CartItemCell.swift */; };
+		85110DE51B793AF4008848B4 /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85110DE31B793AF4008848B4 /* CartItemCell.xib */; };
+		85110DE71B794648008848B4 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85110DE61B794648008848B4 /* CartViewController.swift */; };
 		85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BE51B39092100D07CCD /* AppDelegate.swift */; };
 		85163BEB1B39092100D07CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85163BE91B39092100D07CCD /* Main.storyboard */; };
 		85163BED1B39092100D07CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEC1B39092100D07CCD /* Images.xcassets */; };
@@ -50,6 +53,9 @@
 /* Begin PBXFileReference section */
 		215C647095260555D8088A71 /* Pods_Zerable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zerable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC14B8EFFEFEA77E66A76FD /* Pods-Zerable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.release.xcconfig"; sourceTree = "<group>"; };
+		85110DE21B793AF4008848B4 /* CartItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		85110DE31B793AF4008848B4 /* CartItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
+		85110DE61B794648008848B4 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		85163BE01B39092100D07CCD /* Zerable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zerable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85163BE41B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BE51B39092100D07CCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				853FD2771B3CC0AF00969391 /* TermAndPolicyViewController.swift */,
 				85365E901B3DCAED0053448F /* ItemListViewController.swift */,
 				85B6BCDC1B6BE74E00B6A197 /* ItemDetailViewController.swift */,
+				85110DE61B794648008848B4 /* CartViewController.swift */,
 				852B25891B4DB93300F597ED /* SettingsViewController.swift */,
 				852B9C9C1B50DE33006DE459 /* ProfileViewController.swift */,
 				852B9C9E1B50E044006DE459 /* BasicInfoViewController.swift */,
@@ -195,6 +202,8 @@
 				85BE69571B4397E0008F13F1 /* ItemCell.xib */,
 				852B258B1B4DBA9900F597ED /* SettingsCell.swift */,
 				852B258D1B4DBAF100F597ED /* SettingsCell.xib */,
+				85110DE21B793AF4008848B4 /* CartItemCell.swift */,
+				85110DE31B793AF4008848B4 /* CartItemCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 				85163BEB1B39092100D07CCD /* Main.storyboard in Resources */,
 				85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */,
 				85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */,
+				85110DE51B793AF4008848B4 /* CartItemCell.xib in Resources */,
 				85163BED1B39092100D07CCD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85110DE41B793AF4008848B4 /* CartItemCell.swift in Sources */,
 				852B258C1B4DBA9900F597ED /* SettingsCell.swift in Sources */,
 				851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */,
 				853FD2781B3CC0AF00969391 /* TermAndPolicyViewController.swift in Sources */,
@@ -385,6 +396,7 @@
 				85B6BCDD1B6BE74E00B6A197 /* ItemDetailViewController.swift in Sources */,
 				8532CD9B1B41F78F004D45EF /* ZerableRoundButton.swift in Sources */,
 				852B9C9D1B50DE33006DE459 /* ProfileViewController.swift in Sources */,
+				85110DE71B794648008848B4 /* CartViewController.swift in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
 				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,
 				85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */,
