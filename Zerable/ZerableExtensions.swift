@@ -10,6 +10,90 @@ import UIKit
 import Parse
 
 extension PFQuery {
+    class func adjustCartItem(cart: PFObject, completion: (success: Bool, error: NSError?) ->()) {
+        var cartItemsToDelete = [PFObject]()
+        var cartItemToChangeQuantity = [PFObject]()
+        
+        let cartItemQuery = PFQuery(className: "CartItem")
+        cartItemQuery.whereKey("cart", equalTo: cart)
+        cartItemQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                completion(success: false, error: error)
+            } else {
+                if let cartItems = objects as? [PFObject] {
+                    for cartItem in cartItems {
+                        let item = cartItem["item"] as! PFObject
+                        let stock = (item["stock"] as! NSNumber).integerValue
+                        let quantity = (cartItem["quantity"] as! NSNumber).integerValue
+                        if stock == 0 {
+                            cartItemsToDelete.append(item)
+                        } else {
+                            if quantity > stock {
+                                cartItemToChangeQuantity.append(item)
+                            }
+                        }
+                    }
+                    
+                    self.deleteCartItems(cartItemsToDelete, completion: {
+                        (success, error) -> () in
+                        if let error = error {
+                            completion(success: false, error: error)
+                        } else {
+                            self.changeCartItemsQuantity(cartItemToChangeQuantity, completion: { (success, error) -> () in
+                                if let error = error {
+                                    completion(success: false, error: error)
+                                } else {
+                                    completion(success: true, error: error)
+                                }
+                            })
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    class func changeCartItemsQuantity(cartItems: [PFObject], completion: (success: Bool, error: NSError?) -> ()) {
+        let cartItemsCount = cartItems.count
+        
+        if cartItemsCount == 0 {
+            completion(success: true, error: nil)
+        } else {
+            var counter = 0
+            for cartItem in cartItems {
+                let stock = (cartItem["stock"] as! NSNumber).integerValue
+                cartItem["quantity"] = stock
+                cartItem.saveInBackgroundWithBlock({
+                    (success: Bool, error: NSError?) -> Void in
+                    if let error = error {
+                        completion(success: false, error: error)
+                    } else {
+                        counter++
+                        if counter == cartItemsCount {
+                            completion(success: true, error: nil)
+                        }
+                    }
+                })
+            }
+        }
+    }
+    
+    class func deleteCartItems(cartItems: [PFObject], completion: (success: Bool, error: NSError?) -> ()) {
+        if cartItems.count == 0 {
+            completion(success: true, error: nil)
+        } else {
+            PFObject.deleteAllInBackground(cartItems, block: {
+                (success: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    completion(success: false, error: error)
+                } else {
+                    completion(success: true, error: nil)
+                }
+            })
+        }
+    }
+    
     class func addItemToCart(item: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
         let cartQuery = PFQuery(className: "Cart")
         cartQuery.whereKey("user", equalTo: PFUser.currentUser()!)
@@ -99,7 +183,6 @@ extension PFQuery {
     class func createItemWithCart(item: PFObject, cart: PFObject, completion: (success: Bool, error: NSError?) -> ()) {
         let cartItem = PFObject(className: "CartItem")
         cartItem["item"] = item
-        cartItem["stock"] = item["stock"] as! NSNumber
         cartItem["quantity"] = 1
         cartItem["cart"] = cart
         cartItem.saveInBackgroundWithBlock({

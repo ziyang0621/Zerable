@@ -135,8 +135,11 @@ class ItemDetailViewController: UIViewController {
     func addToCartTapped() {
         println("added to cart tapped")
         
+        KVNProgress.showWithStatus("Adding...")
+        
         PFQuery.addItemToCart(item, completion: {
             (success, error) -> () in
+            KVNProgress.dismiss()
             if success {
                 let cartVC = UIStoryboard.cartViewController()
                 let cartNav = UINavigationController(rootViewController: cartVC)
