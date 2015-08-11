@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Parse
+import KVNProgress
 
 class CartViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var cartItemList = [CartItem]()
+    var cart: Cart?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,59 @@ class CartViewController: UIViewController {
         tableView.dataSource = self
         tableView.registerNib(UINib(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: "CartItemCell")
         tableView.estimatedRowHeight = 120
+        
+        loadCartDetails()
+    }
+    
+    func loadCartDetails() {
+        KVNProgress.showWithStatus("Loading...", onView: navigationController?.view)
+        cartItemList.removeAll(keepCapacity: false)
+        
+        PFQuery.checkIfCartIsEmpty {
+            (cart, error) -> () in
+            if let error = error {
+                KVNProgress.dismiss()
+                let errorString = error.userInfo?["error"] as? String
+                println(errorString)
+            } else {
+                if let cart = cart {
+                    self.cart = cart
+                    
+                    PFQuery.adjustCartItem(cart, completion: {
+                        (success, error) -> () in
+                        if let error = error {
+                            KVNProgress.dismiss()
+                            let errorString = error.userInfo?["error"] as? String
+                            println(errorString)
+                        } else {
+                            
+                            PFQuery.retrieveCartItemsForCart(cart, completion: {
+                                (cartItems, error) -> () in
+                                KVNProgress.dismiss()
+                                if let error = error {
+                                    let errorString = error.userInfo?["error"] as? String
+                                    println(errorString)
+                                } else {
+                                    if let cartItems = cartItems {
+                                        self.cartItemList.extend(cartItems)
+                                        
+                                        for cartItem in self.cartItemList {
+                                            println("\(cartItem.product.name) \(cartItem.product.stock)")
+                                        }
+                                    }
+                                }
+                            })
+
+                        }
+                    })
+                    
+                } else {
+                    KVNProgress.dismiss()
+
+                    // cart is empty
+                }
+            }
+        }
     }
     
     func closeButtonTapped() {

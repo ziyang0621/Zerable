@@ -84,10 +84,10 @@ class SignupViewController: UIViewController {
                         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
-                        let itemListVC = UIStoryboard.itemListViewController()
-                        itemListVC.fromGridIndex = -1
-                        let itemListNav = UINavigationController(rootViewController: itemListVC)
-                        self.presentViewController(itemListNav, animated: true, completion: nil)
+                        let productListVC = UIStoryboard.productListViewController()
+                        productListVC.fromGridIndex = -1
+                        let productListNav = UINavigationController(rootViewController: productListVC)
+                        self.presentViewController(productListNav, animated: true, completion: nil)
                     }
                 })
             }

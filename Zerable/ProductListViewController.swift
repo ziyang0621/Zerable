@@ -1,8 +1,8 @@
 //
-//  ItemListViewController.swift
+//  ProductListViewController.swift
 //  Zerable
 //
-//  Created by Ziyang Tan on 6/26/15.
+//  Created by Ziyang Tan on 8/11/15.
 //  Copyright (c) 2015 Ziyang Tan. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 import RNGridMenu
 import Parse
 
-class ItemListViewController: UIViewController {
-
+class ProductListViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var assistButton: UIButton!
     @IBOutlet weak var loadingInfoView: UIView!
@@ -20,11 +20,11 @@ class ItemListViewController: UIViewController {
     
     var fromGridIndex = 0
     var resultSearchController = UISearchController()
-    var filteredTableData = [PFObject]()
+    var filteredTableData = [Product]()
     var totalPages = 0
-    let numberOfItemsPerPage = 8
+    let numberOfproductsPerPage = 8
     var currentPage = 1
-    var productList = [PFObject]()
+    var productList = [Product]()
     let refreshControl = UIRefreshControl()
     var fetchingProducts = false
     var viewDidAppear = false
@@ -80,7 +80,7 @@ class ItemListViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             self.loadingInfoView.alpha = 1
             self.loadingIndicator.alpha = 0
-            self.loadLabel.text = "All item loaded"
+            self.loadLabel.text = "All product loaded"
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.loadingInfoView.alpha = 0
             })
@@ -94,7 +94,7 @@ class ItemListViewController: UIViewController {
             }
         }
     }
-
+    
     
     func handleRefresh() {
         refreshControl.beginRefreshing()
@@ -125,7 +125,7 @@ class ItemListViewController: UIViewController {
         countQuery.countObjectsInBackgroundWithBlock {
             (counts: Int32, error: NSError?) -> Void in
             if error == nil {
-                self.totalPages = Int(ceil(Double(counts) / Double(self.numberOfItemsPerPage)))
+                self.totalPages = Int(ceil(Double(counts) / Double(self.numberOfproductsPerPage)))
                 println(self.totalPages)
                 let query = PFQuery(className: "Product")
                 query.limit = 8
@@ -136,7 +136,7 @@ class ItemListViewController: UIViewController {
                         let errorString = error.userInfo?["error"] as? String
                         println(errorString)
                     } else {
-                        if let products = objects as? [PFObject] {
+                        if let products = objects as? [Product] {
                             println("query count \(self.productList.count)")
                             self.productList.extend(products)
                             self.resetUI()
@@ -154,7 +154,7 @@ class ItemListViewController: UIViewController {
         self.refreshControl.endRefreshing()
         self.hideLoading()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -180,7 +180,7 @@ class ItemListViewController: UIViewController {
     }
     
     @IBAction func assistButtonPressed(sender: AnyObject) {
-      
+        
         let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
             UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
             UIImage(named: "history")!.newImageWithColor(kThemeColor),
@@ -191,18 +191,18 @@ class ItemListViewController: UIViewController {
     }
 }
 
-extension ItemListViewController: UITableViewDataSource {
+extension ProductListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as! ItemCell
-        var product: PFObject!
+        var product: Product!
         if (resultSearchController.active) {
             product = filteredTableData[indexPath.row]
         } else {
             product = productList[indexPath.row]
         }
         
-        cell.itemName = product["name"] as? String
-        cell.itemImageView.file = product["thumbnail"] as? PFFile
+        cell.itemName = product.name
+        cell.itemImageView.file = product.thumbnail
         cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
             if error == nil {
                 println("cell image loaded")
@@ -211,7 +211,7 @@ extension ItemListViewController: UITableViewDataSource {
                 println(errorString)
             }
         })
-
+        
         return cell
     }
     
@@ -230,16 +230,16 @@ extension ItemListViewController: UITableViewDataSource {
     }
 }
 
-extension ItemListViewController: UITableViewDelegate {
+extension ProductListViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let itemDetailVC = UIStoryboard.itemDetailViewController()
-        itemDetailVC.item = productList[indexPath.row]
-        itemDetailVC.headerImage = (tableView.cellForRowAtIndexPath(indexPath) as! ItemCell).itemImageView.image
-        showViewController(itemDetailVC, sender: self)
+        let productDetailVC = UIStoryboard.productDetailViewController()
+        productDetailVC.product = productList[indexPath.row]
+        productDetailVC.headerImage = (tableView.cellForRowAtIndexPath(indexPath) as! ItemCell).itemImageView.image
+        showViewController(productDetailVC, sender: self)
     }
 }
 
-extension ItemListViewController: UISearchResultsUpdating {
+extension ProductListViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredTableData.removeAll(keepCapacity: false)
         
@@ -252,7 +252,7 @@ extension ItemListViewController: UISearchResultsUpdating {
                 let errorString = error.userInfo?["error"] as? String
                 println(errorString)
             } else {
-                if let products = objects as? [PFObject] {
+                if let products = objects as? [Product] {
                     self.filteredTableData.extend(products)
                     self.resetUI()
                     self.currentPage++
@@ -263,7 +263,7 @@ extension ItemListViewController: UISearchResultsUpdating {
     }
 }
 
-extension ItemListViewController: RNGridMenuDelegate {
+extension ProductListViewController: RNGridMenuDelegate {
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
         delay(seconds: 0.3) { () -> () in
             if itemIndex == 0 {
@@ -280,9 +280,9 @@ extension ItemListViewController: RNGridMenuDelegate {
                     self.presentViewController(settingsNav, animated: true, completion: nil)
                 }
             }
-
+            
         }
         
     }
- }
+}
 

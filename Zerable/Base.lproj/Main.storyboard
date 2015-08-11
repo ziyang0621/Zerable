@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="309" y="369"/>
         </scene>
-        <!--Item List View Controller-->
+        <!--Product List View Controller-->
         <scene sceneID="XI2-Zd-hsn">
             <objects>
-                <viewController storyboardIdentifier="ItemListViewController" id="JD5-xO-2Sl" customClass="ItemListViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductListViewController" id="JD5-xO-2Sl" customClass="ProductListViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dKH-HZ-F6K"/>
                         <viewControllerLayoutGuide type="bottom" id="JMt-Sy-LAU"/>
@@ -264,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="1007" y="1144"/>
         </scene>
-        <!--Item Detail View Controller-->
+        <!--Product Detail View Controller-->
         <scene sceneID="4fE-Wn-TBl">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailViewController" id="7Rb-Yg-al2" customClass="ItemDetailViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailViewController" id="7Rb-Yg-al2" customClass="ProductDetailViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m6e-jK-vxn"/>
                         <viewControllerLayoutGuide type="bottom" id="yyy-lm-Juf"/>
@@ -364,8 +364,8 @@
                         <outlet property="contentView" destination="Ng6-Xu-4bj" id="6dk-5G-rkG"/>
                         <outlet property="headerImageViewHeightLayoutConstraint" destination="rVd-Qb-3ax" id="DCp-lf-8Pg"/>
                         <outlet property="headerImageViewTopLayoutContraint" destination="2QI-ty-ku1" id="K3a-Ps-37P"/>
-                        <outlet property="itemImageView" destination="4nn-iP-O6n" id="9G6-Xb-Pq4"/>
-                        <outlet property="itemNameLabel" destination="cnK-YD-g1a" id="eWy-6t-0Yt"/>
+                        <outlet property="productImageView" destination="4nn-iP-O6n" id="shx-jA-oj9"/>
+                        <outlet property="productNameLabel" destination="cnK-YD-g1a" id="66m-d3-pXv"/>
                         <outlet property="scrollView" destination="Y6p-RK-Pny" id="WjP-n2-jRp"/>
                     </connections>
                 </viewController>

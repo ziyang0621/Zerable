@@ -61,10 +61,10 @@ class LoginViewController: UIViewController {
                     (user: PFUser?, error:NSError?) -> Void in
                     KVNProgress.dismiss()
                     if user != nil {
-                        let itemListVC = UIStoryboard.itemListViewController()
-                        itemListVC.fromGridIndex = -1
-                        let itemListNav = UINavigationController(rootViewController: itemListVC)
-                        self.presentViewController(itemListNav, animated: true, completion: nil)
+                        let productListVC = UIStoryboard.productListViewController()
+                        productListVC.fromGridIndex = -1
+                        let productListNav = UINavigationController(rootViewController: productListVC)
+                        self.presentViewController(productListNav, animated: true, completion: nil)
                     } else {
                         if let error = error {
                             let errorString = error.userInfo?["error"] as? String

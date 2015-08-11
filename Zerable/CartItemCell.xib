@@ -64,12 +64,21 @@
                             <action selector="plusButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vu1-Mm-XHF"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock: 999" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-1n-jva">
+                        <rect key="frame" x="330" y="89" width="110" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ipk-7r-Ijb" firstAttribute="centerY" secondItem="qzo-4r-UXt" secondAttribute="centerY" id="5DP-5u-sAE"/>
                     <constraint firstItem="qzo-4r-UXt" firstAttribute="leading" secondItem="9QN-M9-cWB" secondAttribute="trailing" constant="5" id="5GV-7P-JDD"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="top" secondItem="GpU-Tx-fX1" secondAttribute="bottom" constant="20" id="5RQ-AE-uGB"/>
                     <constraint firstAttribute="centerY" secondItem="9QN-M9-cWB" secondAttribute="centerY" id="7Nn-8F-QEV"/>
                     <constraint firstItem="Ipk-7r-Ijb" firstAttribute="centerY" secondItem="GpU-Tx-fX1" secondAttribute="centerY" id="EiX-lA-Plg"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="leading" secondItem="niK-Bt-dlb" secondAttribute="leading" id="Eqs-XZ-b7k"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="trailing" secondItem="Ipk-7r-Ijb" secondAttribute="trailing" id="Hb3-NT-3XP"/>
                     <constraint firstAttribute="centerY" secondItem="qzo-4r-UXt" secondAttribute="centerY" id="MTI-II-JT5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ipk-7r-Ijb" secondAttribute="trailing" constant="5" id="PyL-n9-5EL"/>
                     <constraint firstItem="GpU-Tx-fX1" firstAttribute="centerY" secondItem="niK-Bt-dlb" secondAttribute="centerY" id="QWt-t2-m2p"/>
@@ -85,6 +94,7 @@
                 <outlet property="minusButton" destination="niK-Bt-dlb" id="5rR-ew-qsA"/>
                 <outlet property="plusButton" destination="Ipk-7r-Ijb" id="be9-zz-Rnh"/>
                 <outlet property="quantityLabel" destination="GpU-Tx-fX1" id="IEf-6o-fD8"/>
+                <outlet property="stockLabel" destination="xcF-1n-jva" id="Bx5-eV-MIl"/>
             </connections>
             <point key="canvasLocation" x="512.5" y="559"/>
         </tableViewCell>

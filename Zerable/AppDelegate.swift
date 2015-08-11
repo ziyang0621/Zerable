@@ -17,9 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Product.initialize()
+        Cart.initialize()
+        CartItem.initialize()
         
         Parse.setApplicationId("gSMFL1BfYtr0daSJz9iQqUCzsK7ZRYdSg80Fy30O", clientKey: "R4s5wWFQus4BPt1xaKnIyOHPPLSSIa9gd7fS3YbQ")
         
@@ -34,10 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if PFUser.currentUser() != nil {
             if let window = self.window {
-                let itemListVC = UIStoryboard.itemListViewController()
-                itemListVC.fromGridIndex = -1
-                let itemListNav = UINavigationController(rootViewController: itemListVC)
-                window.rootViewController = itemListNav
+                let productListVC = UIStoryboard.productListViewController()
+                productListVC.fromGridIndex = -1
+                let productListNav = UINavigationController(rootViewController: productListVC)
+                window.rootViewController = productListNav
             }
         }
         
@@ -65,19 +68,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func insertProducts() {
         for index in 0..<15 {
-            let product = PFObject(className: "Product")
-            product["name"] = shuffle(kItemList).first
-            product["description"] = "This is a frozen meet from Bay Area"
-            product["price"] = Int(arc4random_uniform(100))
-            product["stock"] = Int(arc4random_uniform(100))
-            product["category"] = "American"
-            product["origin"] = "San Francisco"
-            product["storeMethod"] = "Frozen"
-            product["durability"] = 180
-            product["certificate"] = "xxx supply"
-            product["productionDate"] = "7/1/2015"
-            product["thumbnail"] = generateImage()
-        
+            var product = Product()
+            product.name = shuffle(kItemList).first!
+            product.productdescription = "This is a frozen meet from Bay Area"
+            product.price = Int(arc4random_uniform(100))
+            product.stock = Int(arc4random_uniform(100))
+            product.category = "American"
+            product.origin = "San Francisco"
+            product.storedMethod = "Frozen"
+            product.durability = 180
+            product.certificate = "xxx supply"
+            product.productionDate = "7/1/2015"
+            product.thumbnail = generateImage()
+            
             product.saveInBackgroundWithBlock({
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {

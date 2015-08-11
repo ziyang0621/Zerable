@@ -99,10 +99,10 @@ extension SettingsViewController: RNGridMenuDelegate {
             }
             else {
                 if itemIndex == 0 {
-                    let itemListVC = UIStoryboard.itemListViewController()
-                    itemListVC.fromGridIndex == 3
-                    let itemListNav = UINavigationController(rootViewController: itemListVC)
-                    self.presentViewController(itemListNav, animated: true, completion: nil)
+                    let productListVC = UIStoryboard.productListViewController()
+                    productListVC.fromGridIndex == 3
+                    let productListNav = UINavigationController(rootViewController: productListVC)
+                    self.presentViewController(productListNav, animated: true, completion: nil)
                 }
             }
 

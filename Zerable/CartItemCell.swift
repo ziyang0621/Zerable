@@ -15,6 +15,7 @@ class CartItemCell: UITableViewCell {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var stockLabel: UILabel!
     var miniQuantity = 0
     var maxQuantity = 0
     var currentQuantity: Int? {
