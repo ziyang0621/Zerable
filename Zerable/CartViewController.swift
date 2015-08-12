@@ -13,6 +13,7 @@ import KVNProgress
 class CartViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cartEmptyLabel: UILabel!
     var cartItemList = [CartItem]()
     var cart: Cart?
     
@@ -41,7 +42,8 @@ class CartViewController: UIViewController {
     func loadCartDetails() {
         KVNProgress.showWithStatus("Loading...", onView: navigationController?.view)
         cartItemList.removeAll(keepCapacity: false)
-        
+        cartEmptyLabel.alpha = 0
+    
         PFQuery.checkIfCartIsEmpty {
             (cart, error) -> () in
             if let error = error {
@@ -80,8 +82,7 @@ class CartViewController: UIViewController {
                     
                 } else {
                     KVNProgress.dismiss()
-
-                    // cart is empty
+                    self.cartEmptyLabel.alpha = 1
                 }
             }
         }

@@ -389,16 +389,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cart is empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-mM-fXW">
+                                <rect key="frame" x="214" y="285" width="173" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="biC-2m-K1S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="3Jg-mM-fXW" secondAttribute="centerY" id="Cxv-k5-YI0"/>
                             <constraint firstItem="KSa-Uu-dq6" firstAttribute="leading" secondItem="mcb-kc-h6e" secondAttribute="leading" id="PzF-tN-1fc"/>
                             <constraint firstItem="1Wz-4W-m4t" firstAttribute="top" secondItem="KSa-Uu-dq6" secondAttribute="bottom" id="bjE-W8-EUy"/>
                             <constraint firstAttribute="trailing" secondItem="KSa-Uu-dq6" secondAttribute="trailing" id="eko-fw-6M0"/>
                             <constraint firstItem="KSa-Uu-dq6" firstAttribute="top" secondItem="mcb-kc-h6e" secondAttribute="top" id="kIF-ht-Gj1"/>
+                            <constraint firstAttribute="centerX" secondItem="3Jg-mM-fXW" secondAttribute="centerX" id="x14-cl-pML"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cartEmptyLabel" destination="3Jg-mM-fXW" id="0SO-ca-pXR"/>
                         <outlet property="tableView" destination="KSa-Uu-dq6" id="vse-aH-9ry"/>
                     </connections>
                 </viewController>

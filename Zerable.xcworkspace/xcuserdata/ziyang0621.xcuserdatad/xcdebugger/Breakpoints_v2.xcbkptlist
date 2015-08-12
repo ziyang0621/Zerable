@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/CartViewController.swift"
-            timestampString = "461038902.584296"
+            timestampString = "461044853.758529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/CartViewController.swift"
-            timestampString = "461038902.584296"
+            timestampString = "461044853.758529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
