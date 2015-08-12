@@ -26,10 +26,16 @@ class CartViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .None
         tableView.registerNib(UINib(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: "CartItemCell")
+        tableView.registerNib(UINib(nibName: "SubtotalCell", bundle: nil), forCellReuseIdentifier: "SubtotalCell")
         tableView.estimatedRowHeight = 120
         
         loadCartDetails()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func loadCartDetails() {
@@ -64,10 +70,6 @@ class CartViewController: UIViewController {
                                     if let cartItems = cartItems {
                                         self.cartItemList.extend(cartItems)
                                         
-                                        for cartItem in self.cartItemList {
-                                            println("\(cartItem.product.name) \(cartItem.product.stock)")
-                                        }
-                                        
                                         self.tableView.reloadData()
                                     }
                                 }
@@ -93,16 +95,44 @@ class CartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func calculateSubtotal() -> Double {
+        var subTotal: Double = 0.0
+        for cartItem in cartItemList {
+            let itemTotal = cartItem.product.price * Double(cartItem.quantity)
+            subTotal += itemTotal
+        }
+        
+        return subTotal
+    }
 }
 
 extension CartViewController: UITableViewDelegate {
     
 }
 
+extension CartViewController: CartItemCellDelegate {
+    func cartItemCellDidChangeQuantity(cell: CartItemCell, quantity: Int) {
+        
+        for index in 0..<cartItemList.count {
+            if cartItemList[index].product.objectId == cell.cartItem!.product.objectId {
+                cartItemList[index].quantity = quantity
+                break
+            }
+        }
+        
+        let indexPath = NSIndexPath(forRow: cartItemList.count, inSection: 0)
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+    }
+}
+
 
 extension CartViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 120
+        if indexPath.row < cartItemList.count {
+            return 120
+        }
+        return 44
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -110,24 +140,36 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartItemList.count
+        if cartItemList.count > 0 {
+            return cartItemList.count + 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CartItemCell", forIndexPath: indexPath) as! CartItemCell
-        let cartItem = cartItemList[indexPath.row]
-        cell.cartItem = cartItem
-        cell.itemImageView.file = cartItem.product.thumbnail
-        
-        cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
-            if error == nil {
-                println("cell image loaded")
-            } else {
-                let errorString = error!.userInfo?["error"] as? String
-                println(errorString)
-            }
-        })
-        
-        return cell
+        if indexPath.row < cartItemList.count {
+            let cell = tableView.dequeueReusableCellWithIdentifier("CartItemCell", forIndexPath: indexPath) as! CartItemCell
+            let cartItem = cartItemList[indexPath.row]
+            cell.cartItem = cartItem
+            cell.itemImageView.file = cartItem.product.thumbnail
+            cell.delegate = self
+            
+            cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
+                if error == nil {
+                    println("cell image loaded")
+                } else {
+                    let errorString = error!.userInfo?["error"] as? String
+                    println(errorString)
+                }
+            })
+            
+            return cell
+
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("SubtotalCell", forIndexPath: indexPath) as! SubtotalCell
+            cell.subtotalLabel.text = formattedCurrencyString(calculateSubtotal())
+            return cell
+        }
     }
 }

@@ -9,6 +9,11 @@
 import UIKit
 import ParseUI
 
+protocol CartItemCellDelegate {
+    func cartItemCellDidChangeQuantity(cell: CartItemCell, quantity: Int)
+}
+
+
 class CartItemCell: PFTableViewCell {
 
     @IBOutlet weak var itemImageView: PFImageView!
@@ -17,6 +22,9 @@ class CartItemCell: PFTableViewCell {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var stockLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    var delegate: CartItemCellDelegate?
+    
     var cartItem: CartItem? {
         didSet {
             if let cartItem = cartItem {
@@ -31,6 +39,8 @@ class CartItemCell: PFTableViewCell {
         didSet {
             if let currentQuantity = currentQuantity {
                 quantityLabel.text = "\(currentQuantity)"
+                let total = cartItem!.product.price * Double(currentQuantity)
+                priceLabel.text = formattedCurrencyString((total as NSNumber))
             }
         }
     }
@@ -51,6 +61,7 @@ class CartItemCell: PFTableViewCell {
     @IBAction func minusButtonTapped(sender: AnyObject) {
         if currentQuantity > 0 {
             currentQuantity!--
+            delegate?.cartItemCellDidChangeQuantity(self, quantity: currentQuantity!)
         }
     }
     
@@ -58,6 +69,7 @@ class CartItemCell: PFTableViewCell {
         if let cartItem = cartItem {
             if currentQuantity < cartItem.product.stock {
                 currentQuantity!++
+                delegate?.cartItemCellDidChangeQuantity(self, quantity: currentQuantity!)
             }
         }
     }

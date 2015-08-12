@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-M9-cWB" customClass="PFImageView">
-                        <rect key="frame" x="13" y="20" width="80" height="80"/>
+                        <rect key="frame" x="9" y="20" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="NbL-SU-Tdn"/>
                             <constraint firstAttribute="height" constant="80" id="ewU-Hd-6gE"/>
@@ -45,7 +45,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-4r-UXt">
-                        <rect key="frame" x="98" y="52" width="227" height="17"/>
+                        <rect key="frame" x="94" y="52" width="231" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -65,27 +65,51 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock: 999" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-1n-jva">
-                        <rect key="frame" x="330" y="89" width="110" height="15"/>
+                        <rect key="frame" x="94" y="85" width="231" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="J7S-hH-l4L"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$999.99" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et0-ya-Pdc">
+                        <rect key="frame" x="330" y="85" width="110" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VI-Y7-Gau">
+                        <rect key="frame" x="13" y="111" width="432" height="1"/>
+                        <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="aej-Au-mql"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="0VI-Y7-Gau" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="2wG-vf-JAL"/>
                     <constraint firstItem="Ipk-7r-Ijb" firstAttribute="centerY" secondItem="qzo-4r-UXt" secondAttribute="centerY" id="5DP-5u-sAE"/>
                     <constraint firstItem="qzo-4r-UXt" firstAttribute="leading" secondItem="9QN-M9-cWB" secondAttribute="trailing" constant="5" id="5GV-7P-JDD"/>
-                    <constraint firstItem="xcF-1n-jva" firstAttribute="top" secondItem="GpU-Tx-fX1" secondAttribute="bottom" constant="20" id="5RQ-AE-uGB"/>
                     <constraint firstAttribute="centerY" secondItem="9QN-M9-cWB" secondAttribute="centerY" id="7Nn-8F-QEV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0VI-Y7-Gau" secondAttribute="bottom" id="AAJ-eF-fe7"/>
                     <constraint firstItem="Ipk-7r-Ijb" firstAttribute="centerY" secondItem="GpU-Tx-fX1" secondAttribute="centerY" id="EiX-lA-Plg"/>
-                    <constraint firstItem="xcF-1n-jva" firstAttribute="leading" secondItem="niK-Bt-dlb" secondAttribute="leading" id="Eqs-XZ-b7k"/>
-                    <constraint firstItem="xcF-1n-jva" firstAttribute="trailing" secondItem="Ipk-7r-Ijb" secondAttribute="trailing" id="Hb3-NT-3XP"/>
+                    <constraint firstItem="niK-Bt-dlb" firstAttribute="leading" secondItem="et0-ya-Pdc" secondAttribute="leading" id="HgV-4c-Clk"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="trailing" secondItem="qzo-4r-UXt" secondAttribute="trailing" id="Hjj-I0-OrU"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="bottom" secondItem="9QN-M9-cWB" secondAttribute="bottom" id="J7o-WC-Uru"/>
                     <constraint firstAttribute="centerY" secondItem="qzo-4r-UXt" secondAttribute="centerY" id="MTI-II-JT5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ipk-7r-Ijb" secondAttribute="trailing" constant="5" id="PyL-n9-5EL"/>
                     <constraint firstItem="GpU-Tx-fX1" firstAttribute="centerY" secondItem="niK-Bt-dlb" secondAttribute="centerY" id="QWt-t2-m2p"/>
-                    <constraint firstItem="9QN-M9-cWB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Z0V-jV-jQb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0VI-Y7-Gau" secondAttribute="trailing" id="TxV-l8-SxM"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qzo-4r-UXt" secondAttribute="bottom" constant="10" id="VgF-fU-N1e"/>
+                    <constraint firstItem="Ipk-7r-Ijb" firstAttribute="trailing" secondItem="et0-ya-Pdc" secondAttribute="trailing" id="WFk-H2-f7c"/>
+                    <constraint firstItem="9QN-M9-cWB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="Z0V-jV-jQb"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="leading" secondItem="qzo-4r-UXt" secondAttribute="leading" id="ZkH-Jg-jU3"/>
+                    <constraint firstItem="xcF-1n-jva" firstAttribute="bottom" secondItem="et0-ya-Pdc" secondAttribute="bottom" id="gYj-pH-Kel"/>
                     <constraint firstItem="GpU-Tx-fX1" firstAttribute="leading" secondItem="niK-Bt-dlb" secondAttribute="trailing" constant="10" id="pPo-6y-FRq"/>
                     <constraint firstItem="niK-Bt-dlb" firstAttribute="leading" secondItem="qzo-4r-UXt" secondAttribute="trailing" constant="5" id="qt6-wR-XNY"/>
                     <constraint firstItem="Ipk-7r-Ijb" firstAttribute="leading" secondItem="GpU-Tx-fX1" secondAttribute="trailing" constant="10" id="vDU-tG-tQI"/>
+                    <constraint firstItem="et0-ya-Pdc" firstAttribute="top" secondItem="GpU-Tx-fX1" secondAttribute="bottom" constant="16" id="yom-nz-avt"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -93,6 +117,7 @@
                 <outlet property="itemNameLabel" destination="qzo-4r-UXt" id="6uD-BO-V21"/>
                 <outlet property="minusButton" destination="niK-Bt-dlb" id="5rR-ew-qsA"/>
                 <outlet property="plusButton" destination="Ipk-7r-Ijb" id="be9-zz-Rnh"/>
+                <outlet property="priceLabel" destination="et0-ya-Pdc" id="lW0-dw-N15"/>
                 <outlet property="quantityLabel" destination="GpU-Tx-fX1" id="IEf-6o-fD8"/>
                 <outlet property="stockLabel" destination="xcF-1n-jva" id="Bx5-eV-MIl"/>
             </connections>

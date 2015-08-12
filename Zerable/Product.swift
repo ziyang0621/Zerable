@@ -12,7 +12,7 @@ import Parse
 class Product: PFObject, PFSubclassing {
     @NSManaged var name: String
     @NSManaged var productdescription: String
-    @NSManaged var price: Int
+    @NSManaged var price: Double
     @NSManaged var stock: Int
     @NSManaged var category: String
     @NSManaged var origin: String

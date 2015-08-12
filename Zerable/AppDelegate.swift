@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var product = Product()
             product.name = shuffle(kItemList).first!
             product.productdescription = "This is a frozen meet from Bay Area"
-            product.price = Int(arc4random_uniform(100))
+            product.price = Double(arc4random_uniform(100))
             product.stock = Int(arc4random_uniform(100))
             product.category = "American"
             product.origin = "San Francisco"
