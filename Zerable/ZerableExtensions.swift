@@ -37,31 +37,36 @@ extension PFQuery {
                 completion(success: false, error: error)
             } else {
                 if let cartItems = objects as? [CartItem] {
-                    PFQuery.checkCartItemsToChange(cartItems, completion: {
-                        (cartItemsToDelete, cartItemsToChangeQuantity, error) -> () in
-                        if let error = error {
-                            completion(success: false, error: error)
-                        } else {
-                            if let itemsToDelete = cartItemsToDelete {
-                                self.deleteCartItems(itemsToDelete, completion: { (success, error) -> () in
-                                    if let error = error {
-                                        completion(success: false, error: error)
-                                    } else {
-                                        if let itemsToChangeQuantity = cartItemsToChangeQuantity {
-                                            self.changeCartItemsQuantity(itemsToChangeQuantity, completion: { (success, error) -> () in
-                                                if let error = error {
-                                                    completion(success: false, error: error)
-                                                } else {
-                                                    completion(success: true, error: error)
-                                                }
-                                            })
+                    if cartItems.count == 0 {
+                        completion(success: true, error: nil)
+                    } else {
+                        PFQuery.checkCartItemsToChange(cartItems, completion: {
+                            (cartItemsToDelete, cartItemsToChangeQuantity, error) -> () in
+                            if let error = error {
+                                completion(success: false, error: error)
+                            } else {
+                                if let itemsToDelete = cartItemsToDelete {
+                                    self.deleteCartItems(itemsToDelete, completion: { (success, error) -> () in
+                                        if let error = error {
+                                            completion(success: false, error: error)
+                                        } else {
+                                            if let itemsToChangeQuantity = cartItemsToChangeQuantity {
+                                                self.changeCartItemsQuantity(itemsToChangeQuantity, completion: { (success, error) -> () in
+                                                    if let error = error {
+                                                        completion(success: false, error: error)
+                                                    } else {
+                                                        completion(success: true, error: error)
+                                                    }
+                                                })
+                                            }
                                         }
-                                    }
-
-                                })
+                                        
+                                    })
+                                }
                             }
-                        }
-                    })
+                        })
+
+                    }
                 }
             }
         }
@@ -185,13 +190,17 @@ extension PFQuery {
                 completion(cartItems: nil, error: error)
             } else {
                 if let cartItems = objects as? [CartItem] {
-                    self.fetchCartItemsProductDetails(cartItems, completion: { (cartItems, error) -> () in
-                        if let error = error {
-                            completion(cartItems: nil, error: error)
-                        } else {
-                            completion(cartItems: cartItems, error: nil)
-                        }
-                    })
+                    if cartItems.count == 0 {
+                        completion(cartItems: cartItems, error: nil)
+                    } else {
+                        self.fetchCartItemsProductDetails(cartItems, completion: { (cartItems, error) -> () in
+                            if let error = error {
+                                completion(cartItems: nil, error: error)
+                            } else {
+                                completion(cartItems: cartItems, error: nil)
+                            }
+                        })
+                    }
                 }
             }
         }

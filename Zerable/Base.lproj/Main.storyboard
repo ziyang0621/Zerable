@@ -401,8 +401,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cum-jL-YI1">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Process to checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-2c-Sja">
-                                        <rect key="frame" x="217" y="15" width="168" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Process to checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-2c-Sja">
+                                        <rect key="frame" x="217" y="16" width="168" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -416,7 +416,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-5X-O9K">
-                                <rect key="frame" x="530" y="480" width="60" height="60"/>
+                                <rect key="frame" x="530" y="530" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="H51-5D-4Kw"/>
                                     <constraint firstAttribute="height" constant="60" id="j2H-8S-nwL"/>
@@ -435,13 +435,13 @@
                             <constraint firstItem="1Wz-4W-m4t" firstAttribute="top" secondItem="Cum-jL-YI1" secondAttribute="bottom" id="PBh-zr-URr"/>
                             <constraint firstItem="KSa-Uu-dq6" firstAttribute="leading" secondItem="mcb-kc-h6e" secondAttribute="leading" id="PzF-tN-1fc"/>
                             <constraint firstItem="Cum-jL-YI1" firstAttribute="leading" secondItem="mcb-kc-h6e" secondAttribute="leading" id="TkQ-S5-wcy"/>
+                            <constraint firstAttribute="bottom" secondItem="WGk-5X-O9K" secondAttribute="bottom" constant="10" id="V6e-4a-6Bb"/>
                             <constraint firstItem="1Wz-4W-m4t" firstAttribute="top" secondItem="KSa-Uu-dq6" secondAttribute="bottom" id="bjE-W8-EUy"/>
                             <constraint firstAttribute="trailing" secondItem="KSa-Uu-dq6" secondAttribute="trailing" id="eko-fw-6M0"/>
                             <constraint firstAttribute="trailing" secondItem="WGk-5X-O9K" secondAttribute="trailing" constant="10" id="hTf-bK-CcU"/>
                             <constraint firstItem="KSa-Uu-dq6" firstAttribute="top" secondItem="mcb-kc-h6e" secondAttribute="top" id="kIF-ht-Gj1"/>
                             <constraint firstAttribute="trailing" secondItem="Cum-jL-YI1" secondAttribute="trailing" id="nvl-oc-5et"/>
                             <constraint firstAttribute="centerX" secondItem="3Jg-mM-fXW" secondAttribute="centerX" id="x14-cl-pML"/>
-                            <constraint firstItem="Cum-jL-YI1" firstAttribute="top" secondItem="WGk-5X-O9K" secondAttribute="bottom" constant="10" id="yjY-VY-Bo9"/>
                         </constraints>
                     </view>
                     <connections>

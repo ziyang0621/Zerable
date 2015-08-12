@@ -26,25 +26,17 @@ class CartViewController: UIViewController {
 
         navigationItem.title = "Cart"
         
-        let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeButtonTapped")
-        navigationItem.leftBarButtonItem = leftBarButton
-        
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .None
         tableView.registerNib(UINib(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: "CartItemCell")
         tableView.registerNib(UINib(nibName: "SubtotalCell", bundle: nil), forCellReuseIdentifier: "SubtotalCell")
-        tableView.estimatedRowHeight = 120
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
         let processTap = UITapGestureRecognizer(target: self, action: "processToCheckout")
         processToCheckoutView.addGestureRecognizer(processTap)
         
         UIView.applyCurvedShadow(assistButton.imageView!)
-        if fromGridIndex == 1 {
-            assistButton.alpha = 0
-        }
-        
-        loadCartDetails()
     }
     
     func processToCheckout() {
@@ -53,6 +45,25 @@ class CartViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if fromGridIndex == -1 {
+            let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeButtonTapped")
+            navigationItem.leftBarButtonItem = leftBarButton
+        } else {
+            navigationItem.leftBarButtonItem = nil
+        }
+        
+        if fromGridIndex == -1 {
+            assistButton.alpha = 0
+        } else {
+            assistButton.alpha = 1
+        }
+
+        loadCartDetails()
     }
     
     func loadCartDetails() {
@@ -87,8 +98,12 @@ class CartViewController: UIViewController {
                                     println(errorString)
                                 } else {
                                     if let cartItems = cartItems {
-                                        self.cartItemList.extend(cartItems)
-                                        self.processToCheckoutView.alpha = 1
+                                        if cartItems.count > 0 {
+                                            self.cartItemList.extend(cartItems)
+                                            self.processToCheckoutView.alpha = 1
+                                        } else {
+                                            self.cartEmptyLabel.alpha = 1
+                                        }
                                         self.tableView.reloadData()
                                     }
                                 }
@@ -106,18 +121,23 @@ class CartViewController: UIViewController {
     }
     
     func closeButtonTapped() {
-        KVNProgress.showWithStatus("Saving changes...", onView: navigationController?.view)
-        
-        PFQuery.updateCartItemsQuantity(cartItemList, completion: {
-            (success, error) -> () in
-            KVNProgress.dismiss()
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
-            } else {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        })
+        if cartItemList.count > 0 {
+            KVNProgress.showWithStatus("Saving changes...", onView: navigationController?.view)
+            
+            PFQuery.updateCartItemsQuantity(cartItemList, completion: {
+                (success, error) -> () in
+                KVNProgress.dismiss()
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? String
+                    println(errorString)
+                } else {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            })
+
+        } else {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     @IBAction func assistButtonPressed(sender: AnyObject) {
@@ -162,6 +182,14 @@ extension CartViewController: CartItemCellDelegate {
     }
 }
 
+extension CartViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < cartItemList.count {
+            return 120
+        }
+        return 44
+    }
+}
 
 extension CartViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -170,7 +198,7 @@ extension CartViewController: UITableViewDataSource {
         }
         return 44
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -220,17 +248,38 @@ extension CartViewController: RNGridMenuDelegate {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
             else {
+                var destinationVC: UINavigationController?
                 if itemIndex == 0 {
                     let productListVC = UIStoryboard.productListViewController()
                     productListVC.fromGridIndex == 1
                     let productListNav = UINavigationController(rootViewController: productListVC)
-                    self.presentViewController(productListNav, animated: true, completion: nil)
+                    destinationVC = productListNav
                 } else if itemIndex == 3 {
                     let settingsVC = UIStoryboard.settingsViewController()
                     settingsVC.fromGridIndex = 1
                     let settingsNav = UINavigationController(rootViewController: settingsVC)
-                    self.presentViewController(settingsNav, animated: true, completion: nil)
+                    destinationVC = settingsNav
                 }
+                
+                if let desVC = destinationVC {
+                    if self.cartItemList.count > 0 {
+                        KVNProgress.showWithStatus("Saving changes...", onView: self.navigationController?.view)
+                        PFQuery.updateCartItemsQuantity(self.cartItemList, completion: {
+                            (success, error) -> () in
+                            KVNProgress.dismiss()
+                            if let error = error {
+                                let errorString = error.userInfo?["error"] as? String
+                                println(errorString)
+                            } else {
+                                println("inside cart item saving......")
+                                self.presentViewController(desVC, animated: true, completion: nil)
+                            }
+                        })
+                    } else {
+                        self.presentViewController(desVC, animated: true, completion: nil)
+                    }
+                }
+             
             }
             
         }
