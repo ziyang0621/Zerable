@@ -22,11 +22,11 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niK-Bt-dlb">
-                        <rect key="frame" x="330" y="40" width="30" height="42"/>
+                        <rect key="frame" x="330" y="37" width="30" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="w3b-Mm-FuC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <state key="normal" title="-">
                             <color key="titleColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,11 +51,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipk-7r-Ijb">
-                        <rect key="frame" x="410" y="39" width="30" height="42"/>
+                        <rect key="frame" x="410" y="36" width="30" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="cV9-84-Scc"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <state key="normal" title="+">
                             <color key="titleColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

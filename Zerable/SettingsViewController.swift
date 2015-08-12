@@ -103,7 +103,13 @@ extension SettingsViewController: RNGridMenuDelegate {
                     productListVC.fromGridIndex == 3
                     let productListNav = UINavigationController(rootViewController: productListVC)
                     self.presentViewController(productListNav, animated: true, completion: nil)
+                } else if itemIndex == 1 {
+                    let cartVC = UIStoryboard.cartViewController()
+                    cartVC.fromGridIndex = 3
+                    let cartNav = UINavigationController(rootViewController: cartVC)
+                    self.presentViewController(cartNav, animated: true, completion: nil)
                 }
+
             }
 
         }

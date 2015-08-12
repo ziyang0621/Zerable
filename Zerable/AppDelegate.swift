@@ -71,11 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var product = Product()
             product.name = shuffle(kItemList).first!
             product.productdescription = "This is a frozen meet from Bay Area"
-            product.price = Double(arc4random_uniform(100))
-            product.stock = Int(arc4random_uniform(100))
+            var price = Double.random(min: 0, max: 99.99)
+            price = Double(round(100*price)/100)
+            product.price = NSDecimalNumber(decimal: NSNumber(double: price).decimalValue)
+            product.stock = Int.random(min: 0, max: 20)
             product.category = "American"
             product.origin = "San Francisco"
-            product.storedMethod = "Frozen"
+            product.storeMethod = "Frozen"
             product.durability = 180
             product.certificate = "xxx supply"
             product.productionDate = "7/1/2015"

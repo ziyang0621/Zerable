@@ -61,11 +61,11 @@ class ProductDetailViewController: UIViewController {
         
         productNameLabel.text = product.name
         
-        generateproductRow("Price", value: formattedCurrencyString(product.price as NSNumber), rowNumber: 0)
+        generateproductRow("Price", value: formattedCurrencyString(product.price), rowNumber: 0)
         generateproductRow("Stock", value: (product.stock as NSNumber).stringValue, rowNumber: 1)
         generateproductRow("Production Date", value: product.productdescription, rowNumber: 2)
         generateproductRow("Durability", value: (product.durability as NSNumber).stringValue + " days", rowNumber: 3)
-        generateproductRow("Store Method", value: product.storedMethod, rowNumber: 4)
+        generateproductRow("Store Method", value: product.storeMethod, rowNumber: 4)
         generateproductRow("Category", value: product.category, rowNumber: 5)
         generateproductRow("Origin", value: product.origin, rowNumber: 6)
         generateproductRow("Certificate", value: product.certificate, rowNumber: 7)
@@ -143,6 +143,7 @@ class ProductDetailViewController: UIViewController {
             if success {
                 let cartVC = UIStoryboard.cartViewController()
                 let cartNav = UINavigationController(rootViewController: cartVC)
+                cartVC.fromGridIndex = -1
                 self.presentViewController(cartNav, animated: true, completion: nil)
             } else {
                 if let error = error {

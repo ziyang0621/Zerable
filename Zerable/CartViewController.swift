@@ -9,13 +9,17 @@
 import UIKit
 import Parse
 import KVNProgress
+import RNGridMenu
 
 class CartViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cartEmptyLabel: UILabel!
+    @IBOutlet weak var processToCheckoutView: UIView!
+    @IBOutlet weak var assistButton: UIButton!
     var cartItemList = [CartItem]()
     var cart: Cart?
+    var fromGridIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +29,26 @@ class CartViewController: UIViewController {
         let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeButtonTapped")
         navigationItem.leftBarButtonItem = leftBarButton
         
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .None
         tableView.registerNib(UINib(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: "CartItemCell")
         tableView.registerNib(UINib(nibName: "SubtotalCell", bundle: nil), forCellReuseIdentifier: "SubtotalCell")
         tableView.estimatedRowHeight = 120
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        
+        let processTap = UITapGestureRecognizer(target: self, action: "processToCheckout")
+        processToCheckoutView.addGestureRecognizer(processTap)
+        
+        UIView.applyCurvedShadow(assistButton.imageView!)
+        if fromGridIndex == 1 {
+            assistButton.alpha = 0
+        }
         
         loadCartDetails()
+    }
+    
+    func processToCheckout() {
+        println("process tapped")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,6 +59,7 @@ class CartViewController: UIViewController {
         KVNProgress.showWithStatus("Loading...", onView: navigationController?.view)
         cartItemList.removeAll(keepCapacity: false)
         cartEmptyLabel.alpha = 0
+        processToCheckoutView.alpha = 0
     
         PFQuery.checkIfCartIsEmpty {
             (cart, error) -> () in
@@ -71,7 +88,7 @@ class CartViewController: UIViewController {
                                 } else {
                                     if let cartItems = cartItems {
                                         self.cartItemList.extend(cartItems)
-                                        
+                                        self.processToCheckoutView.alpha = 1
                                         self.tableView.reloadData()
                                     }
                                 }
@@ -89,28 +106,46 @@ class CartViewController: UIViewController {
     }
     
     func closeButtonTapped() {
-        dismissViewControllerAnimated(true, completion: nil)
+        KVNProgress.showWithStatus("Saving changes...", onView: navigationController?.view)
+        
+        PFQuery.updateCartItemsQuantity(cartItemList, completion: {
+            (success, error) -> () in
+            KVNProgress.dismiss()
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? String
+                println(errorString)
+            } else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        })
     }
 
+    @IBAction func assistButtonPressed(sender: AnyObject) {
+        let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
+            UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
+            UIImage(named: "history")!.newImageWithColor(kThemeColor),
+            UIImage(named:"settings")!.newImageWithColor(kThemeColor)])
+        
+        gridMenu.delegate = self
+        gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func calculateSubtotal() -> Double {
-        var subTotal: Double = 0.0
+    func calculateSubtotal() -> NSDecimalNumber {
+        var subTotal = NSDecimalNumber(string: "0.00")
         for cartItem in cartItemList {
-            let itemTotal = cartItem.product.price * Double(cartItem.quantity)
-            subTotal += itemTotal
+            let itemSubtotal = NSDecimalNumber(decimal: cartItem.product.price.decimalValue).decimalNumberByMultiplyingBy(NSDecimalNumber(decimal: NSNumber(double: Double(cartItem.quantity)).decimalValue))
+            subTotal = subTotal.decimalNumberByAdding(itemSubtotal)
         }
         
         return subTotal
     }
 }
 
-extension CartViewController: UITableViewDelegate {
-    
-}
 
 extension CartViewController: CartItemCellDelegate {
     func cartItemCellDidChangeQuantity(cell: CartItemCell, quantity: Int) {
@@ -171,6 +206,33 @@ extension CartViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier("SubtotalCell", forIndexPath: indexPath) as! SubtotalCell
             cell.subtotalLabel.text = formattedCurrencyString(calculateSubtotal())
             return cell
+        }
+    }
+}
+
+extension CartViewController: RNGridMenuDelegate {
+    func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
+        delay(seconds: 0.3) { () -> () in
+            if itemIndex == 1 {
+                return
+            }
+            if itemIndex == self.fromGridIndex {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                if itemIndex == 0 {
+                    let productListVC = UIStoryboard.productListViewController()
+                    productListVC.fromGridIndex == 1
+                    let productListNav = UINavigationController(rootViewController: productListVC)
+                    self.presentViewController(productListNav, animated: true, completion: nil)
+                } else if itemIndex == 3 {
+                    let settingsVC = UIStoryboard.settingsViewController()
+                    settingsVC.fromGridIndex = 1
+                    let settingsNav = UINavigationController(rootViewController: settingsVC)
+                    self.presentViewController(settingsNav, animated: true, completion: nil)
+                }
+            }
+            
         }
     }
 }

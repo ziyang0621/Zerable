@@ -10,6 +10,24 @@ import UIKit
 import Parse
 
 extension PFQuery {
+    class func updateCartItemsQuantity(cartItems: [CartItem], completion: (success: Bool, error: NSError?) -> ()) {
+       var counter = 0
+       let cartItemCount = cartItems.count
+        for singleItem in cartItems {
+            singleItem.saveInBackgroundWithBlock({
+                (success: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    completion(success: false, error: error)
+                } else {
+                    counter++
+                    if counter == cartItemCount {
+                        completion(success: true, error: nil)
+                    }
+                }
+            })
+        }
+    }
+    
     class func adjustCartItem(cart: Cart, completion: (success: Bool, error: NSError?) ->()) {
         let cartItemQuery = PFQuery(className: "CartItem")
         cartItemQuery.whereKey("cart", equalTo: cart)
@@ -63,7 +81,7 @@ extension PFQuery {
                 if let error = error {
                     completion(cartItemsToDelete: nil, cartItemsToChangeQuantity: nil, error: error)
                 } else {
-                    if stock == 0 {
+                    if stock == 0 || quantity == 0 {
                         cartItemsToDelete.append(cartItem)
                     } else {
                         if quantity > stock {
@@ -562,3 +580,47 @@ extension KeychainWrapper {
     }
 }
 
+
+extension Int {
+
+    public static func random(n: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(n)))
+    }
+
+    public static func random(#min: Int, max: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(max - min + 1))) + min
+    }
+}
+
+extension Double {
+
+    public static func random() -> Double {
+        return Double(arc4random()) / 0xFFFFFFFF
+    }
+    
+    public static func random(#min: Double, max: Double) -> Double {
+        return Double.random() * (max - min) + min
+    }
+}
+
+extension Float {
+   
+    public static func random() -> Float {
+        return Float(arc4random()) / 0xFFFFFFFF
+    }
+
+    public static func random(#min: Float, max: Float) -> Float {
+        return Float.random() * (max - min) + min
+    }
+}
+
+extension CGFloat {
+  
+    public static func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    }
+
+    public static func random(#min: CGFloat, max: CGFloat) -> CGFloat {
+        return CGFloat.random() * (max - min) + min
+    }
+}

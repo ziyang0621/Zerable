@@ -278,6 +278,11 @@ extension ProductListViewController: RNGridMenuDelegate {
                     settingsVC.fromGridIndex = 0
                     let settingsNav = UINavigationController(rootViewController: settingsVC)
                     self.presentViewController(settingsNav, animated: true, completion: nil)
+                } else if itemIndex == 1 {
+                    let cartVC = UIStoryboard.cartViewController()
+                    cartVC.fromGridIndex = 0
+                    let cartNav = UINavigationController(rootViewController: cartVC)
+                    self.presentViewController(cartNav, animated: true, completion: nil)
                 }
             }
             

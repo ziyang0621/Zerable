@@ -39,8 +39,11 @@ class CartItemCell: PFTableViewCell {
         didSet {
             if let currentQuantity = currentQuantity {
                 quantityLabel.text = "\(currentQuantity)"
-                let total = cartItem!.product.price * Double(currentQuantity)
-                priceLabel.text = formattedCurrencyString((total as NSNumber))
+                
+                if let cartItem = cartItem {
+                    let total = NSDecimalNumber(decimal: cartItem.product.price.decimalValue).decimalNumberByMultiplyingBy(NSDecimalNumber(decimal: NSNumber(double: Double(currentQuantity)).decimalValue))
+                    priceLabel.text = formattedCurrencyString(total)
+                }
             }
         }
     }
