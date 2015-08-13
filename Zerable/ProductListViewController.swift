@@ -32,8 +32,6 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("viewDidLoad")
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -126,7 +124,6 @@ class ProductListViewController: UIViewController {
             (counts: Int32, error: NSError?) -> Void in
             if error == nil {
                 self.totalPages = Int(ceil(Double(counts) / Double(self.numberOfproductsPerPage)))
-                println(self.totalPages)
                 let query = PFQuery(className: "Product")
                 query.limit = 8
                 query.findObjectsInBackgroundWithBlock({
@@ -137,7 +134,6 @@ class ProductListViewController: UIViewController {
                         println(errorString)
                     } else {
                         if let products = objects as? [Product] {
-                            println("query count \(self.productList.count)")
                             self.productList.extend(products)
                             self.resetUI()
                             self.currentPage++
@@ -164,7 +160,6 @@ class ProductListViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        println("viewWillAppear")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -175,8 +170,6 @@ class ProductListViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        println("viewDidLayoutSubviews")
     }
     
     @IBAction func assistButtonPressed(sender: AnyObject) {
@@ -205,7 +198,7 @@ extension ProductListViewController: UITableViewDataSource {
         cell.itemImageView.file = product.thumbnail
         cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
             if error == nil {
-                println("cell image loaded")
+            //    println("cell image loaded")
             } else {
                 let errorString = error!.userInfo?["error"] as? String
                 println(errorString)
@@ -216,7 +209,6 @@ extension ProductListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(productList.count)
         if (resultSearchController.active) {
             return filteredTableData.count
         }

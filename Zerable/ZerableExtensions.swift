@@ -171,7 +171,9 @@ extension PFQuery {
                     completion(cartItems: nil, error: error)
                 } else {
                     if let product = object as? Product {
-                        cartItems[counter++].product = product
+
+                        cartItem.product = product
+                        counter++
                         if counter == cartItemCount {
                             completion(cartItems: cartItems, error: nil)
                         }
@@ -193,6 +195,7 @@ extension PFQuery {
                     if cartItems.count == 0 {
                         completion(cartItems: cartItems, error: nil)
                     } else {
+            
                         self.fetchCartItemsProductDetails(cartItems, completion: { (cartItems, error) -> () in
                             if let error = error {
                                 completion(cartItems: nil, error: error)

@@ -120,24 +120,34 @@ class CartViewController: UIViewController {
         }
     }
     
-    func closeButtonTapped() {
-        if cartItemList.count > 0 {
-            KVNProgress.showWithStatus("Saving changes...", onView: navigationController?.view)
-            
-            PFQuery.updateCartItemsQuantity(cartItemList, completion: {
+    func viewControllerTransitionWithSaving(dismiss: Bool, destVC: UIViewController?) {
+        if self.cartItemList.count > 0 {
+            KVNProgress.showWithStatus("Saving changes...", onView: self.navigationController?.view)
+            PFQuery.updateCartItemsQuantity(self.cartItemList, completion: {
                 (success, error) -> () in
                 KVNProgress.dismiss()
                 if let error = error {
                     let errorString = error.userInfo?["error"] as? String
                     println(errorString)
                 } else {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    if dismiss {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentViewController(destVC!, animated: true, completion: nil)
+                    }
                 }
             })
-
         } else {
-            dismissViewControllerAnimated(true, completion: nil)
+            if dismiss {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.presentViewController(destVC!, animated: true, completion: nil)
+            }
         }
+    }
+    
+    func closeButtonTapped() {
+        viewControllerTransitionWithSaving(true, destVC: nil)
     }
 
     @IBAction func assistButtonPressed(sender: AnyObject) {
@@ -221,7 +231,7 @@ extension CartViewController: UITableViewDataSource {
             
             cell.itemImageView.loadInBackground({ (image: UIImage?, error: NSError?) -> Void in
                 if error == nil {
-                    println("cell image loaded")
+                   // println("cell image loaded")
                 } else {
                     let errorString = error!.userInfo?["error"] as? String
                     println(errorString)
@@ -241,11 +251,12 @@ extension CartViewController: UITableViewDataSource {
 extension CartViewController: RNGridMenuDelegate {
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
         delay(seconds: 0.3) { () -> () in
+            println("test inside")
             if itemIndex == 1 {
                 return
             }
             if itemIndex == self.fromGridIndex {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.viewControllerTransitionWithSaving(true, destVC: nil)
             }
             else {
                 var destinationVC: UINavigationController?
@@ -261,23 +272,8 @@ extension CartViewController: RNGridMenuDelegate {
                     destinationVC = settingsNav
                 }
                 
-                if let desVC = destinationVC {
-                    if self.cartItemList.count > 0 {
-                        KVNProgress.showWithStatus("Saving changes...", onView: self.navigationController?.view)
-                        PFQuery.updateCartItemsQuantity(self.cartItemList, completion: {
-                            (success, error) -> () in
-                            KVNProgress.dismiss()
-                            if let error = error {
-                                let errorString = error.userInfo?["error"] as? String
-                                println(errorString)
-                            } else {
-                                println("inside cart item saving......")
-                                self.presentViewController(desVC, animated: true, completion: nil)
-                            }
-                        })
-                    } else {
-                        self.presentViewController(desVC, animated: true, completion: nil)
-                    }
+                if let destVC = destinationVC {
+                    self.viewControllerTransitionWithSaving(false, destVC: destVC)
                 }
              
             }
