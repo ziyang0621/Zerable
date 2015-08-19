@@ -26,11 +26,10 @@ class AddressViewController: UIViewController {
     var placemarkList: [CLPlacemark] = []
     var selectedPlacemark: CLPlacemark?
     var loadedAddressSummary = ""
+    var toCheckout = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scrollView.topInset = 64
         
         fullAddressTextField.delegate = self
         fullAddressTextField.dataSourceDelegate = self
@@ -56,6 +55,12 @@ class AddressViewController: UIViewController {
                 self.changeSaveButtonState()
             })
         }
+        
+        if toCheckout {
+            saveButton.setTitle("Next", forState: .Normal)
+        } else {
+            scrollView.topInset = 64
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +71,12 @@ class AddressViewController: UIViewController {
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         if loadedAddressSummary == addressSummaryTextView.text {
+            if self.toCheckout {
+                let paymentInfoVC = UIStoryboard.paymentInfoViewController()
+                paymentInfoVC.toCheckout = true
+                self.showViewController(paymentInfoVC, sender: self)
+            }
+
             return
         }
         if checkAddress() {
@@ -80,7 +91,11 @@ class AddressViewController: UIViewController {
                 KVNProgress.showWithStatus("Saving...")
                 userAddress.saveInBackgroundWithBlock({
                     (succeeded: Bool, error: NSError?) -> Void in
-                    KVNProgress.showSuccess()
+                    if self.toCheckout {
+                        KVNProgress.dismiss()
+                    } else {
+                        KVNProgress.showSuccess()
+                    }
                     if let error = error {
                         let errorString = error.userInfo?["error"] as? String
                         let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
@@ -88,6 +103,12 @@ class AddressViewController: UIViewController {
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
                         self.loadedAddressSummary = self.addressSummaryTextView.text
+                        
+                        if self.toCheckout {
+                            let paymentInfoVC = UIStoryboard.paymentInfoViewController()
+                            paymentInfoVC.toCheckout = true
+                            self.showViewController(paymentInfoVC, sender: self)
+                        }
                     }
                 })
             }

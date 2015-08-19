@@ -7,111 +7,120 @@
 //
 
 import UIKit
-import PaymentKit
 import Parse
 import KVNProgress
+import Stripe
 
 class PaymentInfoViewController: UIViewController {
 
     @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var paymentView: PTKView!
+    @IBOutlet weak var paymentView: STPPaymentCardTextField!
     @IBOutlet weak var cardSummaryTextView: UITextView!
     @IBOutlet weak var saveButton: ZerableRoundButton!
-    var loadedCardNumber = ""
+    var cardInfo: UserCardInfo?
+    var noCardInfo = "There is no payment card infomation in your profile"
+    var toCheckout = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.topInset = 64
 
         cardSummaryTextView.layer.cornerRadius = 5
-        
-        saveButton.enabled = false
         
         paymentView.delegate = self
         paymentView.becomeFirstResponder()
         
-//        PFUser.currentUser()?.fetchIfNeededInBackgroundWithBlock({
-//            (object: PFObject?, error:NSError?) -> Void in
-//            let user = object as! PFUser
-//            if user["payments"] != nil {
-//                let userPayments = user["payments"] as! [PFObject]
-//                let userPayment = userPayments.first!
-//                userPayment.fetchIfNeededInBackgroundWithBlock({
-//                    (payment: PFObject?, error:NSError?) -> Void in
-//                    let cardDict = NSKeyedUnarchiver.unarchiveObjectWithData(payment!["cardInfo"] as! NSData) as! [String: String]
-//                    self.paymentView.cardNumberField.text = cardDict["numberField"]
-//                    self.paymentView.cardExpiryField.text = cardDict["expiryField"]
-//                    self.paymentView.cardCVCField.text = cardDict["cvcField"]
-//                    if self.paymentView.isValid() {
-//                        self.saveButton.backgroundColor = kThemeColor
-//                        self.saveButton.enabled = true
-//                        
-//                        let cardType = self.paymentView.cardNumber.cardType
-//                        let cardTypeName = self.getCardTypeName(cardType)
-//                        self.cardSummaryTextView.text =  "\(cardTypeName)\nCard Number End With: \(self.paymentView.cardNumber.last4)"
-//                    }
-//                })
-//            }
-//        })
-        
         if let currentUser = PFUser.currentUser() {
-            let query = PFQuery(className: "UserPayment")
-            query.whereKey("user", equalTo: currentUser)
-            query.orderByDescending("createdAt")
-            query.getFirstObjectInBackgroundWithBlock({
-                (payment: PFObject?, error:NSError?) -> Void in
-                let cardDict = NSKeyedUnarchiver.unarchiveObjectWithData(payment!["cardInfo"] as! NSData) as! [String: String]
-                self.paymentView.cardNumberField.text = cardDict["numberField"]
-                self.paymentView.cardExpiryField.text = cardDict["expiryField"]
-                self.paymentView.cardCVCField.text = cardDict["cvcField"]
-                self.loadedCardNumber = cardDict["number"]!
-                if self.paymentView.isValid() {
-                    self.saveButton.backgroundColor = kThemeColor
-                    self.saveButton.enabled = true
-                    
-                    let cardType = self.paymentView.cardNumber.cardType
-                    let cardTypeName = self.getCardTypeName(cardType)
-                    self.cardSummaryTextView.text =  "\(cardTypeName)\nCard Number End With: \(self.paymentView.cardNumber.last4)"
+            PFQuery.loadUserPayment(currentUser, completion: { (cardInfo, error) -> () in
+                if error == nil {
+                    if let card = cardInfo {
+                        self.cardInfo = card
+                        let cardTypeName = card.brandName
+                        self.cardSummaryTextView.text =  "\(cardTypeName)\nCard Number End With: \(card.last4)"
+                    } else {
+                        self.cardSummaryTextView.text = self.noCardInfo
+                    }
                 }
+                self.checkSaveButtonState()
             })
         }
+        
+        if toCheckout {
+            saveButton.setTitle("Next", forState: .Normal)
+        } else {
+            scrollView.topInset = 64
+        }
+        
     }
 
     @IBAction func saveButtonPressed(sender: AnyObject) {
-        if loadedCardNumber == paymentView.card.number {
-            return
-        }
-        if let currentUser = PFUser.currentUser() {
-            let userPayment = PFObject(className: "UserPayment")
-            var paymentDict = [String: String]()
-            paymentDict["number"] = paymentView.card.number
-            paymentDict["cvc"] = paymentView.card.cvc
-            paymentDict["addressZip"] = paymentView.card.addressZip
-            paymentDict["expMonth"] = "\(paymentView.card.expMonth)"
-            paymentDict["expYear"] = "\(paymentView.card.expYear)"
-            paymentDict["last4"] = paymentView.card.last4
-            paymentDict["numberField"] = paymentView.cardNumberField.text
-            paymentDict["expiryField"] = paymentView.cardExpiryField.text
-            paymentDict["cvcField"] = paymentView.cardCVCField.text
-        
-            userPayment["cardInfo"] = NSKeyedArchiver.archivedDataWithRootObject(paymentDict)
-            userPayment["user"] = currentUser
-            
-            KVNProgress.showWithStatus("Saving...")
-            userPayment.saveInBackgroundWithBlock({
-                (succeeded: Bool, error: NSError?) -> Void in
-                KVNProgress.showSuccess()
-                if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
-                    let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+        if toCheckout {
+            if let cardInfo = cardInfo {
+                println("already has card info")
+            } else {
+                if let currentUser = PFUser.currentUser() {
+                    
+                    let userCardInfo = UserCardInfo()
+                    userCardInfo.number = paymentView.card!.number!
+                    userCardInfo.last4 = paymentView.card!.last4!
+                    userCardInfo.expMonth = paymentView.card!.expMonth
+                    userCardInfo.expYear = paymentView.card!.expYear
+                    userCardInfo.cvc = paymentView.card!.cvc!
+                    userCardInfo.brandName = self.getCardTypeName(paymentView.card!.brand)
+                    userCardInfo.user = currentUser
+                    
+                    KVNProgress.showWithStatus("Saving...")
+                    userCardInfo.saveInBackgroundWithBlock({
+                        (succeeded: Bool, error: NSError?) -> Void in
+                        KVNProgress.dismiss()
+                        if let error = error {
+                            let errorString = error.userInfo?["error"] as? String
+                            let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        } else {
+                            self.cardInfo = userCardInfo
+                        }
+                    })
+                }
+            }
+        } else {
+            if let cardInfo = cardInfo {
+                if cardInfo.number == paymentView.cardNumber! {
+                    let alert = UIAlertController(title: "Duplicate", message: "The card you input is the same as the one you in your profile currently", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
-                } else {
-                    self.loadedCardNumber = self.paymentView.card.number
+                    
+                    return
                 }
-            })
+                
+            }
+            if let currentUser = PFUser.currentUser() {
+                
+                let userCardInfo = UserCardInfo()
+                userCardInfo.number = paymentView.card!.number!
+                userCardInfo.last4 = paymentView.card!.last4!
+                userCardInfo.expMonth = paymentView.card!.expMonth
+                userCardInfo.expYear = paymentView.card!.expYear
+                userCardInfo.cvc = paymentView.card!.cvc!
+                userCardInfo.brandName = self.getCardTypeName(paymentView.card!.brand)
+                userCardInfo.user = currentUser
+                
+                KVNProgress.showWithStatus("Saving...")
+                userCardInfo.saveInBackgroundWithBlock({
+                    (succeeded: Bool, error: NSError?) -> Void in
+                    KVNProgress.showSuccess()
+                    if let error = error {
+                        let errorString = error.userInfo?["error"] as? String
+                        let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    } else {
+                        self.cardInfo = userCardInfo
+                    }
+                })
+            }
+
         }
     }
     
@@ -120,40 +129,54 @@ class PaymentInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getCardTypeName(cardType: PTKCardType) -> String {
+    func getCardTypeName(cardType: STPCardBrand) -> String {
         let cardTypeName: String!
         
-        switch (cardType.value) {
-        case PTKCardTypeAmex.value:
-            cardTypeName = "amex"
-        case PTKCardTypeDinersClub.value:
+        switch (cardType) {
+        case .Amex:
+            cardTypeName = "AMEX"
+        case .DinersClub:
             cardTypeName = "Dinners"
-        case PTKCardTypeDiscover.value:
+        case .Discover:
             cardTypeName = "Discover"
-        case PTKCardTypeJCB.value:
+        case .JCB:
             cardTypeName = "JCB"
-        case PTKCardTypeMasterCard.value:
+        case .MasterCard:
             cardTypeName = "Master Card"
-        case PTKCardTypeVisa.value:
+        case .Visa:
             cardTypeName = "VISA"
         default:
             cardTypeName = ""
         }
         return cardTypeName
     }
+    
+    func checkSaveButtonState() {
+        if toCheckout {
+            saveButton.enabled = (paymentView.valid || cardInfo != nil)
+            saveButton.backgroundColor = (paymentView.valid || cardInfo != nil)  ? kThemeColor : UIColor.lightGrayColor()
+        } else {
+            saveButton.enabled = paymentView.valid
+            saveButton.backgroundColor = paymentView.valid ? kThemeColor : UIColor.lightGrayColor()
+        }
+    }
 }
 
-extension PaymentInfoViewController: PTKViewDelegate {
-    func paymentView(paymentView: PTKView!, withCard card: PTKCard!, isValid valid: Bool) {
-        saveButton.enabled = valid
-        saveButton.backgroundColor = valid ? kThemeColor : UIColor.lightGrayColor()
-        if valid {
-            let cardType = paymentView.cardNumber.cardType
-            let cardTypeName = getCardTypeName(cardType)
-       
-            cardSummaryTextView.text = valid ? "\(cardTypeName)\nCard Number End With: \(paymentView.cardNumber.last4)" : ""
+extension PaymentInfoViewController: STPPaymentCardTextFieldDelegate {
+    func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
+        checkSaveButtonState()
+        
+        if textField.valid {
+            let cardTypeName = getCardTypeName(textField.card!.brand)
+            
+            cardSummaryTextView.text = textField.valid ? "\(cardTypeName)\nCard Number End With: \(textField.card!.last4!)" : ""
         } else {
-            cardSummaryTextView.text = ""
+            if let cardInfo = cardInfo {
+                cardSummaryTextView.text = "\(cardInfo.brandName)\nCard Number End With: \(cardInfo.last4)"
+            } else {
+                cardSummaryTextView.text = noCardInfo
+            }
         }
+
     }
 }

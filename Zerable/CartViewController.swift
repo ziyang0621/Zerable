@@ -41,6 +41,9 @@ class CartViewController: UIViewController {
     
     func processToCheckout() {
         println("process tapped")
+        let basicInfoVC = UIStoryboard.basicViewController()
+        basicInfoVC.toCheckout = true
+        showViewController(basicInfoVC, sender: self)
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -57,10 +57,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Zerable/NYTPhotoViewer.framework'
   install_framework 'Pods-Zerable/Parse.framework'
   install_framework 'Pods-Zerable/ParseUI.framework'
-  install_framework 'Pods-Zerable/PaymentKit.framework'
   install_framework 'Pods-Zerable/REFormattedNumberField.framework'
   install_framework 'Pods-Zerable/RNGridMenu.framework'
+  install_framework 'Pods-Zerable/Stripe.framework'
   install_framework 'Pods-Zerable/ZTDropDownTextField.framework'
+  install_framework 'Pods-Zerable/pop.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Zerable/Bolts.framework'
@@ -68,8 +69,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Zerable/NYTPhotoViewer.framework'
   install_framework 'Pods-Zerable/Parse.framework'
   install_framework 'Pods-Zerable/ParseUI.framework'
-  install_framework 'Pods-Zerable/PaymentKit.framework'
   install_framework 'Pods-Zerable/REFormattedNumberField.framework'
   install_framework 'Pods-Zerable/RNGridMenu.framework'
+  install_framework 'Pods-Zerable/Stripe.framework'
   install_framework 'Pods-Zerable/ZTDropDownTextField.framework'
+  install_framework 'Pods-Zerable/pop.framework'
 fi

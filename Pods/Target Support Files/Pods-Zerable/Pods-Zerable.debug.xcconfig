@@ -1,7 +1,9 @@
+CLANG_CXX_LANGUAGE_STANDARD = c++11
+CLANG_CXX_LIBRARY = libc++
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/KVNProgress.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/NYTPhotoViewer.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ParseUI.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PaymentKit.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/REFormattedNumberField.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RNGridMenu.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ZTDropDownTextField.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -undefined dynamic_lookup -framework "Bolts" -framework "KVNProgress" -framework "NYTPhotoViewer" -framework "Parse" -framework "ParseUI" -framework "PaymentKit" -framework "REFormattedNumberField" -framework "RNGridMenu" -framework "ZTDropDownTextField"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/KVNProgress.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/NYTPhotoViewer.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ParseUI.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/REFormattedNumberField.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RNGridMenu.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Stripe.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ZTDropDownTextField.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/pop.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Bolts" -framework "KVNProgress" -framework "NYTPhotoViewer" -framework "Parse" -framework "ParseUI" -framework "REFormattedNumberField" -framework "RNGridMenu" -framework "Stripe" -framework "ZTDropDownTextField" -framework "pop"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Zerable
 PODS_ROOT = ${SRCROOT}/Pods

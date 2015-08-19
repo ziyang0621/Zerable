@@ -12,7 +12,7 @@ pod 'REFormattedNumberField'
 
 pod 'RNGridMenu'
 
-pod 'PaymentKit'
+pod 'Stripe'
 
 pod 'Parse'
 

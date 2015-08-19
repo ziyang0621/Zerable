@@ -42,6 +42,7 @@
 		85BA28DD1B4DD1660084E7A7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA28DC1B4DD1660084E7A7 /* GradientView.swift */; };
 		85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BE69571B4397E0008F13F1 /* ItemCell.xib */; };
 		85BE69641B439A1B008F13F1 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE69631B439A1B008F13F1 /* ItemCell.swift */; };
+		85E347C41B852E720061A285 /* UserCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E347C31B852E720061A285 /* UserCardInfo.swift */; };
 		85F6C9561B39F24500517ADB /* ZerableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6C9551B39F24500517ADB /* ZerableExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		85BA28DC1B4DD1660084E7A7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		85BE69571B4397E0008F13F1 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		85BE69631B439A1B008F13F1 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		85E347C31B852E720061A285 /* UserCardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCardInfo.swift; sourceTree = "<group>"; };
 		85F6C9551B39F24500517ADB /* ZerableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZerableExtensions.swift; sourceTree = "<group>"; };
 		D09FFBFED2BF73E0FCA0F661 /* Pods-Zerable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zerable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zerable/Pods-Zerable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 				85B3C7EF1B7A6B83008EB488 /* Product.swift */,
 				85B3C7F31B7A71CA008EB488 /* CartItem.swift */,
 				85B3C7F11B7A71C2008EB488 /* Cart.swift */,
+				85E347C31B852E720061A285 /* UserCardInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				85B3C7F61B7A7776008EB488 /* ProductDetailViewController.swift in Sources */,
 				8546A1431B3A58CF00150669 /* KeychainWrapper.m in Sources */,
 				8532CD9B1B41F78F004D45EF /* ZerableRoundButton.swift in Sources */,
+				85E347C41B852E720061A285 /* UserCardInfo.swift in Sources */,
 				852B9C9D1B50DE33006DE459 /* ProfileViewController.swift in Sources */,
 				85110DE71B794648008848B4 /* CartViewController.swift in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,

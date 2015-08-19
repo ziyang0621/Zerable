@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PaymentKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Zerable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,7 +44,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Stripe.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZTDropDownTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,17 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EBE4828E2B39F662E86DF7CF65891E1</key>
+		<key>254C78A24F8411ED5F5E7211AC49F3B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1DB6FB85DF997B149CB011612232047F</key>
+		<key>3DA374BB5346C86BB9E37D7D8A3F9705</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7414EEBCA058DF4A8D5C8FFB1A43ABD4</key>
+		<key>44E8DBCA1C4555893C2F2D2123DFB16C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>572C6226748BC6DD7EAD51BD05FA315F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,27 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75F5A1E29D0B82D2491D0F1E8EF89712</key>
+		<key>ADB35418E7D12CC55F3E943CA1E94270</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE239113DD3A73670F0A85F33C5F88D4</key>
+		<key>B239C97E3A917FD88385B304D102A545</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF50D4E3A3FA7F7F00F27B6736F6EAD8</key>
+		<key>BCEB16558D00E10174357AC81956FEFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAE0E3752613BC39FFE2E6F7E2624C48</key>
+		<key>D439223E6CEEBEA84D7822E48F7250FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F041B11C013FE4EB0EE9A58D801D7C28</key>
+		<key>F229F88A17251E912A33844678AF5D70</key>
 		<dict>
 			<key>primary</key>
 			<true/>

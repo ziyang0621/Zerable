@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Product.initialize()
         Cart.initialize()
         CartItem.initialize()
+        UserCardInfo.initialize()
         
         Parse.setApplicationId("gSMFL1BfYtr0daSJz9iQqUCzsK7ZRYdSg80Fy30O", clientKey: "R4s5wWFQus4BPt1xaKnIyOHPPLSSIa9gd7fS3YbQ")
         

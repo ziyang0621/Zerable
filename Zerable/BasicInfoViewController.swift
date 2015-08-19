@@ -19,11 +19,10 @@ class BasicInfoViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: REFormattedNumberField!
     @IBOutlet weak var saveButton: ZerableRoundButton!
+    var toCheckout = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.topInset = 64
         
         phoneTextField.format = "(XXX) XXX-XXXX";
         
@@ -39,6 +38,12 @@ class BasicInfoViewController: UIViewController {
             self.phoneTextField.text = user["phoneNumber"] as! String
             self.changeSaveButtonState()
         })
+        
+        if toCheckout {
+            saveButton.setTitle("Next", forState: .Normal)
+        } else {
+            scrollView.topInset = 64
+        }
         
         firstnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
         lastnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
@@ -63,12 +68,22 @@ class BasicInfoViewController: UIViewController {
             KVNProgress.showWithStatus("Saving...")
             currentUser.saveInBackgroundWithBlock({
                 (succeeded: Bool, error: NSError?) -> Void in
-                KVNProgress.showSuccess()
+                if self.toCheckout {
+                    KVNProgress.dismiss()
+                } else {
+                    KVNProgress.showSuccess()
+                }
                 if let error = error {
                     let errorString = error.userInfo?["error"] as? String
                     let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    if self.toCheckout {
+                        let addressVC = UIStoryboard.addressViewController()
+                        addressVC.toCheckout = true
+                        self.showViewController(addressVC, sender: self)
+                    }
                 }
             })
         }

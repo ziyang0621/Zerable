@@ -10,6 +10,27 @@ import UIKit
 import Parse
 
 extension PFQuery {
+    class func loadUserPayment(user: PFUser, completion: (cardInfo: UserCardInfo?, error: NSError?) -> ()) {
+        let query = PFQuery(className: "UserCardInfo")
+        query.whereKey("user", equalTo: user)
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                completion(cardInfo: nil, error: error)
+            } else {
+                if let cardInfos = objects as? [UserCardInfo] {
+                    if cardInfos.count > 0 {
+                        completion(cardInfo: cardInfos.first!, error: nil)
+                    } else {
+                        completion(cardInfo: nil, error: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    
     class func updateCartItemsQuantity(cartItems: [CartItem], completion: (success: Bool, error: NSError?) -> ()) {
        var counter = 0
        let cartItemCount = cartItems.count

@@ -2,34 +2,40 @@ PODS:
   - Bolts/Tasks (1.2.0)
   - KVNProgress (2.2.1)
   - NYTPhotoViewer (0.1.2)
-  - Parse (1.7.5.3):
+  - Parse (1.8.1):
     - Bolts/Tasks (>= 1.2.0)
-  - ParseUI (1.1.4):
-    - Parse (~> 1.7)
-  - PaymentKit (1.1.1)
+  - ParseUI (1.1.5):
+    - Bolts/Tasks (~> 1.2)
+    - Parse (~> 1.8)
+  - pop (1.0.7)
   - REFormattedNumberField (1.1.5)
   - RNGridMenu (0.1.3)
-  - ZTDropDownTextField (0.1.2)
+  - Stripe (5.1.2):
+    - Stripe/Core (= 5.1.2)
+  - Stripe/Core (5.1.2)
+  - ZTDropDownTextField (0.1.4):
+    - pop (~> 1.0)
 
 DEPENDENCIES:
   - KVNProgress
   - NYTPhotoViewer
   - Parse
   - ParseUI
-  - PaymentKit
   - REFormattedNumberField
   - RNGridMenu
+  - Stripe
   - ZTDropDownTextField
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
   NYTPhotoViewer: 874a57dd833238b52ab2e8d1c827356c763626c3
-  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
-  ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
-  PaymentKit: 323c25233af5060880daa0c31366d4b688c34487
+  Parse: 2155953b1565494095d5fa5c83b3c77f2c677c09
+  ParseUI: 2c53621ed028ee793f5ab92a551b099689265525
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   REFormattedNumberField: be3d55dd709f65541fb26b7e1709da07903147f8
   RNGridMenu: c58db81f87b5473936bb1b675dc3e947c409b51d
-  ZTDropDownTextField: 7c5c61cabefc2d1fad140c4c7bcf747fd0b9cd85
+  Stripe: 141b28d157f12db2e1624315cf19f1b6bd5af84d
+  ZTDropDownTextField: daa0562263299b87c7bcb1f52c7a7af410714134
 
 COCOAPODS: 0.38.2
