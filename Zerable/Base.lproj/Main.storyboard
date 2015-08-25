@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ogx-K6-sFI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ogx-K6-sFI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -653,6 +653,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAK-Iz-4am" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2679" y="1149"/>
+        </scene>
+        <!--Order Summary View Controller-->
+        <scene sceneID="dd0-8v-fTl">
+            <objects>
+                <viewController storyboardIdentifier="OrderSummaryViewController" id="PQi-Qj-PYh" customClass="OrderSummaryViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6ne-LA-40x"/>
+                        <viewControllerLayoutGuide type="bottom" id="HP7-AN-bFS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FK1-bf-HW4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="cfD-Ay-06w">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cart is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-Hn-hn8">
+                                <rect key="frame" x="214" y="285" width="173" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KaL-Rt-TYz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrP-C0-Nap">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Place Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-l1-pMn">
+                                        <rect key="frame" x="253" y="15" width="97" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="Mcf-l1-pMn" secondAttribute="centerY" id="9dG-R8-Wz2"/>
+                                    <constraint firstAttribute="centerX" secondItem="Mcf-l1-pMn" secondAttribute="centerX" id="Vdc-fs-V8m"/>
+                                    <constraint firstAttribute="height" constant="50" id="i6c-AL-SG4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vYK-Hn-hn8" secondAttribute="centerX" id="5NX-0g-oXO"/>
+                            <constraint firstAttribute="centerY" secondItem="vYK-Hn-hn8" secondAttribute="centerY" id="NB5-od-rL2"/>
+                            <constraint firstItem="cfD-Ay-06w" firstAttribute="leading" secondItem="FK1-bf-HW4" secondAttribute="leading" id="NR0-PC-2Ij"/>
+                            <constraint firstAttribute="bottom" secondItem="YrP-C0-Nap" secondAttribute="bottom" id="OJ3-UK-vvB"/>
+                            <constraint firstAttribute="bottom" secondItem="cfD-Ay-06w" secondAttribute="bottom" id="aDh-aM-pVX"/>
+                            <constraint firstAttribute="trailing" secondItem="YrP-C0-Nap" secondAttribute="trailing" id="cLl-y7-8pg"/>
+                            <constraint firstItem="YrP-C0-Nap" firstAttribute="leading" secondItem="FK1-bf-HW4" secondAttribute="leading" id="ozx-qv-UJl"/>
+                            <constraint firstAttribute="trailing" secondItem="cfD-Ay-06w" secondAttribute="trailing" id="t0h-q6-7iO"/>
+                            <constraint firstItem="cfD-Ay-06w" firstAttribute="top" secondItem="FK1-bf-HW4" secondAttribute="top" id="xjP-sp-s4N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cartEmptyLabel" destination="vYK-Hn-hn8" id="1DJ-QU-seg"/>
+                        <outlet property="placeOrderView" destination="YrP-C0-Nap" id="wLz-UZ-a5k"/>
+                        <outlet property="tableView" destination="cfD-Ay-06w" id="MXc-5E-xtH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p20-Ot-O4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3407" y="1207"/>
         </scene>
         <!--Basic Info View Controller-->
         <scene sceneID="Nj3-vh-I6d">

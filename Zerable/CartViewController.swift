@@ -30,7 +30,7 @@ class CartViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .None
         tableView.registerNib(UINib(nibName: "CartItemCell", bundle: nil), forCellReuseIdentifier: "CartItemCell")
-        tableView.registerNib(UINib(nibName: "SubtotalCell", bundle: nil), forCellReuseIdentifier: "SubtotalCell")
+        tableView.registerNib(UINib(nibName: "TotalCell", bundle: nil), forCellReuseIdentifier: "TotalCell")
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
         let processTap = UITapGestureRecognizer(target: self, action: "processToCheckout")
@@ -43,7 +43,7 @@ class CartViewController: UIViewController {
         println("process tapped")
         let basicInfoVC = UIStoryboard.basicViewController()
         basicInfoVC.toCheckout = true
-        showViewController(basicInfoVC, sender: self)
+        viewControllerTransitionWithSaving(false, destVC: basicInfoVC, showVC: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -123,7 +123,7 @@ class CartViewController: UIViewController {
         }
     }
     
-    func viewControllerTransitionWithSaving(dismiss: Bool, destVC: UIViewController?) {
+    func viewControllerTransitionWithSaving(dismiss: Bool, destVC: UIViewController?, showVC: Bool = false) {
         if self.cartItemList.count > 0 {
             KVNProgress.showWithStatus("Saving changes...", onView: self.navigationController?.view)
             PFQuery.updateCartItemsQuantity(self.cartItemList, completion: {
@@ -136,7 +136,11 @@ class CartViewController: UIViewController {
                     if dismiss {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
-                        self.presentViewController(destVC!, animated: true, completion: nil)
+                        if showVC {
+                            self.showViewController(destVC!, sender: self)
+                        } else {
+                              self.presentViewController(destVC!, animated: true, completion: nil)
+                        }
                     }
                 }
             })
@@ -244,8 +248,8 @@ extension CartViewController: UITableViewDataSource {
             return cell
 
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("SubtotalCell", forIndexPath: indexPath) as! SubtotalCell
-            cell.subtotalLabel.text = formattedCurrencyString(calculateSubtotal())
+            let cell = tableView.dequeueReusableCellWithIdentifier("TotalCell", forIndexPath: indexPath) as! TotalCell
+            cell.totalLabel.text = formattedCurrencyString(calculateSubtotal())
             return cell
         }
     }

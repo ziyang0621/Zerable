@@ -9,8 +9,9 @@
 import UIKit
 import ParseUI
 
+@objc
 protocol CartItemCellDelegate {
-    func cartItemCellDidChangeQuantity(cell: CartItemCell, quantity: Int)
+    optional func cartItemCellDidChangeQuantity(cell: CartItemCell, quantity: Int)
 }
 
 
@@ -64,7 +65,7 @@ class CartItemCell: PFTableViewCell {
     @IBAction func minusButtonTapped(sender: AnyObject) {
         if currentQuantity > 0 {
             currentQuantity!--
-            delegate?.cartItemCellDidChangeQuantity(self, quantity: currentQuantity!)
+            delegate?.cartItemCellDidChangeQuantity!(self, quantity: currentQuantity!)
         }
     }
     
@@ -72,7 +73,7 @@ class CartItemCell: PFTableViewCell {
         if let cartItem = cartItem {
             if currentQuantity < cartItem.product.stock {
                 currentQuantity!++
-                delegate?.cartItemCellDidChangeQuantity(self, quantity: currentQuantity!)
+                delegate?.cartItemCellDidChangeQuantity!(self, quantity: currentQuantity!)
             }
         }
     }

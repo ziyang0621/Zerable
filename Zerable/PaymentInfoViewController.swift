@@ -52,11 +52,19 @@ class PaymentInfoViewController: UIViewController {
         }
         
     }
+    
+    func transitionToOrderSummary() {
+        let orderSummaryVC = UIStoryboard.orderSummaryViewController()
+        orderSummaryVC.cardInfo = cardInfo
+        orderSummaryVC.cardInfoText = cardSummaryTextView.text
+        showViewController(orderSummaryVC, sender: self)
+    }
 
     @IBAction func saveButtonPressed(sender: AnyObject) {
         if toCheckout {
             if let cardInfo = cardInfo {
                 println("already has card info")
+                transitionToOrderSummary()
             } else {
                 if let currentUser = PFUser.currentUser() {
                     
@@ -80,6 +88,7 @@ class PaymentInfoViewController: UIViewController {
                             self.presentViewController(alert, animated: true, completion: nil)
                         } else {
                             self.cardInfo = userCardInfo
+                            self.transitionToOrderSummary()
                         }
                     })
                 }

@@ -601,6 +601,10 @@ extension UIStoryboard {
     class func cartViewController() -> CartViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("CartViewController") as! CartViewController
     }
+    
+    class func orderSummaryViewController() -> OrderSummaryViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("OrderSummaryViewController") as! OrderSummaryViewController
+    }
 }
 
 extension KeychainWrapper {
