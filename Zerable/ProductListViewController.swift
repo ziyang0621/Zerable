@@ -120,11 +120,13 @@ class ProductListViewController: UIViewController {
         showLoading()
         fetchingProducts = true
         let countQuery = PFQuery(className: "Product")
+        countQuery.whereKey("stock", greaterThan: 0)
         countQuery.countObjectsInBackgroundWithBlock {
             (counts: Int32, error: NSError?) -> Void in
             if error == nil {
                 self.totalPages = Int(ceil(Double(counts) / Double(self.numberOfproductsPerPage)))
                 let query = PFQuery(className: "Product")
+                query.whereKey("stock", greaterThan: 0)
                 query.limit = 8
                 query.findObjectsInBackgroundWithBlock({
                     (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -237,6 +239,7 @@ extension ProductListViewController: UISearchResultsUpdating {
         
         let query = PFQuery(className: "Product")
         query.whereKey("name", containsString: searchController.searchBar.text)
+        query.whereKey("stock", greaterThan: 0)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let error = error {

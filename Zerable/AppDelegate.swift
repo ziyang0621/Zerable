@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Stripe
 
 let kThemeColor = UIColor.colorWithRGBHex(0x71EAC6, alpha: 1.0)
 let kItemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Cart.initialize()
         CartItem.initialize()
         UserCardInfo.initialize()
+        Order.initialize()
         
         Parse.setApplicationId("gSMFL1BfYtr0daSJz9iQqUCzsK7ZRYdSg80Fy30O", clientKey: "R4s5wWFQus4BPt1xaKnIyOHPPLSSIa9gd7fS3YbQ")
         
@@ -46,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         checkProducts()
+        
+        Stripe.setDefaultPublishableKey("pk_test_zr91XeUZfWPBAb6iVOUvgvJx")
        
         return true
     }

@@ -22,4 +22,6 @@ pod 'ZTDropDownTextField'
 
 pod 'NYTPhotoViewer'
 
+pod 'Alamofire'
+
 end

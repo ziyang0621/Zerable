@@ -9,7 +9,8 @@
 import UIKit
 import KVNProgress
 import Parse
-
+import Stripe
+import Alamofire
 
 class OrderSummaryViewController: UIViewController {
 
@@ -44,7 +45,145 @@ class OrderSummaryViewController: UIViewController {
     }
     
     func placeOrder() {
-        println("place order tapped")
+        KVNProgress.showWithStatus("Placing order...", onView: navigationController?.view)
+        
+        PFQuery.checkCartItemsToChange(cartItemList, completion: {
+            (cartItemsToDelete, cartItemsToChangeQuantity, error) -> () in
+            if let error = error {
+                KVNProgress.dismiss()
+                let errorString = error.userInfo?["error"] as? String
+                let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)            } else {
+                if cartItemsToDelete!.count > 0 || cartItemsToChangeQuantity!.count > 0 {
+                    let alert = UIAlertController(title: "Error", message: "Some of the items do not have enough stock, please change the quantity", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    println("enough quantity")
+                    PFQuery.updateCardItemsProductStock(self.cartItemList, completion: { (success, error) -> () in
+                        if let error = error {
+                            KVNProgress.dismiss()
+                            let alert = UIAlertController(title: "Error", message: "unable to update product stock", preferredStyle: .Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        } else {
+                            self.startStripePayment()
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
+    func startStripePayment(isTest: Bool = true) {
+        
+        let stripCard = STPCard()
+        if isTest {
+            stripCard.number = "4242424242424242"
+            stripCard.cvc = "222"
+            stripCard.expMonth = 9
+            stripCard.expYear = 2019
+
+        } else {
+            stripCard.number = cardInfo!.number
+            stripCard.cvc = cardInfo!.cvc
+            stripCard.expMonth = cardInfo!.expMonth
+            stripCard.expYear = cardInfo!.expYear
+        }
+     
+        STPAPIClient.sharedClient().createTokenWithCard(stripCard, completion: { (token, error) -> Void in
+            
+            if error != nil {
+                self.handleError(error!)
+                return
+            }
+            
+            self.postStripeToken(token!)
+        })
+    }
+    
+    func postStripeToken(token: STPToken) {
+        
+        let URL = "http://localhost/donate/payment.php"
+        let params = ["stripeToken": token.tokenId,
+            "amount": calculateSubtotal().doubleValue,
+            "currency": "usd",
+            "description": PFUser.currentUser()!.email!]
+        
+        Alamofire.request(.POST, URL, parameters: params as? [String : AnyObject]).response {
+            (request, response, data, error) in
+            if let error = error {
+                self.handleError(error)
+            } else {
+                if let data = data {
+                    var dict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! [String: String]
+                    let status = dict["status"]
+                    if status == "Failure" {
+                        KVNProgress.dismiss()
+                        UIAlertView(title: status,
+                            message: dict["message"],
+                            delegate: nil,
+                            cancelButtonTitle: "OK").show()
+                    } else if status == "Success" {
+                        println("payment submitted")
+                        self.saveOrderInParse()
+                    }
+                } else {
+                    KVNProgress.dismiss()
+                    UIAlertView(title: "Error",
+                        message: "Server error",
+                        delegate: nil,
+                        cancelButtonTitle: "OK").show()
+                }
+            }
+        }
+    }
+    
+    func handleError(error: NSError) {
+        KVNProgress.dismiss()
+        UIAlertView(title: "Please Try Again",
+            message: error.localizedDescription,
+            delegate: nil,
+            cancelButtonTitle: "OK").show()
+    }
+
+    func saveOrderInParse() {
+
+        cart!.checkedOut = true
+        cart!.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if let error = error {
+                KVNProgress.dismiss()
+                let alert = UIAlertController(title: "Error", message: "unable to update cart", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                
+                let order = Order()
+                order.user = PFUser.currentUser()!
+                order.status = "orderPlaced"
+                order.cardInfo = self.cardInfo!
+                order.addressSummary = self.loadedAddressSummary
+                order.placeMark =  NSKeyedArchiver.archivedDataWithRootObject(self.selectedPlacemark!)
+                order.cart = self.cart!
+                
+                order.saveInBackgroundWithBlock({
+                    (success: Bool, error: NSError?) -> Void in
+                    KVNProgress.dismiss()
+                    if let error = error {
+                        let alert = UIAlertController(title: "Error", message: "unable to place order", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    } else {
+                        println("order placed")
+                        let orderCompletedVC = UIStoryboard.orderCompletedViewController()
+                        let orderCompletedNav = UINavigationController(rootViewController: orderCompletedVC)
+                        self.presentViewController(orderCompletedNav, animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +217,7 @@ class OrderSummaryViewController: UIViewController {
         cartEmptyLabel.alpha = 0
         placeOrderView.alpha = 0
         
-        PFQuery.checkIfCartIsEmpty {
+        PFQuery.checkIfCartIsEmpty { 
             (cart, error) -> () in
             if let error = error {
                 KVNProgress.dismiss()

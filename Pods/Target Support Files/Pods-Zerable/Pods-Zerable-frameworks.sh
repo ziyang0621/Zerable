@@ -52,6 +52,7 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-Zerable/Alamofire.framework'
   install_framework 'Pods-Zerable/Bolts.framework'
   install_framework 'Pods-Zerable/KVNProgress.framework'
   install_framework 'Pods-Zerable/NYTPhotoViewer.framework'
@@ -64,6 +65,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Zerable/pop.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-Zerable/Alamofire.framework'
   install_framework 'Pods-Zerable/Bolts.framework'
   install_framework 'Pods-Zerable/KVNProgress.framework'
   install_framework 'Pods-Zerable/NYTPhotoViewer.framework'

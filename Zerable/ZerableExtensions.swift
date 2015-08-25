@@ -10,6 +10,7 @@ import UIKit
 import Parse
 
 extension PFQuery {
+        
     class func loadUserPayment(user: PFUser, completion: (cardInfo: UserCardInfo?, error: NSError?) -> ()) {
         let query = PFQuery(className: "UserCardInfo")
         query.whereKey("user", equalTo: user)
@@ -30,8 +31,26 @@ extension PFQuery {
         }
     }
     
+    class func updateCardItemsProductStock(cartItems: [CartItem], completion: (success: Bool, error: NSError?) -> ()) {
+        var counter = 0
+        let cartItemCount = cartItems.count
+        for singleItem in cartItems {
+            singleItem.product.stock = singleItem.product.stock - singleItem.quantity
+            singleItem.product.saveInBackgroundWithBlock({
+                (success: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    completion(success: false, error: error)
+                } else {
+                    counter++
+                    if counter == cartItemCount {
+                        completion(success: true, error: nil)
+                    }
+                }
+            })
+        }
+    }
     
-    class func updateCartItemsQuantity(cartItems: [CartItem], completion: (success: Bool, error: NSError?) -> ()) {
+    class func updateCartItems(cartItems: [CartItem], completion: (success: Bool, error: NSError?) -> ()) {
        var counter = 0
        let cartItemCount = cartItems.count
         for singleItem in cartItems {
@@ -604,6 +623,10 @@ extension UIStoryboard {
     
     class func orderSummaryViewController() -> OrderSummaryViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("OrderSummaryViewController") as! OrderSummaryViewController
+    }
+    
+    class func orderCompletedViewController() -> OrderCompletedViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("OrderCompletedViewController") as! OrderCompletedViewController
     }
 }
 

@@ -126,7 +126,7 @@ class CartViewController: UIViewController {
     func viewControllerTransitionWithSaving(dismiss: Bool, destVC: UIViewController?, showVC: Bool = false) {
         if self.cartItemList.count > 0 {
             KVNProgress.showWithStatus("Saving changes...", onView: self.navigationController?.view)
-            PFQuery.updateCartItemsQuantity(self.cartItemList, completion: {
+            PFQuery.updateCartItems(self.cartItemList, completion: {
                 (success, error) -> () in
                 KVNProgress.dismiss()
                 if let error = error {

@@ -654,6 +654,62 @@
             </objects>
             <point key="canvasLocation" x="2679" y="1149"/>
         </scene>
+        <!--Order Completed View Controller-->
+        <scene sceneID="bdO-2u-5kH">
+            <objects>
+                <viewController storyboardIdentifier="OrderCompletedViewController" id="wOf-AD-6dv" customClass="OrderCompletedViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uyn-yU-x2V"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jr8-5K-eU9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B5A-Gk-SuD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fXA-OG-fFk">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="B9p-g6-gSc"/>
+                                    <constraint firstAttribute="height" constant="200" id="Ej0-ta-sgb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Placed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Sh-38C">
+                                <rect key="frame" x="213" y="147" width="176" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSw-5t-IPt" customClass="ZerableRoundButton" customModule="Zerable" customModuleProvider="target">
+                                <rect key="frame" x="200" y="430" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="F5u-oG-f69"/>
+                                    <constraint firstAttribute="width" constant="200" id="fgB-eG-XXV"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="OKButtonTapped:" destination="wOf-AD-6dv" eventType="touchUpInside" id="XGd-17-eES"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kSw-5t-IPt" firstAttribute="top" secondItem="fXA-OG-fFk" secondAttribute="bottom" constant="30" id="7Dr-4j-1aI"/>
+                            <constraint firstAttribute="centerX" secondItem="kSw-5t-IPt" secondAttribute="centerX" id="Ch5-2i-UPx"/>
+                            <constraint firstAttribute="centerY" secondItem="fXA-OG-fFk" secondAttribute="centerY" id="Gee-on-A3f"/>
+                            <constraint firstItem="fXA-OG-fFk" firstAttribute="top" secondItem="wba-Sh-38C" secondAttribute="bottom" constant="20" id="IZQ-4e-Y1E"/>
+                            <constraint firstAttribute="centerX" secondItem="fXA-OG-fFk" secondAttribute="centerX" id="RjQ-gO-eUc"/>
+                            <constraint firstAttribute="centerX" secondItem="wba-Sh-38C" secondAttribute="centerX" id="SB9-e1-hNI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQG-wh-2ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3413" y="525"/>
+        </scene>
         <!--Order Summary View Controller-->
         <scene sceneID="dd0-8v-fTl">
             <objects>
