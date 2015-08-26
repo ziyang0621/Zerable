@@ -776,6 +776,55 @@
             </objects>
             <point key="canvasLocation" x="3407" y="1207"/>
         </scene>
+        <!--Order History View Controller-->
+        <scene sceneID="jLb-89-ZQR">
+            <objects>
+                <viewController storyboardIdentifier="OrderHistoryViewController" id="rWY-l7-uP7" customClass="OrderHistoryViewController" customModule="Zerable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iR0-K6-rdT"/>
+                        <viewControllerLayoutGuide type="bottom" id="W3R-0K-ybb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qwK-bR-ZtH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a65-KL-Rtk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-Ve-PdL">
+                                <rect key="frame" x="530" y="530" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ALs-th-OzH"/>
+                                    <constraint firstAttribute="width" constant="60" id="nzs-od-voF"/>
+                                </constraints>
+                                <state key="normal" image="logo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="assistButtonPressed:" destination="rWY-l7-uP7" eventType="touchUpInside" id="HBh-LS-3wD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Avh-Ve-PdL" secondAttribute="trailing" constant="10" id="6H4-V4-6yj"/>
+                            <constraint firstItem="a65-KL-Rtk" firstAttribute="leading" secondItem="qwK-bR-ZtH" secondAttribute="leading" id="YWV-eF-vz8"/>
+                            <constraint firstItem="a65-KL-Rtk" firstAttribute="top" secondItem="qwK-bR-ZtH" secondAttribute="top" id="sp2-J2-8hW"/>
+                            <constraint firstItem="W3R-0K-ybb" firstAttribute="top" secondItem="Avh-Ve-PdL" secondAttribute="bottom" constant="10" id="tEY-2a-Oqn"/>
+                            <constraint firstAttribute="trailing" secondItem="a65-KL-Rtk" secondAttribute="trailing" id="tJk-lb-g3r"/>
+                            <constraint firstAttribute="bottom" secondItem="a65-KL-Rtk" secondAttribute="bottom" id="u4W-X7-bL6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="assistButton" destination="Avh-Ve-PdL" id="C73-ej-eMS"/>
+                        <outlet property="tableVIew" destination="a65-KL-Rtk" id="jHC-ZS-3n2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3g-cW-KrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4070" y="1207"/>
+        </scene>
         <!--Basic Info View Controller-->
         <scene sceneID="Nj3-vh-I6d">
             <objects>

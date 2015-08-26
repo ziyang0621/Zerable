@@ -258,7 +258,6 @@ extension CartViewController: UITableViewDataSource {
 extension CartViewController: RNGridMenuDelegate {
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
         delay(seconds: 0.3) { () -> () in
-            println("test inside")
             if itemIndex == 1 {
                 return
             }
@@ -272,6 +271,12 @@ extension CartViewController: RNGridMenuDelegate {
                     productListVC.fromGridIndex == 1
                     let productListNav = UINavigationController(rootViewController: productListVC)
                     destinationVC = productListNav
+                }
+                else if itemIndex == 2 {
+                    let orderHistoryVC = UIStoryboard.orderHistoryViewController()
+                    orderHistoryVC.fromGridIndex = 1
+                    let orderHitoryNav = UINavigationController(rootViewController: orderHistoryVC)
+                    destinationVC = orderHitoryNav
                 } else if itemIndex == 3 {
                     let settingsVC = UIStoryboard.settingsViewController()
                     settingsVC.fromGridIndex = 1

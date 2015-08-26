@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zerable/ZerableExtensions.swift"
-            timestampString = "462234517.859573"
+            timestampString = "462250587.968975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "464"
-            endingLineNumber = "464"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
             landmarkName = "applyCurvedShadow(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -511,22 +511,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "270"
             endingLineNumber = "270"
-            landmarkName = "gridMenu(_:willDismissWithSelectedItem:atIndex:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zerable/CartViewController.swift"
-            timestampString = "462220924.721023"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
             landmarkName = "gridMenu(_:willDismissWithSelectedItem:atIndex:)"
             landmarkType = "5">
          </BreakpointContent>

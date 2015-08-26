@@ -40,6 +40,7 @@
 		856421D71B8CE480005CB5AB /* PaymentInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856421D61B8CE480005CB5AB /* PaymentInfoCell.xib */; };
 		856421D91B8D04AA005CB5AB /* OrderCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856421D81B8D04AA005CB5AB /* OrderCompletedViewController.swift */; };
 		856421DB1B8D1DC3005CB5AB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856421DA1B8D1DC3005CB5AB /* Order.swift */; };
+		856421DD1B8D7467005CB5AB /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856421DC1B8D7467005CB5AB /* OrderHistoryViewController.swift */; };
 		85B3C7F01B7A6B83008EB488 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3C7EF1B7A6B83008EB488 /* Product.swift */; };
 		85B3C7F21B7A71C2008EB488 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3C7F11B7A71C2008EB488 /* Cart.swift */; };
 		85B3C7F41B7A71CA008EB488 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3C7F31B7A71CA008EB488 /* CartItem.swift */; };
@@ -106,6 +107,7 @@
 		856421D61B8CE480005CB5AB /* PaymentInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentInfoCell.xib; sourceTree = "<group>"; };
 		856421D81B8D04AA005CB5AB /* OrderCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCompletedViewController.swift; sourceTree = "<group>"; };
 		856421DA1B8D1DC3005CB5AB /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		856421DC1B8D7467005CB5AB /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		85B3C7EF1B7A6B83008EB488 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		85B3C7F11B7A71C2008EB488 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		85B3C7F31B7A71CA008EB488 /* CartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */,
 				856421CA1B8BC601005CB5AB /* OrderSummaryViewController.swift */,
 				856421D81B8D04AA005CB5AB /* OrderCompletedViewController.swift */,
+				856421DC1B8D7467005CB5AB /* OrderHistoryViewController.swift */,
 				85163BE91B39092100D07CCD /* Main.storyboard */,
 				85163BEC1B39092100D07CCD /* Images.xcassets */,
 				85163BEE1B39092100D07CCD /* LaunchScreen.xib */,
@@ -442,6 +445,7 @@
 			files = (
 				85110DE41B793AF4008848B4 /* CartItemCell.swift in Sources */,
 				852B258C1B4DBA9900F597ED /* SettingsCell.swift in Sources */,
+				856421DD1B8D7467005CB5AB /* OrderHistoryViewController.swift in Sources */,
 				85B3C7FB1B7ABECE008EB488 /* SubtotalCell.swift in Sources */,
 				85B3C7F21B7A71C2008EB488 /* Cart.swift in Sources */,
 				851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */,

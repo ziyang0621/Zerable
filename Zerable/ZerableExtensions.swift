@@ -10,6 +10,26 @@ import UIKit
 import Parse
 
 extension PFQuery {
+    
+    class func saveOrder(cart: Cart, order: Order,completion: (success: Bool, error: NSError?) -> ()) {
+        
+        cart.checkedOut = true
+        cart.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if let error = error {
+                completion(success: false, error: error)
+            } else {
+                order.saveInBackgroundWithBlock({
+                    (success: Bool, error: NSError?) -> Void in
+                    if let error = error {
+                        completion(success: false, error: error)
+                    } else {
+                        completion(success: true, error: nil)
+                    }
+                })
+            }
+        }
+    }
         
     class func loadUserPayment(user: PFUser, completion: (cardInfo: UserCardInfo?, error: NSError?) -> ()) {
         let query = PFQuery(className: "UserCardInfo")
@@ -627,6 +647,10 @@ extension UIStoryboard {
     
     class func orderCompletedViewController() -> OrderCompletedViewController {
         return mainStoryboard().instantiateViewControllerWithIdentifier("OrderCompletedViewController") as! OrderCompletedViewController
+    }
+    
+    class func orderHistoryViewController() -> OrderHistoryViewController {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("OrderHistoryViewController") as! OrderHistoryViewController
     }
 }
 

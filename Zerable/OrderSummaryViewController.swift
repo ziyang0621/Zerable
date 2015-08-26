@@ -149,39 +149,28 @@ class OrderSummaryViewController: UIViewController {
     }
 
     func saveOrderInParse() {
+        
+        let order = Order()
+        order.user = PFUser.currentUser()!
+        order.status = "orderPlaced"
+        order.cardInfo = self.cardInfo!
+        order.addressSummary = self.loadedAddressSummary
+        order.placeMark =  NSKeyedArchiver.archivedDataWithRootObject(self.selectedPlacemark!)
+        order.cart = self.cart!
+        order.total = calculateSubtotal()
+        order.shippingFee = NSDecimalNumber(double: 0.0)
 
-        cart!.checkedOut = true
-        cart!.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
+        PFQuery.saveOrder(cart!, order: order) {
+            (success, error) -> () in
             if let error = error {
-                KVNProgress.dismiss()
-                let alert = UIAlertController(title: "Error", message: "unable to update cart", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Error", message: error.userInfo?["error"] as? String, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                
-                let order = Order()
-                order.user = PFUser.currentUser()!
-                order.status = "orderPlaced"
-                order.cardInfo = self.cardInfo!
-                order.addressSummary = self.loadedAddressSummary
-                order.placeMark =  NSKeyedArchiver.archivedDataWithRootObject(self.selectedPlacemark!)
-                order.cart = self.cart!
-                
-                order.saveInBackgroundWithBlock({
-                    (success: Bool, error: NSError?) -> Void in
-                    KVNProgress.dismiss()
-                    if let error = error {
-                        let alert = UIAlertController(title: "Error", message: "unable to place order", preferredStyle: .Alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
-                    } else {
-                        println("order placed")
-                        let orderCompletedVC = UIStoryboard.orderCompletedViewController()
-                        let orderCompletedNav = UINavigationController(rootViewController: orderCompletedVC)
-                        self.presentViewController(orderCompletedNav, animated: true, completion: nil)
-                    }
-                })
+                println("order placed")
+                let orderCompletedVC = UIStoryboard.orderCompletedViewController()
+                let orderCompletedNav = UINavigationController(rootViewController: orderCompletedVC)
+                self.presentViewController(orderCompletedNav, animated: true, completion: nil)
             }
         }
     }

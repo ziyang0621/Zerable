@@ -16,6 +16,8 @@ class Order: PFObject, PFSubclassing {
     @NSManaged var addressSummary: String
     @NSManaged var placeMark: NSData
     @NSManaged var cart: Cart
+    @NSManaged var total: NSDecimalNumber
+    @NSManaged var shippingFee: NSDecimalNumber
     
     override class func initialize() {
         struct Static {
