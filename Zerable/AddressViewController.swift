@@ -40,6 +40,9 @@ class AddressViewController: UIViewController {
 
         addressSummaryTextView.layer.cornerRadius = 5
         
+        inputViewStyle(fullAddressTextField)
+        inputViewStyle(optionalAddressTextField)
+        inputViewStyle(addressSummaryTextView)
         
         if let currentUser = PFUser.currentUser() {
             let query = PFQuery(className: "UserAddress")

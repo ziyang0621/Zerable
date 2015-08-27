@@ -38,7 +38,12 @@ class SignupViewController: UIViewController {
         emailTextField.delegate = self
         phoneTextField.delegate = self
         passwordTextField.delegate = self
-
+        
+        inputViewStyle(firstnameTextField)
+        inputViewStyle(lastnameTextField)
+        inputViewStyle(emailTextField)
+        inputViewStyle(phoneTextField)
+        inputViewStyle(passwordTextField)
     }
     
     override func viewWillAppear(animated: Bool) {

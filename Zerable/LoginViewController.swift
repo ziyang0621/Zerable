@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        inputViewStyle(emailTextField)
+        inputViewStyle(passwordTextField)
+        
         let rightBarButton = UIBarButtonItem(title: "Log In", style: .Plain, target: self, action: "login")
         navigationItem.rightBarButtonItem = rightBarButton
     }

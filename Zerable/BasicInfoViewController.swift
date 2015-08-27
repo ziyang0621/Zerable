@@ -30,6 +30,10 @@ class BasicInfoViewController: UIViewController {
         lastnameTextField.delegate = self
         phoneTextField.delegate = self
         
+        inputViewStyle(firstnameTextField)
+        inputViewStyle(lastnameTextField)
+        inputViewStyle(phoneTextField)
+        
         PFUser.currentUser()?.fetchIfNeededInBackgroundWithBlock({
             (object: PFObject?, error:NSError?) -> Void in
             let user = object as! PFUser

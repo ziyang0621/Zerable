@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Stripe
 
-let kThemeColor = UIColor.colorWithRGBHex(0x71EAC6, alpha: 1.0)
+let kThemeColor = UIColor.colorWithRGBHex(0x00CF98, alpha: 1.0)
 let kItemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
 
 @UIApplicationMain

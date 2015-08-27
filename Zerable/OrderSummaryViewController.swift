@@ -152,7 +152,7 @@ class OrderSummaryViewController: UIViewController {
         
         let order = Order()
         order.user = PFUser.currentUser()!
-        order.status = "orderPlaced"
+        order.status = "Order Placed"
         order.cardInfo = self.cardInfo!
         order.addressSummary = self.loadedAddressSummary
         order.placeMark =  NSKeyedArchiver.archivedDataWithRootObject(self.selectedPlacemark!)

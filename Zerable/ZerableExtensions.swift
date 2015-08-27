@@ -11,6 +11,38 @@ import Parse
 
 extension PFQuery {
     
+    class func retrieveOrderHistory(user: PFUser, completion: (orderHistoryList: [Order: [CartItem]]?, error: NSError?) ->  ()) {
+        var returnList = [Order: [CartItem]]()
+        let orderQuery = PFQuery(className: "Order")
+        orderQuery.whereKey("user", equalTo: user)
+        orderQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                completion(orderHistoryList: nil, error: error)
+            } else {
+                if let returnOrders = objects as? [Order] {
+                    var orderCounter = 0
+                    var orderCount = returnOrders.count
+                    for order in returnOrders {
+                        self.retrieveCartItemsForCart(order.cart, completion: { (cartItems, error) -> () in
+                            if let error = error {
+                                completion(orderHistoryList: nil, error: error)
+                            } else {
+                                if let cartItems = cartItems {
+                                    returnList[order] = cartItems
+                                    orderCounter++
+                                    if orderCounter == orderCount {
+                                        completion(orderHistoryList: returnList, error: nil)
+                                    }
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
     class func saveOrder(cart: Cart, order: Order,completion: (success: Bool, error: NSError?) -> ()) {
         
         cart.checkedOut = true

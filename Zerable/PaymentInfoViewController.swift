@@ -30,6 +30,9 @@ class PaymentInfoViewController: UIViewController {
         paymentView.delegate = self
         paymentView.becomeFirstResponder()
         
+        inputViewStyle(cardSummaryTextView)
+        inputViewStyle(paymentView)
+        
         if let currentUser = PFUser.currentUser() {
             PFQuery.loadUserPayment(currentUser, completion: { (cardInfo, error) -> () in
                 if error == nil {

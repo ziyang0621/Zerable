@@ -17,6 +17,10 @@
 		85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85163BEE1B39092100D07CCD /* LaunchScreen.xib */; };
 		85163BFC1B39092100D07CCD /* ZerableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85163BFB1B39092100D07CCD /* ZerableTests.swift */; };
 		851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */; };
+		85275F311B8E3EE400FFCF38 /* OrderStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85275F301B8E3EE400FFCF38 /* OrderStatusCell.swift */; };
+		85275F331B8E3EF500FFCF38 /* OrderStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85275F321B8E3EF500FFCF38 /* OrderStatusCell.xib */; };
+		85275F351B8E400700FFCF38 /* OrderedItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85275F341B8E400700FFCF38 /* OrderedItemCell.xib */; };
+		85275F371B8E401900FFCF38 /* OrderedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85275F361B8E401900FFCF38 /* OrderedItemCell.swift */; };
 		852B258A1B4DB93300F597ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B25891B4DB93300F597ED /* SettingsViewController.swift */; };
 		852B258C1B4DBA9900F597ED /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B258B1B4DBA9900F597ED /* SettingsCell.swift */; };
 		852B258E1B4DBAF100F597ED /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852B258D1B4DBAF100F597ED /* SettingsCell.xib */; };
@@ -82,6 +86,10 @@
 		85163BFA1B39092100D07CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85163BFB1B39092100D07CCD /* ZerableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerableTests.swift; sourceTree = "<group>"; };
 		851B8D971B55A23E00A33C8F /* PaymentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentInfoViewController.swift; sourceTree = "<group>"; };
+		85275F301B8E3EE400FFCF38 /* OrderStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderStatusCell.swift; sourceTree = "<group>"; };
+		85275F321B8E3EF500FFCF38 /* OrderStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderStatusCell.xib; sourceTree = "<group>"; };
+		85275F341B8E400700FFCF38 /* OrderedItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderedItemCell.xib; sourceTree = "<group>"; };
+		85275F361B8E401900FFCF38 /* OrderedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedItemCell.swift; sourceTree = "<group>"; };
 		852B25891B4DB93300F597ED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		852B258B1B4DBA9900F597ED /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		852B258D1B4DBAF100F597ED /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
@@ -247,6 +255,10 @@
 				856421D21B8CE06A005CB5AB /* UserAddressCell.xib */,
 				856421D41B8CE473005CB5AB /* PaymentInfoCell.swift */,
 				856421D61B8CE480005CB5AB /* PaymentInfoCell.xib */,
+				85275F301B8E3EE400FFCF38 /* OrderStatusCell.swift */,
+				85275F321B8E3EF500FFCF38 /* OrderStatusCell.xib */,
+				85275F361B8E401900FFCF38 /* OrderedItemCell.swift */,
+				85275F341B8E400700FFCF38 /* OrderedItemCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -372,10 +384,12 @@
 				852B258E1B4DBAF100F597ED /* SettingsCell.xib in Resources */,
 				856421CF1B8C1D62005CB5AB /* TotalCell.xib in Resources */,
 				856421D31B8CE06A005CB5AB /* UserAddressCell.xib in Resources */,
+				85275F351B8E400700FFCF38 /* OrderedItemCell.xib in Resources */,
 				85163BEB1B39092100D07CCD /* Main.storyboard in Resources */,
 				85BE69581B4397E0008F13F1 /* ItemCell.xib in Resources */,
 				85163BF01B39092100D07CCD /* LaunchScreen.xib in Resources */,
 				85110DE51B793AF4008848B4 /* CartItemCell.xib in Resources */,
+				85275F331B8E3EF500FFCF38 /* OrderStatusCell.xib in Resources */,
 				856421D71B8CE480005CB5AB /* PaymentInfoCell.xib in Resources */,
 				85163BED1B39092100D07CCD /* Images.xcassets in Resources */,
 			);
@@ -451,6 +465,7 @@
 				851B8D981B55A23E00A33C8F /* PaymentInfoViewController.swift in Sources */,
 				853FD2781B3CC0AF00969391 /* TermAndPolicyViewController.swift in Sources */,
 				856421DB1B8D1DC3005CB5AB /* Order.swift in Sources */,
+				85275F311B8E3EE400FFCF38 /* OrderStatusCell.swift in Sources */,
 				852B9CA11B50E1F4006DE459 /* AddressViewController.swift in Sources */,
 				85BA28DD1B4DD1660084E7A7 /* GradientView.swift in Sources */,
 				8532CD991B41E92E004D45EF /* WelcomeViewController.swift in Sources */,
@@ -466,6 +481,7 @@
 				85110DE71B794648008848B4 /* CartViewController.swift in Sources */,
 				85163BE61B39092100D07CCD /* AppDelegate.swift in Sources */,
 				8546A1491B3A5EDE00150669 /* SignupViewController.swift in Sources */,
+				85275F371B8E401900FFCF38 /* OrderedItemCell.swift in Sources */,
 				856421D91B8D04AA005CB5AB /* OrderCompletedViewController.swift in Sources */,
 				85B3C7F01B7A6B83008EB488 /* Product.swift in Sources */,
 				85B3C7F81B7A78F9008EB488 /* ProductListViewController.swift in Sources */,

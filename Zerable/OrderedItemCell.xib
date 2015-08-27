@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderedItemCell" rowHeight="44" id="fbZ-8w-Y4f" customClass="OrderedItemCell" customModule="Zerable" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbZ-8w-Y4f" id="b4b-DQ-olB">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-NW-Oqx">
+                        <rect key="frame" x="13" y="12" width="224" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ3-QI-F2T">
+                        <rect key="frame" x="257" y="12" width="50" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="M4W-1R-ZTf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="aJ3-QI-F2T" secondAttribute="trailing" constant="5" id="J8c-ls-r3d"/>
+                    <constraint firstAttribute="centerY" secondItem="cNx-NW-Oqx" secondAttribute="centerY" id="Vnh-7U-re3"/>
+                    <constraint firstItem="cNx-NW-Oqx" firstAttribute="leading" secondItem="b4b-DQ-olB" secondAttribute="leadingMargin" constant="5" id="hXt-7k-8hB"/>
+                    <constraint firstItem="aJ3-QI-F2T" firstAttribute="leading" secondItem="cNx-NW-Oqx" secondAttribute="trailing" constant="20" id="kJr-Gs-IhA"/>
+                    <constraint firstAttribute="centerY" secondItem="aJ3-QI-F2T" secondAttribute="centerY" id="zlk-75-Qbw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="orderItemNameLabel" destination="cNx-NW-Oqx" id="pPf-f1-dTg"/>
+                <outlet property="orderItemQuantityLabel" destination="aJ3-QI-F2T" id="nli-M1-Gd3"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

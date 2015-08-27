@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderStatusCell" rowHeight="44" id="6TV-NJ-HQa" customClass="OrderStatusCell" customModule="Zerable" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6TV-NJ-HQa" id="aU5-fI-i3f">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNb-k3-OZl">
+                        <rect key="frame" x="13" y="12" width="144" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Placed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEP-D9-qyY">
+                        <rect key="frame" x="177" y="12" width="130" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="5XG-WJ-9UL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="GEP-D9-qyY" secondAttribute="centerY" id="UlM-xc-m73"/>
+                    <constraint firstItem="GEP-D9-qyY" firstAttribute="leading" secondItem="jNb-k3-OZl" secondAttribute="trailing" constant="20" id="c1s-0P-xcM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GEP-D9-qyY" secondAttribute="trailing" constant="5" id="dNg-yS-zYC"/>
+                    <constraint firstAttribute="centerY" secondItem="jNb-k3-OZl" secondAttribute="centerY" id="mEx-2v-pXl"/>
+                    <constraint firstItem="jNb-k3-OZl" firstAttribute="leading" secondItem="aU5-fI-i3f" secondAttribute="leadingMargin" constant="5" id="xma-WW-W1k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="orderStatusLabel" destination="GEP-D9-qyY" id="BD4-HF-lVK"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

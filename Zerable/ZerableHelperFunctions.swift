@@ -47,3 +47,10 @@ func heightForView(text:String, #font:UIFont, #width:CGFloat) -> CGFloat{
     label.sizeToFit()
     return label.frame.height
 }
+
+func inputViewStyle(view: UIView) {
+    view.layer.cornerRadius = 0.0
+    view.layer.masksToBounds = true
+    view.layer.borderColor = kThemeColor.CGColor
+    view.layer.borderWidth = 1.0
+}
