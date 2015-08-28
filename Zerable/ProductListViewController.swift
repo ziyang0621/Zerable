@@ -264,22 +264,25 @@ extension ProductListViewController: UITableViewDelegate {
 extension ProductListViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredTableData.removeAll(keepCapacity: false)
+        self.tableView.reloadData()
         
-        let query = PFQuery(className: "Product")
-        query.whereKey("name", containsString: searchController.searchBar.text)
-        query.whereKey("stock", greaterThan: 0)
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if let error = error {
-                self.resetUI()
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
-            } else {
-                if let products = objects as? [Product] {
-                    self.filteredTableData.extend(products)
+        if count(searchController.searchBar.text) > 0 {
+            let query = PFQuery(className: "Product")
+            query.whereKey("name", containsString: searchController.searchBar.text)
+            query.whereKey("stock", greaterThan: 0)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [AnyObject]?, error: NSError?) -> Void in
+                if let error = error {
                     self.resetUI()
-                    self.currentPage++
-                    self.tableView.reloadData()
+                    let errorString = error.userInfo?["error"] as? String
+                    println(errorString)
+                } else {
+                    if let products = objects as? [Product] {
+                        self.filteredTableData.extend(products)
+                        self.resetUI()
+                        self.currentPage++
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
