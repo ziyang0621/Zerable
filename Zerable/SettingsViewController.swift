@@ -13,12 +13,23 @@ import Parse
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var assistButton: UIButton!
     
     var fromGridIndex = 0
+    let menuControl = MenuControl()
+    var gridMenu: RNGridMenu!
+    var gridMenuIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuControl.tapHandler = {
+            if self.gridMenuIsShown {
+                self.hideGridMenu()
+            } else {
+                self.showGridMenu()
+            }
+        }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuControl)
         
         navigationItem.title = "Settings"
 
@@ -27,7 +38,6 @@ class SettingsViewController: UIViewController {
         
         tableView.registerNib(UINib(nibName: "SettingsCell", bundle: nil), forCellReuseIdentifier: "SettingsCell")
         
-        UIView.applyCurvedShadow(assistButton.imageView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,15 +45,34 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func assistButtonPressed(sender: AnyObject) {
-        
-        let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
+    func showGridMenu() {
+        gridMenuIsShown = true
+        gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
             UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
             UIImage(named: "history")!.newImageWithColor(kThemeColor),
-            UIImage(named:"settings")!.newImageWithColor(kThemeColor)])
+            UIImage(named: "settings")!.newImageWithColor(kThemeColor)])
         
         gridMenu.delegate = self
-        gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+        gridMenu.showInViewController(self, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+    }
+    
+    func hideGridMenu() {
+        if gridMenu != nil {
+            gridMenuIsShown = false
+            gridMenu.dismissAnimated(true)
+        }
+    }
+    
+    func animateMenuButton(#close: Bool) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            if close {
+                gridMenuIsShown = false
+                button.menuAnimation()
+            } else {
+                gridMenuIsShown = true
+                button.closeAnimation()
+            }
+        }
     }
 }
 
@@ -87,7 +116,12 @@ extension SettingsViewController: UITableViewDelegate {
 }
 
 extension SettingsViewController: RNGridMenuDelegate {
+    func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
+        animateMenuButton(close: true)
+    }
+    
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
+        animateMenuButton(close: true)
         delay(seconds: 0.3) { () -> () in
             if itemIndex == 3 {
                 return

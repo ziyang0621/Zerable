@@ -13,7 +13,6 @@ import Parse
 class ProductListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var assistButton: UIButton!
     @IBOutlet weak var loadingInfoView: UIView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadLabel: UILabel!
@@ -28,10 +27,22 @@ class ProductListViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     var fetchingProducts = false
     var viewDidAppear = false
+    let menuControl = MenuControl()
+    var gridMenu: RNGridMenu!
+    var gridMenuIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuControl.tapHandler = {
+            if self.gridMenuIsShown {
+                self.hideGridMenu()
+            } else {
+                self.showGridMenu()
+            }
+        }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuControl)
+
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -46,8 +57,6 @@ class ProductListViewController: UIViewController {
             
             return controller
         })()
-        
-        UIView.applyCurvedShadow(assistButton.imageView!)
         
         refreshControl.tintColor = UIColor.blackColor()
         refreshControl.addTarget(self, action: "handleRefresh", forControlEvents: .ValueChanged)
@@ -174,15 +183,34 @@ class ProductListViewController: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
-    @IBAction func assistButtonPressed(sender: AnyObject) {
-        
-        let gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
+    func showGridMenu() {
+        gridMenuIsShown = true
+        gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
             UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
             UIImage(named: "history")!.newImageWithColor(kThemeColor),
             UIImage(named: "settings")!.newImageWithColor(kThemeColor)])
         
         gridMenu.delegate = self
-        gridMenu.showInViewController(navigationController, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+        gridMenu.showInViewController(self, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+    }
+    
+    func hideGridMenu() {
+        if gridMenu != nil {
+            gridMenuIsShown = false
+            gridMenu.dismissAnimated(true)
+        }
+    }
+    
+    func animateMenuButton(#close: Bool) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            if close {
+                gridMenuIsShown = false
+                button.menuAnimation()
+            } else {
+                gridMenuIsShown = true
+                button.closeAnimation()
+            }
+        }
     }
 }
 
@@ -259,7 +287,12 @@ extension ProductListViewController: UISearchResultsUpdating {
 }
 
 extension ProductListViewController: RNGridMenuDelegate {
+    func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
+        animateMenuButton(close: true)
+    }
+    
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
+        animateMenuButton(close: true)
         delay(seconds: 0.3) { () -> () in
             if itemIndex == 0 {
                 return

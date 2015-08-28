@@ -16,10 +16,12 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cartEmptyLabel: UILabel!
     @IBOutlet weak var processToCheckoutView: UIView!
-    @IBOutlet weak var assistButton: UIButton!
     var cartItemList = [CartItem]()
     var cart: Cart?
     var fromGridIndex = 0
+    let menuControl = MenuControl()
+    var gridMenu: RNGridMenu!
+    var gridMenuIsShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class CartViewController: UIViewController {
         let processTap = UITapGestureRecognizer(target: self, action: "processToCheckout")
         processToCheckoutView.addGestureRecognizer(processTap)
         
-        UIView.applyCurvedShadow(assistButton.imageView!)
+        
     }
     
     func processToCheckout() {
@@ -57,13 +59,14 @@ class CartViewController: UIViewController {
             let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeButtonTapped")
             navigationItem.leftBarButtonItem = leftBarButton
         } else {
-            navigationItem.leftBarButtonItem = nil
-        }
-        
-        if fromGridIndex == -1 {
-            assistButton.alpha = 0
-        } else {
-            assistButton.alpha = 1
+            menuControl.tapHandler = {
+                if self.gridMenuIsShown {
+                    self.hideGridMenu()
+                } else {
+                    self.showGridMenu()
+                }
+            }
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuControl)
         }
 
         loadCartDetails()
@@ -181,6 +184,36 @@ class CartViewController: UIViewController {
         
         return subTotal
     }
+    
+    func showGridMenu() {
+        gridMenuIsShown = true
+        gridMenu = RNGridMenu(images: [UIImage(named: "home")!.newImageWithColor(kThemeColor),
+            UIImage(named: "shopping")!.newImageWithColor(kThemeColor),
+            UIImage(named: "history")!.newImageWithColor(kThemeColor),
+            UIImage(named: "settings")!.newImageWithColor(kThemeColor)])
+        
+        gridMenu.delegate = self
+        gridMenu.showInViewController(self, center: CGPoint(x: CGRectGetWidth(view.frame)/2, y: CGRectGetHeight(view.frame)/2))
+    }
+    
+    func hideGridMenu() {
+        if gridMenu != nil {
+            gridMenuIsShown = false
+            gridMenu.dismissAnimated(true)
+        }
+    }
+    
+    func animateMenuButton(#close: Bool) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            if close {
+                gridMenuIsShown = false
+                button.menuAnimation()
+            } else {
+                gridMenuIsShown = true
+                button.closeAnimation()
+            }
+        }
+    }
 }
 
 
@@ -256,7 +289,12 @@ extension CartViewController: UITableViewDataSource {
 }
 
 extension CartViewController: RNGridMenuDelegate {
+    func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
+        animateMenuButton(close: true)
+    }
+    
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
+        animateMenuButton(close: true)
         delay(seconds: 0.3) { () -> () in
             if itemIndex == 1 {
                 return
