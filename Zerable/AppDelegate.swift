@@ -31,12 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
-        
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-    
         UINavigationBar.appearance().setBackgroundImage(UIColor.imageWithColor(kThemeColor), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIColor.imageWithColor(kThemeColor)
         UINavigationBar.appearance().translucent = true
+
+        UITabBar.appearance().tintColor = kThemeColor
         
         if PFUser.currentUser() != nil {
             if let window = self.window {

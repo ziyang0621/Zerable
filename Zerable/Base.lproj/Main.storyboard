@@ -586,12 +586,13 @@
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-2b-dsf">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.81176470590000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <tabBarItem title="Basic Info" id="8SC-6f-JMM"/>
-                                    <tabBarItem tag="1" title="Address" id="Iff-SV-syq"/>
-                                    <tabBarItem tag="2" title="Payment" id="2bB-IB-xA8"/>
+                                    <tabBarItem title="Basic Info" image="basic" id="8SC-6f-JMM"/>
+                                    <tabBarItem tag="1" title="Address" image="address" id="Iff-SV-syq"/>
+                                    <tabBarItem tag="2" title="Payment" image="payment" id="2bB-IB-xA8"/>
                                 </items>
+                                <color key="selectedImageTintColor" red="0.0" green="0.81176470590000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1137,6 +1138,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="address" width="50" height="50"/>
+        <image name="basic" width="50" height="50"/>
         <image name="logo" width="136" height="137"/>
+        <image name="payment" width="58" height="58"/>
     </resources>
 </document>
