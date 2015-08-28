@@ -64,7 +64,6 @@ class ZerableScrollView: UIScrollView {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        println("show keyboard")
         if !keyboardIsShown {
             adjustInsetForKeyboardShow(true, notification: notification)
         }
@@ -72,7 +71,6 @@ class ZerableScrollView: UIScrollView {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        println("hide keyboard")
         if keyboardIsShown {
             adjustInsetForKeyboardShow(false, notification: notification)
         }

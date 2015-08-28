@@ -105,7 +105,7 @@ class OrderSummaryViewController: UIViewController {
     
     func postStripeToken(token: STPToken) {
         
-        let URL = "http://localhost/donate/payment.php"
+        let URL = "http://www.zerable.com/payment/pay.php"
         let params = ["stripeToken": token.tokenId,
             "amount": calculateSubtotal().doubleValue,
             "currency": "usd",
