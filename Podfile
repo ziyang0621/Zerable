@@ -24,5 +24,4 @@ pod 'NYTPhotoViewer'
 
 pod 'Alamofire'
 
-
 end
