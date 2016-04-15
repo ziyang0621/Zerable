@@ -16,27 +16,31 @@ extension PFQuery {
         let orderQuery = PFQuery(className: "Order")
         orderQuery.whereKey("user", equalTo: user)
         orderQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 completion(orderHistoryList: nil, error: error)
             } else {
                 if let returnOrders = objects as? [Order] {
                     var orderCounter = 0
-                    var orderCount = returnOrders.count
-                    for order in returnOrders {
-                        self.retrieveCartItemsForCart(order.cart, completion: { (cartItems, error) -> () in
-                            if let error = error {
-                                completion(orderHistoryList: nil, error: error)
-                            } else {
-                                if let cartItems = cartItems {
-                                    returnList[order] = cartItems
-                                    orderCounter++
-                                    if orderCounter == orderCount {
-                                        completion(orderHistoryList: returnList, error: nil)
+                    let orderCount = returnOrders.count
+                    if orderCount == 0 {
+                        completion(orderHistoryList: returnList, error: nil)
+                    } else {
+                        for order in returnOrders {
+                            self.retrieveCartItemsForCart(order.cart, completion: { (cartItems, error) -> () in
+                                if let error = error {
+                                    completion(orderHistoryList: nil, error: error)
+                                } else {
+                                    if let cartItems = cartItems {
+                                        returnList[order] = cartItems
+                                        orderCounter++
+                                        if orderCounter == orderCount {
+                                            completion(orderHistoryList: returnList, error: nil)
+                                        }
                                     }
                                 }
-                            }
-                        })
+                            })
+                        }
                     }
                 }
             }
@@ -68,7 +72,7 @@ extension PFQuery {
         query.whereKey("user", equalTo: user)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 completion(cardInfo: nil, error: error)
             } else {
@@ -124,7 +128,7 @@ extension PFQuery {
         let cartItemQuery = PFQuery(className: "CartItem")
         cartItemQuery.whereKey("cart", equalTo: cart)
         cartItemQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 completion(success: false, error: error)
             } else {
@@ -279,7 +283,7 @@ extension PFQuery {
         let cartItemQuery = PFQuery(className: "CartItem")
         cartItemQuery.whereKey("cart", equalTo: cart)
         cartItemQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 completion(cartItems: nil, error: error)
             } else {
@@ -307,7 +311,7 @@ extension PFQuery {
         cartQuery.whereKey("checkedOut", equalTo: false)
         cartQuery.limit = 1
         cartQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 completion(cart: nil, error: error)
             } else {
@@ -430,8 +434,8 @@ extension PFQuery {
         cartItemQuery.whereKey("cart", equalTo: cart)
         cartItemQuery.whereKey("product", equalTo: product)
         cartItemQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if let error = error {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error != nil {
                 completion(contains: false, cartItem: nil, error: nil)
             } else {
                 if let cartItems = objects as? [CartItem] {
@@ -451,11 +455,11 @@ extension PFQuery {
         let query = PFQuery(className: "ImageFile")
         query.whereKey("product", equalTo: product)
         query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
+            (objects: [PFObject]?, error: NSError?) -> Void in
             if error != nil {
                 completion(itemImages: nil, error: error)
             } else {
-                if let images = objects as? [PFObject] {
+                if let images = objects {
                     var files = [PFFile]()
                     for image in images {
                         files.append(image["imageFile"] as! PFFile)
@@ -477,7 +481,7 @@ extension PFQuery {
     
     class func loadImageData(files: [PFFile], product: Product, completion:(itemImages: [ItemPhoto]?, error: NSError?) -> ()) {
         var loadCount = 0
-        var imageCount = files.count
+        let imageCount = files.count
         var itemImages = [ItemPhoto]()
         for file in files {
             file.getDataInBackgroundWithBlock({
@@ -566,10 +570,10 @@ extension UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         color1.setFill()
         
-        let context = UIGraphicsGetCurrentContext() as CGContextRef
+        let context = UIGraphicsGetCurrentContext()
         CGContextTranslateCTM(context, 0, self.size.height)
         CGContextScaleCTM(context, 1.0, -1.0);
-        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        CGContextSetBlendMode(context, CGBlendMode.Normal)
         
         let rect = CGRectMake(0, 0, self.size.width, self.size.height) as CGRect
         CGContextClipToMask(context, rect, self.CGImage)
@@ -582,41 +586,41 @@ extension UIImage {
     }
 }
 
-extension String {
-    
-    func rangesOfString(findStr:String) -> [Range<String.Index>] {
-        var arr = [Range<String.Index>]()
-        var startInd = self.startIndex
-        // check first that the first character of search string exists
-        if contains(self, first(findStr)!) {
-            // if so set this as the place to start searching
-            startInd = find(self,first(findStr)!)!
-        }
-        else {
-            // if not return empty array
-            return arr
-        }
-        var i = distance(self.startIndex, startInd)
-        while i<=count(self)-count(findStr) {
-            if self[advance(self.startIndex, i)..<advance(self.startIndex, i+count(findStr))] == findStr {
-                arr.append(Range(start:advance(self.startIndex, i),end:advance(self.startIndex, i+count(findStr))))
-                i = i+count(findStr)-1
-                // check again for first occurrence of character (this reduces number of times loop will run
-                if contains(self[advance(self.startIndex, i)..<self.endIndex], first(findStr)!) {
-                    // if so set this as the place to start searching
-                    i = distance(self.startIndex,find(self[advance(self.startIndex, i)..<self.endIndex],first(findStr)!)!) + i
-                    count(findStr)
-                }
-                else {
-                    return arr
-                }
-                
-            }
-            i++
-        }
-        return arr
-    }
-}
+//extension String {
+//    
+//    func rangesOfString(findStr:String) -> [Range<String.Index>] {
+//        var arr = [Range<String.Index>]()
+//        var startInd = self.startIndex
+//        // check first that the first character of search string exists
+//        if contains(self, first(findStr)!) {
+//            // if so set this as the place to start searching
+//            startInd = find(self,first(findStr)!)!
+//        }
+//        else {
+//            // if not return empty array
+//            return arr
+//        }
+//        var i = distance(self.startIndex, startInd)
+//        while i<=count(self)-count(findStr) {
+//            if self[advance(self.startIndex, i)..<advance(self.startIndex, i+count(findStr))] == findStr {
+//                arr.append(Range(start:advance(self.startIndex, i),end:advance(self.startIndex, i+count(findStr))))
+//                i = i+count(findStr)-1
+//                // check again for first occurrence of character (this reduces number of times loop will run
+//                if contains(self[advance(self.startIndex, i)..<self.endIndex], first(findStr)!) {
+//                    // if so set this as the place to start searching
+//                    i = distance(self.startIndex,find(self[advance(self.startIndex, i)..<self.endIndex],first(findStr)!)!) + i
+//                    count(findStr)
+//                }
+//                else {
+//                    return arr
+//                }
+//                
+//            }
+//            i++
+//        }
+//        return arr
+//    }
+//}
 
 extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
@@ -703,7 +707,7 @@ extension Int {
         return Int(arc4random_uniform(UInt32(n)))
     }
 
-    public static func random(#min: Int, max: Int) -> Int {
+    public static func random(min: Int, max: Int) -> Int {
         return Int(arc4random_uniform(UInt32(max - min + 1))) + min
     }
 }
@@ -714,7 +718,7 @@ extension Double {
         return Double(arc4random()) / 0xFFFFFFFF
     }
     
-    public static func random(#min: Double, max: Double) -> Double {
+    public static func random(min: Double, max: Double) -> Double {
         return Double.random() * (max - min) + min
     }
 }
@@ -725,7 +729,7 @@ extension Float {
         return Float(arc4random()) / 0xFFFFFFFF
     }
 
-    public static func random(#min: Float, max: Float) -> Float {
+    public static func random(min: Float, max: Float) -> Float {
         return Float.random() * (max - min) + min
     }
 }
@@ -736,7 +740,7 @@ extension CGFloat {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
 
-    public static func random(#min: CGFloat, max: CGFloat) -> CGFloat {
+    public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return CGFloat.random() * (max - min) + min
     }
 }

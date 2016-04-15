@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import AddressBookUI
-import ZTDropDownTextField
+//import ZTDropDownTextField
 import Parse
 import KVNProgress
 
@@ -18,7 +18,7 @@ class AddressViewController: UIViewController {
     @IBOutlet weak var saveButton: ZerableRoundButton!
     @IBOutlet weak var scrollView: ZerableScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var fullAddressTextField: ZTDropDownTextField!
+    @IBOutlet weak var fullAddressTextField: UITextField!
     @IBOutlet weak var optionalAddressTextField: UITextField!
     @IBOutlet weak var addressSummaryTextView: UITextView!
     let geocoder = CLGeocoder()
@@ -32,11 +32,11 @@ class AddressViewController: UIViewController {
         super.viewDidLoad()
         
         fullAddressTextField.delegate = self
-        fullAddressTextField.dataSourceDelegate = self
-        fullAddressTextField.addTarget(self, action: "fullAddressTextDidChanged:", forControlEvents:.EditingChanged)
+//        fullAddressTextField.dataSourceDelegate = self
+        fullAddressTextField.addTarget(self, action: #selector(AddressViewController.fullAddressTextDidChanged(_:)), forControlEvents:.EditingChanged)
         
         optionalAddressTextField.delegate = self
-        optionalAddressTextField.addTarget(self, action: "optionalAddressTextDidChanged:", forControlEvents:.EditingChanged)
+        optionalAddressTextField.addTarget(self, action: #selector(AddressViewController.optionalAddressTextDidChanged(_:)), forControlEvents:.EditingChanged)
 
         addressSummaryTextView.layer.cornerRadius = 5
         
@@ -50,11 +50,13 @@ class AddressViewController: UIViewController {
             query.orderByDescending("createdAt")
             query.getFirstObjectInBackgroundWithBlock({
                 (address: PFObject?, error:NSError?) -> Void in
-                self.fullAddressTextField.text = address!["fullAddress"] as! String
-                self.optionalAddressTextField.text = address!["optionalAddress"] as! String
-                self.addressSummaryTextView.text = address!["addressSummary"] as! String
-                self.loadedAddressSummary = self.addressSummaryTextView.text
-                self.selectedPlacemark =  NSKeyedUnarchiver.unarchiveObjectWithData(address!["placeMark"] as! NSData) as? CLPlacemark
+                if address != nil {
+                    self.fullAddressTextField.text = address!["fullAddress"] as? String
+                    self.optionalAddressTextField.text = address!["optionalAddress"] as? String
+                    self.addressSummaryTextView.text = address!["addressSummary"] as! String
+                    self.loadedAddressSummary = self.addressSummaryTextView.text
+                    self.selectedPlacemark =  NSKeyedUnarchiver.unarchiveObjectWithData(address!["placeMark"] as! NSData) as? CLPlacemark
+                }
                 self.changeSaveButtonState()
             })
         }
@@ -100,7 +102,7 @@ class AddressViewController: UIViewController {
                         KVNProgress.showSuccess()
                     }
                     if let error = error {
-                        let errorString = error.userInfo?["error"] as? String
+                        let errorString = error.userInfo["error"] as? String
                         let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
@@ -125,21 +127,21 @@ class AddressViewController: UIViewController {
     func fullAddressTextDidChanged(textField: UITextField) {
         changeSaveButtonState()
 
-        if textField.text.isEmpty {
+        if textField.text!.isEmpty {
             placemarkList.removeAll(keepCapacity: false)
-            if let dropDownTableView = fullAddressTextField.dropDownTableView {
-                dropDownTableView.reloadData()
-            }
+//            if let dropDownTableView = fullAddressTextField.dropDownTableView {
+//                dropDownTableView.reloadData()
+//            }
             return
         }
         
-        geocoder.geocodeAddressString(textField.text, inRegion: region, completionHandler: { (placemarks, error) -> Void in
+        geocoder.geocodeAddressString(textField.text!, inRegion: region, completionHandler: { (placemarks, error) -> Void in
             if error != nil {
-                println(error)
+                print(error)
             } else {
                 self.placemarkList.removeAll(keepCapacity: false)
-                self.placemarkList = placemarks as! [CLPlacemark]
-                self.fullAddressTextField.dropDownTableView.reloadData()
+                self.placemarkList = placemarks! as [CLPlacemark]
+             //   self.fullAddressTextField.dropDownTableView.reloadData()
             }
         })
     }
@@ -150,7 +152,7 @@ class AddressViewController: UIViewController {
     }
     
     func formateedFullAddress(placemark: CLPlacemark) -> String {
-        let lines = ABCreateStringWithAddressDictionary(placemark.addressDictionary, false)
+        let lines = ABCreateStringWithAddressDictionary(placemark.addressDictionary!, false)
         let addressString = lines.stringByReplacingOccurrencesOfString("\n", withString: ", ", options: .LiteralSearch, range: nil)
         return addressString
     }
@@ -180,7 +182,7 @@ class AddressViewController: UIViewController {
                     addressSummaryString += "\n"
                 }
             }
-            addressSummaryString += optionalAddressTextField.text.isEmpty ? "" : optionalAddressTextField.text + "\n"
+            addressSummaryString += optionalAddressTextField.text!.isEmpty ? "" : optionalAddressTextField.text! + "\n"
             if let locality = selectedPlacemark.locality {
                 addressSummaryString += locality + " "
             }
@@ -201,45 +203,50 @@ class AddressViewController: UIViewController {
         }
         return ""
     }
-}
-
-extension AddressViewController: ZTDropDownTextFieldDataSourceDelegate {
-    func dropDownTextField(dropDownTextField: ZTDropDownTextField, numberOfRowsInSection section: Int) -> Int {
-        return placemarkList.count
-    }
-    
-    func dropDownTextField(dropDownTextField: ZTDropDownTextField, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell = dropDownTextField.dropDownTableView.dequeueReusableCellWithIdentifier("addressCell") as? UITableViewCell
-        if let cell = cell {
-            
-        } else {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "addressCell")
-        }
-        
-        cell!.textLabel!.text = formateedFullAddress(placemarkList[indexPath.row])
-        cell!.textLabel?.numberOfLines = 0
-        return cell!
-    }
-    
-    func dropDownTextField(dropDownTextField: ZTDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedPlacemark = placemarkList[indexPath.row]
-        println(selectedPlacemark?.subThoroughfare)
-        println(selectedPlacemark?.thoroughfare)
-        println(selectedPlacemark?.locality)
-        println(selectedPlacemark?.administrativeArea)
-        println(selectedPlacemark?.postalCode)
-        println(selectedPlacemark?.country)
-        fullAddressTextField.text = formateedFullAddress(placemarkList[indexPath.row])
-        addressSummaryTextView.text = ABCreateStringWithAddressDictionary(placemarkList[indexPath.row].addressDictionary, false)
-        addressSummaryTextView.text = formattedAddressWithOptionalLine()
-    }
     
     func changeSaveButtonState() {
-        saveButton.enabled = !fullAddressTextField.text.isEmpty ? true : false
-        saveButton.backgroundColor = !fullAddressTextField.text.isEmpty ? kThemeColor : UIColor.lightGrayColor()
+        saveButton.enabled = !fullAddressTextField.text!.isEmpty ? true : false
+        saveButton.backgroundColor = !fullAddressTextField.text!.isEmpty ? kThemeColor : UIColor.lightGrayColor()
     }
 }
+
+//extension AddressViewController: ZTDropDownTextFieldDataSourceDelegate {
+//    func dropDownTextField(dropDownTextField: ZTDropDownTextField, numberOfRowsInSection section: Int) -> Int {
+//        return placemarkList.count
+//    }
+//    
+//    func dropDownTextField(dropDownTextField: ZTDropDownTextField, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        var cell = dropDownTextField.dropDownTableView.dequeueReusableCellWithIdentifier("addressCell") as? UITableViewCell
+//        if let cell = cell {
+//            
+//        } else {
+//            cell = UITableViewCell(style: .Default, reuseIdentifier: "addressCell")
+//        }
+//        
+//        cell!.textLabel!.text = formateedFullAddress(placemarkList[indexPath.row])
+//        cell!.textLabel?.numberOfLines = 0
+//        return cell!
+//    }
+//    
+//    func dropDownTextField(dropDownTextField: ZTDropDownTextField, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        selectedPlacemark = placemarkList[indexPath.row]
+//        println(selectedPlacemark?.subThoroughfare)
+//        println(selectedPlacemark?.thoroughfare)
+//        println(selectedPlacemark?.locality)
+//        println(selectedPlacemark?.administrativeArea)
+//        println(selectedPlacemark?.postalCode)
+//        println(selectedPlacemark?.country)
+//        fullAddressTextField.text = formateedFullAddress(placemarkList[indexPath.row])
+//        addressSummaryTextView.text = ABCreateStringWithAddressDictionary(placemarkList[indexPath.row].addressDictionary, false)
+//        addressSummaryTextView.text = formattedAddressWithOptionalLine()
+//    }
+//    
+//    func changeSaveButtonState() {
+//        saveButton.enabled = !fullAddressTextField.text.isEmpty ? true : false
+//        saveButton.backgroundColor = !fullAddressTextField.text.isEmpty ? kThemeColor : UIColor.lightGrayColor()
+//    }
+//}
 
 extension AddressViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -38,7 +38,7 @@ class OrderSummaryViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "PaymentInfoCell", bundle: nil), forCellReuseIdentifier: "PaymentInfoCell")
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
-        let placeOrderTap = UITapGestureRecognizer(target: self, action: "placeOrder")
+        let placeOrderTap = UITapGestureRecognizer(target: self, action: #selector(OrderSummaryViewController.placeOrder))
         placeOrderView.addGestureRecognizer(placeOrderTap)
         
         loadOrderSummaryDetails()
@@ -51,7 +51,7 @@ class OrderSummaryViewController: UIViewController {
             (cartItemsToDelete, cartItemsToChangeQuantity, error) -> () in
             if let error = error {
                 KVNProgress.dismiss()
-                let errorString = error.userInfo?["error"] as? String
+                let errorString = error.userInfo["error"] as? String
                 let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)            } else {
@@ -60,9 +60,9 @@ class OrderSummaryViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    println("enough quantity")
+                    print("enough quantity")
                     PFQuery.updateCardItemsProductStock(self.cartItemList, completion: { (success, error) -> () in
-                        if let error = error {
+                        if error != nil {
                             KVNProgress.dismiss()
                             let alert = UIAlertController(title: "Error", message: "unable to update product stock", preferredStyle: .Alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
@@ -117,7 +117,13 @@ class OrderSummaryViewController: UIViewController {
                 self.handleError(error)
             } else {
                 if let data = data {
-                    var dict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! [String: String]
+                    var dict:[String:String] = [:]
+                    do {
+                        dict = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:String]
+                    }
+                    catch {
+                        print("error: \(error)")
+                    }
                     let status = dict["status"]
                     if status == "Failure" {
                         KVNProgress.dismiss()
@@ -126,7 +132,7 @@ class OrderSummaryViewController: UIViewController {
                             delegate: nil,
                             cancelButtonTitle: "OK").show()
                     } else if status == "Success" {
-                        println("payment submitted")
+                        print("payment submitted")
                         self.saveOrderInParse()
                     }
                 } else {
@@ -163,11 +169,11 @@ class OrderSummaryViewController: UIViewController {
         PFQuery.saveOrder(cart!, order: order) {
             (success, error) -> () in
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.userInfo?["error"] as? String, preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Error", message: error.userInfo["error"] as? String, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                println("order placed")
+                print("order placed")
                 let orderCompletedVC = UIStoryboard.orderCompletedViewController()
                 let orderCompletedNav = UINavigationController(rootViewController: orderCompletedVC)
                 self.presentViewController(orderCompletedNav, animated: true, completion: nil)
@@ -188,8 +194,8 @@ class OrderSummaryViewController: UIViewController {
             query.getFirstObjectInBackgroundWithBlock({
                 (address: PFObject?, error:NSError?) -> Void in
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
-                    println(errorString)
+                    let errorString = error.userInfo["error"] as? String
+                    print(errorString)
                 } else {
                     self.loadedAddressSummary = address!["addressSummary"] as! String
                     self.selectedPlacemark =  NSKeyedUnarchiver.unarchiveObjectWithData(address!["placeMark"] as! NSData) as? CLPlacemark
@@ -210,8 +216,8 @@ class OrderSummaryViewController: UIViewController {
             (cart, error) -> () in
             if let error = error {
                 KVNProgress.dismiss()
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
+                let errorString = error.userInfo["error"] as? String
+                print(errorString)
             } else {
                 if let cart = cart {
                     self.cart = cart
@@ -220,20 +226,20 @@ class OrderSummaryViewController: UIViewController {
                         (success, error) -> () in
                         if let error = error {
                             KVNProgress.dismiss()
-                            let errorString = error.userInfo?["error"] as? String
-                            println(errorString)
+                            let errorString = error.userInfo["error"] as? String
+                            print(errorString)
                         } else {
                             
                             PFQuery.retrieveCartItemsForCart(cart, completion: {
                                 (cartItems, error) -> () in
                                 KVNProgress.dismiss()
                                 if let error = error {
-                                    let errorString = error.userInfo?["error"] as? String
-                                    println(errorString)
+                                    let errorString = error.userInfo["error"] as? String
+                                    print(errorString)
                                 } else {
                                     if let cartItems = cartItems {
                                         if cartItems.count > 0 {
-                                            self.cartItemList.extend(cartItems)
+                                            self.cartItemList.appendContentsOf(cartItems)
                                             self.loadUserAddress()
                                         } else {
                                             self.cartEmptyLabel.alpha = 1
@@ -326,8 +332,8 @@ extension OrderSummaryViewController: UITableViewDataSource {
                     if error == nil {
                         // println("cell image loaded")
                     } else {
-                        let errorString = error!.userInfo?["error"] as? String
-                        println(errorString)
+                        let errorString = error!.userInfo["error"] as? String
+                        print(errorString)
                     }
                 })
                 

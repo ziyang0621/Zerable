@@ -9,7 +9,7 @@
 import UIKit
 
 func shuffle<C: MutableCollectionType where C.Index == Int>(var list: C) -> C {
-    let c = count(list)
+    let c = list.count
     if c < 2 { return list }
     for i in 0..<(c - 1) {
         let j = Int(arc4random_uniform(UInt32(c - i))) + i
@@ -23,7 +23,7 @@ func validateEmail(candidate: String) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
 }
 
-func delay(#seconds: Double, completion:()->()) {
+func delay(seconds: Double, completion:()->()) {
     let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
     
     dispatch_after(popTime, dispatch_get_main_queue()) {
@@ -37,7 +37,7 @@ func formattedCurrencyString(value: NSNumber) -> String {
     return formatter.stringFromNumber(value)!
 }
 
-func heightForView(text:String, #font:UIFont, #width:CGFloat) -> CGFloat{
+func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
     let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
     label.numberOfLines = 0
     label.lineBreakMode = NSLineBreakMode.ByWordWrapping

@@ -16,12 +16,12 @@ class TermAndPolicyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rightBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeVC")
+        let rightBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(TermAndPolicyViewController.closeVC))
         navigationItem.rightBarButtonItem = rightBarButton
         
         segControl.center = CGPoint(x: CGRectGetWidth(navigationController!.navigationBar.frame) / 2,
             y: CGRectGetHeight(navigationController!.navigationBar.frame) / 2)
-        segControl.addTarget(self, action: "tabChanged:", forControlEvents: .ValueChanged)
+        segControl.addTarget(self, action: #selector(TermAndPolicyViewController.tabChanged(_:)), forControlEvents: .ValueChanged)
         navigationController?.navigationBar.addSubview(segControl)
     }
     

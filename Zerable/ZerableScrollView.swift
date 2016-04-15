@@ -35,8 +35,7 @@ class ZerableScrollView: UIScrollView {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        println("init code")
+        super.init(coder: aDecoder)!
         setup()
     }
     
@@ -49,17 +48,17 @@ class ZerableScrollView: UIScrollView {
         contentInset = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         
-        let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(ZerableScrollView.viewTapped(_:)))
         addGestureRecognizer(viewTap)
         viewTap.cancelsTouchesInView = false
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ZerableScrollView.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ZerableScrollView.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        println("init frame")
+        print("init frame")
         setup()
     }
     
@@ -89,11 +88,11 @@ class ZerableScrollView: UIScrollView {
     
     func findFirstResponder(view: UIView) -> UIView? {
         for childView in view.subviews {
-            if childView.respondsToSelector(Selector("isFirstResponder")) &&
+            if childView.respondsToSelector(#selector(UIResponder.isFirstResponder)) &&
                 childView.isFirstResponder() {
-                    return childView as? UIView
+                    return childView
             }
-            if let result = findFirstResponder(childView as! UIView) {
+            if let result = findFirstResponder(childView) {
                 return result;
             }
         }

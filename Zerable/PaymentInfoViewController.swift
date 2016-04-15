@@ -65,19 +65,20 @@ class PaymentInfoViewController: UIViewController {
 
     @IBAction func saveButtonPressed(sender: AnyObject) {
         if toCheckout {
-            if let cardInfo = cardInfo {
-                println("already has card info")
+            if cardInfo != nil {
+                print("already has card info")
                 transitionToOrderSummary()
             } else {
                 if let currentUser = PFUser.currentUser() {
                     
                     let userCardInfo = UserCardInfo()
-                    userCardInfo.number = paymentView.card!.number!
-                    userCardInfo.last4 = paymentView.card!.last4!
-                    userCardInfo.expMonth = paymentView.card!.expMonth
-                    userCardInfo.expYear = paymentView.card!.expYear
-                    userCardInfo.cvc = paymentView.card!.cvc!
-                    userCardInfo.brandName = self.getCardTypeName(paymentView.card!.brand)
+                    userCardInfo.number = paymentView.cardParams.number!
+                    userCardInfo.last4 = paymentView.cardParams.last4()!
+                    userCardInfo.expMonth = paymentView.cardParams.expMonth
+                    userCardInfo.expYear = paymentView.cardParams.expYear
+                    userCardInfo.cvc = paymentView.cardParams.cvc!
+//                    userCardInfo.brandName = self.getCardTypeName(paymentView.card.brand)
+                    userCardInfo.brandName = "test"
                     userCardInfo.user = currentUser
                     
                     KVNProgress.showWithStatus("Saving...")
@@ -85,7 +86,7 @@ class PaymentInfoViewController: UIViewController {
                         (succeeded: Bool, error: NSError?) -> Void in
                         KVNProgress.dismiss()
                         if let error = error {
-                            let errorString = error.userInfo?["error"] as? String
+                            let errorString = error.userInfo["error"] as? String
                             let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                             self.presentViewController(alert, animated: true, completion: nil)
@@ -110,12 +111,13 @@ class PaymentInfoViewController: UIViewController {
             if let currentUser = PFUser.currentUser() {
                 
                 let userCardInfo = UserCardInfo()
-                userCardInfo.number = paymentView.card!.number!
-                userCardInfo.last4 = paymentView.card!.last4!
-                userCardInfo.expMonth = paymentView.card!.expMonth
-                userCardInfo.expYear = paymentView.card!.expYear
-                userCardInfo.cvc = paymentView.card!.cvc!
-                userCardInfo.brandName = self.getCardTypeName(paymentView.card!.brand)
+                userCardInfo.number = paymentView.cardParams.number!
+                userCardInfo.last4 = paymentView.cardParams.last4()!
+                userCardInfo.expMonth = paymentView.cardParams.expMonth
+                userCardInfo.expYear = paymentView.cardParams.expYear
+                userCardInfo.cvc = paymentView.cardParams.cvc!
+                userCardInfo.brandName = "test"
+//                userCardInfo.brandName = self.getCardTypeName(paymentView.card!.brand)
                 userCardInfo.user = currentUser
                 
                 KVNProgress.showWithStatus("Saving...")
@@ -123,7 +125,7 @@ class PaymentInfoViewController: UIViewController {
                     (succeeded: Bool, error: NSError?) -> Void in
                     KVNProgress.showSuccess()
                     if let error = error {
-                        let errorString = error.userInfo?["error"] as? String
+                        let errorString = error.userInfo["error"] as? String
                         let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
@@ -179,9 +181,9 @@ extension PaymentInfoViewController: STPPaymentCardTextFieldDelegate {
         checkSaveButtonState()
         
         if textField.valid {
-            let cardTypeName = getCardTypeName(textField.card!.brand)
+            let cardTypeName = "test"
             
-            cardSummaryTextView.text = textField.valid ? "\(cardTypeName)\nCard Number End With: \(textField.card!.last4!)" : ""
+            cardSummaryTextView.text = textField.valid ? "\(cardTypeName)\nCard Number End With: \(textField.cardParams.last4())" : ""
         } else {
             if let cardInfo = cardInfo {
                 cardSummaryTextView.text = "\(cardInfo.brandName)\nCard Number End With: \(cardInfo.last4)"

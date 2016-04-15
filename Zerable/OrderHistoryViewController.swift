@@ -60,16 +60,16 @@ class OrderHistoryViewController: UIViewController {
         PFQuery.retrieveOrderHistory(PFUser.currentUser()!, completion: { (orderHistoryList, error) -> () in
             KVNProgress.dismiss()
             if let error = error {
-                let errorString = error.userInfo?["error"] as? String
+                let errorString = error.userInfo["error"] as? String
                 let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                println("retrieved")
+                print("retrieved")
                 if let orderHistoryList = orderHistoryList {
                     self.orderHistoryList = orderHistoryList
                     self.orderList = [Order](orderHistoryList.keys)
-                    self.orderList.sort({ $0.createdAt!.compare($1.createdAt!) == .OrderedDescending })
+                    self.orderList.sortInPlace({ $0.createdAt!.compare($1.createdAt!) == .OrderedDescending })
                     self.tableView.reloadData()
                 }
             }
@@ -99,7 +99,7 @@ class OrderHistoryViewController: UIViewController {
         }
     }
     
-    func animateMenuButton(#close: Bool) {
+    func animateMenuButton(close: Bool) {
         if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
             if close {
                 gridMenuIsShown = false
@@ -156,12 +156,12 @@ extension OrderHistoryViewController: UITableViewDataSource {
 
 extension OrderHistoryViewController: RNGridMenuDelegate {
     func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
-        animateMenuButton(close: true)
+        animateMenuButton(true)
     }
     
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        animateMenuButton(close: true)
-        delay(seconds: 0.3) { () -> () in
+        animateMenuButton(true)
+        delay(0.3) { () -> () in
             if itemIndex == 2 {
                 return
             }

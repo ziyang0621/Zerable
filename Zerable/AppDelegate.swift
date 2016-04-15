@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Stripe
 
-let kThemeColor = UIColor.colorWithRGBHex(0x00CF98, alpha: 1.0)
+let kThemeColor = UIColor.colorWithRGBHex(0xFA256F, alpha: 1.0)
 let kItemList = ["frozen-beef", "frozen-red-meat", "frozen-pork", "frozen-shrimp", "frozen-chicken"]
 
 @UIApplicationMain
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("gSMFL1BfYtr0daSJz9iQqUCzsK7ZRYdSg80Fy30O", clientKey: "R4s5wWFQus4BPt1xaKnIyOHPPLSSIa9gd7fS3YbQ")
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
+        UINavigationBar.appearance().titleTextAttributes = titleDict as? [String : AnyObject]
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().setBackgroundImage(UIColor.imageWithColor(kThemeColor), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIColor.imageWithColor(kThemeColor)
@@ -57,12 +57,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func checkProducts() {
         let query = PFQuery(className: "Product")
         query.limit = 1
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
+                let errorString = error.userInfo["error"] as? String
+                print(errorString)
             } else {
-                if let products = objects as? [PFObject] {
+                if let products = objects {
                     if products.count == 0 {
                         self.insertProducts()
                     }
@@ -72,14 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func insertProducts() {
-        for index in 0..<15 {
-            var product = Product()
+        for _ in 0..<15 {
+            let product = Product()
             product.name = shuffle(kItemList).first!
             product.productdescription = "This is a frozen meet from Bay Area"
-            var price = Double.random(min: 0, max: 99.99)
+            var price = Double.random(0, max: 99.99)
             price = Double(round(100*price)/100)
             product.price = NSDecimalNumber(decimal: NSNumber(double: price).decimalValue)
-            product.stock = Int.random(min: 0, max: 20)
+            product.stock = Int.random(0, max: 20)
             product.category = "American"
             product.origin = "San Francisco"
             product.storeMethod = "Frozen"
@@ -91,9 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             product.saveInBackgroundWithBlock({
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
+                    _ = error.userInfo["error"] as? String
                 } else {
-                    println("inserted product")
+                    print("inserted product")
                     self.addProductImage(product)
                 }
             })
@@ -102,16 +102,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addProductImage(product: PFObject) {
         
-        for imageIndex in 0..<3 {
+        for _ in 0..<3 {
             let detailImage = PFObject(className: "ImageFile")
             detailImage["imageType"] = "detailImage"
             detailImage["imageFile"] = generateImage()
             detailImage["product"] = product
             detailImage.saveInBackgroundWithBlock {   (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
+                    _ = error.userInfo["error"] as? String
                 } else {
-                    println("saved detail image")
+                    print("saved detail image")
                 }
             }
         }
@@ -119,9 +119,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func generateImage() -> PFFile {
         let imageName = shuffle(kItemList).first
-        let imageData = UIImagePNGRepresentation(UIImage(named: imageName!))
-        let imageFile = PFFile(name: imageName, data: imageData)
-        return imageFile
+        let imageData = UIImagePNGRepresentation(UIImage(named: imageName!)!)
+        let imageFile = PFFile(name: imageName, data: imageData!)
+        return imageFile!
     }
 
     func applicationWillResignActive(application: UIApplication) {

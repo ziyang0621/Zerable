@@ -59,7 +59,7 @@ class ProductListViewController: UIViewController {
         })()
         
         refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.addTarget(self, action: "handleRefresh", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(ProductListViewController.handleRefresh), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
         
         fetchProducts()
@@ -138,14 +138,14 @@ class ProductListViewController: UIViewController {
                 query.whereKey("stock", greaterThan: 0)
                 query.limit = 8
                 query.findObjectsInBackgroundWithBlock({
-                    (objects: [AnyObject]?, error: NSError?) -> Void in
+                    (objects: [PFObject]?, error: NSError?) -> Void in
                     if let error = error {
                         self.resetUI()
-                        let errorString = error.userInfo?["error"] as? String
-                        println(errorString)
+                        let errorString = error.userInfo["error"] as? String
+                        print(errorString)
                     } else {
                         if let products = objects as? [Product] {
-                            self.productList.extend(products)
+                            self.productList.appendContentsOf(products)
                             self.resetUI()
                             self.currentPage++
                             self.tableView.reloadData()
@@ -201,7 +201,7 @@ class ProductListViewController: UIViewController {
         }
     }
     
-    func animateMenuButton(#close: Bool) {
+    func animateMenuButton(close: Bool) {
         if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
             if close {
                 gridMenuIsShown = false
@@ -230,8 +230,8 @@ extension ProductListViewController: UITableViewDataSource {
             if error == nil {
             //    println("cell image loaded")
             } else {
-                let errorString = error!.userInfo?["error"] as? String
-                println(errorString)
+                let errorString = error!.userInfo["error"] as? String
+                print(errorString)
             }
         })
         
@@ -266,19 +266,19 @@ extension ProductListViewController: UISearchResultsUpdating {
         filteredTableData.removeAll(keepCapacity: false)
         self.tableView.reloadData()
         
-        if count(searchController.searchBar.text) > 0 {
+        if searchController.searchBar.text!.characters.count > 0 {
             let query = PFQuery(className: "Product")
-            query.whereKey("name", containsString: searchController.searchBar.text)
+            query.whereKey("name", containsString: searchController.searchBar.text!)
             query.whereKey("stock", greaterThan: 0)
             query.findObjectsInBackgroundWithBlock {
-                (objects: [AnyObject]?, error: NSError?) -> Void in
+                (objects: [PFObject]?, error: NSError?) -> Void in
                 if let error = error {
                     self.resetUI()
-                    let errorString = error.userInfo?["error"] as? String
-                    println(errorString)
+                    let errorString = error.userInfo["error"] as? String
+                    print(errorString)
                 } else {
                     if let products = objects as? [Product] {
-                        self.filteredTableData.extend(products)
+                        self.filteredTableData.appendContentsOf(products)
                         self.resetUI()
                         self.currentPage++
                         self.tableView.reloadData()
@@ -291,12 +291,12 @@ extension ProductListViewController: UISearchResultsUpdating {
 
 extension ProductListViewController: RNGridMenuDelegate {
     func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
-        animateMenuButton(close: true)
+        animateMenuButton(true)
     }
     
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        animateMenuButton(close: true)
-        delay(seconds: 0.3) { () -> () in
+        animateMenuButton(true)
+        delay(0.3) { () -> () in
             if itemIndex == 0 {
                 return
             }

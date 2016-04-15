@@ -18,7 +18,7 @@ pod 'Parse'
 
 pod 'ParseUI'
 
-pod 'ZTDropDownTextField'
+#pod 'ZTDropDownTextField'
 
 pod 'NYTPhotoViewer'
 

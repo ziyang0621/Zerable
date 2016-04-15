@@ -63,7 +63,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func animateMenuButton(#close: Bool) {
+    func animateMenuButton(close: Bool) {
         if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
             if close {
                 gridMenuIsShown = false
@@ -117,12 +117,12 @@ extension SettingsViewController: UITableViewDelegate {
 
 extension SettingsViewController: RNGridMenuDelegate {
     func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
-        animateMenuButton(close: true)
+        animateMenuButton(true)
     }
     
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        animateMenuButton(close: true)
-        delay(seconds: 0.3) { () -> () in
+        animateMenuButton(true)
+        delay(0.3) { () -> () in
             if itemIndex == 3 {
                 return
             }

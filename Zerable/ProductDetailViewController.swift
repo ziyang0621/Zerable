@@ -56,7 +56,7 @@ class ProductDetailViewController: UIViewController {
         productImageView.image = headerImage
         
         productImageView.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: "productImageViewTapped")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ProductDetailViewController.productImageViewTapped))
         productImageView.addGestureRecognizer(tap)
         
         productNameLabel.text = product.name
@@ -77,7 +77,7 @@ class ProductDetailViewController: UIViewController {
         if (product.stock as NSNumber).intValue < 1 {
             addToCartView.backgroundColor = UIColor.lightGrayColor()
         } else {
-            let addToCartTap = UITapGestureRecognizer(target: self, action: "addToCartTapped")
+            let addToCartTap = UITapGestureRecognizer(target: self, action: #selector(ProductDetailViewController.addToCartTapped))
             addToCartView.addGestureRecognizer(addToCartTap)
         }
     }
@@ -98,7 +98,7 @@ class ProductDetailViewController: UIViewController {
         infoLabel.numberOfLines = 0
         contentView.addSubview(infoLabel)
         contentView.bringSubviewToFront(infoLabel)
-        infoLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let leftConstraint = NSLayoutConstraint(item: infoLabel, attribute: .Left, relatedBy: .Equal, toItem: contentView, attribute: .Left, multiplier: 1, constant: 15)
         let rightConstraint = NSLayoutConstraint(item: infoLabel, attribute: .Right, relatedBy: .Equal, toItem: contentView, attribute: .Right, multiplier: 1, constant: -15)
@@ -112,7 +112,7 @@ class ProductDetailViewController: UIViewController {
         separator.backgroundColor = lineColor
         contentView.addSubview(separator)
         contentView.bringSubviewToFront(separator)
-        separator.setTranslatesAutoresizingMaskIntoConstraints(false)
+        separator.translatesAutoresizingMaskIntoConstraints = false
         
         let leftConstraint = NSLayoutConstraint(item: separator, attribute: .Left, relatedBy: .Equal, toItem: contentView, attribute: .Left, multiplier: 1, constant: 10)
         let rightConstraint = NSLayoutConstraint(item: separator, attribute: .Right, relatedBy: .Equal, toItem: contentView, attribute: .Right, multiplier: 1, constant: -10)
@@ -133,7 +133,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     func addToCartTapped() {
-        println("added to cart tapped")
+        print("added to cart tapped")
         
         KVNProgress.showWithStatus("Adding...")
         
@@ -147,8 +147,8 @@ class ProductDetailViewController: UIViewController {
                 self.presentViewController(cartNav, animated: true, completion: nil)
             } else {
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
-                    println(errorString)
+                    let errorString = error.userInfo["error"] as? String
+                    print(errorString)
                 }
             }
         })
@@ -168,8 +168,8 @@ class ProductDetailViewController: UIViewController {
             KVNProgress.dismiss()
             self.loadingImages = false
             if let error = error {
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
+                let errorString = error.userInfo["error"] as? String
+                print(errorString)
             } else {
                 if let images = productImages {
                     self.productImages = images

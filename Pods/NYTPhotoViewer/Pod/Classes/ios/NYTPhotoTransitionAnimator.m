@@ -1,13 +1,12 @@
 //
 //  NYTPhotoTransitionAnimator.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
 //
 
 #import "NYTPhotoTransitionAnimator.h"
-#import "NYTOperatingSystemCompatibilityUtility.h"
 
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithZooming = 0.5;
 static const CGFloat NYTPhotoTransitionAnimatorDurationWithoutZooming = 0.3;
@@ -44,10 +43,11 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 #pragma mark - NYTPhotoTransitionAnimator
 
 - (void)setupTransitionContainerHierarchyWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
-    UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
-    
-    toView.frame = [NYTOperatingSystemCompatibilityUtility finalFrameForToViewControllerWithTransitionContext:transitionContext];
+    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    toView.frame = [transitionContext finalFrameForViewController:toViewController];
     
     if (![toView isDescendantOfView:transitionContext.containerView]) {
         [transitionContext.containerView addSubview:toView];
@@ -73,8 +73,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
 #pragma mark - Fading
 
 - (void)performFadeAnimationWithTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:transitionContext];
-    UIView *toView = [NYTOperatingSystemCompatibilityUtility toViewForTransitionContext:transitionContext];
+    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     
     UIView *viewToFade = toView;
     CGFloat beginningAlpha = 0.0;
@@ -121,26 +121,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
         endingViewForAnimation = [[self class] newAnimationViewFromView:self.endingView];
     }
     
-    CGAffineTransform finalEndingViewTransform;
-    
-    // The following code is a workaround for iOS7's lack of correct orientation information
-    // in the transitionContext's containerView. For non-portrait orientations on iOS 7, we must
-    // manually add a rotation transform to account for the containerView thinking it is always in portrait
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    BOOL isOrientationPortrait = UIInterfaceOrientationIsPortrait(fromViewController.interfaceOrientation);
-    
-    if (![NYTOperatingSystemCompatibilityUtility isiOS8OrGreater] && !isOrientationPortrait) {
-        // Correct the endingView and startingView's initial transforms
-        endingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], endingViewForAnimation.transform);
-        startingViewForAnimation.transform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], startingViewForAnimation.transform);
-        
-        // Correct the endingView's final transform
-        finalEndingViewTransform = CGAffineTransformConcat([self transformForOrientation:fromViewController.interfaceOrientation], self.endingView.transform);
-    }
-    else {
-        finalEndingViewTransform = self.endingView.transform;
-    }
-    
+    CGAffineTransform finalEndingViewTransform = self.endingView.transform;
+
     CGFloat endingViewInitialTransform = CGRectGetHeight(startingViewForAnimation.frame) / CGRectGetHeight(endingViewForAnimation.frame);
     CGPoint translatedStartingViewCenter = [[self class] centerPointForView:self.startingView
                                                   translatedToContainerView:containerView];
@@ -155,8 +137,8 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     [transitionContext.containerView addSubview:endingViewForAnimation];
     
     // Hide the original ending view and starting view until the completion of the animation.
-    self.endingView.hidden = YES;
-    self.startingView.hidden = YES;
+    self.endingView.alpha = 0.0;
+    self.startingView.alpha = 0.0;
     
     CGFloat fadeInDuration = [self transitionDuration:transitionContext] * self.animationDurationEndingViewFadeInRatio;
     CGFloat fadeOutDuration = [self transitionDuration:transitionContext] * self.animationDurationStartingViewFadeOutRatio;
@@ -196,31 +178,14 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
                      }
                      completion:^(BOOL finished) {
                          [endingViewForAnimation removeFromSuperview];
-                         self.endingView.hidden = NO;
-                         self.startingView.hidden = NO;
+                         self.endingView.alpha = 1.0;
+                         self.startingView.alpha = 1.0;
         
                          [self completeTransitionWithTransitionContext:transitionContext];
                      }];
 }
 
 #pragma mark - Convenience
-
-- (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
-    switch (orientation) {
-        case UIInterfaceOrientationLandscapeLeft:
-            return CGAffineTransformMakeRotation(-M_PI / 2.0);
-        
-        case UIInterfaceOrientationLandscapeRight:
-            return CGAffineTransformMakeRotation(M_PI / 2.0);
-        
-        case UIInterfaceOrientationPortraitUpsideDown:
-            return CGAffineTransformMakeRotation(M_PI);
-        
-        case UIInterfaceOrientationPortrait:
-        default:
-            return CGAffineTransformMakeRotation(0);
-    }
-}
 
 - (BOOL)shouldPerformZoomingAnimation {
     return self.startingView && self.endingView;
@@ -259,13 +224,22 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     if (!view) {
         return nil;
     }
-    
+
     UIView *animationView;
-    
     if (view.layer.contents) {
-        animationView = [[UIView alloc] initWithFrame:view.frame];
-        animationView.layer.contents = view.layer.contents;
-        animationView.layer.bounds = view.layer.bounds;
+        if ([view isKindOfClass:[UIImageView class]]) {
+            // The case of UIImageView is handled separately since the mere layer's contents (i.e. CGImage in this case) doesn't
+            // seem to contain proper informations about the image orientation for portrait images taken directly on the device.
+            // See https://github.com/NYTimes/NYTPhotoViewer/issues/115
+            animationView = [(UIImageView *)[[view class] alloc] initWithImage:((UIImageView *)view).image];
+            animationView.bounds = view.bounds;
+        }
+        else {
+            animationView = [[UIView alloc] initWithFrame:view.frame];
+            animationView.layer.contents = view.layer.contents;
+            animationView.layer.bounds = view.layer.bounds;
+        }
+
         animationView.layer.cornerRadius = view.layer.cornerRadius;
         animationView.layer.masksToBounds = view.layer.masksToBounds;
         animationView.contentMode = view.contentMode;
@@ -274,7 +248,7 @@ static const CGFloat NYTPhotoTransitionAnimatorSpringDamping = 0.9;
     else {
         animationView = [view snapshotViewAfterScreenUpdates:YES];
     }
-    
+
     return animationView;
 }
 

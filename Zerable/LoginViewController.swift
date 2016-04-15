@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(_:)))
         forgetPasswordLabel.addGestureRecognizer(viewTap)
         
         emailTextField.layer.cornerRadius = CGRectGetHeight(emailTextField.frame) / 2
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         inputViewStyle(emailTextField)
         inputViewStyle(passwordTextField)
         
-        let rightBarButton = UIBarButtonItem(title: "Log In", style: .Plain, target: self, action: "login")
+        let rightBarButton = UIBarButtonItem(title: "Log In", style: .Plain, target: self, action: #selector(LoginViewController.login))
         navigationItem.rightBarButtonItem = rightBarButton
     }
     
@@ -54,13 +54,13 @@ class LoginViewController: UIViewController {
         passwordTextField.resignFirstResponder()
         
         if emailTextField.text != "" && passwordTextField.text != "" {
-            if !validateEmail(emailTextField.text) {
+            if !validateEmail(emailTextField.text!) {
                 let alert = UIAlertController(title: "Login Failed", message: "Invalid email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             } else {
                 KVNProgress.showWithStatus("Loggin in...")
-                PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text, block: {
+                PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!, block: {
                     (user: PFUser?, error:NSError?) -> Void in
                     KVNProgress.dismiss()
                     if user != nil {
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
                         self.presentViewController(productListNav, animated: true, completion: nil)
                     } else {
                         if let error = error {
-                            let errorString = error.userInfo?["error"] as? String
+                            let errorString = error.userInfo["error"] as? String
                             let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                             self.presentViewController(alert, animated: true, completion: nil)
@@ -96,20 +96,20 @@ class LoginViewController: UIViewController {
         }
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
-            let textField = alert.textFields?.first as! UITextField
-            if textField.text == "" {
+            let textField = alert.textFields?.first
+            if textField!.text == "" {
                 let alert = UIAlertController(title: "Pasword Reset Failed", message: "You must provide an email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             } else {
-                if !validateEmail(textField.text) {
+                if !validateEmail(textField!.text!) {
                     let alert = UIAlertController(title: "Pasword Reset Failed", message: "Invalid email address", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    PFUser.requestPasswordResetForEmailInBackground(textField.text, block: { (succeeded: Bool, error:NSError?) -> Void in
+                    PFUser.requestPasswordResetForEmailInBackground(textField!.text!, block: { (succeeded: Bool, error:NSError?) -> Void in
                         if let error = error {
-                            let errorString = error.userInfo?["error"] as? String
+                            let errorString = error.userInfo["error"] as? String
                             let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                             self.presentViewController(alert, animated: true, completion: nil)

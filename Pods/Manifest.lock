@@ -1,21 +1,25 @@
 PODS:
-  - Alamofire (1.3.1)
-  - Bolts/Tasks (1.2.0)
-  - KVNProgress (2.2.1)
-  - NYTPhotoViewer (0.1.2)
-  - Parse (1.8.1):
-    - Bolts/Tasks (>= 1.2.0)
-  - ParseUI (1.1.5):
-    - Bolts/Tasks (~> 1.2)
-    - Parse (~> 1.8)
-  - pop (1.0.7)
-  - REFormattedNumberField (1.1.5)
+  - Alamofire (3.3.1)
+  - Bolts/Tasks (1.7.0)
+  - FLAnimatedImage (1.0.12)
+  - KVNProgress (2.2.4)
+  - NYTPhotoViewer (1.1.0):
+    - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
+    - NYTPhotoViewer/Core (= 1.1.0)
+  - NYTPhotoViewer/AnimatedGifSupport (1.1.0):
+    - FLAnimatedImage (~> 1.0.8)
+    - NYTPhotoViewer/Core
+  - NYTPhotoViewer/Core (1.1.0)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - REFormattedNumberField (1.1.6)
   - RNGridMenu (0.1.3)
-  - Stripe (5.1.2):
-    - Stripe/Core (= 5.1.2)
-  - Stripe/Core (5.1.2)
-  - ZTDropDownTextField (0.1.5):
-    - pop (~> 1.0)
+  - Stripe (6.2.0):
+    - Stripe/Core (= 6.2.0)
+  - Stripe/Core (6.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -26,19 +30,17 @@ DEPENDENCIES:
   - REFormattedNumberField
   - RNGridMenu
   - Stripe
-  - ZTDropDownTextField
 
 SPEC CHECKSUMS:
-  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
-  KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
-  NYTPhotoViewer: 874a57dd833238b52ab2e8d1c827356c763626c3
-  Parse: 2155953b1565494095d5fa5c83b3c77f2c677c09
-  ParseUI: 2c53621ed028ee793f5ab92a551b099689265525
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
-  REFormattedNumberField: be3d55dd709f65541fb26b7e1709da07903147f8
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  KVNProgress: 541edcea5a1fef592aceac8d791a410d38cb499d
+  NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
   RNGridMenu: c58db81f87b5473936bb1b675dc3e947c409b51d
-  Stripe: 141b28d157f12db2e1624315cf19f1b6bd5af84d
-  ZTDropDownTextField: a9cb5db41b66eb28a7c38afaf4c334fb2a81034e
+  Stripe: 275524137e6c4cc1058f6d32ece248adf30a21f9
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

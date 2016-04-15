@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KVNProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYTPhotoViewer-NYTPhotoViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -54,75 +64,65 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ZTDropDownTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>pop.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>055D8DC71D2006D25FC9943024AA072C</key>
+		<key>0186EE20AB4D310515B8041966DB7AEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0AAC1714707994D789426E441EB6367A</key>
+		<key>01AB332540E8FD15FE88D41AAB42D8D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C6A55F0850D4F710385CE834733655E</key>
+		<key>0481F19E1296373CB3E8D78FD008253B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C986513FB88D6580EF34F8C3441D681</key>
+		<key>1966D1D93475A8B1DDD5A3B153568842</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A0FBC3D95AC046583A76CE1D1E1CA17</key>
+		<key>257552BD57A4F7B78A72DDF261C0D7B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>21BA230EAE5640106FF0BEB5FD051553</key>
+		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30E6A2B994E86ECE867BD9E8FA9578EF</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DA374BB5346C86BB9E37D7D8A3F9705</key>
+		<key>B272B33F162D6E5C3510BA50ECF2684B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>572C6226748BC6DD7EAD51BD05FA315F</key>
+		<key>DE7804EAE9710337EC8C050BA84FECBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74AFCA21903C943146D0065512C87036</key>
+		<key>E1F78B1C5F8F2CCD0E68552EAF2B9B52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B239C97E3A917FD88385B304D102A545</key>
+		<key>F1BD1DF5FFACB664765CC26BC9442E28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F774BB55093D8BC516D0A69CBEEFDBA2</key>
+		<key>FE113CEF81C16AA59EC049ACE130BCB2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

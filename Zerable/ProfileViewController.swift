@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
 
 
 extension ProfileViewController: UITabBarDelegate {
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         switch (item.tag) {
         case 0:
             if basicInfoVC == nil {
@@ -61,7 +61,7 @@ extension ProfileViewController: UITabBarDelegate {
             }
             view.insertSubview(paymentInfoVC.view, belowSubview: tabBar)
         default:
-            println("default")
+            print("default")
         }
     }
 }

@@ -84,7 +84,7 @@ class MenuControl: UIControl {
     // MARK: Private Methods
     
     private func addTarget() {
-        addTarget(self, action: "touchUpInside", forControlEvents: .TouchUpInside)
+        addTarget(self, action: #selector(MenuControl.touchUpInside), forControlEvents: .TouchUpInside)
     }
     
     private func setUp() {

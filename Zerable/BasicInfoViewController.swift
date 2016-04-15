@@ -37,9 +37,9 @@ class BasicInfoViewController: UIViewController {
         PFUser.currentUser()?.fetchIfNeededInBackgroundWithBlock({
             (object: PFObject?, error:NSError?) -> Void in
             let user = object as! PFUser
-            self.firstnameTextField.text = user["firstName"] as! String
-            self.lastnameTextField.text = user["lastName"] as! String
-            self.phoneTextField.text = user["phoneNumber"] as! String
+            self.firstnameTextField.text = user["firstName"] as? String
+            self.lastnameTextField.text = user["lastName"] as? String
+            self.phoneTextField.text = user["phoneNumber"] as? String
             self.changeSaveButtonState()
         })
         
@@ -49,14 +49,14 @@ class BasicInfoViewController: UIViewController {
             scrollView.topInset = 64
         }
         
-        firstnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
-        lastnameTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
-        phoneTextField.addTarget(self, action: "textDidChanged:", forControlEvents:.EditingChanged)
+        firstnameTextField.addTarget(self, action: #selector(BasicInfoViewController.textDidChanged(_:)), forControlEvents:.EditingChanged)
+        lastnameTextField.addTarget(self, action: #selector(BasicInfoViewController.textDidChanged(_:)), forControlEvents:.EditingChanged)
+        phoneTextField.addTarget(self, action: #selector(BasicInfoViewController.textDidChanged(_:)), forControlEvents:.EditingChanged)
     }
     
     func changeSaveButtonState() {
-        saveButton.enabled = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? true : false
-        saveButton.backgroundColor = !firstnameTextField.text.isEmpty && !lastnameTextField.text.isEmpty && count(phoneTextField.unformattedText) == 10 ? kThemeColor : UIColor.lightGrayColor()
+        saveButton.enabled = !firstnameTextField.text!.isEmpty && !lastnameTextField.text!.isEmpty && phoneTextField.unformattedText.characters.count == 10 ? true : false
+        saveButton.backgroundColor = !firstnameTextField.text!.isEmpty && !lastnameTextField.text!.isEmpty && phoneTextField.unformattedText.characters.count == 10 ? kThemeColor : UIColor.lightGrayColor()
     }
     
     func textDidChanged(textField: UITextField) {
@@ -78,7 +78,7 @@ class BasicInfoViewController: UIViewController {
                     KVNProgress.showSuccess()
                 }
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
+                    let errorString = error.userInfo["error"] as? String
                     let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)

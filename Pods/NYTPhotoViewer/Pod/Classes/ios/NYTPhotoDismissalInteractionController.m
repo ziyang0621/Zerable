@@ -1,13 +1,12 @@
 //
 //  NYTPhotoDismissalInteractionController.m
-//  Pods
+//  NYTPhotoViewer
 //
 //  Created by Brian Capps on 2/17/15.
 //
 //
 
 #import "NYTPhotoDismissalInteractionController.h"
-#import "NYTOperatingSystemCompatibilityUtility.h"
 
 static const CGFloat NYTPhotoDismissalInteractionControllerPanDismissDistanceRatio = 50.0 / 667.0; // distance over iPhone 6 height.
 static const CGFloat NYTPhotoDismissalInteractionControllerPanDismissMaximumDuration = 0.45;
@@ -24,7 +23,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
 #pragma mark - NYTPhotoDismissalInteractionController
 
 - (void)didPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext];
+    UIView *fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
     CGPoint translatedPanGesturePoint = [panGestureRecognizer translationInView:fromView];
     CGPoint newCenterPoint = CGPointMake(anchorPoint.x, anchorPoint.y + translatedPanGesturePoint.y);
     
@@ -42,7 +41,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
 }
 
 - (void)finishPanWithPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer verticalDelta:(CGFloat)verticalDelta viewToPan:(UIView *)viewToPan anchorPoint:(CGPoint)anchorPoint {
-    UIView *fromView = [NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext];
+    UIView *fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
     
     // Return to center case.
     CGFloat velocityY = [panGestureRecognizer velocityInView:panGestureRecognizer.view].y;
@@ -95,10 +94,15 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
                 }
             }
             
-            self.viewToHideWhenBeginningTransition.hidden = NO;
+            self.viewToHideWhenBeginningTransition.alpha = 1.0;
             
             [self.transitionContext completeTransition:isDismissing && !self.transitionContext.transitionWasCancelled];
+            
+            self.transitionContext = nil;
         }];
+    }
+    else {
+        self.transitionContext = nil;
     }
 }
 
@@ -107,7 +111,7 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
     CGFloat finalAlpha = 0.1;
     CGFloat totalAvailableAlpha = startingAlpha - finalAlpha;
     
-    CGFloat maximumDelta = CGRectGetHeight([NYTOperatingSystemCompatibilityUtility fromViewForTransitionContext:self.transitionContext].bounds) / 2.0; // Arbitrary value.
+    CGFloat maximumDelta = CGRectGetHeight([self.transitionContext viewForKey:UITransitionContextFromViewKey].bounds) / 2.0; // Arbitrary value.
     CGFloat deltaAsPercentageOfMaximum = MIN(ABS(verticalDelta) / maximumDelta, 1.0);
     
     return startingAlpha - (deltaAsPercentageOfMaximum * totalAvailableAlpha);
@@ -132,13 +136,29 @@ static const CGFloat NYTPhotoDismissalInteractionControllerReturnToCenterVelocit
 }
 
 + (BOOL)isRadar20070670Fixed {
-    return NO;
+    // per @bcapps, this was fixed in iOS 8.3 but not marked as such on bugreport.apple.com
+    // https://github.com/NYTimes/NYTPhotoViewer/issues/131#issue-126923817
+
+    static BOOL isRadar20070670Fixed;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSOperatingSystemVersion const iOSVersion8Point3 = (NSOperatingSystemVersion) {
+            .majorVersion = 8,
+            .minorVersion = 3,
+            .patchVersion = 0
+        };
+
+        isRadar20070670Fixed = [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:iOSVersion8Point3];
+    });
+
+    return isRadar20070670Fixed;
 }
 
 #pragma mark - UIViewControllerInteractiveTransitioning
 
 - (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    self.viewToHideWhenBeginningTransition.hidden = YES;
+    self.viewToHideWhenBeginningTransition.alpha = 0.0;
     
     self.transitionContext = transitionContext;
 }

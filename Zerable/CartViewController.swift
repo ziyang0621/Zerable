@@ -35,14 +35,14 @@ class CartViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "TotalCell", bundle: nil), forCellReuseIdentifier: "TotalCell")
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
-        let processTap = UITapGestureRecognizer(target: self, action: "processToCheckout")
+        let processTap = UITapGestureRecognizer(target: self, action: #selector(CartViewController.processToCheckout))
         processToCheckoutView.addGestureRecognizer(processTap)
         
         
     }
     
     func processToCheckout() {
-        println("process tapped")
+        print("process tapped")
         let basicInfoVC = UIStoryboard.basicViewController()
         basicInfoVC.toCheckout = true
         viewControllerTransitionWithSaving(false, destVC: basicInfoVC, showVC: true)
@@ -56,7 +56,7 @@ class CartViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if fromGridIndex == -1 {
-            let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "closeButtonTapped")
+            let leftBarButton = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(CartViewController.closeButtonTapped))
             navigationItem.leftBarButtonItem = leftBarButton
         } else {
             menuControl.tapHandler = {
@@ -82,8 +82,8 @@ class CartViewController: UIViewController {
             (cart, error) -> () in
             if let error = error {
                 KVNProgress.dismiss()
-                let errorString = error.userInfo?["error"] as? String
-                println(errorString)
+                let errorString = error.userInfo["error"] as? String
+                print(errorString)
             } else {
                 if let cart = cart {
                     self.cart = cart
@@ -92,20 +92,20 @@ class CartViewController: UIViewController {
                         (success, error) -> () in
                         if let error = error {
                             KVNProgress.dismiss()
-                            let errorString = error.userInfo?["error"] as? String
-                            println(errorString)
+                            let errorString = error.userInfo["error"] as? String
+                            print(errorString)
                         } else {
                             
                             PFQuery.retrieveCartItemsForCart(cart, completion: {
                                 (cartItems, error) -> () in
                                 KVNProgress.dismiss()
                                 if let error = error {
-                                    let errorString = error.userInfo?["error"] as? String
-                                    println(errorString)
+                                    let errorString = error.userInfo["error"] as? String
+                                    print(errorString)
                                 } else {
                                     if let cartItems = cartItems {
                                         if cartItems.count > 0 {
-                                            self.cartItemList.extend(cartItems)
+                                            self.cartItemList.appendContentsOf(cartItems)
                                             self.processToCheckoutView.alpha = 1
                                         } else {
                                             self.cartEmptyLabel.alpha = 1
@@ -133,8 +133,8 @@ class CartViewController: UIViewController {
                 (success, error) -> () in
                 KVNProgress.dismiss()
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? String
-                    println(errorString)
+                    let errorString = error.userInfo["error"] as? String
+                    print(errorString)
                 } else {
                     if dismiss {
                         self.dismissViewControllerAnimated(true, completion: nil)
@@ -203,7 +203,7 @@ class CartViewController: UIViewController {
         }
     }
     
-    func animateMenuButton(#close: Bool) {
+    func animateMenuButton(close: Bool) {
         if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
             if close {
                 gridMenuIsShown = false
@@ -273,8 +273,8 @@ extension CartViewController: UITableViewDataSource {
                 if error == nil {
                    // println("cell image loaded")
                 } else {
-                    let errorString = error!.userInfo?["error"] as? String
-                    println(errorString)
+                    let errorString = error!.userInfo["error"] as? String
+                    print(errorString)
                 }
             })
             
@@ -290,12 +290,12 @@ extension CartViewController: UITableViewDataSource {
 
 extension CartViewController: RNGridMenuDelegate {
     func gridMenuWillDismiss(gridMenu: RNGridMenu!) {
-        animateMenuButton(close: true)
+        animateMenuButton(true)
     }
     
     func gridMenu(gridMenu: RNGridMenu!, willDismissWithSelectedItem item: RNGridMenuItem!, atIndex itemIndex: Int) {
-        animateMenuButton(close: true)
-        delay(seconds: 0.3) { () -> () in
+        animateMenuButton(true)
+        delay(0.3) { () -> () in
             if itemIndex == 1 {
                 return
             }

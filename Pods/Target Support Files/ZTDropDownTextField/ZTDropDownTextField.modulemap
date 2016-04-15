@@ -1,6 +1,0 @@
-framework module ZTDropDownTextField {
-  umbrella header "ZTDropDownTextField-umbrella.h"
-
-  export *
-  module * { export * }
-}

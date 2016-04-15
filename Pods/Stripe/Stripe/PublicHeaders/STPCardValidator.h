@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Stripe, Inc. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
+#import "STPCardParams.h"
 #import "STPCardBrand.h"
 #import "STPCardValidationState.h"
 
@@ -20,6 +21,11 @@
  *  Returns a copy of the passed string with all non-numeric characters removed.
  */
 + (nonnull NSString *)sanitizedNumericStringForString:(nonnull NSString *)string;
+
+/**
+ *  Whether or not the target string contains only numeric characters.
+ */
++ (BOOL)stringIsNumeric:(nonnull NSString *)string;
 
 /**
  *  Validates a card number, passed as a string. This will return STPCardValidationStateInvalid for numbers that are too short or long, contain invalid characters, do not pass Luhn validation, or (optionally) do not match a number format issued by a major card brand.
@@ -80,11 +86,21 @@
  *  @param cvc   the CVC to validate
  *  @param brand the card brand (can be determined from the card's number using +brandForNumber)
  *
- *  @return Whether the CVC represents a valid CVC for that card brand. For example, would return STPCardValidationStateValid for @"123" and STPCardBrandVisa, STPCardValidationStateValid for @"1234" and STPCardBrandAmericanExpress, STPCardValidationStateIncomplete for @"123" and STPCardBrandAmericanExpress, and STPCardValidationStateInvalid for @"12345" and any brand.
+ *  @return Whether the CVC represents a valid CVC for that card brand. For example, would return STPCardValidationStateValid for @"123" and STPCardBrandVisa, STPCardValidationStateValid for @"1234" and STPCardBrandAmericanExpress, STPCardValidationStateIncomplete for @"12" and STPCardBrandVisa, and STPCardValidationStateInvalid for @"12345" and any brand.
  */
 + (STPCardValidationState)validationStateForCVC:(nonnull NSString *)cvc cardBrand:(STPCardBrand)brand;
 
+/**
+ *  Validates the given card details.
+ *
+ *  @param card the card details to validate.
+ * 
+ *  @return STPCardValidationStateValid if all fields are valid, STPCardValidationStateInvalid if any field is invalid, or STPCardValidationStateIncomplete if all fields are either incomplete or valid.
+ */
++ (STPCardValidationState)validationStateForCard:(nonnull STPCardParams *)card;
+
 // Exposed for testing only.
 + (STPCardValidationState)validationStateForExpirationYear:(nonnull NSString *)expirationYear inMonth:(nonnull NSString *)expirationMonth inCurrentYear:(NSInteger)currentYear currentMonth:(NSInteger)currentMonth;
++ (STPCardValidationState)validationStateForCard:(nonnull STPCardParams *)card inCurrentYear:(NSInteger)currentYear currentMonth:(NSInteger)currentMonth;
 
 @end

@@ -25,10 +25,10 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewTap = UITapGestureRecognizer(target: self, action: "viewTapped:")
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(SignupViewController.viewTapped(_:)))
         termLabel.addGestureRecognizer(viewTap)
         
-        let rightBarButton = UIBarButtonItem(title: "Sign up", style: .Plain, target: self, action: "startSignup")
+        let rightBarButton = UIBarButtonItem(title: "Sign up", style: .Plain, target: self, action: #selector(SignupViewController.startSignup))
         navigationItem.rightBarButtonItem = rightBarButton
         
         phoneTextField.format = "(XXX) XXX-XXXX";
@@ -63,11 +63,11 @@ class SignupViewController: UIViewController {
     func signup() {
         if firstnameTextField.text != "" && lastnameTextField.text != "" &&
             emailTextField.text != "" && phoneTextField.unformattedText != "" && passwordTextField.text != "" {
-            if !validateEmail(emailTextField.text) {
+            if !validateEmail(emailTextField.text!) {
                 let alert = UIAlertController(title: "Setup Failed", message: "Invalid email", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
-            } else if count(phoneTextField.unformattedText) < 10 {
+            } else if phoneTextField.unformattedText.characters.count < 10 {
                 let alert = UIAlertController(title: "Setup Failed", message: "Invalid phone number", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
@@ -84,7 +84,7 @@ class SignupViewController: UIViewController {
                 user.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
                     KVNProgress.dismiss()
                     if let error = error {
-                        let errorString = error.userInfo?["error"] as? String
+                        let errorString = error.userInfo["error"] as? String
                         let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
